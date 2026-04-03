@@ -57,7 +57,7 @@ export default function ClientFeedback() {
 
     const interval = setInterval(() => {
       setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1));
-    }, 7000);
+    }, 8500);
 
     return () => clearInterval(interval);
   }, [isPaused]);
@@ -126,7 +126,7 @@ export default function ClientFeedback() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 1.1, ease: 'easeInOut' }}
+                  transition={{ duration: 1.4, ease: [0.25, 0.1, 0.25, 1] }}
                   className="absolute inset-0 flex flex-col justify-between"
                 >
                   <p className="font-heading text-xl md:text-2xl lg:text-3xl font-light text-background leading-[1.4] italic">
@@ -150,7 +150,7 @@ export default function ClientFeedback() {
               <button
                 onClick={prev}
                 aria-label="Previous testimonial"
-                className="w-12 h-12 rounded-full border border-background/20 flex items-center justify-center text-background/40 hover:text-background hover:border-background/60 transition-all duration-300"
+                className="w-12 h-12 rounded-full border border-background/20 flex items-center justify-center text-background/40 hover:text-background hover:border-background/60 hover:scale-[1.05] transition-all duration-300"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
@@ -162,7 +162,7 @@ export default function ClientFeedback() {
               <button
                 onClick={next}
                 aria-label="Next testimonial"
-                className="w-12 h-12 rounded-full border border-background/20 flex items-center justify-center text-background/40 hover:text-background hover:border-background/60 transition-all duration-300"
+                className="w-12 h-12 rounded-full border border-background/20 flex items-center justify-center text-background/40 hover:text-background hover:border-background/60 hover:scale-[1.05] transition-all duration-300"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
