@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { ChevronDown } from 'lucide-react';
 
-const HERO_IMG = 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/f9bc85767_BMills_promo2016A.jpg';
+const HERO_IMG = "/images/bmills-hero.jpg";
 
 export default function Hero() {
   const ref = useRef(null);
