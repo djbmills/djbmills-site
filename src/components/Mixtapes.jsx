@@ -7,31 +7,30 @@ const mixtapes = [
   title: 'All For The Love',
   genre: 'R&B Mixtape',
   duration: '2025',
-  image: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/e853e1a21_AllForTheLoveMixtapeCover.png',
+  image: '/images/all-for-the-love.png',
   audioUrl: 'https://mcdn.podbean.com/mf/web/2ix9nrz5dvqn4pjy/All_For_The_Love770bt.mp3'
 },
 {
   title: 'The Afterparty',
   genre: 'House/Dance Mixtape',
   duration: '2026',
-  image: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/4f6a00751_dj-bmills-after-party-mix.jpg',
+  image: '/images/afterparty.jpg',
   audioUrl: 'https://mcdn.podbean.com/mf/web/hh8xury4eea68v3a/theAfterparty.mp3'
 },
 {
   title: 'Summertime Smooth',
   genre: 'Poolside House',
   duration: 'Mix Vol. 03 · 2025',
-  image: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/646f94219_SummertimeSmooth3Cover.png',
+  image: '/images/summertime-smooth.png',
   audioUrl: 'https://mcdn.podbean.com/mf/web/yeipune68mtsf6w2/Summertime_Smooth_36zr5x.mp3'
 },
 {
   title: 'Throwback Vibes',
   genre: 'Classic Hip Hop + R&B',
   duration: 'Nostalgia',
-  image: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/ca5f67cca_ThrowbackVibesCover.png',
+  image: '/images/throwback-vibes.png',
   audioUrl: 'https://mcdn.podbean.com/mf/web/piu3pek59sg2h5nj/Throwbacks_Vibes8ip11.mp3'
 }];
-
 
 
 export default function Mixtapes() {
