@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const testimonials = [
@@ -42,23 +42,40 @@ const testimonials = [
 
 export default function ClientFeedback() {
   const [current, setCurrent] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  const prev = () => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1));
-  const next = () => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1));
+  const prev = () => {
+    setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1));
+  };
+
+  const next = () => {
+    setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1));
+  };
+
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1));
+    }, 7000);
+
+    return () => clearInterval(interval);
+  }, [isPaused]);
 
   const t = testimonials[current];
 
   return (
-    <section id="feedback" className="pt-16 md:pt-24 pb-24 md:pb-36 px-6 md:px-12 bg-foreground">
+    <section
+      id="feedback"
+      className="pt-16 md:pt-24 pb-24 md:pb-36 px-6 md:px-12 bg-foreground"
+    >
       <div className="max-w-4xl mx-auto">
-        
-        {/* Top Label */}
         <div className="flex items-center gap-4 mb-16 overflow-hidden">
           <motion.span
             initial={{ opacity: 0, x: -10 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
             className="font-body text-xs tracking-[0.4em] uppercase text-background/30"
           >
             06
@@ -68,7 +85,7 @@ export default function ClientFeedback() {
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.9, delay: 0.1 }}
+            transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
             className="flex-1 h-px bg-background/10 origin-left"
           />
 
@@ -76,14 +93,13 @@ export default function ClientFeedback() {
             initial={{ opacity: 0, x: 10 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
             className="font-body text-xs tracking-[0.3em] uppercase text-background/30"
           >
             Testimonials
           </motion.span>
         </div>
 
-        {/* Title */}
         <div className="text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -96,35 +112,40 @@ export default function ClientFeedback() {
             </h2>
           </motion.div>
 
-          {/* Testimonial */}
-          <div className="relative">
+          <div
+            className="relative"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
             <Quote className="w-10 h-10 text-background/10 mx-auto mb-8" />
 
-            <motion.div
-              key={current}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6 }}
-              className="max-w-3xl mx-auto min-h-[260px] flex flex-col justify-between"
-            >
-              {/* Quote */}
-              <p className="font-heading text-xl md:text-2xl lg:text-3xl font-light text-background leading-[1.4] italic">
-                "{t.quote}"
-              </p>
+            <div className="relative max-w-3xl mx-auto min-h-[320px]">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={current}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1.1, ease: 'easeInOut' }}
+                  className="absolute inset-0 flex flex-col justify-between"
+                >
+                  <p className="font-heading text-xl md:text-2xl lg:text-3xl font-light text-background leading-[1.4] italic">
+                    "{t.quote}"
+                  </p>
 
-              {/* Footer */}
-              <div className="mt-10">
-                <div className="w-8 h-px bg-background/20 mx-auto mb-6" />
-                <p className="font-body text-sm tracking-wider text-background/80 uppercase">
-                  {t.name}
-                </p>
-                <p className="font-body text-xs text-background/40 mt-1">
-                  {t.title}
-                </p>
-              </div>
-            </motion.div>
+                  <div className="mt-10">
+                    <div className="w-8 h-px bg-background/20 mx-auto mb-6" />
+                    <p className="font-body text-sm tracking-wider text-background/80 uppercase">
+                      {t.name}
+                    </p>
+                    <p className="font-body text-xs text-background/40 mt-1">
+                      {t.title}
+                    </p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
 
-            {/* Controls */}
             <div className="flex items-center justify-center gap-6 mt-12">
               <button
                 onClick={prev}
@@ -147,7 +168,6 @@ export default function ClientFeedback() {
               </button>
             </div>
           </div>
-
         </div>
       </div>
     </section>
