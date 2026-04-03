@@ -37,19 +37,19 @@ export default function Mixtapes() {
   const [playing, setPlaying] = useState(null);
   const audioRef = useRef(null);
 
-  const handlePlay = (tape) => {
-    if (!tape.audioUrl) return;
-    if (playing === tape.title) {
-      audioRef.current.pause();
-      setPlaying(null);
-    } else {
-      if (audioRef.current) audioRef.current.pause();
-      audioRef.current = new Audio(tape.audioUrl);
-      audioRef.current.play();
-      audioRef.current.onended = () => setPlaying(null);
-      setPlaying(tape.title);
-    }
-  };
+const handlePlay = (tape) => {
+  if (!tape.audioUrl) return;
+  if (playing === tape.title) {
+    audioRef.current.pause();
+    setPlaying(null);
+  } else {
+    if (audioRef.current) audioRef.current.pause();
+    audioRef.current = new Audio(tape.audioUrl);
+    audioRef.current.play();
+    audioRef.current.onended = () => setPlaying(null);
+    setPlaying(tape.title);
+  }
+};
 
   return (
     <section id="mixtapes" className="py-24 md:py-36 px-6 md:px-12 bg-foreground">
