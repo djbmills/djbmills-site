@@ -26,7 +26,8 @@ const navLinks = [
 ];
 
 const inquiryMailto =
-  'mailto:bookings@djbmills.com?subject=Event%20Inquiry&body=Hi%20B.Mills,%0D%0A%0D%0AEvent%20date:%0D%0ALocation:%0D%0AEvent%20type:%0D%0AGuest%20count:%0D%0A%0D%0ALooking%20forward%20to%20connecting.';
+  const inquiryMailto =
+  'mailto:bookings@djbmills.com?subject=Event%20Inquiry&body=Hi%20B.Mills,%0D%0A%0D%0AEvent%20date:%0D%0ALocation:%0D%0AType%20of%20event:%0D%0AGuest%20count:%0D%0A%0D%0ALooking%20forward%20to%20connecting.';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
