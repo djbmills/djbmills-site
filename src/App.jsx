@@ -20,6 +20,7 @@ export default function App() {
           pointerEvents: "none",
         }}
       />
+
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
