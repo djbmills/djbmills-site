@@ -59,7 +59,7 @@ export default function Approach() {
             className="h-full overflow-hidden group relative"
           >
             <img
-              src="https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/0f15118e8_BEAZLEY_NYC_MARCH2023_PHOTOBY_LARUFOTO_LUISRUIZ_000180.jpg"
+              src="/images/bmills-approach.jpg"
               alt="The Approach"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
