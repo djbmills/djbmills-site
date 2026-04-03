@@ -3,25 +3,25 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const photos = [
-  { src: "/images/gallery-1.jpg", alt: "Luxury corporate event DJ in New York City — B.MILLS" },
-  { src: "/images/gallery-2.jpg", alt: "DJ performing at luxury brand event NYC" },
-  { src: "/images/gallery-3.jpg", alt: "Crowd dancing at upscale corporate event New York City" },
-  { src: "/images/gallery-4.jpg", alt: "B.MILLS DJ set at Brooklyn private event", mobileOnly: true },
-  { src: "/images/gallery-5.jpg", alt: "B.MILLS DJ brand presence at high-end corporate event" },
-  { src: "/images/gallery-6.jpg", alt: "Outdoor luxury brand activation DJ New York City" },
-  { src: "/images/gallery-7.jpg", alt: "B.MILLS performing at luxury private event with confetti" },
-  { src: "/images/gallery-8.jpg", alt: "B.MILLS DJ at turntables luxury corporate event NYC" },
-  { src: "/images/gallery-9.jpg", alt: "B.MILLS at Boom Boom Room luxury venue New York" },
-  { src: "/images/gallery-10.jpg", alt: "Luxury event venue New York City DJ B.MILLS" },
-  { src: "/images/gallery-11.jpg", alt: "Exclusive nightlife event DJ NYC" },
-  { src: "/images/gallery-12.jpg", alt: "B.MILLS solo DJ set at Hall des Lumières New York" },
-  { src: "/images/gallery-13.jpg", alt: "Large-scale luxury gala DJ performance New York City" },
-  { src: "/images/gallery-14.jpg", alt: "B.MILLS DJ at private luxury dinner event NYC" },
-  { src: "/images/gallery-15.jpg", alt: "DJ B.MILLS at luxury brand activation event New York" },
-  { src: "/images/gallery-16.jpg", alt: "B.MILLS nightlife DJ set at upscale NYC venue" },
-  { src: "/images/gallery-17.jpg", alt: "B.MILLS DJ performing at fashion event NYC" },
-  { src: "/images/gallery-18.jpg", alt: "Guests dancing at high-end corporate event New York City" },
-  { src: "/images/gallery-19.jpg", alt: "B.MILLS DJ presentation at luxury event NYC" }
+  { src: "/images/bmills-event-1.jpg", alt: "B.MILLS DJ performing at luxury corporate event in New York City" },
+  { src: "/images/bmills-event-2.jpg", alt: "Upscale NYC event with B.MILLS DJing for corporate audience" },
+  { src: "/images/bmills-event-3.png", alt: "Crowd dancing during high-end private event with B.MILLS DJ" },
+  { src: "/images/bmills-event-4.jpg", alt: "B.MILLS DJ set at luxury brand activation in New York" },
+  { src: "/images/bmills-event-5.jpg", alt: "Elegant corporate gala atmosphere with live DJ performance by B.MILLS" },
+  { src: "/images/bmills-event-6.jpg", alt: "B.MILLS DJ creating atmosphere at upscale Manhattan event" },
+  { src: "/images/bmills-event-7.jpg", alt: "Luxury event crowd engagement with B.MILLS DJ in New York City" },
+  { src: "/images/bmills-event-7.png", alt: "Guests enjoying music during curated DJ set by B.MILLS" },
+  { src: "/images/bmills-event-8.jpg", alt: "B.MILLS DJ performing at high-end nightlife venue in NYC" },
+  { src: "/images/bmills-event-9.jpg", alt: "Packed dance floor at luxury private celebration with B.MILLS DJ" },
+  { src: "/images/bmills-event-10.jpg", alt: "B.MILLS DJ at premium corporate function in New York City" },
+  { src: "/images/bmills-event-11.jpg", alt: "Refined DJ setup for luxury brand event by B.MILLS" },
+  { src: "/images/bmills-event-12.jpg", alt: "B.MILLS DJ performing at large-scale gala event in NYC venue" },
+  { src: "/images/bmills-event-13.jpg", alt: "Corporate event entertainment with B.MILLS DJ in upscale setting" },
+  { src: "/images/bmills-event-14.jpg", alt: "B.MILLS DJ delivering curated music experience at luxury dinner event" },
+  { src: "/images/bmills-event-15.jpg", alt: "High-energy dance moment at corporate event with B.MILLS DJ" },
+  { src: "/images/bmills-event-16.jpg", alt: "B.MILLS DJ performing at exclusive New York City venue" },
+  { src: "/images/bmills-event-17.jpg", alt: "Guests dancing at luxury brand event with B.MILLS DJ" },
+  { src: "/images/bmills-event-mobile-1.png", alt: "Mobile view of B.MILLS DJ performance at upscale NYC event", mobileOnly: true }
 ];
 
 
