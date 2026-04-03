@@ -22,12 +22,21 @@ export default function SEOHeading({
 
     setMeta('description', description);
     if (keywords) setMeta('keywords', keywords);
+
+    // Open Graph
     setMeta('og:title', title, 'property');
     setMeta('og:description', description, 'property');
     setMeta('og:image', image, 'property');
     setMeta('og:url', url, 'property');
     setMeta('og:type', 'website', 'property');
 
+    // Twitter
+    setMeta('twitter:title', title);
+    setMeta('twitter:description', description);
+    setMeta('twitter:image', image);
+    setMeta('twitter:card', 'summary_large_image');
+
+    // Canonical
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
       canonical = document.createElement('link');
@@ -35,7 +44,7 @@ export default function SEOHeading({
       document.head.appendChild(canonical);
     }
     canonical.setAttribute('href', url);
-  }, [title, description, image, url]);
+  }, [title, description, keywords, image, url]);
 
   return null;
 }
