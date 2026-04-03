@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
-const ABOUT_IMG = 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/2c019b135_BEAZLEY_NYC_MARCH2023_PHOTOBY_LARUFOTO_LUISRUIZ_000073.jpg';
+const ABOUT_IMG = "/images/bmills-about.jpg";
 
 export default function About() {
   const ref = useRef(null);
