@@ -51,79 +51,103 @@ export default function ClientFeedback() {
   return (
     <section id="feedback" className="pt-16 md:pt-24 pb-24 md:pb-36 px-6 md:px-12 bg-foreground">
       <div className="max-w-4xl mx-auto">
+        
+        {/* Top Label */}
         <div className="flex items-center gap-4 mb-16 overflow-hidden">
           <motion.span
             initial={{ opacity: 0, x: -10 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="font-body text-xs tracking-[0.4em] uppercase text-background/30">06</motion.span>
+            transition={{ duration: 0.6 }}
+            className="font-body text-xs tracking-[0.4em] uppercase text-background/30"
+          >
+            06
+          </motion.span>
+
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-            className="flex-1 h-px bg-background/10 origin-left" />
+            transition={{ duration: 0.9, delay: 0.1 }}
+            className="flex-1 h-px bg-background/10 origin-left"
+          />
+
           <motion.span
             initial={{ opacity: 0, x: 10 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
-            className="font-body text-xs tracking-[0.3em] uppercase text-background/30">Testimonials</motion.span>
-        </div>
-        <div className="text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="font-heading text-4xl md:text-6xl font-light text-background mb-16">
-            Client Words
-          </h2>
-        </motion.div>
-
-        <div className="relative">
-          <Quote className="w-10 h-10 text-background/10 mx-auto mb-8" />
-
-          <motion.div
-            key={current}
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="font-body text-xs tracking-[0.3em] uppercase text-background/30"
           >
-            <p className="font-heading text-xl md:text-2xl lg:text-3xl font-light text-background leading-relaxed italic mb-10">
-              "{t.quote}"
-            </p>
-            <div className="w-8 h-px bg-background/20 mx-auto mb-6" />
-            <p className="font-body text-sm tracking-wider text-background/80 uppercase">
-              {t.name}
-            </p>
-            <p className="font-body text-xs text-background/40 mt-1">
-              {t.title}
-            </p>
+            Testimonials
+          </motion.span>
+        </div>
+
+        {/* Title */}
+        <div className="text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="font-heading text-4xl md:text-6xl font-light text-background mb-16">
+              Client Words
+            </h2>
           </motion.div>
 
-          <div className="flex items-center justify-center gap-6 mt-12">
-            <button
-              onClick={prev}
-              aria-label="Previous testimonial"
-              className="w-12 h-12 rounded-full border border-background/20 flex items-center justify-center text-background/40 hover:text-background hover:border-background/60 transition-all duration-300"
+          {/* Testimonial */}
+          <div className="relative">
+            <Quote className="w-10 h-10 text-background/10 mx-auto mb-8" />
+
+            <motion.div
+              key={current}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              className="max-w-3xl mx-auto min-h-[260px] flex flex-col justify-between"
             >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <span className="font-body text-xs text-background/30 tracking-widest">
-              {String(current + 1).padStart(2, '0')} / {String(testimonials.length).padStart(2, '0')}
-            </span>
-            <button
-              onClick={next}
-              aria-label="Next testimonial"
-              className="w-12 h-12 rounded-full border border-background/20 flex items-center justify-center text-background/40 hover:text-background hover:border-background/60 transition-all duration-300"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
+              {/* Quote */}
+              <p className="font-heading text-xl md:text-2xl lg:text-3xl font-light text-background leading-[1.4] italic">
+                "{t.quote}"
+              </p>
+
+              {/* Footer */}
+              <div className="mt-10">
+                <div className="w-8 h-px bg-background/20 mx-auto mb-6" />
+                <p className="font-body text-sm tracking-wider text-background/80 uppercase">
+                  {t.name}
+                </p>
+                <p className="font-body text-xs text-background/40 mt-1">
+                  {t.title}
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Controls */}
+            <div className="flex items-center justify-center gap-6 mt-12">
+              <button
+                onClick={prev}
+                aria-label="Previous testimonial"
+                className="w-12 h-12 rounded-full border border-background/20 flex items-center justify-center text-background/40 hover:text-background hover:border-background/60 transition-all duration-300"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+
+              <span className="font-body text-xs text-background/30 tracking-widest">
+                {String(current + 1).padStart(2, '0')} / {String(testimonials.length).padStart(2, '0')}
+              </span>
+
+              <button
+                onClick={next}
+                aria-label="Next testimonial"
+                className="w-12 h-12 rounded-full border border-background/20 flex items-center justify-center text-background/40 hover:text-background hover:border-background/60 transition-all duration-300"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
           </div>
-        </div>
+
         </div>
       </div>
     </section>
