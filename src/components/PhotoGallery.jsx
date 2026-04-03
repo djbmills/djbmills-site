@@ -3,25 +3,25 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const photos = [
-{ src: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/1b6e92d85_1Hero.jpg', alt: 'Luxury corporate event DJ in New York City — B.MILLS at Hall des Lumières' },
-{ src: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/d6b187ed5_IMG_5774.jpg', alt: 'DJ performing at luxury brand event NYC' },
-{ src: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/22e0968aa_4crowddancing.png', alt: 'Crowd dancing at upscale corporate event New York City' },
-{ src: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/c53afdbf1_DJBMILLS_BrooklynEvent.png', alt: 'B.MILLS DJ set at Brooklyn private event', mobileOnly: true },
-{ src: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/9cad8c8dd_7brandcreditability.jpg', alt: 'B.MILLS DJ brand credibility at high-end corporate event' },
-{ src: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/c0f4b7246_9VersatilityCitidaytimeoutdoorshot.jpg', alt: 'Outdoor luxury brand activation DJ New York City' },
-{ src: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/d584db372_IMG_3563.jpg', alt: 'B.MILLS performing at luxury private event with confetti' },
-{ src: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/ad7e0e5e1_generated_image.png', alt: 'B.MILLS DJ at turntables luxury corporate event NYC' },
-{ src: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/d68ebc53a_BoomBoomRoom.jpg', alt: 'B.MILLS at Boom Boom Room luxury venue New York' },
-{ src: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/59ff16c78_8uniqueluxurystatueshot.jpg', alt: 'Luxury event venue New York City DJ B.MILLS' },
-{ src: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/f3786ed73_2ScrollHook.jpg', alt: 'Exclusive nightlife event DJ at Boom Boom Room NYC' },
-{ src: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/378c18618_5HDLsolo.jpg', alt: 'B.MILLS solo DJ set at Hall des Lumières New York' },
-{ src: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/b72d09910_10closingbigeventshot.jpg', alt: 'Large-scale luxury gala DJ performance New York City' },
-{ src: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/9c47bd51e_6authority.jpg', alt: 'B.MILLS DJ at private luxury dinner event NYC' },
-{ src: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/fc0038058_6Brandingauthority.jpg', alt: 'DJ B.MILLS at luxury brand activation event New York' },
-{ src: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/bd6c534a2_IMG_7528.jpg', alt: 'B.MILLS nightlife DJ set at upscale NYC venue' },
-{ src: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/c97a33d49_guccieventselfie.jpg', alt: 'B.MILLS DJ performing at Gucci luxury fashion event NYC' },
-{ src: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/39bf7055c_IMG_3441.jpg', alt: 'Guests dancing at high-end corporate event New York City' },
-{ src: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/16841ae87_IMG_4446.jpg', alt: 'B.MILLS DJ presentation at Hall des Lumières luxury event NYC' }
+  { src: "/images/gallery-1.jpg", alt: "Luxury corporate event DJ in New York City — B.MILLS" },
+  { src: "/images/gallery-2.jpg", alt: "DJ performing at luxury brand event NYC" },
+  { src: "/images/gallery-3.jpg", alt: "Crowd dancing at upscale corporate event New York City" },
+  { src: "/images/gallery-4.jpg", alt: "B.MILLS DJ set at Brooklyn private event", mobileOnly: true },
+  { src: "/images/gallery-5.jpg", alt: "B.MILLS DJ brand presence at high-end corporate event" },
+  { src: "/images/gallery-6.jpg", alt: "Outdoor luxury brand activation DJ New York City" },
+  { src: "/images/gallery-7.jpg", alt: "B.MILLS performing at luxury private event with confetti" },
+  { src: "/images/gallery-8.jpg", alt: "B.MILLS DJ at turntables luxury corporate event NYC" },
+  { src: "/images/gallery-9.jpg", alt: "B.MILLS at Boom Boom Room luxury venue New York" },
+  { src: "/images/gallery-10.jpg", alt: "Luxury event venue New York City DJ B.MILLS" },
+  { src: "/images/gallery-11.jpg", alt: "Exclusive nightlife event DJ NYC" },
+  { src: "/images/gallery-12.jpg", alt: "B.MILLS solo DJ set at Hall des Lumières New York" },
+  { src: "/images/gallery-13.jpg", alt: "Large-scale luxury gala DJ performance New York City" },
+  { src: "/images/gallery-14.jpg", alt: "B.MILLS DJ at private luxury dinner event NYC" },
+  { src: "/images/gallery-15.jpg", alt: "DJ B.MILLS at luxury brand activation event New York" },
+  { src: "/images/gallery-16.jpg", alt: "B.MILLS nightlife DJ set at upscale NYC venue" },
+  { src: "/images/gallery-17.jpg", alt: "B.MILLS DJ performing at fashion event NYC" },
+  { src: "/images/gallery-18.jpg", alt: "Guests dancing at high-end corporate event New York City" },
+  { src: "/images/gallery-19.jpg", alt: "B.MILLS DJ presentation at luxury event NYC" }
 ];
 
 
