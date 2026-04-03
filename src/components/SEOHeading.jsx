@@ -4,7 +4,7 @@ export default function SEOHeading({
   title = 'Premier Corporate Event DJ NYC | Brand Experiences & Private Events | B.MILLS',
   description = 'B.MILLS is a New York City DJ specializing in luxury corporate events, brand experiences, and high-end private events across NYC, the Hamptons, and Connecticut.',
   keywords = '',
-  image = 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/f9bc85767_BMills_promo2016A.jpg',
+  image = "https://djbmills.com/social/og-home.jpg",
   url = 'https://djbmills.com/',
 }) {
   useEffect(() => {
