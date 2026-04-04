@@ -7,7 +7,7 @@ const inquiryMailto =
 
 const photos = [
   {
-    src: "/images/bmills-corporate-7.png",
+    src: "/images/bmills-corporate-7.jpg",
     alt: "Premier corporate event DJ at formal gala New York City",
     caption: "Carlos Delgado and Carlos Beltran speak at fundraiser event in Puerto Rico",
   },
