@@ -18,7 +18,7 @@ export default function Home() {
         title="B.MILLS | Premier Event DJ NYC for Corporate Events, Brand Experiences & Private Celebrations"
         description="B.MILLS is a New York City DJ specializing in luxury corporate events, brand experiences, and high-end private events across NYC, the Hamptons, and Connecticut."
         keywords="luxury corporate event DJ NYC, brand experience DJ, high end event DJ New York, corporate event entertainment NYC, experiential marketing DJ"
-        image="/images/bmills-about-hero.png"
+        image="/images/bmills-hero.jpg"
         url="https://djbmills.com/"
       />
       <Hero />
