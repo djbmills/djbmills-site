@@ -38,8 +38,6 @@ export default function Approach() {
         </div>
 
         <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-center">
-          
-          {/* Left — Text */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -48,7 +46,7 @@ export default function Approach() {
             className="md:col-span-5"
           >
             <h2
-              className="font-heading text-[2.4rem] md:text-[3.4rem] lg:text-[4rem] font-light mb-8 leading-[1.05] tracking-[-0.02em]"
+              className="font-heading text-[2.4rem] md:text-[3.4rem] lg:text-[4rem] font-light mb-8 leading-[1.03] tracking-[-0.02em]"
               style={{ color: '#161614' }}
             >
               No set formula. Only timing.
@@ -56,22 +54,21 @@ export default function Approach() {
 
             <div className="space-y-6 max-w-md">
               <p
-                className="font-body text-[0.98rem] md:text-[1.05rem] leading-[1.75]"
-                style={{ color: 'rgba(22, 22, 20, 0.82)' }}
+                className="font-body text-[0.98rem] md:text-[1.05rem] leading-[1.75] font-light"
+                style={{ color: 'rgba(22, 22, 20, 0.72)' }}
               >
                 Every event moves differently. The music has to meet the space, the crowd, and the moment without forcing any of it.
               </p>
 
               <p
-                className="font-body text-[0.98rem] md:text-[1.05rem] leading-[1.75]"
-                style={{ color: 'rgba(22, 22, 20, 0.82)' }}
+                className="font-body text-[0.98rem] md:text-[1.05rem] leading-[1.75] font-light"
+                style={{ color: 'rgba(22, 22, 20, 0.72)' }}
               >
                 Built in real time, adjusted as the energy shifts, and shaped to feel natural from the first arrival to the last record.
               </p>
             </div>
           </motion.div>
 
-          {/* Right — Image */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -86,10 +83,8 @@ export default function Approach() {
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
 
-              {/* Subtle overlay */}
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
 
-              {/* Photo credit */}
               <div className="absolute bottom-3 right-3">
                 <p className="font-body text-[10px] md:text-[11px] font-light tracking-[0.08em] uppercase text-white/60 group-hover:text-white/80 transition-colors duration-300">
                   Photo by{' '}
@@ -105,7 +100,6 @@ export default function Approach() {
               </div>
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>
