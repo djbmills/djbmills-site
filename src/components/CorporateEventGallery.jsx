@@ -7,18 +7,18 @@ const inquiryMailto =
 
 const photos = [
   {
-    src: "/images/bmills-corporate-6.png",
+    src: "/images/bmills-corporate-7.png",
     alt: "Premier corporate event DJ at formal gala New York City",
     caption: "Carlos Delgado and Carlos Beltran speak at fundraiser event in Puerto Rico",
   },
   {
-    src: "/images/bmills-corporate-7.jpg",
+    src: "/images/bmills-corporate-8.jpg",
     alt: "DJ B.MILLS performing at client corporate event NYC",
     caption: "Client event atmosphere",
     credit: true,
   },
   {
-    src: "/images/bmills-corporate-8.jpg",
+    src: "/images/bmills-corporate-9.jpg",
     alt: "B.MILLS with guests at corporate cocktail reception",
     caption: "Corporate cocktail reception group shot",
   },
