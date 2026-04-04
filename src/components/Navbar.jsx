@@ -7,7 +7,7 @@ const navLinks = [
   { label: 'About', href: '/#about' },
   { label: 'Mixtapes', href: '/#mixtapes' },
   { label: 'Clients', href: '/#clients' },
-  { label: 'In The Room', href: '/#events' },
+  { label: 'Events', href: '/corporate-events' },
   { label: 'Feedback', href: '/#feedback' },
 ];
 
@@ -57,13 +57,9 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`font-body tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300 ${
-                  link.label === 'In The Room'
-                    ? 'text-xs lg:text-xs whitespace-nowrap'
-                    : 'text-xs'
-                }`}
+                className="font-body tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300 text-xs"
               >
-                {link.label === 'In The Room' ? 'In\u00A0the\u00A0Room' : link.label}
+                {link.label}
               </a>
             ))}
 
