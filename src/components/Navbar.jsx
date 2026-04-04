@@ -1,26 +1,30 @@
 import { useState, useEffect } from 'react';
-import { Instagram, Linkedin } from 'lucide-react';
-import { Menu, X } from 'lucide-react';
+import { Instagram, Linkedin, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 
 const navLinks = [
-  { label: 'About', href: '/#about' },
-  { label: 'Mixtapes', href: '/#mixtapes' },
-  { label: 'Clients', href: '/#clients' },
-  { label: 'Events', href: '/corporate-events' },
-  { label: 'Feedback', href: '/#feedback' },
+  { label: 'About', href: '/#about', sectionId: 'about' },
+  { label: 'Mixtapes', href: '/#mixtapes', sectionId: 'mixtapes' },
+  { label: 'Clients', href: '/#clients', sectionId: 'clients' },
+  { label: 'Events', href: '/corporate-events', sectionId: null },
+  { label: 'Feedback', href: '/#feedback', sectionId: 'feedback' },
 ];
 
 const inquiryMailto =
   'mailto:bookings@djbmills.com?subject=Event%20Inquiry&body=Hi%20B.Mills,%0D%0A%0D%0AEvent%20date:%0D%0ALocation:%0D%0AType%20of%20event:%0D%0AGuest%20count:%0D%0A%0D%0ALooking%20forward%20to%20connecting.';
 
 export default function Navbar() {
+  const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('');
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', onScroll);
+    onScroll();
+
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
@@ -30,6 +34,60 @@ export default function Navbar() {
       document.body.style.overflow = '';
     };
   }, [mobileOpen]);
+
+  useEffect(() => {
+    const isCorporatePage = location.pathname === '/corporate-events';
+
+    if (isCorporatePage) {
+      setActiveLink('Events');
+      return;
+    }
+
+    if (location.pathname !== '/') {
+      setActiveLink('');
+      return;
+    }
+
+    const sectionLinks = navLinks.filter((link) => link.sectionId);
+
+    const updateActiveSection = () => {
+      let currentSection = '';
+
+      for (const link of sectionLinks) {
+        const el = document.getElementById(link.sectionId);
+        if (!el) continue;
+
+        const rect = el.getBoundingClientRect();
+        const sectionTop = rect.top;
+        const sectionBottom = rect.bottom;
+
+        if (sectionTop <= 140 && sectionBottom > 140) {
+          currentSection = link.label;
+        }
+      }
+
+      setActiveLink(currentSection);
+    };
+
+    updateActiveSection();
+    window.addEventListener('scroll', updateActiveSection);
+    window.addEventListener('resize', updateActiveSection);
+
+    return () => {
+      window.removeEventListener('scroll', updateActiveSection);
+      window.removeEventListener('resize', updateActiveSection);
+    };
+  }, [location.pathname]);
+
+  const getLinkClassName = (label) => {
+    const isActive = activeLink === label;
+
+    return `font-body tracking-[0.2em] uppercase transition-colors duration-300 text-xs ${
+      isActive
+        ? 'text-foreground'
+        : 'text-muted-foreground hover:text-foreground'
+    }`;
+  };
 
   return (
     <>
@@ -57,7 +115,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="font-body tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300 text-xs"
+                className={getLinkClassName(link.label)}
               >
                 {link.label}
               </a>
@@ -149,7 +207,9 @@ export default function Navbar() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08 }}
-                  className="font-heading text-3xl font-light tracking-wide text-foreground"
+                  className={`font-heading text-3xl font-light tracking-wide transition-colors duration-300 ${
+                    activeLink === link.label ? 'text-foreground' : 'text-foreground/70'
+                  }`}
                 >
                   {link.label}
                 </motion.a>
