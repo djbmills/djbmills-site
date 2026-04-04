@@ -1,5 +1,4 @@
 import SEOHeading from '../components/SEOHeading';
-import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Approach from '../components/Approach';
 import About from '../components/About';
@@ -22,7 +21,6 @@ export default function Home() {
         image="/images/bmills-about-hero.png"
         url="https://djbmills.com/"
       />
-      <Navbar />
       <Hero />
       <Approach />
       <About />
