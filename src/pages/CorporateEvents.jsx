@@ -57,7 +57,7 @@ export default function CorporateEvents() {
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.6 }}
             className="mt-14">
               <img
-              src="https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/accbaa107_generated_image.png"
+              src="/images/bmills-corporate-2.png"
               alt="B.MILLS performing at Goldman Sachs Robinhood event New York City"
               className="w-full h-auto object-cover" />
             
@@ -114,7 +114,7 @@ export default function CorporateEvents() {
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
             className="mt-14">
               <img
-              src="https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/b5845c61b_DJBMills_overseeing_halldeslumieres.png"
+              src="/images/bmills-corporate-3.png"
               alt="B.MILLS overseeing the grand opening of Hall des Lumières New York City"
               className="w-full h-auto object-cover" />
             
@@ -172,12 +172,12 @@ export default function CorporateEvents() {
             className="pt-12 mt-12 border-t border-white/10">
               <div className="grid grid-cols-2 gap-4">
                 <img
-                src="https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/e9b62430a_IMG_3595.jpg"
+                src="/images/bmills-corporate-4.jpg"
                 alt="B.MILLS performing at corporate cocktail reception at Boom Boom Room New York City"
                 className="w-full h-full object-cover" />
               
                 <img
-                src="https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/94d8eae14_DJBMILLS-Boom-Boom-Room.jpg"
+                src="/images/bmills-corporate-5.jpg"
                 alt="B.MILLS performing at Boom Boom Room New York City corporate event"
                 className="w-full h-full object-cover" />
               
@@ -235,7 +235,7 @@ export default function CorporateEvents() {
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
             className="pt-12 mt-12 border-t border-white/10">
               <img
-              src="https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/ed70a7cd6_DJBMILLS-Corporate_event.png"
+              src="/images/bmills-corporate-5.jpg"
               alt="B.MILLS performing at corporate event on Pioneer DJ equipment"
               className="w-full h-auto object-cover" />
             
