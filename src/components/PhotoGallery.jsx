@@ -24,16 +24,24 @@ const photos = [
   { src: "/images/bmills-event-mobile-1.png", alt: "Mobile view of B.MILLS DJ performance at upscale NYC event", mobileOnly: true }
 ];
 
-
 export default function PhotoGallery() {
   const [lightboxIndex, setLightboxIndex] = useState(null);
-  const creditIndices = [2, 8, 12, 10];
+  const [isMobile, setIsMobile] = useState(false);
+
+  const creditIndices = [2, 8, 10, 12];
 
   const openLightbox = (i) => setLightboxIndex(i);
   const closeLightbox = () => setLightboxIndex(null);
-  const prev = () => setLightboxIndex((i) => i === 0 ? photos.length - 1 : i - 1);
-  const next = () => setLightboxIndex((i) => i === photos.length - 1 ? 0 : i + 1);
+  const prev = () => setLightboxIndex((i) => (i === 0 ? photos.length - 1 : i - 1));
+  const next = () => setLightboxIndex((i) => (i === photos.length - 1 ? 0 : i + 1));
   const shouldShowCredit = (i) => creditIndices.includes(i);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     if (lightboxIndex !== null) {
@@ -41,7 +49,9 @@ export default function PhotoGallery() {
     } else {
       document.body.style.overflow = '';
     }
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [lightboxIndex]);
 
   useEffect(() => {
@@ -51,72 +61,95 @@ export default function PhotoGallery() {
       if (e.key === 'ArrowLeft') prev();
       if (e.key === 'ArrowRight') next();
     };
+
     window.addEventListener('keydown', handleKey);
     return () => window.removeEventListener('keydown', handleKey);
   }, [lightboxIndex]);
 
+  const visiblePhotos = photos.filter(
+    (photo) => !photo.mobileOnly || isMobile
+  );
+
   return (
     <section id="events" className="pt-16 md:pt-24 pb-6 md:pb-8 px-6 md:px-12 border-t border-border">
       <div className="max-w-7xl mx-auto">
+
         {/* Header */}
         <div className="flex items-center gap-4 mb-12 overflow-hidden">
           <motion.span
             initial={{ opacity: 0, x: -10 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground">05</motion.span>
+            transition={{ duration: 0.6 }}
+            className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground"
+          >
+            05
+          </motion.span>
+
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-            className="flex-1 h-px bg-border origin-left" />
+            transition={{ duration: 0.9, delay: 0.1 }}
+            className="flex-1 h-px bg-border origin-left"
+          />
+
           <motion.span
             initial={{ opacity: 0, x: 10 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
-            className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground">Gallery</motion.span>
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground"
+          >
+            Gallery
+          </motion.span>
         </div>
+
+        {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-8">
-          <h2 className="font-heading text-4xl md:text-6xl font-light">Inside the Room</h2>
+          className="mb-8"
+        >
+          <h2 className="font-heading text-4xl md:text-6xl font-light">
+            Inside the Room
+          </h2>
         </motion.div>
 
-        {/* Masonry Grid */}
-         <div className="columns-2 md:columns-3 lg:columns-4 gap-3">
-           {photos.filter(photo => !photo.mobileOnly || window.innerWidth < 768).map((photo, i) =>
-          <motion.div
-            key={i}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: i * 0.05 }}
-            className="break-inside-avoid group relative overflow-hidden cursor-pointer mb-3"
-            onClick={() => openLightbox(i)}>
-
+        {/* Grid */}
+        <div className="columns-2 md:columns-3 lg:columns-4 gap-3">
+          {visiblePhotos.map((photo, i) => (
+            <motion.div
+              key={photo.src}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.05 }}
+              className="break-inside-avoid group relative overflow-hidden cursor-pointer mb-3"
+              onClick={() => openLightbox(i)}
+            >
               <img
-              src={photo.src}
-              alt={photo.alt}
-              loading="lazy"
-              className="w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                src={photo.src}
+                alt={photo.alt}
+                loading="lazy"
+                className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
 
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500" />
+              {/* subtle overlay */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
 
+              {/* photo credit */}
               {shouldShowCredit(i) && (
-                <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-70 transition-opacity duration-300">
-                  <p className="font-body text-xs font-light text-white tracking-wide">
+                <div className="absolute bottom-3 right-3">
+                  <p className="font-body text-[10px] md:text-[11px] font-light tracking-[0.08em] uppercase text-white/60 group-hover:text-white/80 transition-colors duration-300">
                     Photo by{' '}
                     <a
                       href="https://instagram.com/vnina"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline hover:opacity-80 transition-opacity"
+                      className="underline underline-offset-4"
                       onClick={(e) => e.stopPropagation()}
                     >
                       Nina
@@ -125,64 +158,59 @@ export default function PhotoGallery() {
                 </div>
               )}
             </motion.div>
-          )}
+          ))}
         </div>
       </div>
 
       {/* Lightbox */}
       <AnimatePresence>
-        {lightboxIndex !== null &&
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center"
-          onClick={closeLightbox}>
-          
-            {/* Close */}
+        {lightboxIndex !== null && (
+          <motion.div
+            className="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closeLightbox}
+          >
             <button
-            aria-label="Close image gallery"
-            className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors z-10"
-            onClick={closeLightbox}>
+              className="absolute top-6 right-6 text-white/50 hover:text-white"
+              onClick={closeLightbox}
+            >
               <X className="w-7 h-7" />
             </button>
 
-            {/* Prev */}
             <button
-            aria-label="Previous image"
-            className="absolute left-4 md:left-8 text-white/40 hover:text-white transition-colors z-10"
-            onClick={(e) => {e.stopPropagation();prev();}}>
+              className="absolute left-4 md:left-8 text-white/40 hover:text-white"
+              onClick={(e) => { e.stopPropagation(); prev(); }}
+            >
               <ChevronLeft className="w-8 h-8" />
             </button>
 
-            {/* Image */}
             <motion.img
-            key={lightboxIndex}
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            src={photos[lightboxIndex].src}
-            alt={photos[lightboxIndex].alt}
-            className="max-h-[88vh] max-w-[88vw] object-contain"
-            onClick={(e) => e.stopPropagation()} />
-          
+              key={lightboxIndex}
+              src={visiblePhotos[lightboxIndex].src}
+              alt={visiblePhotos[lightboxIndex].alt}
+              className="max-h-[88vh] max-w-[88vw] object-contain"
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
+            />
 
-            {/* Next */}
             <button
-            aria-label="Next image"
-            className="absolute right-4 md:right-8 text-white/40 hover:text-white transition-colors z-10"
-            onClick={(e) => {e.stopPropagation();next();}}>
+              className="absolute right-4 md:right-8 text-white/40 hover:text-white"
+              onClick={(e) => { e.stopPropagation(); next(); }}
+            >
               <ChevronRight className="w-8 h-8" />
             </button>
 
-            {/* Counter */}
             <p className="absolute bottom-6 left-1/2 -translate-x-1/2 font-body text-xs text-white/30 tracking-widest">
-              {String(lightboxIndex + 1).padStart(2, '0')} / {String(photos.length).padStart(2, '0')}
+              {String(lightboxIndex + 1).padStart(2, '0')} / {String(visiblePhotos.length).padStart(2, '0')}
             </p>
           </motion.div>
-        }
+        )}
       </AnimatePresence>
-    </section>);
-
+    </section>
+  );
 }
