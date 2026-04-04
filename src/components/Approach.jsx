@@ -85,14 +85,14 @@ export default function Approach() {
 
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
 
-              <div className="absolute bottom-3 right-3">
-                <p className="font-body text-[10px] md:text-[11px] font-light tracking-[0.08em] uppercase text-white/60 group-hover:text-white/80 transition-colors duration-300">
+              <div className="absolute bottom-3 right-3 z-10 pointer-events-none opacity-0 group-hover:opacity-80 transition-opacity duration-300">
+                <p className="font-body text-[10px] md:text-[11px] font-light tracking-[0.08em] uppercase text-white">
                   Photo by{' '}
                   <a
                     href="https://www.instagram.com/larufoto/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline underline-offset-4"
+                    className="underline underline-offset-4 pointer-events-auto"
                   >
                     Luis
                   </a>
