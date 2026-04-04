@@ -103,7 +103,7 @@ export default function About() {
               </p>
 
               <p className="font-body text-[0.98rem] md:text-[1.05rem] text-muted-foreground leading-[1.75] font-light">
-                From cocktail hours to after hours, the approach stays consistent. Read the room. Adjust in real time. Let the energy build where it should.
+                From cocktail hours to after hours, the approach stays consistent. Feel it. Adjust in real time. Let the energy build where it should.
               </p>
             </div>
 
