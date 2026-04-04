@@ -25,7 +25,6 @@ export default function Navbar() {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', onScroll);
     onScroll();
-
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
@@ -59,10 +58,8 @@ export default function Navbar() {
         if (!el) continue;
 
         const rect = el.getBoundingClientRect();
-        const sectionTop = rect.top;
-        const sectionBottom = rect.bottom;
 
-        if (sectionTop <= 140 && sectionBottom > 140) {
+        if (rect.top <= 140 && rect.bottom > 140) {
           currentSection = link.label;
         }
       }
@@ -84,15 +81,12 @@ export default function Navbar() {
     if (location.pathname === '/' && location.hash) {
       const sectionId = location.hash.replace('#', '');
 
-      const scrollToSection = () => {
+      setTimeout(() => {
         const el = document.getElementById(sectionId);
         if (el) {
           el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-      };
-
-      const timeout = setTimeout(scrollToSection, 100);
-      return () => clearTimeout(timeout);
+      }, 100);
     }
   }, [location.pathname, location.hash]);
 
@@ -117,10 +111,8 @@ export default function Navbar() {
   };
 
   const getLinkClassName = (label) => {
-    const isActive = activeLink === label;
-
     return `font-body tracking-[0.2em] uppercase transition-colors duration-300 text-xs ${
-      isActive
+      activeLink === label
         ? 'text-foreground'
         : 'text-muted-foreground hover:text-foreground'
     }`;
@@ -136,7 +128,9 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-20">
-          <a href="/" aria-label="B.Mills home" className="flex items-center h-10">
+          
+          {/* Logo */}
+          <a href="/" className="flex items-center h-10">
             <img
               src="/logos/bmills-logo-white.png"
               alt="B.Mills"
@@ -147,6 +141,7 @@ export default function Navbar() {
             />
           </a>
 
+          {/* Desktop */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
@@ -159,41 +154,6 @@ export default function Navbar() {
               </a>
             ))}
 
-            <div className="flex items-center gap-3">
-              <a
-                href="https://www.instagram.com/djbmills/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-4 h-4 text-muted-foreground hover:text-foreground" />
-              </a>
-
-              <a
-                href="https://www.tiktok.com/@djbmills"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="TikTok"
-              >
-                <svg
-                  className="w-4 h-4 text-muted-foreground hover:text-foreground"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z" />
-                </svg>
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/bmillsdj/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-4 h-4 text-muted-foreground hover:text-foreground" />
-              </a>
-            </div>
-
             <a
               href={inquiryMailto}
               className="font-body text-xs tracking-[0.2em] uppercase bg-foreground text-background px-4 py-2 hover:bg-foreground/80 transition-colors duration-300"
@@ -202,13 +162,23 @@ export default function Navbar() {
             </a>
           </div>
 
-          <button
-            onClick={() => setMobileOpen(true)}
-            className="md:hidden text-foreground"
-            aria-label="Open menu"
-          >
-            <Menu className="w-6 h-6" />
-          </button>
+          {/* Mobile */}
+          <div className="md:hidden flex items-center gap-3">
+            
+            {/* Refined Inquire */}
+            <a
+              href={inquiryMailto}
+              className="font-body text-[10px] tracking-[0.25em] uppercase text-foreground border border-foreground/30 px-3 py-2 hover:border-foreground transition-all duration-300"
+            >
+              Inquire
+            </a>
+
+            {/* Hamburger */}
+            <button onClick={() => setMobileOpen(true)} aria-label="Open menu">
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
+
         </div>
       </nav>
 
@@ -220,20 +190,12 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <button
-              onClick={() => setMobileOpen(false)}
-              className="absolute top-6 right-6"
-              aria-label="Close menu"
-            >
+            <button onClick={() => setMobileOpen(false)} className="absolute top-6 right-6">
               <X className="w-7 h-7" />
             </button>
 
             <div className="flex flex-col items-center gap-8">
-              <a
-                href={inquiryMailto}
-                onClick={() => setMobileOpen(false)}
-                className="font-heading text-3xl font-light tracking-wide text-foreground"
-              >
+              <a href={inquiryMailto} className="text-3xl">
                 Inquire
               </a>
 
@@ -245,9 +207,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08 }}
-                  className={`font-heading text-3xl font-light tracking-wide transition-colors duration-300 ${
-                    activeLink === link.label ? 'text-foreground' : 'text-foreground/70'
-                  }`}
+                  className="text-3xl"
                 >
                   {link.label}
                 </motion.a>
