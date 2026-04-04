@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Instagram, Linkedin, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const navLinks = [
   { label: 'About', href: '/#about', sectionId: 'about' },
@@ -16,6 +16,7 @@ const inquiryMailto =
 
 export default function Navbar() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('');
@@ -79,6 +80,42 @@ export default function Navbar() {
     };
   }, [location.pathname]);
 
+  useEffect(() => {
+    if (location.pathname === '/' && location.hash) {
+      const sectionId = location.hash.replace('#', '');
+
+      const scrollToSection = () => {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      };
+
+      const timeout = setTimeout(scrollToSection, 100);
+      return () => clearTimeout(timeout);
+    }
+  }, [location.pathname, location.hash]);
+
+  const handleNavClick = (e, link) => {
+    if (!link.sectionId) {
+      setMobileOpen(false);
+      return;
+    }
+
+    e.preventDefault();
+    setMobileOpen(false);
+
+    if (location.pathname === '/') {
+      const el = document.getElementById(link.sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.history.replaceState(null, '', `/#${link.sectionId}`);
+      }
+    } else {
+      navigate(`/#${link.sectionId}`);
+    }
+  };
+
   const getLinkClassName = (label) => {
     const isActive = activeLink === label;
 
@@ -115,6 +152,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link)}
                 className={getLinkClassName(link.label)}
               >
                 {link.label}
@@ -203,7 +241,7 @@ export default function Navbar() {
                 <motion.a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(e) => handleNavClick(e, link)}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08 }}
