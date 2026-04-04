@@ -235,7 +235,7 @@ export default function CorporateEvents() {
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
             className="pt-12 mt-12 border-t border-white/10">
               <img
-              src="/images/bmills-corporate-5.jpg"
+              src="/images/bmills-corporate-6.jpg"
               alt="B.MILLS performing at corporate event on Pioneer DJ equipment"
               className="w-full h-auto object-cover" />
             
