@@ -226,7 +226,8 @@ export default function CorporateEvents() {
             viewport={{ once: true, margin: '-10%' }}
             transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
             className="font-body text-base text-white/50 leading-relaxed max-w-2xl">
-              Music should feel like a natural extension of the room. It supports the atmosphere, adjusts with the energy, and helps everything flow without ever needing to stand out.
+              Music should feel like a natural extension of the room. It supports the atmosphere, adjusts with the energy, and helps everything flow without ever needing to stand out. 
+              Experience includes working within structured event timelines, production teams, and client-facing environments where consistency and awareness are key.
             </motion.p>
             <motion.div
             initial={{ opacity: 0, y: 30 }}
