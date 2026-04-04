@@ -128,7 +128,7 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-20">
-          
+
           {/* Logo */}
           <a href="/" className="flex items-center h-10">
             <img
@@ -164,7 +164,7 @@ export default function Navbar() {
 
           {/* Mobile */}
           <div className="md:hidden flex items-center gap-3">
-            
+
             {/* Refined Inquire */}
             <a
               href={inquiryMailto}
@@ -174,7 +174,7 @@ export default function Navbar() {
             </a>
 
             {/* Hamburger */}
-            <button onClick={() => setMobileOpen(true)} aria-label="Open menu">
+            <button onClick={() => setMobileOpen(true)}>
               <Menu className="w-6 h-6" />
             </button>
           </div>
@@ -195,7 +195,12 @@ export default function Navbar() {
             </button>
 
             <div className="flex flex-col items-center gap-8">
-              <a href={inquiryMailto} className="text-3xl">
+
+              {/* KEEP LIGHT STYLE */}
+              <a
+                href={inquiryMailto}
+                className="font-heading text-3xl font-light tracking-wide text-foreground"
+              >
                 Inquire
               </a>
 
@@ -207,7 +212,9 @@ export default function Navbar() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08 }}
-                  className="text-3xl"
+                  className={`font-heading text-3xl font-light tracking-wide transition-colors duration-300 ${
+                    activeLink === link.label ? 'text-foreground' : 'text-foreground/70'
+                  }`}
                 >
                   {link.label}
                 </motion.a>
