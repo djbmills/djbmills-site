@@ -57,7 +57,7 @@ export default function ClientFeedback() {
 
     const interval = setInterval(() => {
       setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1));
-    }, 8500);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, [isPaused]);
@@ -125,7 +125,7 @@ export default function ClientFeedback() {
                     opacity: i === current ? 1 : 0,
                   }}
                   transition={{
-                    duration: 1.2,
+                    duration: 0.7,
                     ease: [0.25, 0.1, 0.25, 1],
                   }}
                   className={`absolute inset-0 flex flex-col justify-between ${
