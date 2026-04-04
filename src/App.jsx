@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import PageNotFound from "./lib/PageNotFound";
 import Home from "./pages/Home";
 import CorporateEvents from "./pages/CorporateEvents";
+import Navbar from "./components/Navbar";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
       />
 
       <Router>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/corporate-events" element={<CorporateEvents />} />
