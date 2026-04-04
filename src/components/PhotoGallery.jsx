@@ -49,7 +49,9 @@ export default function PhotoGallery() {
     } else {
       document.body.style.overflow = '';
     }
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [lightboxIndex]);
 
   useEffect(() => {
@@ -70,19 +72,40 @@ export default function PhotoGallery() {
   return (
     <section id="events" className="pt-16 md:pt-24 pb-6 md:pb-8 px-6 md:px-12 border-t border-border">
       <div className="max-w-7xl mx-auto">
-
-        {/* Header */}
         <div className="flex items-center gap-4 mb-12 overflow-hidden">
-          <motion.span className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground">05</motion.span>
-          <div className="flex-1 h-px bg-border" />
-          <motion.span className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground">Gallery</motion.span>
+          <motion.span
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground"
+          >
+            05
+          </motion.span>
+
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9, delay: 0.1 }}
+            className="flex-1 h-px bg-border origin-left"
+          />
+
+          <motion.span
+            initial={{ opacity: 0, x: 10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground"
+          >
+            Gallery
+          </motion.span>
         </div>
 
         <h2 className="font-heading text-4xl md:text-6xl font-light mb-8">
           Inside the Room
         </h2>
 
-        {/* Grid */}
         <div className="columns-2 md:columns-3 lg:columns-4 gap-3">
           {visiblePhotos.map((photo, i) => (
             <div
@@ -97,19 +120,17 @@ export default function PhotoGallery() {
                 className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
 
-              {/* subtle overlay */}
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
 
-              {/* photo credit (hover reveal refined) */}
               {shouldShowCredit(i) && (
-                <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-80 transition-all duration-500">
+                <div className="absolute bottom-3 right-3 z-10 pointer-events-none opacity-0 group-hover:opacity-80 transition-opacity duration-300">
                   <p className="font-body text-[10px] md:text-[11px] font-light tracking-[0.08em] uppercase text-white">
                     Photo by{' '}
                     <a
                       href="https://instagram.com/vnina"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline underline-offset-4"
+                      className="underline underline-offset-4 pointer-events-auto"
                       onClick={(e) => e.stopPropagation()}
                     >
                       Nina
@@ -122,7 +143,6 @@ export default function PhotoGallery() {
         </div>
       </div>
 
-      {/* Lightbox stays same */}
       <AnimatePresence>
         {lightboxIndex !== null && (
           <motion.div
@@ -132,11 +152,20 @@ export default function PhotoGallery() {
             exit={{ opacity: 0 }}
             onClick={closeLightbox}
           >
-            <button className="absolute top-6 right-6 text-white/50 hover:text-white" onClick={closeLightbox}>
+            <button
+              className="absolute top-6 right-6 text-white/50 hover:text-white"
+              onClick={closeLightbox}
+            >
               <X className="w-7 h-7" />
             </button>
 
-            <button className="absolute left-4 md:left-8 text-white/40 hover:text-white" onClick={(e) => { e.stopPropagation(); prev(); }}>
+            <button
+              className="absolute left-4 md:left-8 text-white/40 hover:text-white"
+              onClick={(e) => {
+                e.stopPropagation();
+                prev();
+              }}
+            >
               <ChevronLeft className="w-8 h-8" />
             </button>
 
@@ -148,11 +177,23 @@ export default function PhotoGallery() {
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
             />
 
-            <button className="absolute right-4 md:right-8 text-white/40 hover:text-white" onClick={(e) => { e.stopPropagation(); next(); }}>
+            <button
+              className="absolute right-4 md:right-8 text-white/40 hover:text-white"
+              onClick={(e) => {
+                e.stopPropagation();
+                next();
+              }}
+            >
               <ChevronRight className="w-8 h-8" />
             </button>
+
+            <p className="absolute bottom-6 left-1/2 -translate-x-1/2 font-body text-xs text-white/30 tracking-widest">
+              {String(lightboxIndex + 1).padStart(2, '0')} / {String(visiblePhotos.length).padStart(2, '0')}
+            </p>
           </motion.div>
         )}
       </AnimatePresence>
