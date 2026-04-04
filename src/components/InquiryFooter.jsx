@@ -42,7 +42,7 @@ export default function InquiryFooter({
 
     const emailBody = `Hi B.Mills,%0A%0AName: ${encodeURIComponent(formData.name)}%0AEmail: ${encodeURIComponent(formData.email)}%0AEvent date: ${encodeURIComponent(formattedDate)}%0AType of event: ${encodeURIComponent(formData.eventType)}%0A%0A${encodeURIComponent(formData.message)}%0A%0ALooking forward to connecting.`;
 
-    window.open(`mailto:bookings@djbmills.com?subject=Event%20Inquiry%20-%20B.Mills&body=${emailBody}`);
+    window.location.href = `mailto:bookings@djbmills.com?subject=Event%20Inquiry%20-%20B.Mills&body=${emailBody}`;
   };
 
   return (
@@ -53,7 +53,6 @@ export default function InquiryFooter({
     >
       <div className="max-w-7xl mx-auto relative">
         <div className="grid md:grid-cols-2 gap-16 md:gap-24">
-          {/* Left side */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -92,7 +91,6 @@ export default function InquiryFooter({
             </div>
           </motion.div>
 
-          {/* Right side — Form */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -227,7 +225,6 @@ export default function InquiryFooter({
           </motion.div>
         </div>
 
-        {/* Footer */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col items-center gap-4 text-center">
           <a href="/" aria-label="B.Mills home" className="hover:opacity-70 transition-opacity">
             <img
