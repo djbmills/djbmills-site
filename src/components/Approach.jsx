@@ -46,22 +46,22 @@ export default function Approach() {
             className="md:col-span-5"
           >
             <h2
-              className="font-heading text-[2.4rem] md:text-[3.4rem] lg:text-[4rem] font-light mb-8 leading-[1.03] tracking-[-0.02em]"
+              className="font-heading text-[2.2rem] md:text-[3.1rem] lg:text-[3.6rem] font-light mb-8 leading-[1.03] tracking-[-0.02em]"
               style={{ color: '#161614' }}
             >
               No set formula. Only timing.
             </h2>
 
-            <div className="space-y-6 max-w-md">
+            <div className="space-y-6 max-w-[30rem]">
               <p
-                className="font-body text-[0.98rem] md:text-[1.05rem] leading-[1.75] font-light"
+                className="font-body text-[0.95rem] md:text-[1rem] leading-[1.75] font-light"
                 style={{ color: 'rgba(22, 22, 20, 0.72)' }}
               >
-                Every event moves differently. The music has to meet the space, the crowd, and the moment without forcing any of it.
+                Every event moves different. The music has to meet the space, the crowd, and the moment without forcing any of it.
               </p>
 
               <p
-                className="font-body text-[0.98rem] md:text-[1.05rem] leading-[1.75] font-light"
+                className="font-body text-[0.95rem] md:text-[1rem] leading-[1.75] font-light"
                 style={{ color: 'rgba(22, 22, 20, 0.72)' }}
               >
                 Built in real time, adjusted as the energy shifts, and shaped to feel natural from the first arrival to the last record.
