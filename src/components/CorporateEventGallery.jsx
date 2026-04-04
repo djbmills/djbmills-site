@@ -18,10 +18,11 @@ const photos = [
     credit: true,
   },
   {
-    src="/images/bmills-corporate-8.jpg",
-    alt: 'B.MILLS with guests at corporate cocktail reception',
-    caption: 'Corporate cocktail reception group shot',
-  },
+    {
+  src: "/images/bmills-corporate-8.jpg",
+  alt: "B.MILLS with guests at corporate cocktail reception",
+  caption: "Corporate cocktail reception group shot",
+},
 ];
 
 export default function CorporateEventGallery() {
