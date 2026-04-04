@@ -2,9 +2,6 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
-const inquiryMailto =
-  'mailto:bookings@djbmills.com?subject=Event%20Inquiry&body=Hi%20B.Mills,%0D%0A%0D%0AEvent%20date:%0D%0ALocation:%0D%0AType%20of%20event:%0D%0AGuest%20count:%0D%0A%0D%0ALooking%20forward%20to%20connecting.';
-
 const photos = [
   {
     src: "/images/bmills-corporate-7.jpg",
@@ -34,17 +31,6 @@ export default function CorporateEventGallery() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-end">
-          <a
-            href={inquiryMailto}
-            className="pointer-events-auto font-body text-xs tracking-[0.2em] uppercase bg-foreground text-background px-4 py-2 hover:bg-foreground/80 transition-colors duration-300"
-          >
-            Inquire
-          </a>
-        </div>
-      </div>
-
       <section
         className="py-20 md:py-32 px-6 md:px-12 border-b border-border"
         style={{ backgroundColor: '#f3eee2' }}
