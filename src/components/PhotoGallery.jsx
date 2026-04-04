@@ -49,9 +49,7 @@ export default function PhotoGallery() {
     } else {
       document.body.style.overflow = '';
     }
-    return () => {
-      document.body.style.overflow = '';
-    };
+    return () => { document.body.style.overflow = ''; };
   }, [lightboxIndex]);
 
   useEffect(() => {
@@ -61,7 +59,6 @@ export default function PhotoGallery() {
       if (e.key === 'ArrowLeft') prev();
       if (e.key === 'ArrowRight') next();
     };
-
     window.addEventListener('keydown', handleKey);
     return () => window.removeEventListener('keydown', handleKey);
   }, [lightboxIndex]);
@@ -76,57 +73,20 @@ export default function PhotoGallery() {
 
         {/* Header */}
         <div className="flex items-center gap-4 mb-12 overflow-hidden">
-          <motion.span
-            initial={{ opacity: 0, x: -10 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground"
-          >
-            05
-          </motion.span>
-
-          <motion.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9, delay: 0.1 }}
-            className="flex-1 h-px bg-border origin-left"
-          />
-
-          <motion.span
-            initial={{ opacity: 0, x: 10 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground"
-          >
-            Gallery
-          </motion.span>
+          <motion.span className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground">05</motion.span>
+          <div className="flex-1 h-px bg-border" />
+          <motion.span className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground">Gallery</motion.span>
         </div>
 
-        {/* Title */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mb-8"
-        >
-          <h2 className="font-heading text-4xl md:text-6xl font-light">
-            Inside the Room
-          </h2>
-        </motion.div>
+        <h2 className="font-heading text-4xl md:text-6xl font-light mb-8">
+          Inside the Room
+        </h2>
 
         {/* Grid */}
         <div className="columns-2 md:columns-3 lg:columns-4 gap-3">
           {visiblePhotos.map((photo, i) => (
-            <motion.div
+            <div
               key={photo.src}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.05 }}
               className="break-inside-avoid group relative overflow-hidden cursor-pointer mb-3"
               onClick={() => openLightbox(i)}
             >
@@ -138,12 +98,12 @@ export default function PhotoGallery() {
               />
 
               {/* subtle overlay */}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
 
-              {/* photo credit */}
+              {/* photo credit (hover reveal refined) */}
               {shouldShowCredit(i) && (
-                <div className="absolute bottom-3 right-3">
-                  <p className="font-body text-[10px] md:text-[11px] font-light tracking-[0.08em] uppercase text-white/60 group-hover:text-white/80 transition-colors duration-300">
+                <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-80 transition-all duration-500">
+                  <p className="font-body text-[10px] md:text-[11px] font-light tracking-[0.08em] uppercase text-white">
                     Photo by{' '}
                     <a
                       href="https://instagram.com/vnina"
@@ -157,12 +117,12 @@ export default function PhotoGallery() {
                   </p>
                 </div>
               )}
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
 
-      {/* Lightbox */}
+      {/* Lightbox stays same */}
       <AnimatePresence>
         {lightboxIndex !== null && (
           <motion.div
@@ -172,17 +132,11 @@ export default function PhotoGallery() {
             exit={{ opacity: 0 }}
             onClick={closeLightbox}
           >
-            <button
-              className="absolute top-6 right-6 text-white/50 hover:text-white"
-              onClick={closeLightbox}
-            >
+            <button className="absolute top-6 right-6 text-white/50 hover:text-white" onClick={closeLightbox}>
               <X className="w-7 h-7" />
             </button>
 
-            <button
-              className="absolute left-4 md:left-8 text-white/40 hover:text-white"
-              onClick={(e) => { e.stopPropagation(); prev(); }}
-            >
+            <button className="absolute left-4 md:left-8 text-white/40 hover:text-white" onClick={(e) => { e.stopPropagation(); prev(); }}>
               <ChevronLeft className="w-8 h-8" />
             </button>
 
@@ -194,20 +148,11 @@ export default function PhotoGallery() {
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              onClick={(e) => e.stopPropagation()}
             />
 
-            <button
-              className="absolute right-4 md:right-8 text-white/40 hover:text-white"
-              onClick={(e) => { e.stopPropagation(); next(); }}
-            >
+            <button className="absolute right-4 md:right-8 text-white/40 hover:text-white" onClick={(e) => { e.stopPropagation(); next(); }}>
               <ChevronRight className="w-8 h-8" />
             </button>
-
-            <p className="absolute bottom-6 left-1/2 -translate-x-1/2 font-body text-xs text-white/30 tracking-widest">
-              {String(lightboxIndex + 1).padStart(2, '0')} / {String(visiblePhotos.length).padStart(2, '0')}
-            </p>
           </motion.div>
         )}
       </AnimatePresence>
