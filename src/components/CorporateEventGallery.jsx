@@ -7,18 +7,18 @@ const inquiryMailto =
 
 const photos = [
   {
-    src: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/cb856c29f_DoradoBeachRainandRoseFundBenefit1.jpg',
+    src="/images/bmills-corporate-6.png",
     alt: 'Premier corporate event DJ at formal gala New York City',
-    caption: 'Carlos Delgado and Carlos Beltran speak at fundraiser event for Puerto Rico',
+    caption: 'Carlos Delgado and Carlos Beltran speak at fundraiser event in Puerto Rico',
   },
   {
-    src: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/2ba902b0f_BEAZLEY_NYC_MARCH2023_PHOTOBY_LARUFOTO_LUISRUIZ_000073.jpg',
+    src="/images/bmills-corporate-7.jpg",
     alt: 'DJ B.MILLS performing at client corporate event NYC',
     caption: 'Client event atmosphere',
     credit: true,
   },
   {
-    src: 'https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/37a7490df_corporate-event-cocktail-reception-Group-shot-w-DJ.jpg',
+    src="/images/bmills-corporate-8.jpg",
     alt: 'B.MILLS with guests at corporate cocktail reception',
     caption: 'Corporate cocktail reception group shot',
   },
