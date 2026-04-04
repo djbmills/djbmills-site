@@ -143,6 +143,8 @@ export default function Navbar() {
 
           {/* Desktop */}
           <div className="hidden md:flex items-center gap-8">
+
+            {/* Nav Links */}
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -154,18 +156,51 @@ export default function Navbar() {
               </a>
             ))}
 
+            {/* Social Icons (tight cluster) */}
+            <div className="flex items-center gap-3 ml-2">
+              <a
+                href="https://www.instagram.com/djbmills/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Instagram className="w-4 h-4 text-muted-foreground hover:text-foreground transition-colors" />
+              </a>
+
+              <a
+                href="https://www.tiktok.com/@djbmills"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  className="w-4 h-4 text-muted-foreground hover:text-foreground transition-colors"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z" />
+                </svg>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/bmillsdj/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin className="w-4 h-4 text-muted-foreground hover:text-foreground transition-colors" />
+              </a>
+            </div>
+
+            {/* Inquire */}
             <a
               href={inquiryMailto}
-              className="font-body text-xs tracking-[0.2em] uppercase bg-foreground text-background px-4 py-2 hover:bg-foreground/80 transition-colors duration-300"
+              className="font-body text-xs tracking-[0.2em] uppercase bg-foreground text-background px-4 py-2 hover:bg-foreground/80 transition-colors duration-300 ml-2"
             >
               Inquire
             </a>
+
           </div>
 
           {/* Mobile */}
           <div className="md:hidden flex items-center gap-3">
-
-            {/* Refined Inquire */}
             <a
               href={inquiryMailto}
               className="font-body text-[10px] tracking-[0.25em] uppercase text-foreground border border-foreground/30 px-3 py-2 hover:border-foreground transition-all duration-300"
@@ -173,7 +208,6 @@ export default function Navbar() {
               Inquire
             </a>
 
-            {/* Hamburger */}
             <button onClick={() => setMobileOpen(true)}>
               <Menu className="w-6 h-6" />
             </button>
@@ -195,8 +229,6 @@ export default function Navbar() {
             </button>
 
             <div className="flex flex-col items-center gap-8">
-
-              {/* KEEP LIGHT STYLE */}
               <a
                 href={inquiryMailto}
                 className="font-heading text-3xl font-light tracking-wide text-foreground"
@@ -212,9 +244,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08 }}
-                  className={`font-heading text-3xl font-light tracking-wide transition-colors duration-300 ${
-                    activeLink === link.label ? 'text-foreground' : 'text-foreground/70'
-                  }`}
+                  className="font-heading text-3xl font-light tracking-wide text-foreground/70 hover:text-foreground transition-colors"
                 >
                   {link.label}
                 </motion.a>
