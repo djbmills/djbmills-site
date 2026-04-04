@@ -99,7 +99,7 @@ export default function About() {
               </p>
 
               <p className="font-body text-[0.98rem] md:text-[1.05rem] text-muted-foreground leading-[1.75] font-light">
-                His foundation is built on the kind of records that don't age. Rhythm, tone, and selection come first, layered with house, disco, and modern sounds that move naturally with the room. Nothing forced.
+                His foundation is built on the kind of records that don't age. Rhythm, tone, and selection come first, layered with house, soul, and modern sounds that move naturally with the room.
               </p>
 
               <p className="font-body text-[0.98rem] md:text-[1.05rem] text-muted-foreground leading-[1.75] font-light">
