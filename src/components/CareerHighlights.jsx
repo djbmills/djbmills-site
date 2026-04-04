@@ -3,7 +3,7 @@ import { useRef } from 'react';
 
 const columns = [
   {
-    heading: 'Live Moments',
+    heading: 'Shared Stages',
     items: [
       ['Coco & Breezy', 'Opening Set'],
       ['Juvenile', 'Direct Support'],
