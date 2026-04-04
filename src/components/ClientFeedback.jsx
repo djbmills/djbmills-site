@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
@@ -62,8 +62,6 @@ export default function ClientFeedback() {
     return () => clearInterval(interval);
   }, [isPaused]);
 
-  const t = testimonials[current];
-
   return (
     <section
       id="feedback"
@@ -120,14 +118,22 @@ export default function ClientFeedback() {
             <Quote className="w-10 h-10 text-background/10 mx-auto mb-8" />
 
             <div className="relative max-w-3xl mx-auto min-h-[320px]">
-              <AnimatePresence mode="wait">
+              {testimonials.map((t, i) => (
                 <motion.div
-                  key={current}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 1.4, ease: [0.25, 0.1, 0.25, 1] }}
-                  className="absolute inset-0 flex flex-col justify-between"
+                  key={`${t.name}-${i}`}
+                  animate={{
+                    opacity: i === current ? 1 : 0,
+                  }}
+                  transition={{
+                    duration: 1.2,
+                    ease: [0.25, 0.1, 0.25, 1],
+                  }}
+                  className={`absolute inset-0 flex flex-col justify-between ${
+                    i === current ? 'pointer-events-auto' : 'pointer-events-none'
+                  }`}
+                  style={{
+                    willChange: 'opacity',
+                  }}
                 >
                   <p className="font-heading text-xl md:text-2xl lg:text-3xl font-light text-background leading-[1.4] italic">
                     "{t.quote}"
@@ -143,7 +149,7 @@ export default function ClientFeedback() {
                     </p>
                   </div>
                 </motion.div>
-              </AnimatePresence>
+              ))}
             </div>
 
             <div className="flex items-center justify-center gap-6 mt-12">
