@@ -18,7 +18,7 @@ const photos = [
   { src: "/images/bmills-event-12.jpg", alt: "B.MILLS DJ performing at large-scale gala event in NYC venue" },
   { src: "/images/bmills-event-13.jpg", alt: "Corporate event entertainment with B.MILLS DJ in upscale setting" },
   { src: "/images/bmills-event-14.jpg", alt: "B.MILLS DJ delivering curated music experience at luxury dinner event" },
-  { src: "/images/bmills-event-15.jpg", alt: "High-energy dance moment at corporate event with B.MILLS DJ" },
+  { src: "/images/bmills-event-15.png", alt: "High-energy dance moment at corporate event with B.MILLS DJ" },
   { src: "/images/bmills-event-16.jpg", alt: "B.MILLS DJ performing at exclusive New York City venue" },
   { src: "/images/bmills-event-17.jpg", alt: "Guests dancing at luxury brand event with B.MILLS DJ" },
   { src: "/images/bmills-event-mobile-1.png", alt: "Mobile view of B.MILLS DJ performance at upscale NYC event", mobileOnly: true }
