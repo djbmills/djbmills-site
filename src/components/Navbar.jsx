@@ -11,17 +11,17 @@ const navLinks = [
   { label: 'Feedback', href: '/#feedback', sectionId: 'feedback' },
 ];
 
-const inquiryLink =
-  location.pathname === '/corporate-events'
-    ? { label: 'Inquire', href: '/corporate-events#inquiry', sectionId: 'inquiry' }
-    : { label: 'Inquire', href: '/#inquiry', sectionId: 'inquiry' };
-
 export default function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('');
+
+  const inquiryLink =
+    location.pathname === '/corporate-events'
+      ? { label: 'Inquire', href: '/corporate-events#inquiry', sectionId: 'inquiry' }
+      : { label: 'Inquire', href: '/#inquiry', sectionId: 'inquiry' };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -50,7 +50,7 @@ export default function Navbar() {
       return;
     }
 
-    const sectionLinks = [...navLinks, inquiryLink].filter((link) => link.sectionId);
+    const sectionLinks = navLinks.filter((link) => link.sectionId);
 
     const updateActiveSection = () => {
       let currentSection = '';
@@ -80,7 +80,7 @@ export default function Navbar() {
   }, [location.pathname]);
 
   useEffect(() => {
-    if (location.pathname === '/' && location.hash) {
+    if (location.hash) {
       const sectionId = location.hash.replace('#', '');
 
       setTimeout(() => {
@@ -101,14 +101,17 @@ export default function Navbar() {
     e.preventDefault();
     setMobileOpen(false);
 
-    if (location.pathname === '/') {
+    if (
+      (location.pathname === '/' && link.href.startsWith('/#')) ||
+      (location.pathname === '/corporate-events' && link.href.startsWith('/corporate-events#'))
+    ) {
       const el = document.getElementById(link.sectionId);
       if (el) {
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        window.history.replaceState(null, '', `/#${link.sectionId}`);
+        window.history.replaceState(null, '', link.href);
       }
     } else {
-      navigate(`/#${link.sectionId}`);
+      navigate(link.href);
     }
   };
 
