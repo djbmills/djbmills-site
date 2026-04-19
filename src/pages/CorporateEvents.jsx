@@ -8,246 +8,186 @@ export default function CorporateEvents() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHeading
-        title="Premier Corporate Event DJ New York City | B.MILLS"
-        description="B.MILLS provides professional music direction for premier corporate events, executive dinners, galas, and client functions in New York City and beyond."
-        keywords="corporate event DJ NYC, premier corporate DJ New York, executive event DJ, corporate gala DJ New York City"
+        title="Luxury Corporate Event DJ NYC | B.MILLS | Brand Activations & Galas"
+        description="B.MILLS provides curated sonic identities for luxury corporate galas, brand activations, and executive dinners in NYC. Specialized in minimalist hosting and professional event flow. Fully insured (COI)."
+        keywords="luxury corporate DJ NYC, brand activation DJ New York, corporate gala DJ, luxury event sound design, B.MILLS corporate, fashion week DJ NYC, COI insured DJ NYC"
         url="https://djbmills.com/corporate-events" />
       
       <CorporateHero />
 
-      {/* Intro */}
+      {/* Section 01: The Philosophy of Curation */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
         <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-4 mb-10 overflow-hidden">
               <motion.span
-              initial={{ opacity: 0, x: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-              className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground">01</motion.span>
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-10%' }}
+                transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+                className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground">01</motion.span>
               <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-              className="flex-1 h-px bg-border origin-left" />
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true, margin: '-10%' }}
+                transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
+                className="flex-1 h-px bg-border origin-left" />
             </div>
             <div className="overflow-hidden">
               <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
-              className="font-heading text-2xl md:text-3xl lg:text-4xl font-light text-foreground leading-relaxed">
-                Corporate events require a high level of awareness and control. The music should support the room without drawing attention away from the event itself, while still creating energy at the right moments.
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-10%' }}
+                transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
+                className="font-heading text-2xl md:text-3xl lg:text-4xl font-light text-foreground leading-relaxed">
+                Corporate environments require precise sonic curation. The music should define the brand identity without overwhelming the space, providing professional vocal direction only when necessary.
               </motion.p>
             </div>
             <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
-            className="font-body text-sm text-muted-foreground mt-8 max-w-xl leading-relaxed">
-              The focus is on maintaining that balance from beginning to end.
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-10%' }}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
+              className="font-body text-sm text-muted-foreground mt-8 max-w-xl leading-relaxed">
+              Maintaining a sophisticated balance between background atmosphere and high-energy transitions.
             </motion.p>
             <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.6 }}
-            className="mt-14">
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-10%' }}
+              transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.6 }}
+              className="mt-14">
               <img
-              src="/images/bmills-corporate-2.png"
-              alt="B.MILLS performing at Goldman Sachs Robinhood event New York City"
-              className="w-full h-auto object-cover" />
-            
+                src="/images/bmills-corporate-2.png"
+                alt="B.MILLS performing at Goldman Sachs Robinhood event New York City - Corporate Sound Design"
+                className="w-full h-auto object-cover" />
+              
               <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">GOLDMAN SACHS / ROBINHOOD EVENT, NEW YORK CITY</p>
             </motion.div>
         </div>
       </section>
 
-      {/* Approach */}
+      {/* Section 02: Brand Alignment */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
         <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-4 mb-10 overflow-hidden">
               <motion.span
-              initial={{ opacity: 0, x: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-              className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground">02</motion.span>
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-10%' }}
+                transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+                className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground">02</motion.span>
               <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-              className="flex-1 h-px bg-border origin-left" />
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true, margin: '-10%' }}
+                transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
+                className="flex-1 h-px bg-border origin-left" />
               <motion.span
-              initial={{ opacity: 0, x: 10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
-              className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground">Approach</motion.span>
+                initial={{ opacity: 0, x: 10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-10%' }}
+                transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
+                className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground">Brand Alignment</motion.span>
             </div>
             <div className="overflow-hidden">
               <motion.h2
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
-              className="font-heading text-5xl md:text-6xl font-light text-foreground mb-10 leading-tight">
-                Reading the Room
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-10%' }}
+                transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
+                className="font-heading text-5xl md:text-6xl font-light text-foreground mb-10 leading-tight">
+                Sonic Identity
               </motion.h2>
             </div>
             <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
-            className="font-body text-base text-muted-foreground leading-relaxed max-w-2xl">
-              The role of music in a corporate setting changes throughout the event. Early portions often call for restraint and clarity, while later moments allow for a gradual increase in energy. The music is adjusted in real time based on the room, the schedule, and the audience, ensuring it remains aligned with what is happening.
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-10%' }}
+              transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
+              className="font-body text-base text-muted-foreground leading-relaxed max-w-2xl">
+              Every brand activation has a unique musical DNA. Whether for a luxury product launch or a corporate gala, I curate a bespoke soundscape that reflects the brand’s aesthetic. My approach is rooted in restraint, ensuring professional flow and clear, understated announcements for structured event timelines.
             </motion.p>
             <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
-            className="mt-14">
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-10%' }}
+              transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
+              className="mt-14">
               <img
-              src="/images/bmills-corporate-3.png"
-              alt="B.MILLS overseeing the grand opening of Hall des Lumières New York City"
-              className="w-full h-auto object-cover" />
-            
+                src="/images/bmills-corporate-3.png"
+                alt="B.MILLS managing audio for Hall des Lumières Grand Opening - NYC Brand Event"
+                className="w-full h-auto object-cover" />
+              
               <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">Grand Opening — Hall des Lumières, New York City</p>
             </motion.div>
         </div>
       </section>
 
-      {/* Experience */}
+      {/* Experience / Logistics */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border" style={{ backgroundColor: '#0d0d0d' }}>
         <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-4 mb-10 overflow-hidden">
               <motion.span
-              initial={{ opacity: 0, x: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-              className="font-body text-xs tracking-[0.4em] uppercase text-white/30">03</motion.span>
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-10%' }}
+                transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+                className="font-body text-xs tracking-[0.4em] uppercase text-white/30">03</motion.span>
               <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-              className="flex-1 h-px bg-white/10 origin-left" />
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true, margin: '-10%' }}
+                transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
+                className="flex-1 h-px bg-white/10 origin-left" />
               <motion.span
-              initial={{ opacity: 0, x: 10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
-              className="font-body text-xs tracking-[0.3em] uppercase text-white/30">Experience</motion.span>
+                initial={{ opacity: 0, x: 10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-10%' }}
+                transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
+                className="font-body text-xs tracking-[0.3em] uppercase text-white/30">Logistics & Trust</motion.span>
             </div>
             <div className="overflow-hidden">
               <motion.h2
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
-              className="font-heading text-5xl md:text-6xl font-light text-white mb-10 leading-tight">
-                Event Flow
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-10%' }}
+                transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
+                className="font-heading text-5xl md:text-6xl font-light text-white mb-10 leading-tight">
+                Professional Standards
               </motion.h2>
             </div>
             <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
-            className="font-body text-base text-white/50 leading-relaxed max-w-2xl">
-              My background spans formal galas, internal company events, and client facing functions across a range of industries and settings. Each environment carries its own expectations, and understanding how to move within those is key. What works for a cocktail hour is different from a seated dinner, and shifts again as the night progresses. Knowing how to manage that flow is what keeps everything moving in the right direction.
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-10%' }}
+              transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
+              className="font-body text-base text-white/50 leading-relaxed max-w-2xl">
+              Operating within the high-end NYC event industry requires more than just music. I maintain full liability insurance (COI) for all major venues and work seamlessly with production teams to manage complex event flows. From executive dinners at the Boom Boom Room to large-scale galas, I provide a reliable, understated presence that respects the event's objectives.
             </motion.p>
             <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
-            className="pt-12 mt-12 border-t border-white/10">
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-10%' }}
+              transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
+              className="pt-12 mt-12 border-t border-white/10">
               <div className="grid grid-cols-2 gap-4">
                 <img
-                src="/images/bmills-corporate-4.jpg"
-                alt="B.MILLS performing at corporate cocktail reception at Boom Boom Room New York City"
-                className="w-full h-full object-cover" />
-              
+                  src="/images/bmills-corporate-4.jpg"
+                  alt="B.MILLS Luxury Corporate Event DJ NYC - Boom Boom Room"
+                  className="w-full h-full object-cover" />
+                
                 <img
-                src="/images/bmills-corporate-5.jpg"
-                alt="B.MILLS performing at Boom Boom Room New York City corporate event"
-                className="w-full h-full object-cover" />
-              
+                  src="/images/bmills-corporate-5.jpg"
+                  alt="B.MILLS Curated Music Direction for High-End Galas"
+                  className="w-full h-full object-cover" />
               </div>
               <p className="font-body text-xs text-white/30 mt-4 tracking-widest uppercase">Corporate Cocktail Reception — Boom Boom Room, New York City</p>
             </motion.div>
         </div>
       </section>
 
-      {/* Sound Direction */}
-      <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border" style={{ backgroundColor: '#0d0d0d' }}>
-        <div className="max-w-4xl mx-auto">
-            <div className="flex items-center gap-4 mb-10 overflow-hidden">
-              <motion.span
-              initial={{ opacity: 0, x: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-              className="font-body text-xs tracking-[0.4em] uppercase text-white/30">04</motion.span>
-              <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-              className="flex-1 h-px bg-white/10 origin-left" />
-              <motion.span
-              initial={{ opacity: 0, x: 10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
-              className="font-body text-xs tracking-[0.3em] uppercase text-white/30">Sound Direction</motion.span>
-            </div>
-            <div className="overflow-hidden">
-              <motion.h2
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
-              className="font-heading text-5xl md:text-6xl font-light text-white mb-10 leading-tight">
-                Setting the Tone
-              </motion.h2>
-            </div>
-            <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
-            className="font-body text-base text-white/50 leading-relaxed max-w-2xl">
-              Music should feel like a natural extension of the room. It supports the atmosphere, adjusts with the energy, and helps everything flow without ever needing to stand out. 
-              Experience includes working within structured event timelines, production teams, and client-facing environments where consistency and awareness are key.
-            </motion.p>
-            <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
-            className="pt-12 mt-12 border-t border-white/10">
-              <img
-              src="/images/bmills-corporate-6.png"
-              alt="B.MILLS performing at corporate event on Pioneer DJ equipment"
-              className="w-full h-auto object-cover" />
-            
-            </motion.div>
-        </div>
-      </section>
-
       <CorporateEventGallery />
 
-      <InquiryFooter headline="Let's shape your event." footerText={`Available for premier corporate events, luxury galas, and client functions across New York City,
-the Hamptons, Westchester, New Jersey, and Connecticut.`} />
+      <InquiryFooter headline="Let's shape your event." footerText={`Fully insured and available for luxury brand activations, corporate galas, and private functions across NYC, the Hamptons, and beyond.`} />
     </div>);
-
 }
