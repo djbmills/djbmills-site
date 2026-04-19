@@ -40,10 +40,52 @@ export default function InquiryFooter({
       ? format(formData.eventDate, 'MMMM d, yyyy')
       : '';
 
-    const emailBody = `Hi B.Mills,%0A%0AName: ${encodeURIComponent(formData.name)}%0AEmail: ${encodeURIComponent(formData.email)}%0AEvent date: ${encodeURIComponent(formattedDate)}%0AType of event: ${encodeURIComponent(formData.eventType)}%0A%0A${encodeURIComponent(formData.message)}%0A%0ALooking forward to connecting.`;
+    const emailText = `Hi B.Mills,
 
-    window.location.href = `mailto:bookings@djbmills.com?subject=Event%20Inquiry%20-%20B.Mills&body=${emailBody}`;
+I’m interested in booking you for my event and would love to share a few details:
+
+Name: ${formData.name}
+Email: ${formData.email}
+Event date: ${formattedDate}
+Location (venue + city):
+Type of event: ${formData.eventType}
+Guest count:
+Event timing (start/end):
+
+Will sound and DJ equipment be provided by the venue or AV team? Details:
+
+The atmosphere I’m envisioning (music style, energy, key moments like cocktail hour, dinner, after party):
+${formData.message}
+
+Planner or point of contact (if applicable):
+
+Looking forward to connecting.`;
+
+    const subject = encodeURIComponent('Event Inquiry - B.Mills');
+    const bodyParam = encodeURIComponent(emailText);
+
+    window.location.href = `mailto:bookings@djbmills.com?subject=${subject}&body=${bodyParam}`;
   };
+
+  const directEmailBody = encodeURIComponent(`Hi B.Mills,
+
+I’m interested in booking you for my event and would love to share a few details:
+
+Event date:
+Location (venue + city):
+Type of event:
+Guest count:
+Event timing (start/end):
+
+Will sound and DJ equipment be provided by the venue or AV team? Details:
+
+The atmosphere I’m envisioning (music style, energy, key moments like cocktail hour, dinner, after party):
+
+Planner or point of contact (if applicable):
+
+Looking forward to connecting.`);
+
+  const directEmailSubject = encodeURIComponent('Event Inquiry - B.Mills');
 
   return (
     <section
@@ -78,7 +120,7 @@ export default function InquiryFooter({
 
             <div className="space-y-3">
               <a
-                href="mailto:bookings@djbmills.com?subject=Event%20Inquiry%20-%20B.Mills&body=Hi%20B.Mills,%0A%0AEvent%20date:%0ALocation:%0AType%20of%20event:%0AGuest%20count:%0A%0ABudget:%0A%0ALooking%20forward%20to%20connecting."
+                href={`mailto:bookings@djbmills.com?subject=${directEmailSubject}&body=${directEmailBody}`}
                 className="font-body text-sm text-foreground hover:text-muted-foreground transition-colors flex items-center gap-2"
               >
                 <Mail className="w-4 h-4" />
@@ -203,7 +245,7 @@ export default function InquiryFooter({
 
               <div>
                 <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block">
-                  Tell us about your event
+                  Atmosphere / Music Direction
                 </label>
                 <Textarea
                   name="message"
@@ -228,7 +270,7 @@ export default function InquiryFooter({
         <div className="mt-12 pt-8 border-t border-border flex flex-col items-center gap-4 text-center">
           <a href="/" aria-label="B.Mills home" className="hover:opacity-70 transition-opacity">
             <img
-              src="https://media.base44.com/images/public/69c5d6df4095d84ce47a4bc2/88d4c0a96_BMills_logo_black-transparent.png"
+              src="/logos/bmills-logo-white.png"
               alt="B.Mills"
               className="h-14 w-auto object-contain"
             />
