@@ -25,7 +25,8 @@ export default function InquiryFooter({
     equipmentProvided: '',
     atmosphere: '',
     plannerContact: '',
-    hearAbout: ''
+    hearAbout: '',
+    botField: ''
   });
 
   const [calendarOpen, setCalendarOpen] = useState(false);
@@ -33,7 +34,8 @@ export default function InquiryFooter({
   const [submitStatus, setSubmitStatus] = useState('');
 
   const handleChange = (e) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleDateChange = (date) => {
@@ -68,7 +70,7 @@ export default function InquiryFooter({
       atmosphere: formData.atmosphere,
       plannerContact: formData.plannerContact,
       hearAbout: formData.hearAbout,
-      'bot-field': ''
+      'bot-field': formData.botField
     };
 
     try {
@@ -82,7 +84,7 @@ export default function InquiryFooter({
         throw new Error('Form submission failed');
       }
 
-      setSubmitStatus('Thanks, your inquiry has been sent. I’ll be in touch soon.');
+      setSubmitStatus('Thank you — your inquiry has been received. I’ll be in touch shortly.');
       setFormData({
         name: '',
         email: '',
@@ -94,7 +96,8 @@ export default function InquiryFooter({
         equipmentProvided: '',
         atmosphere: '',
         plannerContact: '',
-        hearAbout: ''
+        hearAbout: '',
+        botField: ''
       });
     } catch (error) {
       setSubmitStatus('Something went wrong while sending your inquiry. Please try again.');
@@ -164,7 +167,19 @@ export default function InquiryFooter({
               className="space-y-6"
             >
               <input type="hidden" name="form-name" value="inquiry" />
-              <input type="hidden" name="bot-field" />
+
+              <div style={{ display: 'none' }}>
+                <label>
+                  Don’t fill this out if you're human:
+                  <input
+                    name="bot-field"
+                    value={formData.botField}
+                    onChange={handleChange}
+                    tabIndex="-1"
+                    autoComplete="off"
+                  />
+                </label>
+              </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
@@ -258,6 +273,7 @@ export default function InquiryFooter({
                     type="hidden"
                     name="eventDate"
                     value={formData.eventDate ? format(formData.eventDate, 'MMMM d, yyyy') : ''}
+                    readOnly
                   />
                 </div>
 
