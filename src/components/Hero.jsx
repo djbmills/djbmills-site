@@ -8,11 +8,8 @@ export default function Hero() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
 
-  // Desktop: slightly more movement
   const yDesktop = useTransform(scrollYProgress, [0, 1], ['0%', '14%']);
-  // Mobile: very subtle
   const yMobile = useTransform(scrollYProgress, [0, 1], ['0%', '6%']);
-  // Shared: imperceptible scale-down
   const scale = useTransform(scrollYProgress, [0, 1], [1.04, 1.0]);
 
   return (
@@ -23,7 +20,7 @@ export default function Hero() {
         <div className="w-full h-[58vh] overflow-hidden">
           <motion.img
             src={HERO_IMG}
-            alt="B.Mills"
+            alt="B.MILLS Luxury Event DJ NYC - Corporate & Brand Activations"
             className="w-full h-full object-cover object-[60%_12%]"
             style={{ y: yMobile, scale }}
           />
@@ -37,7 +34,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-body text-[10px] tracking-[0.28em] uppercase text-foreground/50 mb-5"
           >
-            DJ. Curator. Atmosphere.
+            Sonic Identity · Curation · Atmosphere
           </motion.p>
 
           <motion.h1
@@ -62,7 +59,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 1.1 }}
             className="font-body text-xs tracking-[0.15em] uppercase text-foreground/60 max-w-[240px]"
           >
-            The DJ behind the room you didn't want to leave.
+            Curated Sound for Brands and Private Afterparties.
           </motion.p>
         </div>
       </section>
@@ -73,7 +70,7 @@ export default function Hero() {
         <div className="absolute inset-y-0 right-0 w-[62%] overflow-hidden">
           <motion.img
             src={HERO_IMG}
-            alt="B.Mills"
+            alt="B.MILLS - High-End Corporate and Wedding Afterparty DJ NYC"
             className="w-full h-full object-cover object-[30%_top]"
             style={{ y: yDesktop, scale }}
           />
@@ -88,7 +85,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="font-body text-xs tracking-[0.3em] uppercase text-foreground/40 mb-4"
           >
-            DJ · Curator · Atmosphere
+            Sonic Identity · Curation · Atmosphere
           </motion.p>
 
           <motion.h1
@@ -113,7 +110,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 1.3 }}
             className="font-body text-sm tracking-[0.2em] uppercase text-foreground/50 max-w-xs"
           >
-            The DJ behind the room you didn't want to leave.
+            Curated Sound for Brands and Private Afterparties.
           </motion.p>
         </div>
 
