@@ -18,11 +18,19 @@ export default function InquiryFooter({
     name: '',
     email: '',
     eventDate: null,
+    location: '',
     eventType: '',
-    message: ''
+    guestCount: '',
+    eventTiming: '',
+    equipmentProvided: '',
+    atmosphere: '',
+    plannerContact: '',
+    hearAbout: ''
   });
 
   const [calendarOpen, setCalendarOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -33,59 +41,67 @@ export default function InquiryFooter({
     setCalendarOpen(false);
   };
 
-  const handleSubmit = (e) => {
+  const encode = (data) =>
+    Object.keys(data)
+      .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key] ?? '')}`)
+      .join('&');
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('');
 
     const formattedDate = formData.eventDate
       ? format(formData.eventDate, 'MMMM d, yyyy')
       : '';
 
-    const emailText = `Hi B.Mills,
+    const payload = {
+      'form-name': 'inquiry',
+      name: formData.name,
+      email: formData.email,
+      eventDate: formattedDate,
+      location: formData.location,
+      eventType: formData.eventType,
+      guestCount: formData.guestCount,
+      eventTiming: formData.eventTiming,
+      equipmentProvided: formData.equipmentProvided,
+      atmosphere: formData.atmosphere,
+      plannerContact: formData.plannerContact,
+      hearAbout: formData.hearAbout,
+      'bot-field': ''
+    };
 
-I’m interested in booking you for my event and would love to share a few details:
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode(payload)
+      });
 
-Name: ${formData.name}
-Email: ${formData.email}
-Event date: ${formattedDate}
-Location (venue + city):
-Type of event: ${formData.eventType}
-Guest count:
-Event timing (start/end):
+      if (!response.ok) {
+        throw new Error('Form submission failed');
+      }
 
-Will sound and DJ equipment be provided by the venue or AV team? Details:
-
-The atmosphere I’m envisioning (music style, energy, key moments like cocktail hour, dinner, after party):
-${formData.message}
-
-Planner or point of contact (if applicable):
-
-Looking forward to connecting.`;
-
-    const subject = encodeURIComponent('Event Inquiry - B.Mills');
-    const bodyParam = encodeURIComponent(emailText);
-
-    window.location.href = `mailto:bookings@djbmills.com?subject=${subject}&body=${bodyParam}`;
+      setSubmitStatus('Thanks, your inquiry has been sent. I’ll be in touch soon.');
+      setFormData({
+        name: '',
+        email: '',
+        eventDate: null,
+        location: '',
+        eventType: '',
+        guestCount: '',
+        eventTiming: '',
+        equipmentProvided: '',
+        atmosphere: '',
+        plannerContact: '',
+        hearAbout: ''
+      });
+    } catch (error) {
+      setSubmitStatus('Something went wrong while sending your inquiry. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
-
-  const directEmailBody = encodeURIComponent(`Hi B.Mills,
-
-I’m interested in booking you for my event and would love to share a few details:
-
-Event date:
-Location (venue + city):
-Type of event:
-Guest count:
-Event timing (start/end):
-
-Will sound and DJ equipment be provided by the venue or AV team? Details:
-
-The atmosphere I’m envisioning (music style, energy, key moments like cocktail hour, dinner, after party):
-
-Planner or point of contact (if applicable):
-
-Looking forward to connecting.`);
-
-  const directEmailSubject = encodeURIComponent('Event Inquiry - B.Mills');
 
   return (
     <section
@@ -120,7 +136,7 @@ Looking forward to connecting.`);
 
             <div className="space-y-3">
               <a
-                href={`mailto:bookings@djbmills.com?subject=${directEmailSubject}&body=${directEmailBody}`}
+                href="mailto:bookings@djbmills.com"
                 className="font-body text-sm text-foreground hover:text-muted-foreground transition-colors flex items-center gap-2"
               >
                 <Mail className="w-4 h-4" />
@@ -139,7 +155,17 @@ Looking forward to connecting.`);
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.15 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form
+              name="inquiry"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              onSubmit={handleSubmit}
+              className="space-y-6"
+            >
+              <input type="hidden" name="form-name" value="inquiry" />
+              <input type="hidden" name="bot-field" />
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block">
@@ -227,6 +253,12 @@ Looking forward to connecting.`);
                       />
                     </PopoverContent>
                   </Popover>
+
+                  <input
+                    type="hidden"
+                    name="eventDate"
+                    value={formData.eventDate ? format(formData.eventDate, 'MMMM d, yyyy') : ''}
+                  />
                 </div>
 
                 <div>
@@ -237,7 +269,61 @@ Looking forward to connecting.`);
                     name="eventType"
                     value={formData.eventType}
                     onChange={handleChange}
-                    placeholder="Corporate, Wedding, Private..."
+                    placeholder="Wedding, corporate, private..."
+                    className="bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors placeholder:text-muted-foreground/50"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block">
+                    Location / Venue + City
+                  </label>
+                  <Input
+                    name="location"
+                    value={formData.location}
+                    onChange={handleChange}
+                    className="bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors"
+                  />
+                </div>
+
+                <div>
+                  <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block">
+                    Guest Count
+                  </label>
+                  <Input
+                    name="guestCount"
+                    value={formData.guestCount}
+                    onChange={handleChange}
+                    className="bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block">
+                    Event Timing
+                  </label>
+                  <Input
+                    name="eventTiming"
+                    value={formData.eventTiming}
+                    onChange={handleChange}
+                    placeholder="Start time / end time"
+                    className="bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors placeholder:text-muted-foreground/50"
+                  />
+                </div>
+
+                <div>
+                  <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block">
+                    How Did You Hear About Me?
+                  </label>
+                  <Input
+                    name="hearAbout"
+                    value={formData.hearAbout}
+                    onChange={handleChange}
+                    placeholder="Planner, venue, Instagram, referral..."
                     className="bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors placeholder:text-muted-foreground/50"
                   />
                 </div>
@@ -245,22 +331,56 @@ Looking forward to connecting.`);
 
               <div>
                 <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block">
-                  Atmosphere / Music Direction
+                  Sound / DJ Equipment Provided?
                 </label>
                 <Textarea
-                  name="message"
-                  value={formData.message}
+                  name="equipmentProvided"
+                  value={formData.equipmentProvided}
                   onChange={handleChange}
-                  rows={4}
-                  className="bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors resize-none"
+                  rows={3}
+                  placeholder="Venue sound system, in-house DJ setup, AV team details, etc."
+                  className="bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors resize-none placeholder:text-muted-foreground/50"
                 />
               </div>
 
+              <div>
+                <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block">
+                  Atmosphere / Music Direction
+                </label>
+                <Textarea
+                  name="atmosphere"
+                  value={formData.atmosphere}
+                  onChange={handleChange}
+                  rows={4}
+                  placeholder="Music style, energy, key moments like cocktail hour, dinner, after party..."
+                  className="bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors resize-none placeholder:text-muted-foreground/50"
+                />
+              </div>
+
+              <div>
+                <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block">
+                  Planner / Point of Contact
+                </label>
+                <Input
+                  name="plannerContact"
+                  value={formData.plannerContact}
+                  onChange={handleChange}
+                  className="bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors"
+                />
+              </div>
+
+              {submitStatus && (
+                <p className="font-body text-sm text-muted-foreground">
+                  {submitStatus}
+                </p>
+              )}
+
               <Button
                 type="submit"
-                className="mt-4 bg-foreground text-background hover:bg-foreground/90 font-body text-xs tracking-[0.2em] uppercase px-10 py-6 rounded-none"
+                disabled={isSubmitting}
+                className="mt-4 bg-foreground text-background hover:bg-foreground/90 font-body text-xs tracking-[0.2em] uppercase px-10 py-6 rounded-none disabled:opacity-60"
               >
-                Start Inquiry
+                {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
                 <ArrowRight className="w-4 h-4 ml-3" />
               </Button>
             </form>
