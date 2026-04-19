@@ -11,7 +11,10 @@ const navLinks = [
   { label: 'Feedback', href: '/#feedback', sectionId: 'feedback' },
 ];
 
-const inquiryLink = { label: 'Inquire', href: '/#inquiry', sectionId: 'inquiry' };
+const inquiryLink =
+  location.pathname === '/corporate-events'
+    ? { label: 'Inquire', href: '/corporate-events#inquiry', sectionId: 'inquiry' }
+    : { label: 'Inquire', href: '/#inquiry', sectionId: 'inquiry' };
 
 export default function Navbar() {
   const location = useLocation();
