@@ -11,8 +11,7 @@ const navLinks = [
   { label: 'Feedback', href: '/#feedback', sectionId: 'feedback' },
 ];
 
-const inquiryMailto =
-  'mailto:bookings@djbmills.com?subject=Event%20Inquiry&body=Hi%20B.Mills,%0D%0A%0D%0AEvent%20date:%0D%0ALocation:%0D%0AType%20of%20event:%0D%0AGuest%20count:%0D%0A%0D%0ALooking%20forward%20to%20connecting.';
+const inquiryLink = { label: 'Inquire', href: '/#inquiry', sectionId: 'inquiry' };
 
 export default function Navbar() {
   const location = useLocation();
@@ -48,7 +47,7 @@ export default function Navbar() {
       return;
     }
 
-    const sectionLinks = navLinks.filter((link) => link.sectionId);
+    const sectionLinks = [...navLinks, inquiryLink].filter((link) => link.sectionId);
 
     const updateActiveSection = () => {
       let currentSection = '';
@@ -128,8 +127,6 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-20">
-
-          {/* Logo */}
           <a href="/" className="flex items-center h-10">
             <img
               src="/logos/bmills-logo-white.png"
@@ -141,10 +138,7 @@ export default function Navbar() {
             />
           </a>
 
-          {/* Desktop */}
           <div className="hidden md:flex items-center gap-8">
-
-            {/* Nav Links */}
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -156,7 +150,6 @@ export default function Navbar() {
               </a>
             ))}
 
-            {/* Social Icons (tight cluster) */}
             <div className="flex items-center gap-3 ml-2">
               <a
                 href="https://www.instagram.com/djbmills/"
@@ -189,20 +182,19 @@ export default function Navbar() {
               </a>
             </div>
 
-            {/* Inquire */}
             <a
-              href={inquiryMailto}
+              href={inquiryLink.href}
+              onClick={(e) => handleNavClick(e, inquiryLink)}
               className="font-body text-xs tracking-[0.2em] uppercase bg-foreground text-background px-4 py-2 hover:bg-foreground/80 transition-colors duration-300 ml-2"
             >
               Inquire
             </a>
-
           </div>
 
-          {/* Mobile */}
           <div className="md:hidden flex items-center gap-3">
             <a
-              href={inquiryMailto}
+              href={inquiryLink.href}
+              onClick={(e) => handleNavClick(e, inquiryLink)}
               className="font-body text-[10px] tracking-[0.25em] uppercase text-foreground border border-foreground/30 px-3 py-2 hover:border-foreground transition-all duration-300"
             >
               Inquire
@@ -212,7 +204,6 @@ export default function Navbar() {
               <Menu className="w-6 h-6" />
             </button>
           </div>
-
         </div>
       </nav>
 
@@ -230,7 +221,8 @@ export default function Navbar() {
 
             <div className="flex flex-col items-center gap-8">
               <a
-                href={inquiryMailto}
+                href={inquiryLink.href}
+                onClick={(e) => handleNavClick(e, inquiryLink)}
                 className="font-heading text-3xl font-light tracking-wide text-foreground"
               >
                 Inquire
