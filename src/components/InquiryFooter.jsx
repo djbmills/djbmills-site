@@ -33,6 +33,17 @@ export default function InquiryFooter({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
 
+  const requiredLabelClass =
+    'font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 flex items-center justify-between gap-3';
+  const optionalLabelClass =
+    'font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block';
+  const requiredFieldClass =
+    'bg-transparent border-0 border-b border-foreground/40 rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors';
+  const optionalFieldClass =
+    'bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors';
+  const requiredTagClass =
+    'font-body text-[10px] tracking-[0.18em] uppercase text-foreground/55';
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -41,6 +52,9 @@ export default function InquiryFooter({
   const handleDateChange = (date) => {
     setFormData((prev) => ({ ...prev, eventDate: date || null }));
     setCalendarOpen(false);
+    if (submitStatus === 'Please select an event date before submitting.') {
+      setSubmitStatus('');
+    }
   };
 
   const encode = (data) =>
@@ -50,6 +64,12 @@ export default function InquiryFooter({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!formData.eventDate) {
+      setSubmitStatus('Please select an event date before submitting.');
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus('');
 
@@ -183,21 +203,23 @@ export default function InquiryFooter({
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block">
-                    Name
+                  <label className={requiredLabelClass}>
+                    <span>Name</span>
+                    <span className={requiredTagClass}>Required</span>
                   </label>
                   <Input
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors"
+                    className={requiredFieldClass}
                   />
                 </div>
 
                 <div>
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block">
-                    Email
+                  <label className={requiredLabelClass}>
+                    <span>Email</span>
+                    <span className={requiredTagClass}>Required</span>
                   </label>
                   <Input
                     name="email"
@@ -205,22 +227,25 @@ export default function InquiryFooter({
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors"
+                    className={requiredFieldClass}
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block">
-                    Event Date
+                  <label className={requiredLabelClass}>
+                    <span>Event Date</span>
+                    <span className={requiredTagClass}>Required</span>
                   </label>
 
                   <Popover open={calendarOpen} onOpenChange={setCalendarOpen}>
                     <PopoverTrigger asChild>
                       <button
                         type="button"
-                        className="w-full bg-transparent border-0 border-b border-border rounded-none px-0 pb-3 text-left font-body text-sm text-foreground focus:outline-none focus:border-foreground transition-colors flex items-center justify-between"
+                        className={`w-full bg-transparent border-0 border-b rounded-none px-0 pb-3 text-left font-body text-sm text-foreground focus:outline-none transition-colors flex items-center justify-between ${
+                          formData.eventDate ? 'border-foreground/40' : 'border-foreground/40'
+                        }`}
                       >
                         <span className={formData.eventDate ? 'text-foreground' : 'text-muted-foreground/50'}>
                           {formData.eventDate ? format(formData.eventDate, 'MMMM d, yyyy') : 'Select date'}
@@ -278,7 +303,7 @@ export default function InquiryFooter({
                 </div>
 
                 <div>
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block">
+                  <label className={optionalLabelClass}>
                     Event Type
                   </label>
                   <Input
@@ -286,40 +311,42 @@ export default function InquiryFooter({
                     value={formData.eventType}
                     onChange={handleChange}
                     placeholder="Wedding, corporate, private..."
-                    className="bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors placeholder:text-muted-foreground/50"
+                    className={`${optionalFieldClass} placeholder:text-muted-foreground/50`}
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block">
-                    Location / Venue + City
+                  <label className={requiredLabelClass}>
+                    <span>Location / Venue + City</span>
+                    <span className={requiredTagClass}>Required</span>
                   </label>
                   <Input
                     name="location"
                     value={formData.location}
                     onChange={handleChange}
-                    className="bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors"
+                    required
+                    className={requiredFieldClass}
                   />
                 </div>
 
                 <div>
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block">
+                  <label className={optionalLabelClass}>
                     Guest Count
                   </label>
                   <Input
                     name="guestCount"
                     value={formData.guestCount}
                     onChange={handleChange}
-                    className="bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors"
+                    className={optionalFieldClass}
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block">
+                  <label className={optionalLabelClass}>
                     Event Timing
                   </label>
                   <Input
@@ -327,12 +354,12 @@ export default function InquiryFooter({
                     value={formData.eventTiming}
                     onChange={handleChange}
                     placeholder="Start time / end time"
-                    className="bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors placeholder:text-muted-foreground/50"
+                    className={`${optionalFieldClass} placeholder:text-muted-foreground/50`}
                   />
                 </div>
 
                 <div>
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block">
+                  <label className={optionalLabelClass}>
                     How Did You Hear About Me?
                   </label>
                   <Input
@@ -340,13 +367,13 @@ export default function InquiryFooter({
                     value={formData.hearAbout}
                     onChange={handleChange}
                     placeholder="Planner, venue, Instagram, referral..."
-                    className="bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors placeholder:text-muted-foreground/50"
+                    className={`${optionalFieldClass} placeholder:text-muted-foreground/50`}
                   />
                 </div>
               </div>
 
               <div>
-                <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block">
+                <label className={optionalLabelClass}>
                   Sound / DJ Equipment Provided?
                 </label>
                 <Textarea
@@ -355,12 +382,12 @@ export default function InquiryFooter({
                   onChange={handleChange}
                   rows={3}
                   placeholder="Venue sound system, in-house DJ setup, AV team details, etc."
-                  className="bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors resize-none placeholder:text-muted-foreground/50"
+                  className={`${optionalFieldClass} resize-none placeholder:text-muted-foreground/50`}
                 />
               </div>
 
               <div>
-                <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block">
+                <label className={optionalLabelClass}>
                   Atmosphere / Music Direction
                 </label>
                 <Textarea
@@ -369,19 +396,19 @@ export default function InquiryFooter({
                   onChange={handleChange}
                   rows={4}
                   placeholder="Music style, energy, key moments like cocktail hour, dinner, after party..."
-                  className="bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors resize-none placeholder:text-muted-foreground/50"
+                  className={`${optionalFieldClass} resize-none placeholder:text-muted-foreground/50`}
                 />
               </div>
 
               <div>
-                <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block">
+                <label className={optionalLabelClass}>
                   Planner / Point of Contact
                 </label>
                 <Input
                   name="plannerContact"
                   value={formData.plannerContact}
                   onChange={handleChange}
-                  className="bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors"
+                  className={optionalFieldClass}
                 />
               </div>
 
