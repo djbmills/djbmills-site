@@ -30,7 +30,7 @@ const columns = [
       ['Hall des Lumières', 'Opening Night'],
       ['John Legend', 'Afterparty'],
       ['New York Rangers', 'Team Event'],
-      ['SAB Ball', 'x2'],
+      ['SAB Ball', 'Second Year Running'],
       ['Wieden+Kennedy', "Founder's Day x2"],
     ],
   },
