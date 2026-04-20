@@ -31,7 +31,7 @@ const columns = [
       ['Hall des Lumières', 'Opening Night'],
       ['John Legend', 'Afterparty'],
       ['New York Rangers', 'Team Event'],
-      ['SAB Ball', 'Second Year Running'],
+      ['SAB Ball', 'x2'],
     ],
   },
 ];
