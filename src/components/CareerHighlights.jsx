@@ -6,11 +6,11 @@ const columns = [
     heading: 'Shared Stages',
     items: [
       ['Coco & Breezy', 'Opening Set'],
+      ['Flo Rida', 'Closing Set'],
       ['Juvenile', 'Direct Support'],
       ['Questlove', 'Direct Support'],
       ['Sofi Tukker', 'Direct Support'],
       ['Sugarhill Gang', 'Direct Support'],
-      ['Flo Rida', 'Closing Set'],
       ['Rev Run', 'Closing Set'],
     ],
   },
@@ -26,12 +26,12 @@ const columns = [
   {
     heading: 'Notable Events',
     items: [
-      ['Wieden+Kennedy', "Founder's Day x2"],
       ['Avedon 100', 'Gagosian'],
+      ['SAB Ball', 'x2'],
       ['Hall des Lumières', 'Opening Night'],
       ['John Legend', 'Afterparty'],
       ['New York Rangers', 'Team Event'],
-      ['SAB Ball', 'x2'],
+      ['Wieden+Kennedy', "Founder's Day x2"],
     ],
   },
 ];
