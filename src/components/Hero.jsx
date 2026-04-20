@@ -85,7 +85,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="font-body text-xs tracking-[0.3em] uppercase text-foreground/40 mb-4"
           >
-            Sonic Identity · Curation · Atmosphere
+            Curator · DJ · Atmosphere
           </motion.p>
 
           <motion.h1
@@ -110,7 +110,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 1.3 }}
             className="font-body text-sm tracking-[0.2em] uppercase text-foreground/50 max-w-xs"
           >
-            Curated Sound for Brands and Private Afterparties.
+            Less talk. Better music.
           </motion.p>
         </div>
 
