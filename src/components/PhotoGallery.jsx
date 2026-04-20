@@ -28,7 +28,7 @@ export default function PhotoGallery() {
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
 
-  const creditIndices = [2, 8, 10, 12];
+  const creditIndices = [2, 8, 12, 18];
 
   const openLightbox = (i) => setLightboxIndex(i);
   const closeLightbox = () => setLightboxIndex(null);
