@@ -27,10 +27,10 @@ const columns = [
     heading: 'Notable Events',
     items: [
       ['Avedon 100', 'Gagosian'],
-      ['SAB Ball', 'x2'],
       ['Hall des Lumières', 'Opening Night'],
       ['John Legend', 'Afterparty'],
       ['New York Rangers', 'Team Event'],
+      ['SAB Ball', 'x2'],
       ['Wieden+Kennedy', "Founder's Day x2"],
     ],
   },
