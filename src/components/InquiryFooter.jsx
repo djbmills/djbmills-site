@@ -310,7 +310,7 @@ export default function InquiryFooter({
                     name="eventType"
                     value={formData.eventType}
                     onChange={handleChange}
-                    placeholder="Wedding, corporate, private..."
+                    placeholder="Corporate, private, wedding..."
                     className={`${optionalFieldClass} placeholder:text-muted-foreground/50`}
                   />
                 </div>
