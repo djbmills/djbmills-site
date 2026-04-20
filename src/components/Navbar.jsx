@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 const navLinks = [
   { label: 'About', href: '/#about', sectionId: 'about' },
-  { label: 'Mixtapes', href: '/#mixtapes', sectionId: 'mixtapes' },
+  { label: 'Listen', href: '/#mixtapes', sectionId: 'mixtapes' },
   { label: 'Clients', href: '/#clients', sectionId: 'clients' },
   { label: 'Events', href: '/corporate-events', sectionId: null },
   { label: 'Feedback', href: '/#feedback', sectionId: 'feedback' },
