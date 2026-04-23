@@ -178,33 +178,29 @@ export default function CorporateEvents() {
       {/* Section 03: Selected Event Experience */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
         <div className="max-w-5xl mx-auto">
-          <div className="flex items-center gap-4 mb-10 overflow-hidden">
-            <motion.span
-              initial={{ opacity: 0, x: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-              className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground"
-            >
-              03
-            </motion.span>
-            <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-              className="flex-1 h-px bg-border origin-left"
-            />
-            <motion.span
-              initial={{ opacity: 0, x: 10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
-              className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground"
-            >
-              Selected Event Experience
-            </motion.span>
-          </div>
+     <div className="flex items-center gap-4 mb-10">
+  <span className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground shrink-0">
+    03
+  </span>
+
+  <motion.div
+    initial={{ scaleX: 0 }}
+    whileInView={{ scaleX: 1 }}
+    viewport={{ once: true, margin: '-10%' }}
+    transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
+    className="flex-1 h-px bg-border origin-left"
+  />
+
+  <motion.span
+    initial={{ opacity: 0, x: 10 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: true, margin: '-10%' }}
+    transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
+    className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground shrink-0"
+  >
+    Selected Event Experience
+  </motion.span>
+</div>
 
           <div className="overflow-hidden">
             <motion.h2
