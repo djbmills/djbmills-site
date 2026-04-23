@@ -198,7 +198,7 @@ export default function CorporateEvents() {
     transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
     className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground shrink-0"
   >
-    Selected Event Experience
+    Featured Work
   </motion.span>
 </div>
 
