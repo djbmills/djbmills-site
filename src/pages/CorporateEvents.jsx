@@ -8,7 +8,7 @@ const selectedEvents = [
   {
     title: "Sammontana Gelati All’Italiana U.S. Launch",
     meta: "Brand Launch | Eataly Rooftop, New York City",
-    body: "For the U.S. launch of Sammontana Gelati All’Italiana at Eataly Rooftop, I curated the soundtrack for a crowd with a distinctly European feel, including many Italian guests. I was brought in through a referral from Kering Eyewear, a past client I had worked with across multiple events, which made the booking feel especially aligned from the start. The music direction was designed to reflect the brand’s roots and the mood of the evening, beginning with a relaxed, stylish energy as guests arrived and settled into the space, then gradually building into a more upbeat European house direction as the night progressed. The result felt culturally in tune, brand-right, and effortless in its progression.",
+    body: "For the U.S. launch of Sammontana Gelati All’Italiana at Eataly Rooftop, I curated the soundtrack for a crowd with a distinctly European feel, including many Italian guests. I was brought in through a referral from Kering Eyewear, a past client I had worked with across multiple events, which made the booking feel especially aligned from the start. The music direction was designed to reflect the brand’s roots and the mood of the evening, beginning with a relaxed, stylish energy as guests arrived and settled into the space, then gradually building into a more upbeat European house direction as the night progressed. The result felt culturally in tune, brand right, and effortless in its progression.",
   },
   {
     title: "Gagosian Gallery x Avedon 100",
@@ -18,7 +18,7 @@ const selectedEvents = [
   {
     title: "School of American Ballet Ball",
     meta: "Dinner + Dancing | Lincoln Center, New York City",
-    body: "Trusted for two consecutive years to soundtrack the SAB Ball, I shaped the full musical arc of the evening for approximately 450 guests, including high-net-worth donors and dance enthusiasts. I was referred to the School of American Ballet by the New York City Ballet Young Patrons Circle event team, following 13 years of DJing their Young Patrons Circle post-performance parties in The Promenade of the David H. Koch Theater. The night began with a smooth, soulful dinner soundtrack that brought warmth and movement into the room while keeping the tone elegant. From there, the energy built naturally into a more celebratory dance floor later in the evening, allowing the event to shift without losing its sense of polish.",
+    body: "Trusted for two consecutive years to soundtrack the SAB Ball, I shaped the full musical arc of the evening for approximately 450 guests, including high-net-worth donors and dance enthusiasts. I was referred by the New York City Ballet Young Patrons Circle event team, following 13 years of DJing their Young Patrons Circle post-performance parties in The Promenade of the David H. Koch Theater. The night began with a smooth, soulful dinner soundtrack that brought warmth and movement into the room while keeping the tone elegant. From there, the energy built naturally into a more celebratory dance floor later in the evening, allowing the event to shift without losing its sense of polish.",
   },
 ];
 
