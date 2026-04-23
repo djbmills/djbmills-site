@@ -176,9 +176,9 @@ export default function CorporateEvents() {
       </section>
 
       {/* Section 03: Selected Event Experience */}
-      <section className="pt-16 pb-20 md:pt-24 md:pb-24 px-6 md:px-12 border-b border-border bg-background">
+       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
         <div className="max-w-5xl mx-auto">
-    <div className="flex items-center gap-4 mb-8">
+    <div className="flex items-center gap-4 mb-10 overflow-hidden">
   <span className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground shrink-0">
     03
   </span>
