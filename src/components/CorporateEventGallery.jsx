@@ -35,18 +35,12 @@ export default function CorporateEventGallery() {
       style={{ backgroundColor: '#f3eee2' }}
     >
       <div className="max-w-6xl mx-auto">
-    <div className="flex items-center gap-4 mb-16">
+   <div className="flex items-center gap-4 mb-16">
   <span className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground shrink-0">
     05
   </span>
 
-  <motion.div
-    initial={{ scaleX: 0 }}
-    whileInView={{ scaleX: 1 }}
-    viewport={{ once: true, margin: '-10%' }}
-    transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-    className="flex-1 h-px bg-border origin-left min-w-[40px]"
-  />
+  <div className="flex-1 h-px bg-black/15 min-w-[40px]" />
 
   <span className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground shrink-0 whitespace-nowrap">
     In The Room
