@@ -439,9 +439,9 @@ export default function CorporateEvents() {
   headline="Let's shape your event."
   footerText={
     <>
-      Fully insured and available for luxury brand activations, corporate galas, and private functions
+      Fully insured and available for luxury brand activations, corporate galas,
       <br />
-      across NYC, the Hamptons, and beyond.
+      and private functions across NYC, the Hamptons, and beyond.
     </>
   }
 />
