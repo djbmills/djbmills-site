@@ -32,9 +32,9 @@ export default function CorporateEvents() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHeading
-        title="Luxury Corporate Event DJ NYC | B.MILLS | Brand Activations & Galas"
-        description="B.MILLS provides curated sonic identities for luxury corporate galas, brand activations, and executive dinners in NYC. Specialized in minimalist hosting and professional event flow. Fully insured (COI)."
-        keywords="luxury corporate DJ NYC, brand activation DJ New York, corporate gala DJ, luxury event sound design, B.MILLS corporate, fashion week DJ NYC, COI insured DJ NYC"
+        title="Premier Corporate Event DJ NYC | B.MILLS | Brand Activations & Galas"
+        description="B.MILLS provides curated music direction for luxury corporate galas, brand activations, cocktail receptions, and executive events in New York City. Fully insured and trusted for elevated event environments."
+        keywords="premier corporate DJ NYC, brand activation DJ New York, corporate gala DJ, luxury event DJ NYC, brand event DJ, B.MILLS corporate events, fashion event DJ NYC, COI insured DJ NYC"
         url="https://djbmills.com/corporate-events"
       />
 
@@ -169,38 +169,38 @@ export default function CorporateEvents() {
               className="w-full h-auto object-cover"
             />
             <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
-              GRAND OPENING — HALL DES LUMIÈRES, NEW YORK CITY
+              GRAND OPENING | HALL DES LUMIÈRES, NEW YORK CITY
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Section 03: Selected Event Experience */}
-       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
+      <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
         <div className="max-w-5xl mx-auto">
-    <div className="flex items-center gap-4 mb-10 overflow-hidden">
-  <span className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground shrink-0">
-    03
-  </span>
+          <div className="flex items-center gap-4 mb-10 overflow-hidden">
+            <span className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground shrink-0">
+              03
+            </span>
 
-  <motion.div
-    initial={{ scaleX: 0 }}
-    whileInView={{ scaleX: 1 }}
-    viewport={{ once: true, margin: '-10%' }}
-    transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-    className="flex-1 h-px bg-border origin-left"
-  />
+            <motion.div
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true, margin: '-10%' }}
+              transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
+              className="flex-1 h-px bg-border origin-left"
+            />
 
-  <motion.span
-    initial={{ opacity: 0, x: 10 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    viewport={{ once: true, margin: '-10%' }}
-    transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
-    className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground shrink-0"
-  >
-    Featured Work
-  </motion.span>
-</div>
+            <motion.span
+              initial={{ opacity: 0, x: 10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-10%' }}
+              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
+              className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground shrink-0"
+            >
+              Featured Work
+            </motion.span>
+          </div>
 
           <div className="overflow-hidden">
             <motion.h2
@@ -223,6 +223,106 @@ export default function CorporateEvents() {
           >
             A look at the rooms, audiences, and events that reflect the kind of work B.MILLS is trusted to do.
           </motion.p>
+
+          {/* Visual Case Study */}
+          <motion.div
+            initial={{ opacity: 0, y: 34 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-10%' }}
+            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
+            className="mt-16 border-t border-border pt-10"
+          >
+            <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-12 items-start">
+              <div>
+                <img
+                  src="/images/corporate/1800-tequila/1800-tequila-pioneer-works-crowd.png"
+                  alt="1800 Tequila Essential Artists reception at Pioneer Works in Red Hook Brooklyn"
+                  className="w-full h-auto object-cover"
+                />
+                <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
+                  1800 TEQUILA X ESSENTIAL ARTISTS | PIONEER WORKS, BROOKLYN
+                </p>
+              </div>
+
+              <div className="lg:pt-4">
+                <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-5">
+                  Brand Reception / Limited-Edition Launch / Art World Event
+                </p>
+
+                <h3 className="font-heading text-3xl md:text-4xl font-light text-foreground leading-tight">
+                  1800 Tequila x Essential Artists
+                </h3>
+
+                <p className="font-body text-sm tracking-[0.25em] uppercase text-muted-foreground mt-5">
+                  Pioneer Works | Red Hook, Brooklyn
+                </p>
+
+                <p className="font-body text-base text-muted-foreground leading-relaxed mt-7">
+                  For a limited-edition 1800 Tequila bottle release featuring artist Dustin Yellin, B.MILLS provided the soundtrack for an intimate brand reception at Pioneer Works, the Brooklyn cultural space founded by Yellin.
+                </p>
+
+                <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
+                  The music was curated to complement the room: artful, culturally tuned, and intentional, supporting the brand experience while keeping the energy exactly where it needed to be.
+                </p>
+
+                <div className="mt-8 grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
+                      Client
+                    </p>
+                    <p className="font-body text-sm text-foreground">
+                      1800 Tequila
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
+                      Role
+                    </p>
+                    <p className="font-body text-sm text-foreground">
+                      DJ / Music Curation
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
+                      Setting
+                    </p>
+                    <p className="font-body text-sm text-foreground">
+                      Cocktail Reception
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
+                      Focus
+                    </p>
+                    <p className="font-body text-sm text-foreground">
+                      Brand Atmosphere
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-4 mt-8">
+              <img
+                src="/images/corporate/1800-tequila/bmills-1800-tequila-dj-pioneer-works.png"
+                alt="B.MILLS DJing the 1800 Tequila Essential Artists reception at Pioneer Works"
+                className="w-full h-full object-cover aspect-[2/3]"
+              />
+              <img
+                src="/images/corporate/1800-tequila/1800-tequila-essential-artists-bottles.png"
+                alt="1800 Tequila Essential Artists limited edition bottles by Dustin Yellin"
+                className="w-full h-full object-cover aspect-[2/3]"
+              />
+              <img
+                src="/images/corporate/1800-tequila/dustin-yellin-pioneer-works-sculpture.png"
+                alt="Dustin Yellin artwork displayed at Pioneer Works for the 1800 Tequila event"
+                className="w-full h-full object-cover aspect-[2/3]"
+              />
+            </div>
+          </motion.div>
 
           <div className="mt-16 space-y-16">
             {selectedEvents.map((event, index) => (
@@ -348,7 +448,7 @@ export default function CorporateEvents() {
               />
             </div>
             <p className="font-body text-xs text-white/30 mt-4 tracking-widest uppercase">
-              Corporate Cocktail Reception — Boom Boom Room, New York City
+              Corporate Cocktail Reception | Boom Boom Room, New York City
             </p>
           </motion.div>
         </div>
