@@ -436,9 +436,15 @@ export default function CorporateEvents() {
           <CorporateEventGallery />
 
       <InquiryFooter
-        headline="Let's shape your event."
-        footerText={`Fully insured and available for luxury brand activations, corporate galas, and private functions across NYC, the Hamptons, and beyond.`}
-      />
+  headline="Let's shape your event."
+  footerText={
+    <>
+      Fully insured and available for luxury brand activations, corporate galas, and private functions
+      <br />
+      across NYC, the Hamptons, and beyond.
+    </>
+  }
+/>
     </div>
   );
 }
