@@ -454,8 +454,7 @@ export default function CorporateEvents() {
         </div>
       </section>
 
-     <CorporateEventGallery />
-</section>
+          <CorporateEventGallery />
 
       <InquiryFooter
         headline="Let's shape your event."
