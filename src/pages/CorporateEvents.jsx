@@ -40,69 +40,67 @@ export default function CorporateEvents() {
 
       <CorporateHero />
 
-      {/* Section 01: The Philosophy of Curation */}
-      <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
-        <div className="max-w-4xl mx-auto">
-         <div className="flex items-center gap-4 mb-10 overflow-hidden">
-  <motion.span
-    initial={{ opacity: 0, x: -10 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    viewport={{ once: true, margin: '-10%' }}
-    transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-    className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground shrink-0"
-  >
-    01
-  </motion.span>
+    {/* Section 01: The Philosophy of Curation */}
+<section className="py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
+  <div className="max-w-4xl mx-auto">
+    <div className="flex items-center gap-4 mb-10">
+      <span className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground shrink-0">
+        01
+      </span>
 
-  <motion.div
-    initial={{ scaleX: 0 }}
-    whileInView={{ scaleX: 1 }}
-    viewport={{ once: true, margin: '-10%' }}
-    transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-    className="flex-1 h-px bg-border origin-left min-w-0"
-  />
-</div>
+      <motion.div
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true, margin: '-10%' }}
+        transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
+        className="flex-1 h-px bg-border origin-left min-w-[40px]"
+      />
 
-          <div className="overflow-hidden">
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
-              className="font-heading text-2xl md:text-3xl lg:text-4xl font-light text-foreground leading-relaxed"
-            >
-              Corporate environments require precise sonic curation. The music should define the brand identity without overwhelming the space, providing professional vocal direction only when necessary.
-            </motion.p>
-          </div>
+      <span className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground shrink-0 whitespace-nowrap">
+        The Philosophy of Curation
+      </span>
+    </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
-            className="font-body text-sm text-muted-foreground mt-8 max-w-xl leading-relaxed"
-          >
-            Maintaining a sophisticated balance between background atmosphere and high-energy transitions.
-          </motion.p>
+    <div className="overflow-hidden">
+      <motion.p
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-10%' }}
+        transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
+        className="font-heading text-2xl md:text-3xl lg:text-4xl font-light text-foreground leading-relaxed"
+      >
+        Corporate environments require precise sonic curation. The music should define the brand identity without overwhelming the space, providing professional vocal direction only when necessary.
+      </motion.p>
+    </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.6 }}
-            className="mt-14"
-          >
-            <img
-              src="/images/bmills-corporate-2.png"
-              alt="B.MILLS performing at Goldman Sachs Robinhood event New York City - Corporate Sound Design"
-              className="w-full h-auto object-cover"
-            />
-            <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
-              GOLDMAN SACHS / ROBINHOOD EVENT, NEW YORK CITY
-            </p>
-          </motion.div>
-        </div>
-      </section>
+    <motion.p
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-10%' }}
+      transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
+      className="font-body text-sm text-muted-foreground mt-8 max-w-xl leading-relaxed"
+    >
+      Maintaining a sophisticated balance between background atmosphere and high-energy transitions.
+    </motion.p>
+
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-10%' }}
+      transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.6 }}
+      className="mt-14"
+    >
+      <img
+        src="/images/bmills-corporate-2.png"
+        alt="B.MILLS performing at Goldman Sachs Robinhood event New York City - Corporate Sound Design"
+        className="w-full h-auto object-cover"
+      />
+      <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
+        GOLDMAN SACHS / ROBINHOOD EVENT, NEW YORK CITY
+      </p>
+    </motion.div>
+  </div>
+</section>
 
       {/* Section 02: Brand Alignment */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
@@ -379,33 +377,23 @@ export default function CorporateEvents() {
       {/* Section 04: Experience / Logistics */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border" style={{ backgroundColor: '#0d0d0d' }}>
         <div className="max-w-4xl mx-auto">
-          <div className="flex items-center gap-4 mb-10 overflow-hidden">
-            <motion.span
-              initial={{ opacity: 0, x: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-             className="font-body text-xs tracking-[0.4em] uppercase text-white/30 shrink-0"
-            >
-              04
-            </motion.span>
-            <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-              className="flex-1 h-px bg-white/10 origin-left min-w-0"
-            />
-            <motion.span
-              initial={{ opacity: 0, x: 10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
-             className="font-body text-xs tracking-[0.3em] uppercase text-white/30 shrink-0"
-            >
-              Logistics & Trust
-            </motion.span>
-          </div>
+          <div className="flex items-center gap-4 mb-10">
+  <span className="font-body text-xs tracking-[0.4em] uppercase text-white/30 shrink-0">
+    04
+  </span>
+
+  <motion.div
+    initial={{ scaleX: 0 }}
+    whileInView={{ scaleX: 1 }}
+    viewport={{ once: true, margin: '-10%' }}
+    transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
+    className="flex-1 h-px bg-white/10 origin-left min-w-[40px]"
+  />
+
+  <span className="font-body text-xs tracking-[0.3em] uppercase text-white/30 shrink-0 whitespace-nowrap">
+    Logistics & Trust
+  </span>
+</div>
 
           <div className="overflow-hidden">
             <motion.h2
