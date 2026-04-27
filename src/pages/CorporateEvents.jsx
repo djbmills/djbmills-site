@@ -40,7 +40,7 @@ export default function CorporateEvents() {
 
       <CorporateHero />
 
-    {/* Section 01: The Philosophy of Curation */}
+    {/* Section 01: The Philosophy */}
 <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
   <div className="max-w-4xl mx-auto">
     <div className="flex items-center gap-4 mb-10">
@@ -57,7 +57,7 @@ export default function CorporateEvents() {
       />
 
       <span className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground shrink-0 whitespace-nowrap">
-        The Philosophy of Curation
+        The Philosophy
       </span>
     </div>
 
