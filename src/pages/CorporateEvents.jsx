@@ -42,46 +42,48 @@ export default function CorporateEvents() {
 
     {/* Section 01: The Philosophy */}
 <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
-  <div className="max-w-4xl mx-auto">
-    <div className="flex items-center gap-4 mb-10">
-      <span className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground shrink-0">
-        01
-      </span>
+  <div className="max-w-6xl mx-auto">
+    <div className="max-w-4xl mx-auto">
+      <div className="flex items-center gap-4 mb-10">
+        <span className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground shrink-0">
+          01
+        </span>
 
-      <motion.div
-        initial={{ scaleX: 0 }}
-        whileInView={{ scaleX: 1 }}
-        viewport={{ once: true, margin: '-10%' }}
-        transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-        className="flex-1 h-px bg-border origin-left min-w-[40px]"
-      />
+        <motion.div
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true, margin: '-10%' }}
+          transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
+          className="flex-1 h-px bg-border origin-left min-w-[40px]"
+        />
 
-      <span className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground shrink-0 whitespace-nowrap">
-        The Philosophy
-      </span>
-    </div>
+        <span className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground shrink-0 whitespace-nowrap">
+          The Philosophy
+        </span>
+      </div>
 
-    <div className="overflow-hidden">
+      <div className="overflow-hidden">
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-10%' }}
+          transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
+          className="font-heading text-2xl md:text-3xl lg:text-4xl font-light text-foreground leading-relaxed"
+        >
+          Corporate environments require precise sonic curation. The music should define the brand identity without overwhelming the space, providing professional vocal direction only when necessary.
+        </motion.p>
+      </div>
+
       <motion.p
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-10%' }}
-        transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
-        className="font-heading text-2xl md:text-3xl lg:text-4xl font-light text-foreground leading-relaxed"
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
+        className="font-body text-sm text-muted-foreground mt-8 max-w-xl leading-relaxed"
       >
-        Corporate environments require precise sonic curation. The music should define the brand identity without overwhelming the space, providing professional vocal direction only when necessary.
+        Maintaining a sophisticated balance between background atmosphere and high-energy transitions.
       </motion.p>
     </div>
-
-    <motion.p
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-10%' }}
-      transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
-      className="font-body text-sm text-muted-foreground mt-8 max-w-xl leading-relaxed"
-    >
-      Maintaining a sophisticated balance between background atmosphere and high-energy transitions.
-    </motion.p>
 
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -90,11 +92,36 @@ export default function CorporateEvents() {
       transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.6 }}
       className="mt-14"
     >
-      <img
-        src="/images/bmills-corporate-2.png"
-        alt="B.MILLS performing at Goldman Sachs Robinhood event New York City - Corporate Sound Design"
-        className="w-full h-auto object-cover"
-      />
+      <div className="grid lg:grid-cols-[2fr_1fr] gap-4 lg:gap-5 items-stretch">
+        <div className="h-full">
+          <img
+            src="/images/bmills-corporate-2.png"
+            alt="B.MILLS performing at Goldman Sachs Robinhood event New York City - Corporate Sound Design"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        <div className="grid grid-cols-3 lg:grid-cols-1 gap-4 lg:gap-5 h-full">
+          <img
+            src="/images/corporate/goldman-robinhood/goldman-robinhood-signage.png"
+            alt="Goldman Sachs and Robinhood event signage in New York City"
+            className="w-full h-full object-cover aspect-[4/5] lg:aspect-auto"
+          />
+
+          <img
+            src="/images/corporate/goldman-robinhood/metropolis-event-interior.png"
+            alt="Metropolis by Marcus Samuelsson event interior for Goldman Sachs Robinhood event"
+            className="w-full h-full object-cover aspect-[4/5] lg:aspect-auto"
+          />
+
+          <img
+            src="/images/corporate/goldman-robinhood/bmills-dj-booth-robinhood-goldman.png"
+            alt="B.MILLS DJ setup at Goldman Sachs Robinhood event in New York City"
+            className="w-full h-full object-cover aspect-[4/5] lg:aspect-auto"
+          />
+        </div>
+      </div>
+
       <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
         GOLDMAN SACHS / ROBINHOOD EVENT, NEW YORK CITY
       </p>
