@@ -40,105 +40,104 @@ export default function CorporateEvents() {
 
       <CorporateHero />
 
-    {/* Section 01: The Philosophy */}
+  {/* Section 01: The Philosophy */}
 <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
-    <div className="max-w-xl mx-auto">
-      <div className="flex items-center gap-4 mb-10">
-        <span className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground shrink-0">
-          01
-        </span>
+  <div className="max-w-xl mx-auto">
+    <div className="flex items-center gap-4 mb-10">
+      <span className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground shrink-0">
+        01
+      </span>
 
-        <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true, margin: '-10%' }}
-          transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-          className="flex-1 h-px bg-border origin-left min-w-[40px]"
-        />
+      <motion.div
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true, margin: '-10%' }}
+        transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
+        className="flex-1 h-px bg-border origin-left min-w-[40px]"
+      />
 
-        <span className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground shrink-0 whitespace-nowrap">
-          The Philosophy
-        </span>
-      </div>
+      <span className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground shrink-0 whitespace-nowrap">
+        The Philosophy
+      </span>
+    </div>
 
-      <div className="overflow-hidden">
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-10%' }}
-          transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
-          className="font-heading text-2xl md:text-3xl lg:text-4xl font-light text-foreground leading-relaxed"
-        >
-          Corporate environments require precise sonic curation. The music should define the brand identity without overwhelming the space, providing professional vocal direction only when necessary.
-        </motion.p>
-      </div>
-
+    <div className="overflow-hidden">
       <motion.p
-        initial={{ opacity: 0, y: 16 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-10%' }}
-        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
-        className="font-body text-sm text-muted-foreground mt-8 max-w-xl leading-relaxed"
+        transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
+        className="font-heading text-2xl md:text-3xl lg:text-4xl font-light text-foreground leading-relaxed"
       >
-        Maintaining a sophisticated balance between background atmosphere and high-energy transitions.
+        Corporate environments require precise sonic curation. The music should define the brand identity without overwhelming the space, providing professional vocal direction only when necessary.
       </motion.p>
     </div>
 
-<motion.div
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true, margin: '-10%' }}
-  transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.6 }}
-  className="mt-14"
->
-  <div className="w-full md:w-[48%] mx-auto">
-    <div className="group relative overflow-hidden bg-black/5">
-      <img
-        src="/images/bmills-corporate-2.png"
-        alt="B.MILLS performing at Goldman Sachs Robinhood event New York City - Corporate Sound Design"
-        className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-      />
+    <motion.p
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-10%' }}
+      transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
+      className="font-body text-sm text-muted-foreground mt-8 max-w-xl leading-relaxed"
+    >
+      Maintaining a sophisticated balance between background atmosphere and high-energy transitions.
+    </motion.p>
 
-      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
-    </div>
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-10%' }}
+      transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.6 }}
+      className="mt-14"
+    >
+      <div className="max-w-[360px] md:max-w-[400px] mx-auto">
+        <div className="group relative overflow-hidden bg-black/5">
+          <img
+            src="/images/bmills-corporate-2.png"
+            alt="B.MILLS performing at Goldman Sachs Robinhood event New York City - Corporate Sound Design"
+            className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+          />
 
-    <div className="grid grid-cols-3 gap-2 md:gap-3 mt-3">
-      <div className="group relative overflow-hidden bg-black/5 aspect-[4/3]">
-        <img
-          src="/images/corporate/goldman-robinhood/bmills-dj-booth-robinhood-goldman.png"
-          alt="B.MILLS DJ setup at Goldman Sachs Robinhood event in New York City"
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
+        </div>
+
+        <div className="grid grid-cols-3 gap-2 mt-2">
+          <div className="group relative overflow-hidden bg-black/5 aspect-[4/3]">
+            <img
+              src="/images/corporate/goldman-robinhood/bmills-dj-booth-robinhood-goldman.png"
+              alt="B.MILLS DJ setup at Goldman Sachs Robinhood event in New York City"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+          </div>
+
+          <div className="group relative overflow-hidden bg-black/5 aspect-[4/3]">
+            <img
+              src="/images/corporate/goldman-robinhood/metropolis-event-interior.png"
+              alt="Metropolis by Marcus Samuelsson event interior for Goldman Sachs Robinhood event"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+          </div>
+
+          <div className="group relative overflow-hidden bg-black/5 aspect-[4/3]">
+            <img
+              src="/images/corporate/goldman-robinhood/goldman-robinhood-signage.png"
+              alt="Goldman Sachs and Robinhood event signage in New York City"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+          </div>
+        </div>
+
+        <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
+          GOLDMAN SACHS / ROBINHOOD EVENT, NEW YORK CITY
+        </p>
       </div>
-
-      <div className="group relative overflow-hidden bg-black/5 aspect-[4/3]">
-        <img
-          src="/images/corporate/goldman-robinhood/metropolis-event-interior.png"
-          alt="Metropolis by Marcus Samuelsson event interior for Goldman Sachs Robinhood event"
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
-      </div>
-
-      <div className="group relative overflow-hidden bg-black/5 aspect-[4/3]">
-        <img
-          src="/images/corporate/goldman-robinhood/goldman-robinhood-signage.png"
-          alt="Goldman Sachs and Robinhood event signage in New York City"
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
-      </div>
-    </div>
-
-    <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
-      GOLDMAN SACHS / ROBINHOOD EVENT, NEW YORK CITY
-    </p>
-  </div>
-</motion.div>
+    </motion.div>
   </div>
 </section>
-
+      
       {/* Section 02: Brand Alignment */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
   <div className="max-w-4xl mx-auto">
