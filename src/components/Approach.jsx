@@ -77,16 +77,28 @@ export default function Approach() {
             className="md:col-span-7"
           >
             <div className="relative overflow-hidden bg-black/5 aspect-[4/3] md:aspect-[5/4] group">
-              <img
-                src="/images/bmills-approach.png"
-                alt="The Approach"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+  <img
+    src="/images/bmills-approach.png"
+    alt="The Approach"
+    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+  />
 
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
+  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
 
-              
-            </div>
+  <div className="absolute bottom-3 right-3 z-10 pointer-events-none opacity-0 group-hover:opacity-80 transition-opacity duration-300">
+    <p className="font-body text-[10px] md:text-[11px] font-light tracking-[0.08em] uppercase text-white">
+      Photo by{' '}
+      <a
+        href="https://instagram.com/vnina"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline underline-offset-4 pointer-events-auto"
+      >
+        Nina
+      </a>
+    </p>
+  </div>
+</div>
           </motion.div>
         </div>
       </div>
