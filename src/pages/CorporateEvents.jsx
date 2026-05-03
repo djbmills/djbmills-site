@@ -90,21 +90,21 @@ export default function CorporateEvents() {
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true, margin: '-10%' }}
   transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.6 }}
-  className="mt-14"
+  className="mt-14 max-w-4xl mx-auto"
 >
-  <div className="grid md:grid-cols-[1.6fr_0.9fr] gap-3 md:gap-4 items-stretch">
-    <div className="group relative overflow-hidden bg-black/5 aspect-[4/3]">
+  <div className="grid md:grid-cols-[1fr_0.72fr] gap-3 md:gap-4 items-stretch">
+    <div className="group relative overflow-hidden bg-black/5">
       <img
         src="/images/bmills-corporate-2.png"
         alt="B.MILLS performing at Goldman Sachs Robinhood event New York City - Corporate Sound Design"
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+        className="w-full h-auto max-h-[620px] object-contain transition-transform duration-700 group-hover:scale-[1.02]"
       />
 
       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
     </div>
 
-    <div className="grid grid-cols-3 md:grid-cols-1 gap-3 md:gap-4">
-      <div className="group relative overflow-hidden bg-black/5 aspect-[4/3] md:aspect-auto">
+    <div className="grid grid-cols-3 md:grid-cols-1 gap-3 md:gap-4 md:h-full">
+      <div className="group relative overflow-hidden bg-black/5 aspect-[4/3] md:aspect-auto md:min-h-0">
         <img
           src="/images/corporate/goldman-robinhood/bmills-dj-booth-robinhood-goldman.png"
           alt="B.MILLS DJ setup at Goldman Sachs Robinhood event in New York City"
@@ -114,7 +114,7 @@ export default function CorporateEvents() {
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
       </div>
 
-      <div className="group relative overflow-hidden bg-black/5 aspect-[4/3] md:aspect-auto">
+      <div className="group relative overflow-hidden bg-black/5 aspect-[4/3] md:aspect-auto md:min-h-0">
         <img
           src="/images/corporate/goldman-robinhood/metropolis-event-interior.png"
           alt="Metropolis by Marcus Samuelsson event interior for Goldman Sachs Robinhood event"
@@ -124,7 +124,7 @@ export default function CorporateEvents() {
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
       </div>
 
-      <div className="group relative overflow-hidden bg-black/5 aspect-[4/3] md:aspect-auto">
+      <div className="group relative overflow-hidden bg-black/5 aspect-[4/3] md:aspect-auto md:min-h-0">
         <img
           src="/images/corporate/goldman-robinhood/goldman-robinhood-signage.png"
           alt="Goldman Sachs and Robinhood event signage in New York City"
