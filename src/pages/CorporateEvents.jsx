@@ -85,52 +85,54 @@ export default function CorporateEvents() {
       </motion.p>
     </div>
 
-   <motion.div
+<motion.div
   initial={{ opacity: 0, y: 30 }}
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true, margin: '-10%' }}
   transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.6 }}
   className="mt-14"
 >
-  <div className="group relative overflow-hidden">
-    <img
-      src="/images/bmills-corporate-2.png"
-      alt="B.MILLS performing at Goldman Sachs Robinhood event New York City - Corporate Sound Design"
-      className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-    />
-
-    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
-  </div>
-
-  <div className="grid grid-cols-3 gap-3 md:gap-4 mt-4">
-    <div className="group relative overflow-hidden bg-black/5 aspect-[4/5]">
+  <div className="grid md:grid-cols-[1.6fr_0.9fr] gap-3 md:gap-4 items-stretch">
+    <div className="group relative overflow-hidden bg-black/5 aspect-[4/3]">
       <img
-        src="/images/corporate/goldman-robinhood/goldman-robinhood-signage.png"
-        alt="Goldman Sachs and Robinhood event signage in New York City"
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        src="/images/bmills-corporate-2.png"
+        alt="B.MILLS performing at Goldman Sachs Robinhood event New York City - Corporate Sound Design"
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
       />
 
-      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
     </div>
 
-    <div className="group relative overflow-hidden bg-black/5 aspect-[4/5]">
-      <img
-        src="/images/corporate/goldman-robinhood/metropolis-event-interior.png"
-        alt="Metropolis by Marcus Samuelsson event interior for Goldman Sachs Robinhood event"
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-      />
+    <div className="grid grid-cols-3 md:grid-cols-1 gap-3 md:gap-4">
+      <div className="group relative overflow-hidden bg-black/5 aspect-[4/3] md:aspect-auto">
+        <img
+          src="/images/corporate/goldman-robinhood/bmills-dj-booth-robinhood-goldman.png"
+          alt="B.MILLS DJ setup at Goldman Sachs Robinhood event in New York City"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
 
-      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
-    </div>
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+      </div>
 
-    <div className="group relative overflow-hidden bg-black/5 aspect-[4/5]">
-      <img
-        src="/images/corporate/goldman-robinhood/bmills-dj-booth-robinhood-goldman.png"
-        alt="B.MILLS DJ setup at Goldman Sachs Robinhood event in New York City"
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-      />
+      <div className="group relative overflow-hidden bg-black/5 aspect-[4/3] md:aspect-auto">
+        <img
+          src="/images/corporate/goldman-robinhood/metropolis-event-interior.png"
+          alt="Metropolis by Marcus Samuelsson event interior for Goldman Sachs Robinhood event"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
 
-      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+      </div>
+
+      <div className="group relative overflow-hidden bg-black/5 aspect-[4/3] md:aspect-auto">
+        <img
+          src="/images/corporate/goldman-robinhood/goldman-robinhood-signage.png"
+          alt="Goldman Sachs and Robinhood event signage in New York City"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+      </div>
     </div>
   </div>
 
