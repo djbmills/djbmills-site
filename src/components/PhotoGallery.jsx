@@ -5,9 +5,9 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 const photos = [
   { src: "/images/bmills-event-1.jpg", alt: "B.MILLS DJ performing at luxury corporate event in New York City" },
   { src: "/images/bmills-event-2.jpg", alt: "Upscale NYC event with B.MILLS DJing for corporate audience" },
-  { src: "/images/bmills-event-3.png", alt: "Fanatics Topps event in NYC with B.MILLS DJ" },
   { src: "/images/bmills-event-4.jpg", alt: "B.MILLS DJ set at luxury brand activation in New York" },
   { src: "/images/bmills-event-5.jpg", alt: "Elegant corporate gala atmosphere with live DJ performance by B.MILLS" },
+  { src: "/images/bmills-event-3.png", alt: "Fanatics Topps event in NYC with B.MILLS DJ" },
   { src: "/images/bmills-event-6.jpg", alt: "B.MILLS DJ creating atmosphere at upscale Manhattan event" },
   { src: "/images/bmills-event-7.jpg", alt: "Luxury event crowd engagement with B.MILLS DJ in New York City" },
   { src: "/images/bmills-event-7.png", alt: "Guests enjoying music during curated DJ set by B.MILLS" },
@@ -23,7 +23,6 @@ const photos = [
   { src: "/images/bmills-event-17.jpg", alt: "Guests dancing at luxury brand event with B.MILLS DJ" },
   { src: "/images/bmills-event-mobile-1.png", alt: "Mobile view of B.MILLS DJ performance at upscale NYC event", mobileOnly: true }
 ];
-
 export default function PhotoGallery() {
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
