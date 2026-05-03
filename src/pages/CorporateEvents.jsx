@@ -42,13 +42,13 @@ export default function CorporateEvents() {
 
   {/* Section 01: The Philosophy */}
 <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
-  <div className="max-w-xl mx-auto">
+  <div className="max-w-4xl mx-auto">
     <div className="flex items-center gap-4 mb-10">
       <span className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground shrink-0">
         01
       </span>
 
-      <motion.div
+     <motion.div
   initial={{ opacity: 0, y: 30 }}
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true, margin: '-10%' }}
