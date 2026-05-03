@@ -91,47 +91,50 @@ export default function CorporateEvents() {
   transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.6 }}
   className="mt-14"
 >
-  <img
-    src="/images/bmills-corporate-2.png"
-    alt="B.MILLS performing at Goldman Sachs Robinhood event New York City - Corporate Sound Design"
-    className="w-full h-auto object-cover"
-  />
-
-  <div className="grid grid-cols-3 gap-3 md:gap-4 mt-4">
-    <div className="group relative overflow-hidden bg-black/5 aspect-[4/3]">
+  <div className="w-full md:w-[48%] mx-auto">
+    <div className="group relative overflow-hidden bg-black/5">
       <img
-        src="/images/corporate/goldman-robinhood/bmills-dj-booth-robinhood-goldman.png"
-        alt="B.MILLS DJ setup at Goldman Sachs Robinhood event in New York City"
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        src="/images/bmills-corporate-2.png"
+        alt="B.MILLS performing at Goldman Sachs Robinhood event New York City - Corporate Sound Design"
+        className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
       />
 
-      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
     </div>
 
-    <div className="group relative overflow-hidden bg-black/5 aspect-[4/3]">
-      <img
-        src="/images/corporate/goldman-robinhood/metropolis-event-interior.png"
-        alt="Metropolis by Marcus Samuelsson event interior for Goldman Sachs Robinhood event"
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-      />
+    <div className="grid grid-cols-3 gap-2 md:gap-3 mt-3">
+      <div className="group relative overflow-hidden bg-black/5 aspect-[4/3]">
+        <img
+          src="/images/corporate/goldman-robinhood/bmills-dj-booth-robinhood-goldman.png"
+          alt="B.MILLS DJ setup at Goldman Sachs Robinhood event in New York City"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+      </div>
 
-      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+      <div className="group relative overflow-hidden bg-black/5 aspect-[4/3]">
+        <img
+          src="/images/corporate/goldman-robinhood/metropolis-event-interior.png"
+          alt="Metropolis by Marcus Samuelsson event interior for Goldman Sachs Robinhood event"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+      </div>
+
+      <div className="group relative overflow-hidden bg-black/5 aspect-[4/3]">
+        <img
+          src="/images/corporate/goldman-robinhood/goldman-robinhood-signage.png"
+          alt="Goldman Sachs and Robinhood event signage in New York City"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+      </div>
     </div>
 
-    <div className="group relative overflow-hidden bg-black/5 aspect-[4/3]">
-      <img
-        src="/images/corporate/goldman-robinhood/goldman-robinhood-signage.png"
-        alt="Goldman Sachs and Robinhood event signage in New York City"
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-      />
-
-      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
-    </div>
+    <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
+      GOLDMAN SACHS / ROBINHOOD EVENT, NEW YORK CITY
+    </p>
   </div>
-
-  <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
-    GOLDMAN SACHS / ROBINHOOD EVENT, NEW YORK CITY
-  </p>
 </motion.div>
   </div>
 </section>
