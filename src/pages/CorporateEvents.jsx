@@ -439,7 +439,7 @@ export default function CorporateEvents() {
             transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
             className="font-body text-base text-white/50 leading-relaxed max-w-2xl"
           >
-At the highest level, the music is only part of the job. B.MILLS is fully insured and experienced in working alongside venue and production teams, bringing a calm, understated presence to executive dinners, brand events, and large scale galas where timing, tone, and room flow all matter.          </motion.p>
+At the highest level, the music is only part of it. B.MILLS is fully insured and experienced in working alongside venue and production teams, bringing a calm, understated presence to executive dinners, brand events, and large scale galas where timing, tone, and room flow all matter.          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
