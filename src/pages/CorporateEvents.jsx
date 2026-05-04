@@ -90,7 +90,7 @@ export default function CorporateEvents() {
   transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.6 }}
   className="mt-12"
 >
-  <div className="max-w-3xl mx-auto">
+  <div className="max-w-4xl mx-auto">
     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
       <div className="group relative overflow-hidden bg-black/5 aspect-[4/5]">
         <img
