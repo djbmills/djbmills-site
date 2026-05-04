@@ -28,7 +28,7 @@ const columns = [
     items: [
       ['Avedon 100', 'Gagosian'],
       ['Hall des Lumières', 'Opening Night'],
-      ['John Legend', 'Afterparty'],
+      ['John Legend', 'Concert Afterparty'],
       ['New York Rangers', 'Team Event'],
       ['SAB Ball', 'Second Year Running'],
       ['Wieden+Kennedy', "Founder's Day x2"],
