@@ -4,7 +4,7 @@ import { useRef } from 'react';
 const clients = [
 'CELINE', 'Gucci', 'LVMH', 'Moët & Chandon',
 'Kering Eyewear', 'L\'Oréal', 'Supreme', 'Tumi',
-'Goldman Sachs', 'JP Morgan Chase', 'Citadel', 'Google',
+'Goldman Sachs', 'JP Morgan Chase', 'Fanatics', 'Google',
 'New York City Ballet', 'Gagosian Gallery', 'The Standard Hotels', 'Equinox',
 'NBCUniversal', 'Disney', 'Mass Appeal', 'MLB'];
 
