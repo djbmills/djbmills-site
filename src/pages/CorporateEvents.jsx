@@ -25,7 +25,7 @@ const selectedEvents = [
 const trustedFor = [
   "Corporate events and holiday parties",
   "Private celebrations and milestone events",
-  "Wedding after-parties and late-night transitions",
+  "Wedding after parties and late-night transitions",
 ];
 
 export default function CorporateEvents() {
