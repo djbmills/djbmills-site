@@ -20,7 +20,7 @@ const selectedEvents = [
 const trustedFor = [
   "Corporate events and holiday parties",
   "Private celebrations and milestone events",
-  "Wedding after parties and late-night transitions",
+  "Wedding after parties and late night transitions",
 ];
 
 export default function CorporateEvents() {
@@ -366,7 +366,7 @@ export default function CorporateEvents() {
   </div>
 </motion.div>
 
-    {/* 1800 Tequila Visual Case Study */}
+{/* 1800 Tequila Visual Case Study */}
 <motion.div
   initial={{ opacity: 0, y: 34 }}
   whileInView={{ opacity: 1, y: 0 }}
@@ -409,30 +409,22 @@ export default function CorporateEvents() {
     </div>
   </div>
 
-  <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mt-12">
-    <div>
-      <img
-        src="/images/corporate/1800-tequila/1800-tequila-bmills-dj.png"
-        alt="B.MILLS DJing the 1800 Tequila x Essential Artists event"
-        className="w-full h-auto object-cover"
-      />
-    </div>
-
-    <div>
-      <img
-        src="/images/corporate/1800-tequila/1800-tequila-bottle.png"
-        alt="1800 Tequila limited edition bottle displayed at the event"
-        className="w-full h-auto object-cover"
-      />
-    </div>
-
-    <div>
-      <img
-        src="/images/corporate/1800-tequila/1800-tequila-artwork.png"
-        alt="Artwork display at the 1800 Tequila x Essential Artists event"
-        className="w-full h-auto object-cover"
-      />
-    </div>
+  <div className="grid md:grid-cols-3 gap-4 mt-8">
+    <img
+      src="/images/corporate/1800-tequila/bmills-1800-tequila-dj-pioneer-works.png"
+      alt="B.MILLS DJing the 1800 Tequila Essential Artists reception at Pioneer Works"
+      className="w-full h-full object-cover aspect-[2/3]"
+    />
+    <img
+      src="/images/corporate/1800-tequila/1800-tequila-essential-artists-bottles.png"
+      alt="1800 Tequila Essential Artists limited edition bottles by Dustin Yellin"
+      className="w-full h-full object-cover aspect-[2/3]"
+    />
+    <img
+      src="/images/corporate/1800-tequila/dustin-yellin-pioneer-works-sculpture.png"
+      alt="Dustin Yellin artwork displayed at Pioneer Works for the 1800 Tequila event"
+      className="w-full h-full object-cover aspect-[2/3]"
+    />
   </div>
 </motion.div>
 
