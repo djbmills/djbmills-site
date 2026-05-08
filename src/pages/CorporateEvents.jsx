@@ -199,206 +199,332 @@ export default function CorporateEvents() {
         </div>
       </section>
 
-      {/* Section 03: Selected Event Experience */}
-      <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex items-center gap-4 mb-10 overflow-hidden">
-            <span className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground shrink-0">
-              03
-            </span>
+     {/* Section 03: Selected Event Experience */}
+<section className="py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
+  <div className="max-w-5xl mx-auto">
+    <div className="flex items-center gap-4 mb-10 overflow-hidden">
+      <span className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground shrink-0">
+        03
+      </span>
 
-            <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-              className="flex-1 h-px bg-border origin-left"
-            />
+      <motion.div
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true, margin: '-10%' }}
+        transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
+        className="flex-1 h-px bg-border origin-left"
+      />
 
-            <motion.span
-              initial={{ opacity: 0, x: 10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
-              className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground shrink-0"
-            >
-              Featured Work
-            </motion.span>
-          </div>
+      <motion.span
+        initial={{ opacity: 0, x: 10 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: '-10%' }}
+        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
+        className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground shrink-0"
+      >
+        Featured Work
+      </motion.span>
+    </div>
 
-          <div className="overflow-hidden">
-            <motion.h2
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
-              className="font-heading text-5xl md:text-6xl font-light text-foreground mb-10 leading-tight"
-            >
-              Selected Event Experience
-            </motion.h2>
-          </div>
+    <div className="overflow-hidden">
+      <motion.h2
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-10%' }}
+        transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
+        className="font-heading text-5xl md:text-6xl font-light text-foreground mb-10 leading-tight"
+      >
+        Selected Event Experience
+      </motion.h2>
+    </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
-            className="font-body text-base text-muted-foreground leading-relaxed max-w-3xl"
-          >
-            A look at the rooms, audiences, and events that reflect the kind of work B.MILLS is trusted to do.
-          </motion.p>
+    <motion.p
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-10%' }}
+      transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
+      className="font-body text-base text-muted-foreground leading-relaxed max-w-3xl"
+    >
+      A look at the rooms, audiences, and events that reflect the kind of work B.MILLS is trusted to do.
+    </motion.p>
 
-          {/* Visual Case Study */}
-          <motion.div
-            initial={{ opacity: 0, y: 34 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
-            className="mt-16 border-t border-border pt-10"
-          >
-            <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-12 items-start">
-              <div>
-                <img
-                  src="/images/corporate/1800-tequila/1800-tequila-pioneer-works-crowd.png"
-                  alt="1800 Tequila Essential Artists reception at Pioneer Works in Red Hook Brooklyn"
-                  className="w-full h-auto object-cover"
-                />
-                <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
-                  1800 TEQUILA X ESSENTIAL ARTISTS | PIONEER WORKS, BROOKLYN
-                </p>
-              </div>
-
-              <div className="lg:pt-4">
-                <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-5">
-                  Brand Reception / Limited-Edition Launch / Art World Event
-                </p>
-
-                <h3 className="font-heading text-3xl md:text-4xl font-light text-foreground leading-tight">
-                  1800 Tequila x Essential Artists
-                </h3>
-
-                <p className="font-body text-sm tracking-[0.25em] uppercase text-muted-foreground mt-5">
-                  Pioneer Works | Red Hook, Brooklyn
-                </p>
-
-                <p className="font-body text-base text-muted-foreground leading-relaxed mt-7">
-                  For a limited-edition 1800 Tequila bottle release featuring artist Dustin Yellin, B.MILLS provided the soundtrack for an intimate brand reception at Pioneer Works, the Brooklyn cultural space founded by Yellin.
-                </p>
-
-                <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
-                  The music was curated to complement the room: artful, culturally tuned, and intentional, supporting the brand experience while keeping the energy exactly where it needed to be.
-                </p>
-
-                <div className="mt-8 grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
-                      Client
-                    </p>
-                    <p className="font-body text-sm text-foreground">
-                      1800 Tequila
-                    </p>
-                  </div>
-
-                  <div>
-                    <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
-                      Role
-                    </p>
-                    <p className="font-body text-sm text-foreground">
-                      DJ / Music Curation
-                    </p>
-                  </div>
-
-                  <div>
-                    <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
-                      Setting
-                    </p>
-                    <p className="font-body text-sm text-foreground">
-                      Cocktail Reception
-                    </p>
-                  </div>
-
-                  <div>
-                    <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
-                      Focus
-                    </p>
-                    <p className="font-body text-sm text-foreground">
-                      Brand Atmosphere
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-4 mt-8">
-              <img
-                src="/images/corporate/1800-tequila/bmills-1800-tequila-dj-pioneer-works.png"
-                alt="B.MILLS DJing the 1800 Tequila Essential Artists reception at Pioneer Works"
-                className="w-full h-full object-cover aspect-[2/3]"
-              />
-              <img
-                src="/images/corporate/1800-tequila/1800-tequila-essential-artists-bottles.png"
-                alt="1800 Tequila Essential Artists limited edition bottles by Dustin Yellin"
-                className="w-full h-full object-cover aspect-[2/3]"
-              />
-              <img
-                src="/images/corporate/1800-tequila/dustin-yellin-pioneer-works-sculpture.png"
-                alt="Dustin Yellin artwork displayed at Pioneer Works for the 1800 Tequila event"
-                className="w-full h-full object-cover aspect-[2/3]"
-              />
-            </div>
-          </motion.div>
-
-          <div className="mt-16 space-y-16">
-            {selectedEvents.map((event, index) => (
-              <motion.div
-                key={event.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-10%' }}
-                transition={{
-                  duration: 0.9,
-                  ease: [0.25, 0.1, 0.25, 1],
-                  delay: 0.15 + index * 0.1,
-                }}
-                className="border-t border-border pt-10"
-              >
-                <h3 className="font-heading text-2xl md:text-3xl font-light text-foreground leading-tight">
-                  {event.title}
-                </h3>
-                <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mt-4">
-                  {event.meta}
-                </p>
-                <p className="font-body text-base text-muted-foreground leading-relaxed mt-6 max-w-4xl">
-                  {event.body}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
-            className="mt-20 pt-10 border-t border-border"
-          >
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-6">
-              Also Trusted For
-            </p>
-            <div className="grid md:grid-cols-3 gap-6">
-              {trustedFor.map((item) => (
-                <p
-                  key={item}
-                  className="font-body text-sm text-muted-foreground leading-relaxed"
-                >
-                  {item}
-                </p>
-              ))}
-            </div>
-          </motion.div>
+    {/* Gagosian Visual Case Study */}
+    <motion.div
+      initial={{ opacity: 0, y: 34 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-10%' }}
+      transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
+      className="mt-16 border-t border-border pt-10"
+    >
+      <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-12 items-start">
+        <div>
+          <img
+            src="/images/corporate/gagosian-avedon-100/gagosian-avedon-100-boom-boom-room-crowd.jpg"
+            alt="Gagosian Gallery Avedon 100 event crowd at Boom Boom Room in New York City"
+            className="w-full h-auto object-cover"
+          />
+          <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
+            GAGOSIAN GALLERY X AVEDON 100 | BOOM BOOM ROOM, NEW YORK CITY
+          </p>
         </div>
-      </section>
 
+        <div className="lg:pt-4">
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-5">
+            Cocktail Event + Afterparty / Art / Fashion / Culture
+          </p>
+
+          <h3 className="font-heading text-3xl md:text-4xl font-light text-foreground leading-tight">
+            Gagosian Gallery x Avedon 100
+          </h3>
+
+          <p className="font-body text-sm tracking-[0.25em] uppercase text-muted-foreground mt-5">
+            Boom Boom Room + Le Bain | New York City
+          </p>
+
+          <p className="font-body text-base text-muted-foreground leading-relaxed mt-7">
+            For Avedon 100 with Gagosian Gallery, B.MILLS curated the soundtrack for an evening that began at Boom Boom Room and later moved into Le Bain, with the full 18th floor of The Standard reserved for the event.
+          </p>
+
+          <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
+            With a guest list spanning fashion, art, and culture, including names like Anna Wintour, Gigi Hadid, and Naomi Campbell, the music direction called for taste, restraint, and just the right amount of movement. The soundtrack supported conversation, complemented the room, and carried the night with an intentional sense of momentum from cocktail hour through the closing stretch.
+          </p>
+
+          <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
+            Later featured in Vanity Fair and Vogue, the evening was noted by both publications, with B.MILLS named among the DJs behind the night.
+          </p>
+
+          <div className="mt-8 grid grid-cols-2 gap-4">
+            <div>
+              <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
+                Client
+              </p>
+              <p className="font-body text-sm text-foreground">
+                Gagosian Gallery
+              </p>
+            </div>
+
+            <div>
+              <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
+                Role
+              </p>
+              <p className="font-body text-sm text-foreground">
+                DJ / Music Curation
+              </p>
+            </div>
+
+            <div>
+              <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
+                Setting
+              </p>
+              <p className="font-body text-sm text-foreground">
+                Cocktail Event + Afterparty
+              </p>
+            </div>
+
+            <div>
+              <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
+                Focus
+              </p>
+              <p className="font-body text-sm text-foreground">
+                Fashion / Art / Culture
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-3 gap-4 mt-8">
+        <img
+          src="/images/corporate/gagosian-avedon-100/bmills-dj-gagosian-avedon-100-boom-boom-room.jpg"
+          alt="B.MILLS DJing the Gagosian Gallery Avedon 100 event at Boom Boom Room"
+          className="w-full h-full object-cover aspect-[2/3]"
+        />
+        <img
+          src="/images/corporate/gagosian-avedon-100/gagosian-avedon-100-boom-boom-room-bar-crowd.jpg"
+          alt="Black and white bar crowd scene from Gagosian Gallery Avedon 100 at Boom Boom Room"
+          className="w-full h-full object-cover aspect-[2/3]"
+        />
+        <img
+          src="/images/corporate/gagosian-avedon-100/gagosian-avedon-100-le-bain-after-party.jpg"
+          alt="Le Bain afterparty lighting and disco balls for Gagosian Gallery Avedon 100"
+          className="w-full h-full object-cover aspect-[2/3]"
+        />
+      </div>
+
+      <div className="mt-4">
+        <img
+          src="/images/corporate/gagosian-avedon-100/gagosian-avedon-100-boom-boom-room-cocktail-reception.jpg"
+          alt="Cocktail reception atmosphere at Gagosian Gallery Avedon 100 at Boom Boom Room"
+          className="w-full h-auto object-cover"
+        />
+        <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
+          BOOM BOOM ROOM COCKTAIL RECEPTION + LE BAIN CLOSING SET
+        </p>
+      </div>
+    </motion.div>
+
+    {/* 1800 Tequila Visual Case Study */}
+    <motion.div
+      initial={{ opacity: 0, y: 34 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-10%' }}
+      transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
+      className="mt-20 border-t border-border pt-10"
+    >
+      <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-12 items-start">
+        <div>
+          <img
+            src="/images/corporate/1800-tequila/1800-tequila-pioneer-works-crowd.png"
+            alt="1800 Tequila Essential Artists reception at Pioneer Works in Red Hook Brooklyn"
+            className="w-full h-auto object-cover"
+          />
+          <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
+            1800 TEQUILA X ESSENTIAL ARTISTS | PIONEER WORKS, BROOKLYN
+          </p>
+        </div>
+
+        <div className="lg:pt-4">
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-5">
+            Brand Reception / Limited Edition Launch / Art World Event
+          </p>
+
+          <h3 className="font-heading text-3xl md:text-4xl font-light text-foreground leading-tight">
+            1800 Tequila x Essential Artists
+          </h3>
+
+          <p className="font-body text-sm tracking-[0.25em] uppercase text-muted-foreground mt-5">
+            Pioneer Works | Red Hook, Brooklyn
+          </p>
+
+          <p className="font-body text-base text-muted-foreground leading-relaxed mt-7">
+            For a limited edition 1800 Tequila bottle release featuring artist Dustin Yellin, B.MILLS provided the soundtrack for an intimate brand reception at Pioneer Works, the Brooklyn cultural space founded by Yellin.
+          </p>
+
+          <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
+            The music was curated to complement the room: artful, culturally tuned, and intentional, supporting the brand experience while keeping the energy exactly where it needed to be.
+          </p>
+
+          <div className="mt-8 grid grid-cols-2 gap-4">
+            <div>
+              <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
+                Client
+              </p>
+              <p className="font-body text-sm text-foreground">
+                1800 Tequila
+              </p>
+            </div>
+
+            <div>
+              <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
+                Role
+              </p>
+              <p className="font-body text-sm text-foreground">
+                DJ / Music Curation
+              </p>
+            </div>
+
+            <div>
+              <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
+                Setting
+              </p>
+              <p className="font-body text-sm text-foreground">
+                Cocktail Reception
+              </p>
+            </div>
+
+            <div>
+              <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
+                Focus
+              </p>
+              <p className="font-body text-sm text-foreground">
+                Brand Atmosphere
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-3 gap-4 mt-8">
+        <img
+          src="/images/corporate/1800-tequila/bmills-1800-tequila-dj-pioneer-works.png"
+          alt="B.MILLS DJing the 1800 Tequila Essential Artists reception at Pioneer Works"
+          className="w-full h-full object-cover aspect-[2/3]"
+        />
+        <img
+          src="/images/corporate/1800-tequila/1800-tequila-essential-artists-bottles.png"
+          alt="1800 Tequila Essential Artists limited edition bottles by Dustin Yellin"
+          className="w-full h-full object-cover aspect-[2/3]"
+        />
+        <img
+          src="/images/corporate/1800-tequila/dustin-yellin-pioneer-works-sculpture.png"
+          alt="Dustin Yellin artwork displayed at Pioneer Works for the 1800 Tequila event"
+          className="w-full h-full object-cover aspect-[2/3]"
+        />
+      </div>
+    </motion.div>
+
+    <div className="mt-16 space-y-16">
+      {[
+        {
+          title: "Sammontana Gelati All’Italiana U.S. Launch",
+          meta: "Brand Launch | Eataly Rooftop, New York City",
+          body: "For the U.S. launch of Sammontana Gelati All’Italiana at Eataly Rooftop, I curated the soundtrack for a crowd with a distinctly European feel, including many Italian guests. I was brought in through a referral from Kering Eyewear, a past client I had worked with across multiple events, which made the booking feel especially aligned from the start. The music direction was designed to reflect the brand’s roots and the mood of the evening, beginning with a relaxed, stylish energy as guests arrived and settled into the space, then gradually building into a more upbeat European house direction as the night progressed. The result felt culturally in tune, brand right, and effortless in its progression.",
+        },
+        {
+          title: "School of American Ballet Ball",
+          meta: "Dinner + Dancing | Lincoln Center, New York City",
+          body: "Trusted for two consecutive years to soundtrack the SAB Ball, I shaped the full musical arc of the evening for approximately 450 guests, including high net worth donors and dance enthusiasts. I was referred by the New York City Ballet Young Patrons Circle event team, following 13 years of DJing their Young Patrons Circle post performance parties in The Promenade of the David H. Koch Theater. The night began with a smooth, soulful dinner soundtrack that brought warmth and movement into the room while keeping the tone elegant. From there, the energy built naturally into a more celebratory dance floor later in the evening, allowing the event to shift without losing its sense of refinement.",
+        },
+      ].map((event, index) => (
+        <motion.div
+          key={event.title}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-10%' }}
+          transition={{
+            duration: 0.9,
+            ease: [0.25, 0.1, 0.25, 1],
+            delay: 0.15 + index * 0.1,
+          }}
+          className="border-t border-border pt-10"
+        >
+          <h3 className="font-heading text-2xl md:text-3xl font-light text-foreground leading-tight">
+            {event.title}
+          </h3>
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mt-4">
+            {event.meta}
+          </p>
+          <p className="font-body text-base text-muted-foreground leading-relaxed mt-6 max-w-4xl">
+            {event.body}
+          </p>
+        </motion.div>
+      ))}
+    </div>
+
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-10%' }}
+      transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
+      className="mt-20 pt-10 border-t border-border"
+    >
+      <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-6">
+        Also Trusted For
+      </p>
+      <div className="grid md:grid-cols-3 gap-6">
+        {trustedFor.map((item) => (
+          <p
+            key={item}
+            className="font-body text-sm text-muted-foreground leading-relaxed"
+          >
+            {item}
+          </p>
+        ))}
+      </div>
+    </motion.div>
+  </div>
+</section>
+      
       {/* Section 04: Experience / Logistics */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border" style={{ backgroundColor: '#0d0d0d' }}>
         <div className="max-w-4xl mx-auto">
