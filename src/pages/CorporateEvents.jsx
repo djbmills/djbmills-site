@@ -11,14 +11,9 @@ const selectedEvents = [
     body: "For the U.S. launch of Sammontana Gelati All’Italiana at Eataly Rooftop, I curated the soundtrack for a crowd with a distinctly European feel, including many Italian guests. I was brought in through a referral from Kering Eyewear, a past client I had worked with across multiple events, which made the booking feel especially aligned from the start. The music direction was designed to reflect the brand’s roots and the mood of the evening, beginning with a relaxed, stylish energy as guests arrived and settled into the space, then gradually building into a more upbeat European house direction as the night progressed. The result felt culturally in tune, brand right, and effortless in its progression.",
   },
   {
-    title: "Gagosian Gallery x Avedon 100",
-    meta: "Cocktail Event | Boom Boom Room, New York City",
-    body: "For Avedon 100 with Gagosian Gallery at Boom Boom Room, I curated the soundtrack for a cocktail event that called for taste, restraint, and just the right amount of movement. I was recommended to the Director of Events at Gagosian by The Standard’s event sales team, which made the booking feel especially aligned from the start. With a guest list spanning fashion, art, and culture, including names like Anna Wintour, Gigi Hadid, and Naomi Campbell, the goal was to create an atmosphere that felt elevated and alive without ever pulling focus from the room itself. The soundtrack supported conversation, complemented the setting, and carried the evening with an intentional sense of momentum from start to finish. Later featured in Vanity Fair and Vogue, the evening was noted by both publications, with B.Mills named among the DJs behind the night.",
-  },
-  {
     title: "School of American Ballet Ball",
     meta: "Dinner + Dancing | Lincoln Center, New York City",
-    body: "Trusted for two consecutive years to soundtrack the SAB Ball, I shaped the full musical arc of the evening for approximately 450 guests, including high-net-worth donors and dance enthusiasts. I was referred by the New York City Ballet Young Patrons Circle event team, following 13 years of DJing their Young Patrons Circle post-performance parties in The Promenade of the David H. Koch Theater. The night began with a smooth, soulful dinner soundtrack that brought warmth and movement into the room while keeping the tone elegant. From there, the energy built naturally into a more celebratory dance floor later in the evening, allowing the event to shift without losing its sense of polish.",
+    body: "Trusted for two consecutive years to soundtrack the SAB Ball, I shaped the full musical arc of the evening for approximately 450 guests, including high net worth donors and dance enthusiasts. I was referred by the New York City Ballet Young Patrons Circle event team, following 13 years of DJing their Young Patrons Circle post performance parties in The Promenade of the David H. Koch Theater. The night began with a smooth, soulful dinner soundtrack that brought warmth and movement into the room while keeping the tone elegant. From there, the energy built naturally into a more celebratory dance floor later in the evening, allowing the event to shift without losing its sense of refinement.",
   },
 ];
 
@@ -463,44 +458,33 @@ export default function CorporateEvents() {
       </div>
     </motion.div>
 
-    <div className="mt-16 space-y-16">
-      {[
-        {
-          title: "Sammontana Gelati All’Italiana U.S. Launch",
-          meta: "Brand Launch | Eataly Rooftop, New York City",
-          body: "For the U.S. launch of Sammontana Gelati All’Italiana at Eataly Rooftop, I curated the soundtrack for a crowd with a distinctly European feel, including many Italian guests. I was brought in through a referral from Kering Eyewear, a past client I had worked with across multiple events, which made the booking feel especially aligned from the start. The music direction was designed to reflect the brand’s roots and the mood of the evening, beginning with a relaxed, stylish energy as guests arrived and settled into the space, then gradually building into a more upbeat European house direction as the night progressed. The result felt culturally in tune, brand right, and effortless in its progression.",
-        },
-        {
-          title: "School of American Ballet Ball",
-          meta: "Dinner + Dancing | Lincoln Center, New York City",
-          body: "Trusted for two consecutive years to soundtrack the SAB Ball, I shaped the full musical arc of the evening for approximately 450 guests, including high net worth donors and dance enthusiasts. I was referred by the New York City Ballet Young Patrons Circle event team, following 13 years of DJing their Young Patrons Circle post performance parties in The Promenade of the David H. Koch Theater. The night began with a smooth, soulful dinner soundtrack that brought warmth and movement into the room while keeping the tone elegant. From there, the energy built naturally into a more celebratory dance floor later in the evening, allowing the event to shift without losing its sense of refinement.",
-        },
-      ].map((event, index) => (
-        <motion.div
-          key={event.title}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-10%' }}
-          transition={{
-            duration: 0.9,
-            ease: [0.25, 0.1, 0.25, 1],
-            delay: 0.15 + index * 0.1,
-          }}
-          className="border-t border-border pt-10"
-        >
-          <h3 className="font-heading text-2xl md:text-3xl font-light text-foreground leading-tight">
-            {event.title}
-          </h3>
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mt-4">
-            {event.meta}
-          </p>
-          <p className="font-body text-base text-muted-foreground leading-relaxed mt-6 max-w-4xl">
-            {event.body}
-          </p>
-        </motion.div>
-      ))}
-    </div>
-
+  <div className="mt-16 space-y-16">
+  {selectedEvents.map((event, index) => (
+    <motion.div
+      key={event.title}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-10%' }}
+      transition={{
+        duration: 0.9,
+        ease: [0.25, 0.1, 0.25, 1],
+        delay: 0.15 + index * 0.1,
+      }}
+      className="border-t border-border pt-10"
+    >
+      <h3 className="font-heading text-2xl md:text-3xl font-light text-foreground leading-tight">
+        {event.title}
+      </h3>
+      <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mt-4">
+        {event.meta}
+      </p>
+      <p className="font-body text-base text-muted-foreground leading-relaxed mt-6 max-w-4xl">
+        {event.body}
+      </p>
+    </motion.div>
+  ))}
+</div>
+    
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
