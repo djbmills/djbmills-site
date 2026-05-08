@@ -243,7 +243,7 @@ export default function CorporateEvents() {
       A look at the rooms, audiences, and events that reflect the kind of work B.MILLS is trusted to do.
     </motion.p>
 
-    {/* Gagosian Visual Case Study */}
+{/* Gagosian Visual Case Study */}
 <motion.div
   initial={{ opacity: 0, y: 34 }}
   whileInView={{ opacity: 1, y: 0 }}
@@ -251,18 +251,7 @@ export default function CorporateEvents() {
   transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
   className="mt-16 border-t border-border pt-10"
 >
-  <div>
-    <img
-      src="/images/corporate/gagosian-avedon-100/gagosian-avedon-100-boom-boom-room-crowd.jpg"
-      alt="Gagosian Gallery Avedon 100 event crowd at Boom Boom Room in New York City"
-      className="w-full h-auto object-cover"
-    />
-    <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
-      GAGOSIAN GALLERY X AVEDON 100 | BOOM BOOM ROOM, NEW YORK CITY
-    </p>
-  </div>
-
-  <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-14 mt-12 items-start">
+  <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-14 items-start">
     <div>
       <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-5">
         Cocktail Event + Afterparty / Art / Fashion / Culture
@@ -289,53 +278,64 @@ export default function CorporateEvents() {
       <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
         Later featured in Vanity Fair and Vogue, the evening was noted by both publications, with B.MILLS named among the DJs behind the night.
       </p>
-
-      <div className="mt-8 grid grid-cols-2 gap-4">
-        <div>
-          <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
-            Client
-          </p>
-          <p className="font-body text-sm text-foreground">
-            Gagosian Gallery
-          </p>
-        </div>
-
-        <div>
-          <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
-            Role
-          </p>
-          <p className="font-body text-sm text-foreground">
-            DJ / Music Curation
-          </p>
-        </div>
-
-        <div>
-          <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
-            Setting
-          </p>
-          <p className="font-body text-sm text-foreground">
-            Cocktail Event + Afterparty
-          </p>
-        </div>
-
-        <div>
-          <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
-            Focus
-          </p>
-          <p className="font-body text-sm text-foreground">
-            Fashion / Art / Culture
-          </p>
-        </div>
-      </div>
     </div>
   </div>
 
-  <div className="grid md:grid-cols-2 gap-4 mt-12">
+  <div className="mt-12">
+    <img
+      src="/images/corporate/gagosian-avedon-100/gagosian-avedon-100-boom-boom-room-crowd.jpg"
+      alt="Gagosian Gallery Avedon 100 event crowd at Boom Boom Room in New York City"
+      className="w-full h-auto object-cover"
+    />
+    <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
+      GAGOSIAN GALLERY X AVEDON 100 | BOOM BOOM ROOM, NEW YORK CITY
+    </p>
+  </div>
+
+  <div className="grid md:grid-cols-4 gap-6 lg:gap-8 mt-12 pt-10 border-t border-border">
+    <div>
+      <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
+        Client
+      </p>
+      <p className="font-body text-sm text-foreground">
+        Gagosian Gallery
+      </p>
+    </div>
+
+    <div>
+      <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
+        Role
+      </p>
+      <p className="font-body text-sm text-foreground">
+        DJ / Music Curation
+      </p>
+    </div>
+
+    <div>
+      <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
+        Setting
+      </p>
+      <p className="font-body text-sm text-foreground">
+        Cocktail Event + Afterparty
+      </p>
+    </div>
+
+    <div>
+      <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
+        Focus
+      </p>
+      <p className="font-body text-sm text-foreground">
+        Fashion / Art / Culture
+      </p>
+    </div>
+  </div>
+
+  <div className="grid md:grid-cols-2 gap-8 lg:gap-10 mt-14">
     <div>
       <img
         src="/images/corporate/gagosian-avedon-100/bmills-dj-gagosian-avedon-100-boom-boom-room.jpg"
         alt="B.MILLS DJing the Gagosian Gallery Avedon 100 event at Boom Boom Room"
-        className="w-full h-full object-cover object-left aspect-[4/3]"
+        className="w-full h-auto object-cover"
       />
       <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
         B.MILLS DJING AT BOOM BOOM ROOM
@@ -346,7 +346,7 @@ export default function CorporateEvents() {
       <img
         src="/images/corporate/gagosian-avedon-100/gagosian-avedon-100-boom-boom-room-bar-crowd.jpg"
         alt="Black and white bar crowd scene from Gagosian Gallery Avedon 100 at Boom Boom Room"
-        className="w-full h-full object-cover aspect-[4/3]"
+        className="w-full h-auto object-cover"
       />
       <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
         BOOM BOOM ROOM BAR + CROWD
@@ -354,7 +354,7 @@ export default function CorporateEvents() {
     </div>
   </div>
 
-  <div className="mt-8">
+  <div className="mt-14 pt-10 border-t border-border">
     <img
       src="/images/corporate/gagosian-avedon-100/gagosian-avedon-100-le-bain-after-party.jpg"
       alt="Le Bain afterparty lighting and disco balls for Gagosian Gallery Avedon 100"
