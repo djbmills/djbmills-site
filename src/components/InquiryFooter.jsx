@@ -22,6 +22,7 @@ const SpotifyIcon = ({ className }) => (
 
 export default function InquiryFooter({
   headline = "Let's shape\nthe night.",
+  // Prop updated to "soundtrack"
   body = "Share a few details and we can build a curated soundtrack for your event, your space, and your audience.",
   footerText = "Serving luxury corporate events, brand activations, and private clients across New York City, the Hamptons, Westchester, New Jersey, and Connecticut. Available for travel worldwide."
 }) {
@@ -95,7 +96,7 @@ export default function InquiryFooter({
         <div className="grid md:grid-cols-2 gap-16 md:gap-24 mb-40">
           
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            {/* Italic class removed from availability line */}
+            {/* Non-italic badge, fixed year format */}
             <p className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-4">
               Inquire · Late 2026 / 2027 Availability
             </p>
