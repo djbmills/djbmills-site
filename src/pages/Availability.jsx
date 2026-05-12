@@ -11,7 +11,7 @@ export default function Availability() {
     <main className="pt-24 min-h-screen bg-[#ebe6d9]"> 
       <InquiryFooter 
         headline="Secure the Date."
-        body="B.MILLS is currently booking for 2026/2027. Please provide your event details below to confirm availability and receive a tailored proposal."
+        body="B.MILLS is currently booking for late 2026/2027. Please provide your event details to confirm availability and receive a tailored proposal."
       />
     </main>
   );
