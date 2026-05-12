@@ -96,4 +96,135 @@ export default function InquiryFooter({
           
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <p className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-4 italic">
-              Inquire · Late 20
+              Inquire · Late 2026 / 2027 Availability
+            </p>
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight italic tracking-tight">{headline}</h2>
+            <div className="w-12 h-px bg-foreground/20 mb-8" />
+            <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-sm mb-12">{body}</p>
+            
+            <div className="space-y-1">
+              <a href="mailto:bookings@djbmills.com" className="font-body text-xs tracking-[0.2em] uppercase text-foreground hover:opacity-60 transition-opacity">
+                bookings@djbmills.com
+              </a>
+              <p className="font-body text-[9px] tracking-[0.2em] text-muted-foreground uppercase opacity-70">
+                Response within 24 hours
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+            <form name="inquiry" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-10">
+              <input type="hidden" name="form-name" value="inquiry" />
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+                <div>
+                  <label className={labelClass}>Name <span className={tagClass}>Required</span></label>
+                  <Input name="name" value={formData.name} onChange={handleChange} required className={fieldClass} />
+                </div>
+                <div>
+                  <label className={labelClass}>Email <span className={tagClass}>Required</span></label>
+                  <Input name="email" type="email" value={formData.email} onChange={handleChange} required className={fieldClass} />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+                <div>
+                  <label className={labelClass}>Event Date <span className={tagClass}>Required</span></label>
+                  <Popover open={calendarOpen} onOpenChange={setCalendarOpen}>
+                    <PopoverTrigger asChild>
+                      <button type="button" className="w-full bg-transparent border-0 border-b border-foreground/20 rounded-none pb-3 text-left font-body text-sm flex items-center justify-between h-10 shadow-none">
+                        <span className={formData.eventDate ? 'text-foreground' : 'text-muted-foreground/30'}>
+                          {formData.eventDate ? format(formData.eventDate, 'MMMM d, yyyy') : 'Select date'}
+                        </span>
+                        <CalendarIcon className="w-4 h-4 text-muted-foreground/40" />
+                      </button>
+                    </PopoverTrigger>
+                    <PopoverContent align="start" className="w-auto p-0 border border-border rounded-none bg-[#ebe6d9] shadow-2xl">
+                      <Calendar mode="single" selected={formData.eventDate} onSelect={handleDateChange} disabled={(date) => date < new Date(new Date().setHours(0,0,0,0))} />
+                    </PopoverContent>
+                  </Popover>
+                </div>
+                <div>
+                  <label className={labelClass}>Location</label>
+                  <Input name="location" value={formData.location} onChange={handleChange} placeholder="Venue or City" className={fieldClass} />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+                <div>
+                  <label className={labelClass}>Event Type</label>
+                  <Input name="eventType" value={formData.eventType} onChange={handleChange} placeholder="Wedding, Brand, Corporate..." className={fieldClass} />
+                </div>
+                <div>
+                  <label className={labelClass}>Guest Count</label>
+                  <Input name="guestCount" value={formData.guestCount} onChange={handleChange} placeholder="Estimated count" className={fieldClass} />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+                <div>
+                  <label className={labelClass}>Atmosphere</label>
+                  <Input name="atmosphere" value={formData.atmosphere} onChange={handleChange} placeholder="Vibe / Energy goals" className={fieldClass} />
+                </div>
+                <div>
+                  <label className={labelClass}>Event Timing</label>
+                  <Input name="eventTiming" value={formData.eventTiming} onChange={handleChange} placeholder="Expected hours" className={fieldClass} />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+                <div>
+                  <label className={labelClass}>Do I need to provide sound?</label>
+                  <Input name="equipmentProvided" value={formData.equipmentProvided} onChange={handleChange} placeholder="Audio details at venue" className={fieldClass} />
+                </div>
+                <div>
+                  <label className={labelClass}>Planner Contact</label>
+                  <Input name="plannerContact" value={formData.plannerContact} onChange={handleChange} placeholder="Name / Email" className={fieldClass} />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 gap-10">
+                <div>
+                  <label className={labelClass}>How did you hear about me?</label>
+                  <Input name="hearAbout" value={formData.hearAbout} onChange={handleChange} placeholder="Instagram, Referral, Google..." className={fieldClass} />
+                </div>
+              </div>
+
+              {submitStatus && <p className="font-body text-xs text-foreground italic border-l-2 border-foreground pl-4 py-1">{submitStatus}</p>}
+
+              <Button type="submit" disabled={isSubmitting} className="w-full sm:w-auto bg-foreground text-background hover:bg-foreground/90 font-body text-[11px] tracking-[0.25em] uppercase px-12 py-7 rounded-none transition-all flex items-center gap-4">
+                {isSubmitting ? 'Sending...' : 'Check My Date'} <ArrowRight className="w-4 h-4" />
+              </Button>
+            </form>
+          </motion.div>
+        </div>
+
+        <div className="pt-16 border-t border-border/40 flex flex-col items-center text-center">
+          <button onClick={scrollToTop} className="mb-10 group transition-transform hover:scale-105 active:scale-95">
+            <img 
+              src="/logos/bmills-logo-white.png" 
+              alt="B.MILLS" 
+              className="h-12 w-auto mx-auto brightness-0 opacity-90" 
+            />
+          </button>
+          
+          <div className="flex items-center gap-8 mb-12">
+            <a href="https://instagram.com/djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><Instagram className="w-5 h-5" /></a>
+            <a href="https://tiktok.com/@djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><TikTokIcon className="w-5 h-5" /></a>
+            <a href="http://googleusercontent.com/spotify.com/6" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><SpotifyIcon className="w-5 h-5" /></a>
+            <a href="https://www.linkedin.com/in/bmillsdj/" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><Linkedin className="w-5 h-5" /></a>
+            <a href="mailto:bookings@djbmills.com" className="text-foreground/50 hover:text-foreground transition-colors"><Mail className="w-5 h-5" /></a>
+          </div>
+          
+          <p className="font-body text-[11px] tracking-tight text-muted-foreground leading-relaxed max-w-2xl opacity-90 mb-8">
+            {footerText}
+          </p>
+          
+          <p className="font-body text-[10px] tracking-normal text-muted-foreground/40 italic">
+            © {new Date().getFullYear()} B.MILLS. New York City · The Hamptons · Westchester · New Jersey · Connecticut · Worldwide
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
