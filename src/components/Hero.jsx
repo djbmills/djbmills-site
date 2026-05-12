@@ -9,7 +9,7 @@ export default function Hero() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
 
   const yDesktop = useTransform(scrollYProgress, [0, 1], ['0%', '14%']);
-  const yMobile = useTransform(scrollYProgress, [0, 1], ['0%', '6%']);
+  const yMobile = useTransform(scrollYProgress, [0, 1], ['0%', '-5%']);
   const scale = useTransform(scrollYProgress, [0, 1], [1.04, 1.0]);
 
   return (
@@ -17,16 +17,16 @@ export default function Hero() {
       {/* ── MOBILE LAYOUT ── */}
       {/* Added -mt-[2px] and pt-[2px] to force the section to the absolute top edge */}
       <section ref={ref} className="flex flex-col md:hidden bg-white -mt-[2px] pt-[2px]">
-        {/* Image container */}
-        <div className="w-full h-[58vh] overflow-hidden bg-white relative">
-          <motion.img
-            src={HERO_IMG}
-            alt="B.MILLS Luxury Event DJ NYC"
-            // -mt-[1px] ensures the image "bleeds" over the top edge
-            className="w-full h-full object-cover object-[60%_12%] -mt-[1px]"
-            style={{ y: yMobile, scale }}
-          />
-        </div>
+       {/* Image container */}
+<div className="w-full h-[58vh] overflow-hidden bg-white relative">
+  <motion.img
+    src={HERO_IMG}
+    alt="B.MILLS Luxury Event DJ NYC"
+    // We add h-[110%] and a -top-2 to ensure there is always "extra" image at the top
+    className="absolute -top-2 left-0 w-full h-[110%] object-cover object-[60%_12%]"
+    style={{ y: yMobile, scale }}
+  />
+</div>
 
         {/* Text block */}
         <div className="px-6 pt-10 pb-14 bg-white">
