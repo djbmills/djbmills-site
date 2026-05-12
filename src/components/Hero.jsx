@@ -14,57 +14,61 @@ export default function Hero() {
 
   return (
     <>
-      {/* ── MOBILE LAYOUT ── */}
-      {/* Added -mt-[2px] and pt-[2px] to force the section to the absolute top edge */}
-      <section ref={ref} className="flex flex-col md:hidden bg-white -mt-[2px] pt-[2px]">
-       {/* Image container */}
-<div className="w-full h-[58vh] overflow-hidden bg-white relative">
-  <motion.img
-    src={HERO_IMG}
-    alt="B.MILLS Luxury Event DJ NYC"
-    // We add h-[110%] and a -top-2 to ensure there is always "extra" image at the top
-    className="absolute -top-2 left-0 w-full h-[110%] object-cover object-[60%_12%]"
-    style={{ y: yMobile, scale }}
-  />
-</div>
+    {/* ── MOBILE LAYOUT ── */}
+<section ref={ref} className="flex flex-col md:hidden bg-white">
+  {/* Image container - Changed h-[58vh] to a fixed 420px to prevent jumping */}
+  <div className="w-full h-[420px] overflow-hidden bg-white relative">
+    <motion.img
+      src={HERO_IMG}
+      alt="B.MILLS Luxury Event DJ NYC"
+      // Added will-change-transform and removed the -top-2 to keep it stable
+      className="w-full h-full object-cover object-[60%_12%] will-change-transform"
+      style={{ 
+        y: yMobile, 
+        scale,
+        // This forces the browser to use hardware acceleration for smoother movement
+        translateZ: 0 
+      }}
+    />
+  </div>
 
-        {/* Text block */}
-        <div className="px-6 pt-10 pb-14 bg-white">
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-body text-[10px] tracking-[0.28em] uppercase text-foreground/50 mb-5"
-          >
-            Curator · DJ · Atmosphere
-          </motion.p>
+  {/* Text block */}
+  <div className="px-6 pt-10 pb-14 bg-white relative z-10">
+    <motion.p
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      className="font-body text-[10px] tracking-[0.28em] uppercase text-foreground/50 mb-5"
+    >
+      Curator · DJ · Atmosphere
+    </motion.p>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="font-display text-[4.5rem] text-foreground leading-none tracking-wide mb-7"
-          >
-            B.MILLS
-          </motion.h1>
+    <motion.h1
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.4 }}
+      className="font-display text-[4.5rem] text-foreground leading-none tracking-wide mb-7"
+    >
+      B.MILLS
+    </motion.h1>
 
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.6, delay: 0.9 }}
-            className="w-14 h-px bg-foreground/25 mb-7 origin-left"
-          />
+    <motion.div
+      initial={{ scaleX: 0 }}
+      animate={{ scaleX: 1 }}
+      transition={{ duration: 0.6, delay: 0.9 }}
+      className="w-14 h-px bg-foreground/25 mb-7 origin-left"
+    />
 
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 1.1 }}
-            className="font-body text-xs tracking-[0.15em] uppercase text-foreground/60 max-w-[240px]"
-          >
-            Less talk. Better music.
-          </motion.p>
-        </div>
-      </section>
+    <motion.p
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 1.1 }}
+      className="font-body text-xs tracking-[0.15em] uppercase text-foreground/60 max-w-[240px]"
+    >
+      Less talk. Better music.
+    </motion.p>
+  </div>
+</section>
 
       {/* ── DESKTOP LAYOUT ── */}
       <section ref={ref} className="relative h-screen w-full overflow-hidden bg-white hidden md:block -mt-[1px]">
