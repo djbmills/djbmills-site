@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { ArrowRight, CalendarIcon, Mail } from 'lucide-react';
+import { ArrowRight, CalendarIcon, Instagram, Linkedin, Mail } from 'lucide-react';
 import { format } from 'date-fns';
-import { useRouter } from 'next/router'; // Added for redirecting
+import { useRouter } from 'next/router';
 
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -25,11 +25,14 @@ export default function InquiryFooter({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
 
+  // Form Classes
   const requiredLabelClass = 'font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 flex items-center justify-between gap-3';
   const optionalLabelClass = 'font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block';
-  const requiredFieldClass = 'bg-transparent border-0 border-b border-foreground/40 rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors';
-  const optionalFieldClass = 'bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors';
+  const requiredFieldClass = 'bg-transparent border-0 border-b border-foreground/40 rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors h-10';
+  const optionalFieldClass = 'bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors h-10';
   const requiredTagClass = 'font-body text-[10px] tracking-[0.18em] uppercase text-foreground/55';
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -53,11 +56,7 @@ export default function InquiryFooter({
     }
 
     setIsSubmitting(true);
-    const payload = {
-      'form-name': 'inquiry',
-      ...formData,
-      eventDate: format(formData.eventDate, 'MMMM d, yyyy')
-    };
+    const payload = { 'form-name': 'inquiry', ...formData, eventDate: format(formData.eventDate, 'MMMM d, yyyy') };
 
     try {
       const response = await fetch('/', {
@@ -65,22 +64,15 @@ export default function InquiryFooter({
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode(payload)
       });
-
       if (!response.ok) throw new Error();
-
-      setSubmitStatus('Confirmed. Sending you to the music...');
-      
+      setSubmitStatus('Confirmed. Connecting you to the music...');
       setTimeout(() => {
         if (router.pathname === '/') {
-          // If on home page, just scroll
-          const mixtapeSection = document.getElementById('mixtapes');
-          mixtapeSection?.scrollIntoView({ behavior: 'smooth' });
+          document.getElementById('mixtapes')?.scrollIntoView({ behavior: 'smooth' });
         } else {
-          // If on Availability or Corporate page, redirect to home page music
           router.push('/#mixtapes');
         }
       }, 2000);
-
     } catch (error) {
       setSubmitStatus('Something went wrong. Please try again.');
     } finally {
@@ -89,25 +81,29 @@ export default function InquiryFooter({
   };
 
   return (
-    <section id="inquiry" className="py-16 md:py-24 px-6 md:px-12 border-t border-border relative overflow-hidden warm-grain" style={{ backgroundColor: '#ebe6d9' }}>
+    <section id="inquiry" className="py-20 md:py-32 px-6 md:px-12 border-t border-border relative overflow-hidden warm-grain" style={{ backgroundColor: '#ebe6d9' }}>
       <div className="max-w-7xl mx-auto relative">
         <div className="grid md:grid-cols-2 gap-16 md:gap-24">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <p className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-4">Inquire · 2026 Availability</p>
+            {/* Updated Lead Line */}
+            <p className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-4 italic">
+              Inquire · Late 2026 / 2027 Availability
+            </p>
             <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight italic tracking-tight">{headline}</h2>
             <div className="w-12 h-px bg-foreground/20 mb-8" />
             <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-sm mb-10">{body}</p>
-            <div className="space-y-4">
-              <a href="mailto:bookings@djbmills.com" className="font-body text-sm text-foreground hover:text-muted-foreground transition-colors flex items-center gap-2">
-                <Mail className="w-4 h-4" /> bookings@djbmills.com
-              </a>
-              <p className="font-body text-[10px] tracking-widest text-muted-foreground uppercase">Response within 24 Hours</p>
+            
+            {/* Social Cluster restored */}
+            <div className="flex items-center gap-6">
+              <a href="https://instagram.com/djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-muted-foreground transition-colors"><Instagram className="w-5 h-5" /></a>
+              <a href="https://linkedin.com/in/djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-muted-foreground transition-colors"><Linkedin className="w-5 h-5" /></a>
+              <a href="mailto:bookings@djbmills.com" className="text-foreground hover:text-muted-foreground transition-colors"><Mail className="w-5 h-5" /></a>
             </div>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}>
-            <form name="inquiry" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <form name="inquiry" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div>
                   <label className={requiredLabelClass}><span>Name</span><span className={requiredTagClass}>Required</span></label>
                   <Input name="name" value={formData.name} onChange={handleChange} required className={requiredFieldClass} />
@@ -118,19 +114,19 @@ export default function InquiryFooter({
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="relative">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div>
                   <label className={requiredLabelClass}><span>Event Date</span><span className={requiredTagClass}>Required</span></label>
                   <Popover open={calendarOpen} onOpenChange={setCalendarOpen}>
                     <PopoverTrigger asChild>
-                      <button type="button" className="w-full bg-transparent border-0 border-b border-foreground/40 rounded-none px-0 pb-3 text-left font-body text-sm text-foreground flex items-center justify-between">
+                      <button type="button" className="w-full bg-transparent border-0 border-b border-foreground/40 rounded-none px-0 pb-3 text-left font-body text-sm flex items-center justify-between h-10">
                         <span className={formData.eventDate ? 'text-foreground' : 'text-muted-foreground/50'}>
                           {formData.eventDate ? format(formData.eventDate, 'MMMM d, yyyy') : 'Select date'}
                         </span>
                         <CalendarIcon className="w-4 h-4 text-muted-foreground" />
                       </button>
                     </PopoverTrigger>
-                    <PopoverContent align="start" className="w-auto p-0 border border-border rounded-none shadow-none bg-[#ebe6d9]">
+                    <PopoverContent align="start" className="w-auto p-0 border border-border rounded-none bg-[#ebe6d9] shadow-2xl">
                       <Calendar mode="single" selected={formData.eventDate} onSelect={handleDateChange} disabled={(date) => date < new Date(new Date().setHours(0,0,0,0))} />
                     </PopoverContent>
                   </Popover>
@@ -155,9 +151,17 @@ export default function InquiryFooter({
           </motion.div>
         </div>
 
-        <div className="mt-24 pt-12 border-t border-border/40 flex flex-col items-center gap-8 text-center">
+        {/* Restore Logo and Site Footer Info */}
+        <div className="mt-32 pt-16 border-t border-border/40 flex flex-col items-center gap-12 text-center">
+          <button onClick={scrollToTop} className="group transition-transform duration-500 hover:scale-105 active:scale-95">
+            <img src="/images/logo-black.png" alt="B.MILLS" className="h-8 md:h-10 w-auto" />
+          </button>
+          
           <p className="font-body text-[10px] tracking-widest text-muted-foreground leading-relaxed max-w-2xl uppercase opacity-80">{footerText}</p>
-          <p className="font-body text-[9px] tracking-[0.3em] text-muted-foreground/40 uppercase">© {new Date().getFullYear()} B.MILLS · NYC · THE HAMPTONS · WORLDWIDE</p>
+          
+          <div className="space-y-4">
+            <p className="font-body text-[9px] tracking-[0.3em] text-muted-foreground/40 uppercase">© {new Date().getFullYear()} B.MILLS · NYC · THE HAMPTONS · WORLDWIDE</p>
+          </div>
         </div>
       </div>
     </section>
