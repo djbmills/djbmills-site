@@ -22,7 +22,7 @@ const SpotifyIcon = ({ className }) => (
 
 export default function InquiryFooter({
   headline = "Let's shape\nthe night.",
-  body = "Every event is different. Share a few details and we can map out the right approach for your space, audience, and goals.",
+  body = "Share a few details and we can build a curated soundtrack for your event, your space, and your audience.",
   footerText = "Serving luxury corporate events, brand activations, and private clients across New York City, the Hamptons, Westchester, New Jersey, and Connecticut. Available for travel worldwide."
 }) {
   const [formData, setFormData] = useState({
@@ -95,7 +95,8 @@ export default function InquiryFooter({
         <div className="grid md:grid-cols-2 gap-16 md:gap-24 mb-40">
           
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <p className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-4 italic">
+            {/* Italic class removed from availability line */}
+            <p className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-4">
               Inquire · Late 2026 / 2027 Availability
             </p>
             <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight italic tracking-tight">{headline}</h2>
@@ -211,7 +212,7 @@ export default function InquiryFooter({
           <div className="flex items-center gap-8 mb-12">
             <a href="https://instagram.com/djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><Instagram className="w-5 h-5" /></a>
             <a href="https://tiktok.com/@djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><TikTokIcon className="w-5 h-5" /></a>
-            <a href="http://googleusercontent.com/spotify.com/6" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><SpotifyIcon className="w-5 h-5" /></a>
+            <a href="https://open.spotify.com/user/djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><SpotifyIcon className="w-5 h-5" /></a>
             <a href="https://www.linkedin.com/in/bmillsdj/" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><Linkedin className="w-5 h-5" /></a>
             <a href="mailto:bookings@djbmills.com" className="text-foreground/50 hover:text-foreground transition-colors"><Mail className="w-5 h-5" /></a>
           </div>
