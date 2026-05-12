@@ -15,8 +15,7 @@ export default function InquiryFooter({
 }) {
   const [formData, setFormData] = useState({
     name: '', email: '', eventDate: null, location: '', eventType: '',
-    guestCount: '', eventTiming: '', equipmentProvided: '',
-    atmosphere: '', plannerContact: '', hearAbout: '', botField: ''
+    botField: ''
   });
 
   const [calendarOpen, setCalendarOpen] = useState(false);
@@ -25,8 +24,8 @@ export default function InquiryFooter({
 
   const requiredLabelClass = 'font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 flex items-center justify-between gap-3';
   const optionalLabelClass = 'font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block';
-  const requiredFieldClass = 'bg-transparent border-0 border-b border-foreground/40 rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors h-10';
-  const optionalFieldClass = 'bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors h-10';
+  const requiredFieldClass = 'bg-transparent border-0 border-b border-foreground/40 rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors h-10 w-full';
+  const optionalFieldClass = 'bg-transparent border-0 border-b border-border rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors h-10 w-full';
   const requiredTagClass = 'font-body text-[10px] tracking-[0.18em] uppercase text-foreground/55';
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -51,7 +50,6 @@ export default function InquiryFooter({
       setSubmitStatus('Please select an event date.');
       return;
     }
-
     setIsSubmitting(true);
     const payload = { 'form-name': 'inquiry', ...formData, eventDate: format(formData.eventDate, 'MMMM d, yyyy') };
 
@@ -62,17 +60,11 @@ export default function InquiryFooter({
         body: encode(payload)
       });
       if (!response.ok) throw new Error();
-      
       setSubmitStatus('Confirmed. Connecting you to the music...');
-      
       setTimeout(() => {
-        const isHomePage = window.location.pathname === '/' || window.location.pathname.includes('index.html');
-        
-        if (isHomePage) {
-          // Smooth scroll on home page
+        if (window.location.pathname === '/' || window.location.pathname.includes('index.html')) {
           document.getElementById('mixtapes')?.scrollIntoView({ behavior: 'smooth' });
         } else {
-          // Hard redirect to home page music section from other pages
           window.location.href = '/#mixtapes';
         }
       }, 2000);
@@ -95,10 +87,14 @@ export default function InquiryFooter({
             <div className="w-12 h-px bg-foreground/20 mb-8" />
             <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-sm mb-10">{body}</p>
             
-            <div className="flex items-center gap-6">
-              <a href="https://instagram.com/djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-muted-foreground transition-colors"><Instagram className="w-5 h-5" /></a>
-              <a href="https://linkedin.com/in/djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-muted-foreground transition-colors"><Linkedin className="w-5 h-5" /></a>
-              <a href="mailto:bookings@djbmills.com" className="text-foreground hover:text-muted-foreground transition-colors"><Mail className="w-5 h-5" /></a>
+            {/* RESTORED: Left-side contact info */}
+            <div className="space-y-1">
+              <a href="mailto:bookings@djbmills.com" className="font-body text-xs tracking-widest uppercase text-foreground hover:opacity-60 transition-opacity">
+                bookings@djbmills.com
+              </a>
+              <p className="font-body text-[10px] tracking-[0.2em] text-muted-foreground uppercase">
+                Response within 24 hours
+              </p>
             </div>
           </motion.div>
 
@@ -152,16 +148,25 @@ export default function InquiryFooter({
           </motion.div>
         </div>
 
-        <div className="mt-32 pt-16 border-t border-border/40 flex flex-col items-center gap-12 text-center">
-          <button onClick={scrollToTop} className="group transition-transform duration-500 hover:scale-105 active:scale-95">
-            <img src="/images/logo-black.png" alt="B.MILLS" className="h-8 md:h-10 w-auto" />
+        {/* RESTORED: Centered Footer Branding Cluster */}
+        <div className="mt-32 pt-16 border-t border-border/40 flex flex-col items-center text-center">
+          <button onClick={scrollToTop} className="mb-12 group transition-transform duration-500 hover:scale-105 active:scale-95">
+            <img src="/images/logo-black.png" alt="B.MILLS" className="h-8 md:h-9 w-auto mx-auto" />
           </button>
           
-          <p className="font-body text-[10px] tracking-widest text-muted-foreground leading-relaxed max-w-2xl uppercase opacity-80">{footerText}</p>
-          
-          <div className="space-y-4">
-            <p className="font-body text-[9px] tracking-[0.3em] text-muted-foreground/40 uppercase">© {new Date().getFullYear()} B.MILLS · NYC · THE HAMPTONS · WORLDWIDE</p>
+          <div className="flex items-center gap-8 mb-12">
+            <a href="https://instagram.com/djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground hover:opacity-50 transition-opacity"><Instagram className="w-5 h-5" /></a>
+            <a href="https://linkedin.com/in/djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground hover:opacity-50 transition-opacity"><Linkedin className="w-5 h-5" /></a>
+            <a href="mailto:bookings@djbmills.com" className="text-foreground hover:opacity-50 transition-opacity"><Mail className="w-5 h-5" /></a>
           </div>
+          
+          <p className="font-body text-[10px] tracking-widest text-muted-foreground leading-relaxed max-w-2xl uppercase opacity-80 mb-6">
+            {footerText}
+          </p>
+          
+          <p className="font-body text-[9px] tracking-[0.3em] text-muted-foreground/40 uppercase">
+            © {new Date().getFullYear()} B.MILLS · NYC · THE HAMPTONS · WORLDWIDE
+          </p>
         </div>
       </div>
     </section>
