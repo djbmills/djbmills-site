@@ -9,25 +9,23 @@ export default function Hero() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
 
   const yDesktop = useTransform(scrollYProgress, [0, 1], ['0%', '14%']);
-  const yMobile = useTransform(scrollYProgress, [0, 1], ['0%', '-5%']);
+  const yMobile = 0;
   const scale = useTransform(scrollYProgress, [0, 1], [1.04, 1.0]);
 
   return (
     <>
-    {/* ── MOBILE LAYOUT ── */}
-<section ref={ref} className="flex flex-col md:hidden bg-white">
-  {/* Image container - Changed h-[58vh] to a fixed 420px to prevent jumping */}
-  <div className="w-full h-[420px] overflow-hidden bg-white relative">
+   {/* ── MOBILE LAYOUT ── */}
+<section ref={ref} className="flex flex-col md:hidden bg-white overflow-hidden">
+  {/* Image container - Fixed height to prevent "VH jump" */}
+  <div className="w-full h-[420px] overflow-hidden bg-white relative translate-z-0">
     <motion.img
       src={HERO_IMG}
       alt="B.MILLS Luxury Event DJ NYC"
-      // Added will-change-transform and removed the -top-2 to keep it stable
-      className="w-full h-full object-cover object-[60%_12%] will-change-transform"
+      // Added 'absolute inset-0' to keep the image pinned to the corners
+      className="absolute inset-0 w-full h-full object-cover object-[60%_12%] will-change-transform"
       style={{ 
         y: yMobile, 
         scale,
-        // This forces the browser to use hardware acceleration for smoother movement
-        translateZ: 0 
       }}
     />
   </div>
