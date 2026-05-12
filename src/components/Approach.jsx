@@ -15,7 +15,7 @@ export default function Approach() {
             transition={{ duration: 0.6 }}
             className="font-body text-xs tracking-[0.4em] uppercase text-foreground/30"
           >
-            01
+            02
           </motion.span>
 
           <motion.div
