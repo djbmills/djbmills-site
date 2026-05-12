@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { ArrowRight, CalendarIcon, Instagram, Linkedin, Mail } from 'lucide-react';
 import { format } from 'date-fns';
-import { useRouter } from 'next/router';
+import { useLocation, useNavigate } from 'react-router-dom'; // Fixed for Vite
 
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -14,7 +14,9 @@ export default function InquiryFooter({
   body = "Every event is different. Share a few details and we can map out the right approach for your space, audience, and goals.",
   footerText = "Serving luxury corporate events, brand activations, and private clients across New York City, the Hamptons, New Jersey, and Connecticut."
 }) {
-  const router = useRouter();
+  const location = useLocation(); // Replaces router.pathname
+  const navigate = useNavigate(); // Replaces router.push
+  
   const [formData, setFormData] = useState({
     name: '', email: '', eventDate: null, location: '', eventType: '',
     guestCount: '', eventTiming: '', equipmentProvided: '',
@@ -25,7 +27,6 @@ export default function InquiryFooter({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
 
-  // Form Classes
   const requiredLabelClass = 'font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 flex items-center justify-between gap-3';
   const optionalLabelClass = 'font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block';
   const requiredFieldClass = 'bg-transparent border-0 border-b border-foreground/40 rounded-none px-0 font-body text-sm shadow-none focus-visible:ring-0 focus-visible:border-foreground transition-colors h-10';
@@ -65,12 +66,16 @@ export default function InquiryFooter({
         body: encode(payload)
       });
       if (!response.ok) throw new Error();
+      
       setSubmitStatus('Confirmed. Connecting you to the music...');
+      
       setTimeout(() => {
-        if (router.pathname === '/') {
+        if (location.pathname === '/' || location.pathname === '/index.html') {
+          // If on home page, scroll to mixtapes
           document.getElementById('mixtapes')?.scrollIntoView({ behavior: 'smooth' });
         } else {
-          router.push('/#mixtapes');
+          // If on other pages, navigate to home and hit the anchor
+          navigate('/#mixtapes');
         }
       }, 2000);
     } catch (error) {
@@ -85,7 +90,6 @@ export default function InquiryFooter({
       <div className="max-w-7xl mx-auto relative">
         <div className="grid md:grid-cols-2 gap-16 md:gap-24">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            {/* Updated Lead Line */}
             <p className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-4 italic">
               Inquire · Late 2026 / 2027 Availability
             </p>
@@ -93,7 +97,6 @@ export default function InquiryFooter({
             <div className="w-12 h-px bg-foreground/20 mb-8" />
             <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-sm mb-10">{body}</p>
             
-            {/* Social Cluster restored */}
             <div className="flex items-center gap-6">
               <a href="https://instagram.com/djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-muted-foreground transition-colors"><Instagram className="w-5 h-5" /></a>
               <a href="https://linkedin.com/in/djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-muted-foreground transition-colors"><Linkedin className="w-5 h-5" /></a>
@@ -139,31 +142,4 @@ export default function InquiryFooter({
 
               <div>
                 <label className={requiredLabelClass}><span>Location / Venue</span><span className={requiredTagClass}>Required</span></label>
-                <Input name="location" value={formData.location} onChange={handleChange} required className={requiredFieldClass} />
-              </div>
-
-              {submitStatus && <p className="font-body text-sm text-foreground italic font-medium">{submitStatus}</p>}
-
-              <Button type="submit" disabled={isSubmitting} className="w-full sm:w-auto bg-foreground text-background hover:bg-background hover:text-foreground border border-transparent hover:border-foreground font-body text-[11px] tracking-[0.25em] uppercase px-12 py-7 rounded-none transition-all duration-500">
-                {isSubmitting ? 'Verifying...' : 'Check My Date'} <ArrowRight className="w-4 h-4 ml-3" />
-              </Button>
-            </form>
-          </motion.div>
-        </div>
-
-        {/* Restore Logo and Site Footer Info */}
-        <div className="mt-32 pt-16 border-t border-border/40 flex flex-col items-center gap-12 text-center">
-          <button onClick={scrollToTop} className="group transition-transform duration-500 hover:scale-105 active:scale-95">
-            <img src="/images/logo-black.png" alt="B.MILLS" className="h-8 md:h-10 w-auto" />
-          </button>
-          
-          <p className="font-body text-[10px] tracking-widest text-muted-foreground leading-relaxed max-w-2xl uppercase opacity-80">{footerText}</p>
-          
-          <div className="space-y-4">
-            <p className="font-body text-[9px] tracking-[0.3em] text-muted-foreground/40 uppercase">© {new Date().getFullYear()} B.MILLS · NYC · THE HAMPTONS · WORLDWIDE</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+                <Input name="location" value={formData.location} onChange={handleChange} required className={requiredFieldClass
