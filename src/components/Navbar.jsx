@@ -18,7 +18,6 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('');
 
-  // UPDATED: Simple, direct link to the new dedicated availability page
   const inquiryLink = { 
     label: 'Check Availability', 
     href: '/availability', 
@@ -49,7 +48,7 @@ export default function Navbar() {
     }
 
     if (isAvailabilityPage) {
-      setActiveLink(''); // Keeps menu clean when on the booking page
+      setActiveLink('');
       return;
     }
 
@@ -98,13 +97,10 @@ export default function Navbar() {
   const handleNavClick = (e, link) => {
     if (!link.sectionId) {
       setMobileOpen(false);
-      // If it's a direct page link (like /availability), let the browser handle the navigation
       return;
     }
-
     e.preventDefault();
     setMobileOpen(false);
-
     if (location.pathname === '/' && link.href.startsWith('/#')) {
       const el = document.getElementById(link.sectionId);
       if (el) {
@@ -118,9 +114,7 @@ export default function Navbar() {
 
   const getLinkClassName = (label) => {
     return `font-body tracking-[0.2em] uppercase transition-colors duration-300 text-xs ${
-      activeLink === label
-        ? 'text-foreground'
-        : 'text-muted-foreground hover:text-foreground'
+      activeLink === label ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
     }`;
   };
 
@@ -128,9 +122,7 @@ export default function Navbar() {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? 'bg-background/90 backdrop-blur-md border-b border-border'
-            : 'bg-transparent'
+          scrolled ? 'bg-background/90 backdrop-blur-md border-b border-border' : 'bg-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-20">
@@ -139,9 +131,7 @@ export default function Navbar() {
               src="/logos/bmills-logo-white.png"
               alt="B.Mills"
               className="h-12 w-auto object-contain"
-              onError={(e) => {
-                e.currentTarget.src = '/logos/bmills-logo.png';
-              }}
+              onError={(e) => { e.currentTarget.src = '/logos/bmills-logo.png'; }}
             />
           </a>
 
@@ -161,21 +151,31 @@ export default function Navbar() {
               <a href="https://www.instagram.com/djbmills/" target="_blank" rel="noopener noreferrer">
                 <Instagram className="w-4 h-4 text-muted-foreground hover:text-foreground transition-colors" />
               </a>
-              {/* TikTok & LinkedIn omitted for brevity, keep your original ones here */}
+
+              {/* TikTok Icon Restored */}
+              <a href="https://www.tiktok.com/@djbmills" target="_blank" rel="noopener noreferrer">
+                <svg className="w-4 h-4 text-muted-foreground hover:text-foreground transition-colors" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z" />
+                </svg>
+              </a>
+
+              {/* LinkedIn Icon Restored */}
+              <a href="https://www.linkedin.com/in/bmillsdj/" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="w-4 h-4 text-muted-foreground hover:text-foreground transition-colors" />
+              </a>
             </div>
 
-            {/* Desktop Button */}
             <a
               href={inquiryLink.href}
               onClick={(e) => handleNavClick(e, inquiryLink)}
-              className="font-body text-xs tracking-[0.2em] uppercase bg-foreground text-background px-4 py-2 hover:bg-foreground/80 transition-colors duration-300 ml-2 text-center min-w-[180px]"
+              className="font-body text-xs tracking-[0.2em] uppercase bg-foreground text-background px-4 py-2 hover:bg-foreground/80 transition-colors duration-300 ml-2"
             >
               {inquiryLink.label}
             </a>
           </div>
 
+          {/* Mobile UI */}
           <div className="md:hidden flex items-center gap-3">
-            {/* Mobile Button */}
             <a
               href={inquiryLink.href}
               onClick={(e) => handleNavClick(e, inquiryLink)}
@@ -183,7 +183,6 @@ export default function Navbar() {
             >
               Availability
             </a>
-
             <button onClick={() => setMobileOpen(true)}>
               <Menu className="w-6 h-6" />
             </button>
@@ -191,27 +190,24 @@ export default function Navbar() {
         </div>
       </nav>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
             className="fixed inset-0 z-[100] bg-background flex flex-col items-center justify-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
           >
             <button onClick={() => setMobileOpen(false)} className="absolute top-6 right-6">
               <X className="w-7 h-7" />
             </button>
-
             <div className="flex flex-col items-center gap-8">
               <a
                 href={inquiryLink.href}
                 onClick={(e) => handleNavClick(e, inquiryLink)}
-                className="font-heading text-3xl font-light tracking-wide text-foreground"
+                className="font-heading text-3xl font-light tracking-wide text-foreground underline decoration-1 underline-offset-8"
               >
                 {inquiryLink.label}
               </a>
-
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link.href}
