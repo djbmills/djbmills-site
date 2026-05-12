@@ -88,7 +88,7 @@ export default function Mixtapes() {
             transition={{ duration: 0.6 }}
             className="font-body text-xs tracking-[0.4em] uppercase text-background/30"
           >
-            03
+            04
           </motion.span>
 
           <motion.div
