@@ -23,7 +23,6 @@ const SpotifyIcon = ({ className }) => (
 export default function InquiryFooter({
   headline = "Let's shape\nthe night.",
   body = "Every event is different. Share a few details and we can map out the right approach for your space, audience, and goals.",
-  // RESTORED FULL TEXT BELOW
   footerText = "Serving luxury corporate events, brand activations, and private clients across New York City, the Hamptons, Westchester, New Jersey, and Connecticut. Available for travel worldwide."
 }) {
   const [formData, setFormData] = useState({
@@ -166,7 +165,7 @@ export default function InquiryFooter({
             <a href="https://instagram.com/djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><Instagram className="w-5 h-5" /></a>
             <a href="https://tiktok.com/@djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><TikTokIcon className="w-5 h-5" /></a>
             <a href="https://open.spotify.com/user/djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><SpotifyIcon className="w-5 h-5" /></a>
-            <a href="https://linkedin.com/in/djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><Linkedin className="w-5 h-5" /></a>
+            <a href="https://www.linkedin.com/in/bmillsdj/" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><Linkedin className="w-5 h-5" /></a>
             <a href="mailto:bookings@djbmills.com" className="text-foreground/50 hover:text-foreground transition-colors"><Mail className="w-5 h-5" /></a>
           </div>
           
