@@ -15,19 +15,21 @@ export default function Hero() {
   return (
     <>
       {/* ── MOBILE LAYOUT ── */}
-      <section ref={ref} className="flex flex-col md:hidden bg-[#ffffff]">
+      {/* Added -mt-[2px] and pt-[2px] to force the section to the absolute top edge */}
+      <section ref={ref} className="flex flex-col md:hidden bg-white -mt-[2px] pt-[2px]">
         {/* Image container */}
-        <div className="w-full h-[58vh] overflow-hidden bg-[#ffffff]">
+        <div className="w-full h-[58vh] overflow-hidden bg-white relative">
           <motion.img
             src={HERO_IMG}
             alt="B.MILLS Luxury Event DJ NYC"
-            className="w-full h-full object-cover object-[60%_12%]"
+            // -mt-[1px] ensures the image "bleeds" over the top edge
+            className="w-full h-full object-cover object-[60%_12%] -mt-[1px]"
             style={{ y: yMobile, scale }}
           />
         </div>
 
         {/* Text block */}
-        <div className="px-6 pt-10 pb-14 bg-[#ffffff]">
+        <div className="px-6 pt-10 pb-14 bg-white">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -65,17 +67,17 @@ export default function Hero() {
       </section>
 
       {/* ── DESKTOP LAYOUT ── */}
-      <section ref={ref} className="relative h-screen w-full overflow-hidden bg-[#ffffff] hidden md:block">
+      <section ref={ref} className="relative h-screen w-full overflow-hidden bg-white hidden md:block -mt-[1px]">
         {/* Photo — anchored right */}
-        <div className="absolute inset-y-0 right-0 w-[62%] overflow-hidden bg-[#ffffff]">
+        <div className="absolute inset-y-0 right-0 w-[62%] overflow-hidden bg-white">
           <motion.img
             src={HERO_IMG}
             alt="B.MILLS - High-End Corporate DJ NYC"
-            className="w-full h-full object-cover object-[30%_top]"
+            className="w-full h-full object-cover object-[30%_top] -mt-[1px]"
             style={{ y: yDesktop, scale }}
           />
           {/* Subtle gradient to blend text into photo */}
-          <div className="absolute inset-y-0 left-0 w-56 bg-gradient-to-r from-[#ffffff] via-[#ffffff]/70 to-transparent" />
+          <div className="absolute inset-y-0 left-0 w-56 bg-gradient-to-r from-white via-white/70 to-transparent" />
         </div>
 
         {/* Text content */}
