@@ -23,7 +23,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground"
           >
-            02
+            03
           </motion.span>
 
           <motion.div
