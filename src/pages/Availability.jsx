@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import InquiryFooter from '../components/InquiryFooter'; // Changed from @ to ../
+import InquiryFooter from '../components/InquiryFooter';
 
 export default function Availability() {
   useEffect(() => {
@@ -11,7 +11,8 @@ export default function Availability() {
     <main className="pt-24 min-h-screen bg-[#ebe6d9]"> 
       <InquiryFooter 
         headline="Secure the Date."
-        body="B.MILLS is currently booking for late 2026/2027. Please provide your event details to confirm availability and receive a tailored proposal."
+        // Updated text to be consistent with the home page tone
+        body="B.MILLS is currently booking for late 2026/2027. Provide your event details below to confirm availability and receive a proposal for a curated soundtrack tailored to your audience."
       />
     </main>
   );
