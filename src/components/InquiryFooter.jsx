@@ -82,7 +82,6 @@ export default function InquiryFooter({
             <div className="w-12 h-px bg-foreground/20 mb-8" />
             <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-sm mb-12">{body}</p>
             
-            {/* Restored Booking Info */}
             <div className="space-y-1">
               <a href="mailto:bookings@djbmills.com" className="font-body text-xs tracking-[0.2em] uppercase text-foreground hover:opacity-60 transition-opacity">
                 bookings@djbmills.com
@@ -98,18 +97,18 @@ export default function InquiryFooter({
             <form name="inquiry" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div className="flex flex-col">
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 flex justify-between">Name <span className="text-[10px] opacity-50">Required</span></label>
+                  <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 flex justify-between">Name <span className="text-[10px] opacity-50 uppercase">Required</span></label>
                   <Input name="name" value={formData.name} onChange={handleChange} required className="bg-transparent border-0 border-b border-foreground/40 rounded-none px-0 h-10 shadow-none focus-visible:ring-0 focus-visible:border-foreground" />
                 </div>
                 <div className="flex flex-col">
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 flex justify-between">Email <span className="text-[10px] opacity-50">Required</span></label>
+                  <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 flex justify-between">Email <span className="text-[10px] opacity-50 uppercase">Required</span></label>
                   <Input name="email" type="email" value={formData.email} onChange={handleChange} required className="bg-transparent border-0 border-b border-foreground/40 rounded-none px-0 h-10 shadow-none focus-visible:ring-0 focus-visible:border-foreground" />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div className="flex flex-col">
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 flex justify-between">Event Date <span className="text-[10px] opacity-50">Required</span></label>
+                  <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 flex justify-between">Event Date <span className="text-[10px] opacity-50 uppercase">Required</span></label>
                   <Popover open={calendarOpen} onOpenChange={setCalendarOpen}>
                     <PopoverTrigger asChild>
                       <button type="button" className="w-full bg-transparent border-0 border-b border-foreground/40 rounded-none pb-3 text-left font-body text-sm flex items-center justify-between h-10">
@@ -131,10 +130,40 @@ export default function InquiryFooter({
               </div>
 
               <div className="flex flex-col">
-                <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 flex justify-between">Location <span className="text-[10px] opacity-50">Required</span></label>
+                <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 flex justify-between">Location <span className="text-[10px] opacity-50 uppercase">Required</span></label>
                 <Input name="location" value={formData.location} onChange={handleChange} required className="bg-transparent border-0 border-b border-foreground/40 rounded-none px-0 h-10 shadow-none focus-visible:ring-0 focus-visible:border-foreground" />
               </div>
 
               {submitStatus && <p className="font-body text-sm text-foreground italic">{submitStatus}</p>}
 
-              <Button type="submit" disabled={isSubmitting} className="w-full sm:w-auto bg-foreground text-background hover:bg-background hover:text-foreground border border-transparent hover:border-foreground
+              <Button type="submit" disabled={isSubmitting} className="w-full sm:w-auto bg-foreground text-background hover:bg-background hover:text-foreground border border-transparent hover:border-foreground font-body text-[11px] tracking-[0.25em] uppercase px-12 py-7 rounded-none transition-all duration-500">
+                {isSubmitting ? 'Verifying...' : 'Check My Date'} <ArrowRight className="w-4 h-4 ml-3" />
+              </Button>
+            </form>
+          </motion.div>
+        </div>
+
+        {/* CENTERED BRANDING CLUSTER */}
+        <div className="pt-16 border-t border-border/40 flex flex-col items-center text-center">
+          <button onClick={scrollToTop} className="mb-10 group transition-transform duration-500 hover:scale-105 active:scale-95">
+            <img src="/images/logo-black.png" alt="B.MILLS" className="h-8 md:h-9 w-auto mx-auto" />
+          </button>
+          
+          <div className="flex items-center gap-8 mb-10">
+            <a href="https://instagram.com/djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground hover:opacity-50 transition-opacity"><Instagram className="w-5 h-5" /></a>
+            <a href="https://linkedin.com/in/djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground hover:opacity-50 transition-opacity"><Linkedin className="w-5 h-5" /></a>
+            <a href="mailto:bookings@djbmills.com" className="text-foreground hover:opacity-50 transition-opacity"><Mail className="w-5 h-5" /></a>
+          </div>
+          
+          <p className="font-body text-[10px] tracking-widest text-muted-foreground leading-relaxed max-w-2xl uppercase opacity-80 mb-6">
+            {footerText}
+          </p>
+          
+          <p className="font-body text-[9px] tracking-[0.3em] text-muted-foreground/40 uppercase">
+            © {new Date().getFullYear()} B.MILLS · NYC · THE HAMPTONS · WORLDWIDE
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
