@@ -5,9 +5,10 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from "react-route
 import PageNotFound from "./lib/PageNotFound";
 import Home from "./pages/Home";
 import CorporateEvents from "./pages/CorporateEvents";
+import Availability from "./pages/Availability"; // <-- Added this
 import Navbar from "./components/Navbar";
 
-// Helper to ensure the page starts at the top on route changes (UX for Luxury Browsing)
+// Helper to ensure the page starts at the top on route changes
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -19,9 +20,7 @@ function ScrollToTop() {
 export default function App() {
   return (
     <>
-      {/* PRESTIGE FADE-IN 
-        This handles the elegant transition as the site loads.
-      */}
+      {/* PRESTIGE FADE-IN */}
       <motion.div
         initial={{ opacity: 1 }}
         animate={{ opacity: 0 }}
@@ -29,7 +28,7 @@ export default function App() {
         style={{
           position: "fixed",
           inset: 0,
-          backgroundColor: "hsl(36, 33%, 97%)", // Your brand's signature cream/off-white
+          backgroundColor: "hsl(36, 33%, 97%)", 
           zIndex: 9999,
           pointerEvents: "none",
         }}
@@ -39,11 +38,11 @@ export default function App() {
         <ScrollToTop />
         <Navbar />
         <Routes>
-          {/* Main Landing: Focuses on B.MILLS Sonic Identity */}
           <Route path="/" element={<Home />} />
-          
-          {/* Corporate Pillar: Targeted at Marketing Directors */}
           <Route path="/corporate-events" element={<CorporateEvents />} />
+          
+          {/* Availability Pillar: The new frictionless booking engine */}
+          <Route path="/availability" element={<Availability />} /> 
           
           <Route path="*" element={<PageNotFound />} />
         </Routes>
