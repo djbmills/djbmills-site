@@ -65,13 +65,25 @@ export default function InquiryFooter({
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({ 'form-name': 'inquiry', ...formData, eventDate: format(formData.eventDate, 'MMMM d, yyyy') })
       });
+      
       if (!response.ok) throw new Error();
-      setSubmitStatus('Confirmed. Connecting you to the music...');
+      
+      // Updated message to avoid false confirmation
+      setSubmitStatus('Inquiry Sent. Expect a response within 24 hours. Connecting you to the music...');
+      
       setTimeout(() => {
-        window.location.hash = 'mixtapes';
-      }, 2000);
+        // Find the mixtapes section and scroll to it
+        const mixtapesSection = document.getElementById('mixtapes');
+        if (mixtapesSection) {
+          mixtapesSection.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          // Fallback if ID is missing
+          window.location.hash = 'mixtapes';
+        }
+      }, 2500);
+
     } catch (error) {
-      setSubmitStatus('Something went wrong. Please try again.');
+      setSubmitStatus('Something went wrong. Please try again or email directly.');
     } finally {
       setIsSubmitting(false);
     }
@@ -102,6 +114,7 @@ export default function InquiryFooter({
 
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
             <form name="inquiry" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-10">
+              <input type="hidden" name="form-name" value="inquiry" />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
                 <div>
                   <label className={labelClass}>Name <span className={tagClass}>Required</span></label>
@@ -147,10 +160,10 @@ export default function InquiryFooter({
                 </div>
               </div>
 
-              {submitStatus && <p className="font-body text-xs text-foreground italic">{submitStatus}</p>}
+              {submitStatus && <p className="font-body text-xs text-foreground italic border-l-2 border-foreground pl-4 py-1">{submitStatus}</p>}
 
               <Button type="submit" disabled={isSubmitting} className="w-full sm:w-auto bg-foreground text-background hover:bg-foreground/90 font-body text-[11px] tracking-[0.25em] uppercase px-12 py-7 rounded-none transition-all flex items-center gap-4">
-                {isSubmitting ? 'Verifying...' : 'Check My Date'} <ArrowRight className="w-4 h-4" />
+                {isSubmitting ? 'Sending...' : 'Check My Date'} <ArrowRight className="w-4 h-4" />
               </Button>
             </form>
           </motion.div>
@@ -164,7 +177,7 @@ export default function InquiryFooter({
           <div className="flex items-center gap-8 mb-12">
             <a href="https://instagram.com/djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><Instagram className="w-5 h-5" /></a>
             <a href="https://tiktok.com/@djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><TikTokIcon className="w-5 h-5" /></a>
-            <a href="https://open.spotify.com/user/djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><SpotifyIcon className="w-5 h-5" /></a>
+            <a href="https://open.spotify.com/user/1253457100" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><SpotifyIcon className="w-5 h-5" /></a>
             <a href="https://www.linkedin.com/in/bmillsdj/" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><Linkedin className="w-5 h-5" /></a>
             <a href="mailto:bookings@djbmills.com" className="text-foreground/50 hover:text-foreground transition-colors"><Mail className="w-5 h-5" /></a>
           </div>
