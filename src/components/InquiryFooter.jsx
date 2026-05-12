@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { ArrowRight, CalendarIcon, Instagram, Linkedin, Mail } from 'lucide-react';
+import { ArrowRight, CalendarIcon, Mail } from 'lucide-react';
 import { format } from 'date-fns';
+import { useRouter } from 'next/router'; // Added for redirecting
 
 import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Calendar } from '@/components/ui/calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
@@ -14,6 +14,7 @@ export default function InquiryFooter({
   body = "Every event is different. Share a few details and we can map out the right approach for your space, audience, and goals.",
   footerText = "Serving luxury corporate events, brand activations, and private clients across New York City, the Hamptons, New Jersey, and Connecticut."
 }) {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: '', email: '', eventDate: null, location: '', eventType: '',
     guestCount: '', eventTiming: '', equipmentProvided: '',
@@ -67,13 +68,16 @@ export default function InquiryFooter({
 
       if (!response.ok) throw new Error();
 
-      setSubmitStatus('Thank you. Connecting you to the music...');
+      setSubmitStatus('Confirmed. Sending you to the music...');
       
-      // The "Music Loop": Wait for them to read success, then scroll to mixtapes
       setTimeout(() => {
-        const mixtapeSection = document.getElementById('mixtapes');
-        if (mixtapeSection) {
-          mixtapeSection.scrollIntoView({ behavior: 'smooth' });
+        if (router.pathname === '/') {
+          // If on home page, just scroll
+          const mixtapeSection = document.getElementById('mixtapes');
+          mixtapeSection?.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          // If on Availability or Corporate page, redirect to home page music
+          router.push('/#mixtapes');
         }
       }, 2000);
 
