@@ -498,22 +498,23 @@ At the highest level, the music is only part of it. B.MILLS is fully insured and
 
           <CorporateEventGallery />
 
-  <InquiryFooter
-  headline="Let's shape your event."
+<InquiryFooter
+  headline="Define the sound." // Sharper, more active headline
+  body="High-stakes events require a precise sonic identity. Share your event details and let's discuss the direction."
   footerText={
     <>
       <span className="hidden md:inline">
-        Fully insured and available for luxury brand activations, corporate galas,
+        Fully COI insured and available for luxury brand activations, corporate galas,
         <br />
-        and private functions across NYC, the Hamptons, and beyond.
+        and executive functions across NYC, the Hamptons, and worldwide.
       </span>
 
       <span className="md:hidden">
-        Fully insured and available for luxury brand activations,
+        Fully COI insured and available for luxury brand activations,
         <br />
-        corporate galas, and private functions
+        corporate galas, and executive functions
         <br />
-        across NYC, the Hamptons, and beyond.
+        across NYC, the Hamptons, and worldwide.
       </span>
     </>
   }
