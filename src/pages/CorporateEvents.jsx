@@ -500,7 +500,7 @@ At the highest level, the music is only part of it. B.MILLS is fully insured and
 
 <InquiryFooter
   headline="Define the sound." // Sharper, more active headline
-  body="High-stakes events require a precise sonic identity. Share your event details and let's discuss the direction."
+  body="High-stakes events require a precise soundtrack. Share your event details and let's discuss the direction."
   footerText={
     <>
       <span className="hidden md:inline">
