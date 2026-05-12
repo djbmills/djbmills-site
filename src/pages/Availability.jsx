@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
-import InquiryFooter from '@/components/InquiryFooter';
+import InquiryFooter from '../components/InquiryFooter'; // Changed from @ to ../
 
-// Renamed to 'Availability' to match your App.jsx import
 export default function Availability() {
   useEffect(() => {
     document.title = "Check Availability | B.MILLS";
