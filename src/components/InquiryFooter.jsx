@@ -68,19 +68,23 @@ export default function InquiryFooter({
       
       if (!response.ok) throw new Error();
       
-      // Updated message to avoid false confirmation
       setSubmitStatus('Inquiry Sent. Expect a response within 24 hours. Connecting you to the music...');
       
+      // Delay to let the user read the success message, then scroll
       setTimeout(() => {
-        // Find the mixtapes section and scroll to it
         const mixtapesSection = document.getElementById('mixtapes');
         if (mixtapesSection) {
-          mixtapesSection.scrollIntoView({ behavior: 'smooth' });
+          // Use absolute position for reliability
+          const offsetTop = mixtapesSection.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({
+            top: offsetTop - 80, // 80px offset for the header/breathing room
+            behavior: 'smooth'
+          });
         } else {
-          // Fallback if ID is missing
+          // If the ID isn't found, try to find by heading text or just go to top
           window.location.hash = 'mixtapes';
         }
-      }, 2500);
+      }, 2800);
 
     } catch (error) {
       setSubmitStatus('Something went wrong. Please try again or email directly.');
@@ -177,7 +181,7 @@ export default function InquiryFooter({
           <div className="flex items-center gap-8 mb-12">
             <a href="https://instagram.com/djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><Instagram className="w-5 h-5" /></a>
             <a href="https://tiktok.com/@djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><TikTokIcon className="w-5 h-5" /></a>
-            <a href="https://open.spotify.com/user/1253457100" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><SpotifyIcon className="w-5 h-5" /></a>
+            <a href="https://open.spotify.com/user/djbmills" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><SpotifyIcon className="w-5 h-5" /></a>
             <a href="https://www.linkedin.com/in/bmillsdj/" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition-colors"><Linkedin className="w-5 h-5" /></a>
             <a href="mailto:bookings@djbmills.com" className="text-foreground/50 hover:text-foreground transition-colors"><Mail className="w-5 h-5" /></a>
           </div>
