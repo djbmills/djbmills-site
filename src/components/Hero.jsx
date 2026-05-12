@@ -8,81 +8,74 @@ export default function Hero() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
 
+  // Keep desktop parallax (it's much smoother on laptops)
   const yDesktop = useTransform(scrollYProgress, [0, 1], ['0%', '14%']);
-  const yMobile = 0;
-  const scale = useTransform(scrollYProgress, [0, 1], [1.04, 1.0]);
+  const scaleDesktop = useTransform(scrollYProgress, [0, 1], [1.04, 1.0]);
 
   return (
     <>
-   {/* ── MOBILE LAYOUT ── */}
-<section ref={ref} className="flex flex-col md:hidden bg-white overflow-hidden">
-  {/* Image container - Fixed height to prevent "VH jump" */}
-  <div className="w-full h-[420px] overflow-hidden bg-white relative translate-z-0">
-    <motion.img
-      src={HERO_IMG}
-      alt="B.MILLS Luxury Event DJ NYC"
-      // Added 'absolute inset-0' to keep the image pinned to the corners
-      className="absolute inset-0 w-full h-full object-cover object-[60%_12%] will-change-transform"
-      style={{ 
-        y: yMobile, 
-        scale,
-      }}
-    />
-  </div>
+      {/* ── MOBILE LAYOUT ── */}
+      <section ref={ref} className="flex flex-col md:hidden bg-white overflow-hidden">
+        {/* Fixed height container - No VH units here */}
+        <div className="w-full h-[440px] overflow-hidden bg-white relative">
+          <img
+            src={HERO_IMG}
+            alt="B.MILLS Luxury Event DJ NYC"
+            // No motion here = No glitching
+            className="w-full h-full object-cover object-[60%_12%]"
+          />
+        </div>
 
-  {/* Text block */}
-  <div className="px-6 pt-10 pb-14 bg-white relative z-10">
-    <motion.p
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.2 }}
-      className="font-body text-[10px] tracking-[0.28em] uppercase text-foreground/50 mb-5"
-    >
-      Curator · DJ · Atmosphere
-    </motion.p>
+        {/* Text block stays as motion because simple Y-axis fades don't glitch */}
+        <div className="px-6 pt-10 pb-14 bg-white relative z-10">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="font-body text-[10px] tracking-[0.28em] uppercase text-foreground/50 mb-5"
+          >
+            Curator · DJ · Atmosphere
+          </motion.p>
 
-    <motion.h1
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.4 }}
-      className="font-display text-[4.5rem] text-foreground leading-none tracking-wide mb-7"
-    >
-      B.MILLS
-    </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="font-display text-[4.5rem] text-foreground leading-none tracking-wide mb-7"
+          >
+            B.MILLS
+          </motion.h1>
 
-    <motion.div
-      initial={{ scaleX: 0 }}
-      animate={{ scaleX: 1 }}
-      transition={{ duration: 0.6, delay: 0.9 }}
-      className="w-14 h-px bg-foreground/25 mb-7 origin-left"
-    />
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.6, delay: 0.9 }}
+            className="w-14 h-px bg-foreground/25 mb-7 origin-left"
+          />
 
-    <motion.p
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 1.1 }}
-      className="font-body text-xs tracking-[0.15em] uppercase text-foreground/60 max-w-[240px]"
-    >
-      Less talk. Better music.
-    </motion.p>
-  </div>
-</section>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 1.1 }}
+            className="font-body text-xs tracking-[0.15em] uppercase text-foreground/60 max-w-[240px]"
+          >
+            Less talk. Better music.
+          </motion.p>
+        </div>
+      </section>
 
-      {/* ── DESKTOP LAYOUT ── */}
-      <section ref={ref} className="relative h-screen w-full overflow-hidden bg-white hidden md:block -mt-[1px]">
-        {/* Photo — anchored right */}
+      {/* ── DESKTOP LAYOUT (Unchanged, looks great) ── */}
+      <section ref={ref} className="relative h-screen w-full overflow-hidden bg-white hidden md:block">
         <div className="absolute inset-y-0 right-0 w-[62%] overflow-hidden bg-white">
           <motion.img
             src={HERO_IMG}
             alt="B.MILLS - High-End Corporate DJ NYC"
-            className="w-full h-full object-cover object-[30%_top] -mt-[1px]"
-            style={{ y: yDesktop, scale }}
+            className="w-full h-full object-cover object-[30%_top]"
+            style={{ y: yDesktop, scale: scaleDesktop }}
           />
-          {/* Subtle gradient to blend text into photo */}
           <div className="absolute inset-y-0 left-0 w-56 bg-gradient-to-r from-white via-white/70 to-transparent" />
         </div>
 
-        {/* Text content */}
         <div className="relative z-10 h-full flex flex-col justify-center px-16 lg:px-24">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -119,7 +112,6 @@ export default function Hero() {
           </motion.p>
         </div>
 
-        {/* Scroll Indicator */}
         <motion.a
           href="#about"
           initial={{ opacity: 0 }}
