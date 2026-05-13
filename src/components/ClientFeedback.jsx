@@ -9,6 +9,11 @@ const testimonials = [
     title: 'Wedding After Party',
   },
   {
+    quote: 'The event was a huge success, and the guests had such a great time on the dance floor. We truly appreciate the energy you brought to the night.',
+    name: 'Ruthie',
+    title: 'School of American Ballet',
+  },
+  {
     quote: 'Your music choices during cocktails, dinner and after dinner were so thoughtful and fun. At every point in the night, the music was a perfect complement and perfectly suited our guests and atmosphere.',
     name: 'Allison & Jay',
     title: 'Private Event',
@@ -63,10 +68,7 @@ export default function ClientFeedback() {
   }, [isPaused]);
 
   return (
-    <section
-      id="feedback"
-      className="pt-16 md:pt-24 pb-24 md:pb-36 px-6 md:px-12 bg-foreground"
-    >
+    <section id="feedback" className="pt-16 md:pt-24 pb-24 md:pb-36 px-6 md:px-12 bg-foreground">
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-4 mb-16 overflow-hidden">
           <motion.span
@@ -76,7 +78,7 @@ export default function ClientFeedback() {
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
             className="font-body text-xs tracking-[0.4em] uppercase text-background/30"
           >
-            06
+            {String(testimonials.length).padStart(2, '0')}
           </motion.span>
 
           <motion.div
@@ -99,41 +101,24 @@ export default function ClientFeedback() {
         </div>
 
         <div className="text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
             <h2 className="font-heading text-4xl md:text-6xl font-light text-background mb-16">
               Client Words
             </h2>
           </motion.div>
 
-          <div
-            className="relative"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-          >
+          <div className="relative" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
             <Quote className="w-10 h-10 text-background/10 mx-auto mb-8" />
 
             <div className="relative max-w-3xl mx-auto min-h-[320px]">
               {testimonials.map((t, i) => (
                 <motion.div
                   key={`${t.name}-${i}`}
-                  animate={{
-                    opacity: i === current ? 1 : 0,
-                  }}
-                  transition={{
-                    duration: 0.7,
-                    ease: [0.25, 0.1, 0.25, 1],
-                  }}
-                  className={`absolute inset-0 flex flex-col justify-between ${
-                    i === current ? 'pointer-events-auto' : 'pointer-events-none'
-                  }`}
-                  style={{
-                    willChange: 'opacity',
-                  }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: i === current ? 1 : 0 }}
+                  transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+                  className={`absolute inset-0 flex flex-col justify-between ${i === current ? 'pointer-events-auto' : 'pointer-events-none'}`}
+                  style={{ willChange: 'opacity' }}
                 >
                   <p className="font-heading text-xl md:text-2xl lg:text-3xl font-light text-background leading-[1.4] italic">
                     "{t.quote}"
@@ -141,35 +126,21 @@ export default function ClientFeedback() {
 
                   <div className="mt-10">
                     <div className="w-8 h-px bg-background/20 mx-auto mb-6" />
-                    <p className="font-body text-sm tracking-wider text-background/80 uppercase">
-                      {t.name}
-                    </p>
-                    <p className="font-body text-xs text-background/40 mt-1">
-                      {t.title}
-                    </p>
+                    <p className="font-body text-sm tracking-wider text-background/80 uppercase">{t.name}</p>
+                    <p className="font-body text-xs text-background/40 mt-1">{t.title}</p>
                   </div>
                 </motion.div>
               ))}
             </div>
 
             <div className="flex items-center justify-center gap-6 mt-12">
-              <button
-                onClick={prev}
-                aria-label="Previous testimonial"
-                className="w-12 h-12 rounded-full border border-background/20 flex items-center justify-center text-background/40 hover:text-background hover:border-background/60 hover:scale-[1.05] transition-all duration-300"
-              >
+              <button onClick={prev} className="w-12 h-12 rounded-full border border-background/20 flex items-center justify-center text-background/40 hover:text-background hover:border-background/60 hover:scale-[1.05] transition-all duration-300">
                 <ChevronLeft className="w-5 h-5" />
               </button>
-
               <span className="font-body text-xs text-background/30 tracking-widest">
                 {String(current + 1).padStart(2, '0')} / {String(testimonials.length).padStart(2, '0')}
               </span>
-
-              <button
-                onClick={next}
-                aria-label="Next testimonial"
-                className="w-12 h-12 rounded-full border border-background/20 flex items-center justify-center text-background/40 hover:text-background hover:border-background/60 hover:scale-[1.05] transition-all duration-300"
-              >
+              <button onClick={next} className="w-12 h-12 rounded-full border border-background/20 flex items-center justify-center text-background/40 hover:text-background hover:border-background/60 hover:scale-[1.05] transition-all duration-300">
                 <ChevronRight className="w-5 h-5" />
               </button>
             </div>
