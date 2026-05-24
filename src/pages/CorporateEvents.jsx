@@ -348,13 +348,21 @@ export default function CorporateEvents() {
         Pioneer Works | Red Hook, Brooklyn
       </p>
 
-      <p className="font-body text-base text-muted-foreground leading-relaxed mt-8">
-        For a limited edition 1800 Tequila bottle release featuring artist Dustin Yellin, B.MILLS provided the soundtrack for an intimate brand reception at Pioneer Works, the Brooklyn cultural space founded by Yellin.
-      </p>
+     <p className="font-body text-base text-muted-foreground leading-relaxed mt-8">
+  For a limited edition 1800 Tequila bottle release featuring artist Dustin Yellin, B.MILLS provided the soundtrack for an intimate brand reception at Pioneer Works, the Brooklyn cultural space founded by Yellin.
+</p>
 
-      <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
-        The music was curated to complement the room: artful, culturally tuned, and intentional, supporting the brand experience while keeping the energy exactly where it needed to be.
-      </p>
+<p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
+  The event centered around the artwork on the bottles, the installations throughout the studio space, and the natural flow of guests gathering, talking, and moving through the room. The music needed to feel atmospheric but still engaging, present without pulling focus.
+</p>
+
+<p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
+  With limited direction from the brand, B.MILLS shaped the sound around the setting itself: the Brooklyn location, the art, the guests, and the tone of the evening. The set moved through soulful, culturally tuned selections with a steady energy that complemented the space and kept the reception feeling warm, connected, and intentional.
+</p>
+
+<p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
+  Each transition was built to feel seamless from one record to the next, supporting the brand experience while allowing the artwork and environment to remain the focus.
+</p>
     </div>
   </div>
 
