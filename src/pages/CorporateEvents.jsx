@@ -132,68 +132,78 @@ export default function CorporateEvents() {
   </div>
 </section>
       
-      {/* Section 02: Brand Alignment */}
-      <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
+     {/* Section 02: Brand Alignment */}
+<section className="py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
   <div className="max-w-4xl mx-auto">
-         <div className="flex items-center gap-4 mb-10">
-  <span className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground shrink-0">
-    02
-  </span>
+    <div className="flex items-center gap-4 mb-10">
+      <span className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground shrink-0">
+        02
+      </span>
 
-  <motion.div
-    initial={{ scaleX: 0 }}
-    whileInView={{ scaleX: 1 }}
-    viewport={{ once: true, margin: '-10%' }}
-    transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-    className="flex-1 h-px bg-border origin-left min-w-[40px]"
-  />
+      <motion.div
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true, margin: '-10%' }}
+        transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
+        className="flex-1 h-px bg-border origin-left min-w-[40px]"
+      />
 
-  <span className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground shrink-0 whitespace-nowrap">
-    Brand Alignment
-  </span>
-</div>
+      <span className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground shrink-0 whitespace-nowrap">
+        Brand Alignment
+      </span>
+    </div>
 
-          <div className="overflow-hidden">
-            <motion.h2
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
-              className="font-heading text-5xl md:text-6xl font-light text-foreground mb-10 leading-tight"
-            >
-              Sonic Identity
-            </motion.h2>
-          </div>
+    <div className="overflow-hidden">
+      <motion.h2
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-10%' }}
+        transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
+        className="font-heading text-5xl md:text-6xl font-light text-foreground mb-10 leading-tight"
+      >
+        Sonic Identity
+      </motion.h2>
+    </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
-            className="font-body text-base text-muted-foreground leading-relaxed max-w-2xl"
-          >
-            Every brand activation has a unique musical DNA. Whether for a luxury product launch or a corporate gala, I curate a bespoke soundscape that reflects the brand’s aesthetic. My approach is rooted in restraint, ensuring professional flow and clear, understated announcements for structured event timelines.
-          </motion.p>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-10%' }}
+      transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
+      className="max-w-2xl"
+    >
+      <p className="font-body text-base text-muted-foreground leading-relaxed">
+        Corporate events bring different people into the same space: clients, teams, executives, guests, and people who may not all move the same way. The music has to find the common thread without turning the room into something it is not.
+      </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
-            className="mt-14"
-          >
-            <img
-              src="/images/bmills-corporate-3.png"
-              alt="B.MILLS managing audio for Hall des Lumières Grand Opening - NYC Brand Event"
-              className="w-full h-auto object-cover"
-            />
-            <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
-              GRAND OPENING | HALL DES LUMIÈRES, NEW YORK CITY
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
+        B.MILLS builds the sound from the setting first. The room, the crowd, the pace, the lighting, the reason everyone is there. From there, the selections stay intentional, soulful, and connected without feeling obvious.
+      </p>
 
+      <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
+        It is not about playing everything. It is about playing what fits, keeping the energy alive, and knowing when to let the music sit in the pocket.
+      </p>
+    </motion.div>
+
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-10%' }}
+      transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
+      className="mt-14"
+    >
+      <img
+        src="/images/bmills-corporate-3.png"
+        alt="B.MILLS managing audio for Hall des Lumières Grand Opening - NYC Brand Event"
+        className="w-full h-auto object-cover"
+      />
+      <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
+        GRAND OPENING | HALL DES LUMIÈRES, NEW YORK CITY
+      </p>
+    </motion.div>
+  </div>
+</section>
+      
      {/* Section 03: Selected Event Experience */}
 <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
   <div className="max-w-5xl mx-auto">
