@@ -177,11 +177,11 @@ export default function CorporateEvents() {
       </p>
 
       <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
-        B.MILLS builds the sound from the setting first. The room, the crowd, the pace, the lighting, the reason everyone is there. From there, the selections stay intentional, soulful, and connected without feeling obvious.
+        B.MILLS builds the sound from the setting first. The room, the crowd, the pace, the lighting, the reason everyone is there. Selections stay intentional, soulful, and connected without feeling obvious.
       </p>
 
       <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
-        It is not about playing everything. It is about playing what fits, keeping the energy alive, and knowing when to let the music sit in the pocket.
+        It's not about playing everything. It's about playing what fits, keeping the energy alive, and knowing when to let the music sit in the pocket.
       </p>
     </motion.div>
 
