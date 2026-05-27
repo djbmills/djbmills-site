@@ -35,7 +35,7 @@ export default function CorporateEvents() {
 
       <CorporateHero />
 
-     {/* Section: Strategic Partners & Clients */}
+    {/* Section: Strategic Partners & Clients */}
 <section className="py-16 md:py-20 border-b border-border bg-background">
   <div className="max-w-6xl mx-auto px-6 md:px-12 text-center">
     <motion.p 
@@ -45,17 +45,17 @@ export default function CorporateEvents() {
       transition={{ duration: 0.8 }}
       className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-16"
     >
-      Selected Client Experience
+      Trusted By
     </motion.p>
     
-    <div className="flex flex-wrap justify-center lg:justify-between items-center gap-12 md:gap-16">
+    <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-16 lg:gap-x-20">
       {[
-        { name: 'Google', url: 'https://www.vectorlogo.zone/logos/google/google-ar21.svg' },
-        { name: 'Goldman Sachs', url: 'https://www.vectorlogo.zone/logos/goldmansachs/goldmansachs-ar21.svg' },
-        { name: 'LVMH', url: 'https://www.vectorlogo.zone/logos/lvmh/lvmh-ar21.svg' },
-        { name: 'Citadel', url: 'https://www.vectorlogo.zone/logos/citadel/citadel-ar21.svg' },
-        { name: 'Celine', url: 'https://www.vectorlogo.zone/logos/celine/celine-ar21.svg' },
-        { name: 'Polymarket', url: 'https://www.vectorlogo.zone/logos/polymarket/polymarket-ar21.svg' }
+        { name: 'Google', src: '/images/logos/google.svg' },
+        { name: 'Goldman Sachs', src: '/images/logos/goldman.svg' },
+        { name: 'LVMH', src: '/images/logos/lvmh.svg' },
+        { name: 'Citadel', src: '/images/logos/citadel.svg' },
+        { name: 'Celine', src: '/images/logos/celine.svg' },
+        { name: 'Polymarket', src: '/images/logos/polymarket.svg' }
       ].map((logo, index) => (
         <motion.div
           key={logo.name}
@@ -63,14 +63,22 @@ export default function CorporateEvents() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.1 * index }}
-          className="flex items-center justify-center min-w-[120px]"
+          className="flex items-center justify-center min-w-[120px] group"
         >
           <img
-            src={logo.url}
+            src={logo.src}
             alt={`${logo.name} logo`}
-            onLoad={(e) => e.currentTarget.style.opacity = "0.4"}
-            className="h-6 md:h-8 w-auto object-contain opacity-0 grayscale contrast-125 transition-all duration-700 hover:opacity-100 hover:grayscale-0"
+            className="h-6 md:h-7 w-auto object-contain opacity-40 grayscale contrast-125 transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
+            onError={(e) => {
+              // If the image hasn't been uploaded to your folder yet, 
+              // this keeps the layout clean by showing the name in your brand font.
+              e.currentTarget.style.display = 'none';
+              e.currentTarget.nextSibling.style.display = 'block';
+            }}
           />
+          <span className="hidden font-body text-[10px] tracking-[0.3em] uppercase opacity-40 group-hover:opacity-100 transition-opacity">
+            {logo.name}
+          </span>
         </motion.div>
       ))}
     </div>
