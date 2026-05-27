@@ -35,15 +35,17 @@ export default function CorporateEvents() {
 
       <CorporateHero />
 
-   {/* Section: Professional Brand Marquee */}
-<section className="py-16 md:py-20 border-b border-border bg-[#F5F5F5] overflow-hidden">
-  <div className="max-w-6xl mx-auto px-6 mb-10">
+  {/* Section: Professional Brand Marquee */}
+<section className="relative py-20 border-b border-border bg-background overflow-hidden">
+  {/* Optional: Add 'warm-grain' to the section above if you want that texture you have in your CSS */}
+  
+  <div className="max-w-6xl mx-auto px-6 mb-12 relative z-10">
     <p className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground text-center">
       Trusted By
     </p>
   </div>
 
-  <div className="relative flex overflow-x-hidden border-y border-black/5 py-12">
+  <div className="relative flex overflow-x-hidden border-y border-border/50 py-12 relative z-10">
     {[1, 2].map((i) => (
       <div key={i} className="animate-marquee whitespace-nowrap flex items-center">
         {[
@@ -53,9 +55,10 @@ export default function CorporateEvents() {
         ].map((brand) => (
           <div key={`${brand}-${i}`} className="mx-12 md:mx-16 flex items-center justify-center">
             <img
-              src={`/images/logos/${brand}.svg`}
+              src={`/logos/${brand}.svg`}
               alt={`${brand} logo`}
-              className="h-6 md:h-8 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
+              className="h-6 md:h-7 w-auto object-contain grayscale contrast-[1.1] opacity-50 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
+              onError={(e) => (e.currentTarget.style.display = 'none')}
             />
           </div>
         ))}
