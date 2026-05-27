@@ -27,13 +27,32 @@ export default function CorporateEvents() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHeading
-        title="Premier Corporate Event DJ NYC | B.MILLS | Brand Activations & Galas"
-        description="B.MILLS provides curated music direction for luxury corporate galas, brand activations, cocktail receptions, and executive events in New York City. Fully insured and trusted for elevated event environments."
-        keywords="premier corporate DJ NYC, brand activation DJ New York, corporate gala DJ, luxury event DJ NYC, brand event DJ, B.MILLS corporate events, fashion event DJ NYC, COI insured DJ NYC"
-        url="https://djbmills.com/corporate-events"
-      />
+  title="B.MILLS | NYC Corporate Event DJ | Tech & Finance Networking | B Mills"
+  description="Premier NYC corporate DJ trusted by Google, Goldman Sachs, LVMH, and Gagosian Gallery. Specialized in high-stakes finance networking, luxury brand activations, and global galas."
+  keywords="corporate DJ NYC, finance event DJ New York, tech networking DJ, luxury brand activation DJ, B Mills DJ, Goldman Sachs DJ, Google event DJ, Brooklyn corporate DJ"
+  url="https://djbmills.com/corporate-events"
+/>
 
       <CorporateHero />
+
+      {/* Section: Strategic Partners & Clients */}
+<section className="py-16 md:py-20 border-b border-border bg-background">
+  <div className="max-w-6xl mx-auto px-6 md:px-12">
+    <motion.p 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-16 text-center"
+    >
+      Selected Client Experience
+    </motion.p>
+    
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-12 gap-y-16 items-center">
+      {/* ... logo map ... */}
+    </div>
+  </div>
+</section>
 
 {/* Section 01: The Philosophy */}
 <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
