@@ -35,7 +35,7 @@ export default function CorporateEvents() {
 
       <CorporateHero />
 
- {/* Section: Professional Brand Marquee */}
+{/* Section: Professional Brand Marquee */}
 <section className="relative py-20 border-b border-border bg-background overflow-hidden">
   <div className="max-w-6xl mx-auto px-6 mb-12 relative z-10">
     <p className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground text-center">
@@ -52,12 +52,14 @@ export default function CorporateEvents() {
           'mlb', 'fanatics', 'tumi', 'citi'
         ].map((brand) => (
           <div key={`${brand}-${i}`} className="mx-12 md:mx-16 flex items-center justify-center">
-           <img
-  src={`/images/logos/${brand}.svg`}
-  alt={`${brand} logo`}
-  className="h-6 md:h-7 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-500 pointer-events-none"
-  {/* ... rest of the tag */}
-/>
+            <img
+              src={`/images/logos/${brand}.svg`}
+              alt={`${brand} logo`}
+              className="h-6 md:h-7 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-500 pointer-events-none"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+            />
           </div>
         ))}
       </div>
