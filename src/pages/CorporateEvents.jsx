@@ -35,21 +35,44 @@ export default function CorporateEvents() {
 
       <CorporateHero />
 
-      {/* Section: Strategic Partners & Clients */}
+     {/* Section: Strategic Partners & Clients */}
 <section className="py-16 md:py-20 border-b border-border bg-background">
-  <div className="max-w-6xl mx-auto px-6 md:px-12">
+  <div className="max-w-6xl mx-auto px-6 md:px-12 text-center">
     <motion.p 
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
-      className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-16 text-center"
+      className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-16"
     >
       Selected Client Experience
     </motion.p>
     
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-12 gap-y-16 items-center">
-      {/* ... logo map ... */}
+    <div className="flex flex-wrap justify-center lg:justify-between items-center gap-12 md:gap-16">
+      {[
+        { name: 'Google', url: 'https://www.vectorlogo.zone/logos/google/google-ar21.svg' },
+        { name: 'Goldman Sachs', url: 'https://www.vectorlogo.zone/logos/goldmansachs/goldmansachs-ar21.svg' },
+        { name: 'LVMH', url: 'https://www.vectorlogo.zone/logos/lvmh/lvmh-ar21.svg' },
+        { name: 'Citadel', url: 'https://www.vectorlogo.zone/logos/citadel/citadel-ar21.svg' },
+        { name: 'Celine', url: 'https://www.vectorlogo.zone/logos/celine/celine-ar21.svg' },
+        { name: 'Polymarket', url: 'https://www.vectorlogo.zone/logos/polymarket/polymarket-ar21.svg' }
+      ].map((logo, index) => (
+        <motion.div
+          key={logo.name}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.1 * index }}
+          className="flex items-center justify-center min-w-[120px]"
+        >
+          <img
+            src={logo.url}
+            alt={`${logo.name} logo`}
+            onLoad={(e) => e.currentTarget.style.opacity = "0.4"}
+            className="h-6 md:h-8 w-auto object-contain opacity-0 grayscale contrast-125 transition-all duration-700 hover:opacity-100 hover:grayscale-0"
+          />
+        </motion.div>
+      ))}
     </div>
   </div>
 </section>
