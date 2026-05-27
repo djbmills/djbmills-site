@@ -44,8 +44,8 @@ export default function CorporateEvents() {
   </div>
 
   <div className="relative flex overflow-x-hidden border-y border-border/50 py-12">
-    {/* flex-nowrap and width max-content prevents the "jump" glitch */}
-    <div className="flex flex-nowrap animate-marquee">
+    {/* One continuous flex container for a smoother loop */}
+    <div className="flex animate-marquee whitespace-nowrap">
       {[1, 2].map((group) => (
         <div key={group} className="flex items-center">
           {[
@@ -55,14 +55,16 @@ export default function CorporateEvents() {
           ].map((brand) => (
             <div 
               key={`${brand}-${group}`} 
-              className="flex items-center justify-center px-8 md:px-12"
-              /* Specific width for horizontal logos to make them look larger */
-              style={{ minWidth: brand === 'google' || brand === 'goldman-sachs' ? '180px' : '140px' }}
+              className="mx-8 md:mx-12 flex items-center justify-center shrink-0"
             >
               <img
                 src={`/images/logos/${brand}.svg`}
                 alt={brand}
-                className="max-h-7 md:max-h-9 w-full object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
+                /* SIZING STRATEGY: 
+                   - Use a taller height (h-10) to make boxy logos clear.
+                   - Remove fixed width so Google/Goldman can spread out naturally.
+                */
+                className="h-7 md:h-10 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
               />
             </div>
           ))}
@@ -77,15 +79,13 @@ export default function CorporateEvents() {
       100% { transform: translateX(-50%); }
     }
     .animate-marquee {
+      display: flex;
       width: max-content;
-      /* SPEED: 40s is the exact midway point for a smooth, professional glide */
-      animation: marquee 40s linear infinite;
+      /* SPEED: 50s is the sweet spot between the too-fast and the too-slow versions */
+      animation: marquee 50s linear infinite;
     }
-    /* Ensures no stutter on mobile devices */
-    @media (prefers-reduced-motion: reduce) {
-      .animate-marquee {
-        animation: none;
-      }
+    .animate-marquee:hover {
+      animation-play-state: paused;
     }
   `}</style>
 </section>
