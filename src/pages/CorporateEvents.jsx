@@ -36,51 +36,31 @@ export default function CorporateEvents() {
       <CorporateHero />
 
    {/* Section: Professional Brand Marquee */}
-<section className="py-20 md:py-24 border-b border-border bg-background overflow-hidden">
-  <div className="max-w-6xl mx-auto px-6 mb-12">
-    <motion.p 
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 1 }}
-      className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground text-center"
-    >
+<section className="py-16 md:py-20 border-b border-border bg-[#F5F5F5] overflow-hidden">
+  <div className="max-w-6xl mx-auto px-6 mb-10">
+    <p className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground text-center">
       Trusted By
-    </motion.p>
+    </p>
   </div>
 
-  {/* The Track: Single horizontal line */}
-  <div className="relative flex overflow-x-hidden border-y border-border/40 py-12 bg-neutral-900/10">
-    <div className="animate-marquee whitespace-nowrap flex items-center">
-      {[
-        'google', 'goldman-sachs', 'lvmh', 'celine', 'oracle', 
-        'polymarket', 'disney', 'gucci', 'jpmorgan', 'nbc', 
-        'mlb', 'fanatics', 'tumi', 'citi'
-      ].map((brand) => (
-        <img
-          key={`${brand}-1`}
-          src={`/images/logos/${brand}.svg`}
-          alt={`${brand} logo`}
-          className="mx-16 h-5 md:h-6 w-auto object-contain brightness-0 invert opacity-30 hover:opacity-100 transition-all duration-700 pointer-events-none"
-        />
-      ))}
-    </div>
-
-    {/* Duplicate set for the infinite loop illusion */}
-    <div className="absolute top-12 animate-marquee2 whitespace-nowrap flex items-center">
-      {[
-        'google', 'goldman-sachs', 'lvmh', 'celine', 'oracle', 
-        'polymarket', 'disney', 'gucci', 'jpmorgan', 'nbc', 
-        'mlb', 'fanatics', 'tumi', 'citi'
-      ].map((brand) => (
-        <img
-          key={`${brand}-2`}
-          src={`/images/logos/${brand}.svg`}
-          alt={`${brand} logo`}
-          className="mx-16 h-5 md:h-6 w-auto object-contain brightness-0 invert opacity-30 hover:opacity-100 transition-all duration-700 pointer-events-none"
-        />
-      ))}
-    </div>
+  <div className="relative flex overflow-x-hidden border-y border-black/5 py-12">
+    {[1, 2].map((i) => (
+      <div key={i} className="animate-marquee whitespace-nowrap flex items-center">
+        {[
+          'google', 'goldman-sachs', 'lvmh', 'celine', 'oracle', 
+          'polymarket', 'disney', 'gucci', 'jpmorgan', 'nbc', 
+          'mlb', 'fanatics', 'tumi', 'citi'
+        ].map((brand) => (
+          <div key={`${brand}-${i}`} className="mx-12 md:mx-16 flex items-center justify-center">
+            <img
+              src={`/images/logos/${brand}.svg`}
+              alt={`${brand} logo`}
+              className="h-6 md:h-8 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
+            />
+          </div>
+        ))}
+      </div>
+    ))}
   </div>
 
   <style jsx>{`
@@ -88,19 +68,12 @@ export default function CorporateEvents() {
       0% { transform: translateX(0%); }
       100% { transform: translateX(-100%); }
     }
-    @keyframes marquee2 {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(0%); }
-    }
     .animate-marquee {
-      animation: marquee 70s linear infinite;
-    }
-    .animate-marquee2 {
-      animation: marquee2 70s linear infinite;
+      animation: marquee 60s linear infinite;
     }
   `}</style>
 </section>
-
+      
 {/* Section 01: The Philosophy */}
 <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
   <div className="max-w-4xl mx-auto">
