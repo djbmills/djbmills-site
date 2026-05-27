@@ -43,28 +43,25 @@ export default function CorporateEvents() {
     </p>
   </div>
 
-  <div className="relative flex overflow-x-hidden border-y border-border/50 py-12">
-    {/* One continuous flex container for a smoother loop */}
-    <div className="flex animate-marquee whitespace-nowrap">
-      {[1, 2].map((group) => (
-        <div key={group} className="flex items-center">
+  <div className="relative border-y border-border/50 py-12">
+    <div className="marquee-container flex">
+      {/* The row of logos rendered twice for a seamless loop */}
+      {[1, 2].map((i) => (
+        <div key={i} className="flex items-center shrink-0">
           {[
             'google', 'goldman-sachs', 'lvmh', 'celine', 'oracle', 
             'polymarket', 'disney', 'gucci', 'jpmorgan', 'nbc', 
             'mlb', 'fanatics', 'tumi', 'citi'
           ].map((brand) => (
             <div 
-              key={`${brand}-${group}`} 
-              className="mx-8 md:mx-12 flex items-center justify-center shrink-0"
+              key={`${brand}-${i}`} 
+              className="flex items-center justify-center px-10 md:px-16"
+              style={{ minWidth: 'max-content' }}
             >
               <img
                 src={`/images/logos/${brand}.svg`}
                 alt={brand}
-                /* SIZING STRATEGY: 
-                   - Use a taller height (h-10) to make boxy logos clear.
-                   - Remove fixed width so Google/Goldman can spread out naturally.
-                */
-                className="h-7 md:h-10 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
+                className="h-7 md:h-9 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
               />
             </div>
           ))}
@@ -74,18 +71,21 @@ export default function CorporateEvents() {
   </div>
 
   <style jsx>{`
-    @keyframes marquee {
+    @keyframes scroll {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
-    .animate-marquee {
-      display: flex;
+    .marquee-container {
       width: max-content;
-      /* SPEED: 50s is the sweet spot between the too-fast and the too-slow versions */
-      animation: marquee 50s linear infinite;
+      display: flex;
+      flex-wrap: nowrap;
+      /* Speed: 45s is the rock-solid middle ground you requested */
+      animation: scroll 45s linear infinite;
     }
-    .animate-marquee:hover {
-      animation-play-state: paused;
+    /* Prevents the overlapping glitch seen in your screenshot */
+    .marquee-container > div {
+      display: flex;
+      flex-shrink: 0;
     }
   `}</style>
 </section>
