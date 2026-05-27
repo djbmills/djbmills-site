@@ -52,15 +52,12 @@ export default function CorporateEvents() {
           'mlb', 'fanatics', 'tumi', 'citi'
         ].map((brand) => (
           <div key={`${brand}-${i}`} className="mx-12 md:mx-16 flex items-center justify-center">
-            <img
-              src={`/images/logos/${brand}.svg`}
-              alt={`${brand} logo`}
-              className="h-6 md:h-7 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
-              onError={(e) => {
-                console.log(`Failed to load: ${brand}`);
-                e.currentTarget.style.display = 'none';
-              }}
-            />
+           <img
+  src={`/images/logos/${brand}.svg`}
+  alt={`${brand} logo`}
+  className="h-6 md:h-7 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-500 pointer-events-none"
+  {/* ... rest of the tag */}
+/>
           </div>
         ))}
       </div>
