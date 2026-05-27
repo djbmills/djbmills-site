@@ -44,43 +44,48 @@ export default function CorporateEvents() {
   </div>
 
   <div className="relative flex overflow-x-hidden border-y border-border/50 py-12">
-    {/* Duplicate for seamless looping */}
-    {[1, 2].map((group) => (
-      <div key={group} className="animate-marquee whitespace-nowrap flex items-center">
-        {[
-          'google', 'goldman-sachs', 'lvmh', 'celine', 'oracle', 
-          'polymarket', 'disney', 'gucci', 'jpmorgan', 'nbc', 
-          'mlb', 'fanatics', 'tumi', 'citi'
-        ].map((brand) => (
-          <div key={`${brand}-${group}`} className="mx-10 md:mx-14 flex items-center justify-center w-[120px] md:w-[160px]">
-            <img
-              src={`/images/logos/${brand}.svg`}
-              alt={brand}
-              /* Sizing Fix: Changed to max-h-12. 
-                 w-full + object-contain ensures horizontal logos (Google/Goldman) 
-                 fill the 160px width, making them much more legible.
-              */
-              className="max-h-8 md:max-h-12 w-full object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
-            />
-          </div>
-        ))}
-      </div>
-    ))}
+    {/* flex-nowrap and width max-content prevents the "jump" glitch */}
+    <div className="flex flex-nowrap animate-marquee">
+      {[1, 2].map((group) => (
+        <div key={group} className="flex items-center">
+          {[
+            'google', 'goldman-sachs', 'lvmh', 'celine', 'oracle', 
+            'polymarket', 'disney', 'gucci', 'jpmorgan', 'nbc', 
+            'mlb', 'fanatics', 'tumi', 'citi'
+          ].map((brand) => (
+            <div 
+              key={`${brand}-${group}`} 
+              className="flex items-center justify-center px-8 md:px-12"
+              /* Specific width for horizontal logos to make them look larger */
+              style={{ minWidth: brand === 'google' || brand === 'goldman-sachs' ? '180px' : '140px' }}
+            >
+              <img
+                src={`/images/logos/${brand}.svg`}
+                alt={brand}
+                className="max-h-7 md:max-h-9 w-full object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
+              />
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
   </div>
 
   <style jsx>{`
     @keyframes marquee {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-100%); }
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
     .animate-marquee {
-      display: flex;
-      flex-shrink: 0;
-      /* Speed: 20s for a faster, seamless scroll */
-      animation: marquee 20s linear infinite;
+      width: max-content;
+      /* SPEED: 40s is the exact midway point for a smooth, professional glide */
+      animation: marquee 40s linear infinite;
     }
-    .animate-marquee:hover {
-      animation-play-state: paused;
+    /* Ensures no stutter on mobile devices */
+    @media (prefers-reduced-motion: reduce) {
+      .animate-marquee {
+        animation: none;
+      }
     }
   `}</style>
 </section>
