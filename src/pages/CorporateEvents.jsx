@@ -35,54 +35,70 @@ export default function CorporateEvents() {
 
       <CorporateHero />
 
-    {/* Section: Strategic Partners & Clients */}
-<section className="py-16 md:py-20 border-b border-border bg-background">
-  <div className="max-w-6xl mx-auto px-6 md:px-12 text-center">
+   {/* Section: Professional Brand Marquee */}
+<section className="py-20 md:py-24 border-b border-border bg-background overflow-hidden">
+  <div className="max-w-6xl mx-auto px-6 mb-12">
     <motion.p 
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-      className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-16"
+      transition={{ duration: 1 }}
+      className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground text-center"
     >
       Trusted By
     </motion.p>
-    
-    <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-16 lg:gap-x-20">
+  </div>
+
+  {/* The Track: Single horizontal line */}
+  <div className="relative flex overflow-x-hidden border-y border-border/40 py-12 bg-neutral-900/10">
+    <div className="animate-marquee whitespace-nowrap flex items-center">
       {[
-        { name: 'Google', src: '/images/logos/google.svg' },
-        { name: 'Goldman Sachs', src: '/images/logos/goldman.svg' },
-        { name: 'LVMH', src: '/images/logos/lvmh.svg' },
-        { name: 'Citadel', src: '/images/logos/citadel.svg' },
-        { name: 'Celine', src: '/images/logos/celine.svg' },
-        { name: 'Polymarket', src: '/images/logos/polymarket.svg' }
-      ].map((logo, index) => (
-        <motion.div
-          key={logo.name}
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.1 * index }}
-          className="flex items-center justify-center min-w-[120px] group"
-        >
-          <img
-            src={logo.src}
-            alt={`${logo.name} logo`}
-            className="h-6 md:h-7 w-auto object-contain opacity-40 grayscale contrast-125 transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
-            onError={(e) => {
-              // If the image hasn't been uploaded to your folder yet, 
-              // this keeps the layout clean by showing the name in your brand font.
-              e.currentTarget.style.display = 'none';
-              e.currentTarget.nextSibling.style.display = 'block';
-            }}
-          />
-          <span className="hidden font-body text-[10px] tracking-[0.3em] uppercase opacity-40 group-hover:opacity-100 transition-opacity">
-            {logo.name}
-          </span>
-        </motion.div>
+        'google', 'goldman-sachs', 'lvmh', 'celine', 'oracle', 
+        'polymarket', 'disney', 'gucci', 'jpmorgan', 'nbc', 
+        'mlb', 'fanatics', 'tumi', 'citi'
+      ].map((brand) => (
+        <img
+          key={`${brand}-1`}
+          src={`/images/logos/${brand}.svg`}
+          alt={`${brand} logo`}
+          className="mx-16 h-5 md:h-6 w-auto object-contain brightness-0 invert opacity-30 hover:opacity-100 transition-all duration-700 pointer-events-none"
+        />
+      ))}
+    </div>
+
+    {/* Duplicate set for the infinite loop illusion */}
+    <div className="absolute top-12 animate-marquee2 whitespace-nowrap flex items-center">
+      {[
+        'google', 'goldman-sachs', 'lvmh', 'celine', 'oracle', 
+        'polymarket', 'disney', 'gucci', 'jpmorgan', 'nbc', 
+        'mlb', 'fanatics', 'tumi', 'citi'
+      ].map((brand) => (
+        <img
+          key={`${brand}-2`}
+          src={`/images/logos/${brand}.svg`}
+          alt={`${brand} logo`}
+          className="mx-16 h-5 md:h-6 w-auto object-contain brightness-0 invert opacity-30 hover:opacity-100 transition-all duration-700 pointer-events-none"
+        />
       ))}
     </div>
   </div>
+
+  <style jsx>{`
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+    @keyframes marquee2 {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(0%); }
+    }
+    .animate-marquee {
+      animation: marquee 70s linear infinite;
+    }
+    .animate-marquee2 {
+      animation: marquee2 70s linear infinite;
+    }
+  `}</style>
 </section>
 
 {/* Section 01: The Philosophy */}
