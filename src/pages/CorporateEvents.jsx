@@ -36,42 +36,51 @@ export default function CorporateEvents() {
       <CorporateHero />
 
 {/* Section: Professional Brand Marquee */}
-<section className="relative py-20 border-b border-border bg-background overflow-hidden min-h-[150px]">
-  <div className="max-w-6xl mx-auto px-6 mb-12">
+<section className="relative py-20 border-b border-border bg-background overflow-hidden">
+  <div className="max-w-6xl mx-auto px-6 mb-12 relative z-10">
     <p className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground text-center">
       Trusted By
     </p>
   </div>
 
   <div className="relative flex overflow-x-hidden border-y border-border/50 py-12">
-    <div className="animate-marquee whitespace-nowrap flex items-center">
-      {/* Logos List */}
-      <img src="/images/logos/google.svg" alt="Google" className="mx-12 h-6 w-auto grayscale opacity-60" />
-      <img src="/images/logos/goldman-sachs.svg" alt="Goldman" className="mx-12 h-6 w-auto grayscale opacity-60" />
-      <img src="/images/logos/lvmh.svg" alt="LVMH" className="mx-12 h-6 w-auto grayscale opacity-60" />
-      <img src="/images/logos/celine.svg" alt="Celine" className="mx-12 h-6 w-auto grayscale opacity-60" />
-      <img src="/images/logos/oracle.svg" alt="Oracle" className="mx-12 h-6 w-auto grayscale opacity-60" />
-      <img src="/images/logos/polymarket.svg" alt="Polymarket" className="mx-12 h-6 w-auto grayscale opacity-60" />
-      <img src="/images/logos/disney.svg" alt="Disney" className="mx-12 h-6 w-auto grayscale opacity-60" />
-      <img src="/images/logos/gucci.svg" alt="Gucci" className="mx-12 h-6 w-auto grayscale opacity-60" />
-      <img src="/images/logos/jpmorgan.svg" alt="JPM" className="mx-12 h-6 w-auto grayscale opacity-60" />
-      <img src="/images/logos/nbc.svg" alt="NBC" className="mx-12 h-6 w-auto grayscale opacity-60" />
-      <img src="/images/logos/mlb.svg" alt="MLB" className="mx-12 h-6 w-auto grayscale opacity-60" />
-      <img src="/images/logos/fanatics.svg" alt="Fanatics" className="mx-12 h-6 w-auto grayscale opacity-60" />
-      <img src="/images/logos/tumi.svg" alt="Tumi" className="mx-12 h-6 w-auto grayscale opacity-60" />
-      <img src="/images/logos/citi.svg" alt="Citi" className="mx-12 h-6 w-auto grayscale opacity-60" />
-    </div>
+    {/* Duplicate for seamless looping */}
+    {[1, 2].map((group) => (
+      <div key={group} className="animate-marquee whitespace-nowrap flex items-center">
+        {[
+          'google', 'goldman-sachs', 'lvmh', 'celine', 'oracle', 
+          'polymarket', 'disney', 'gucci', 'jpmorgan', 'nbc', 
+          'mlb', 'fanatics', 'tumi', 'citi'
+        ].map((brand) => (
+          <div key={`${brand}-${group}`} className="mx-10 md:mx-14 flex items-center justify-center w-[120px] md:w-[160px]">
+            <img
+              src={`/images/logos/${brand}.svg`}
+              alt={brand}
+              /* Sizing Fix: Changed to max-h-12. 
+                 w-full + object-contain ensures horizontal logos (Google/Goldman) 
+                 fill the 160px width, making them much more legible.
+              */
+              className="max-h-8 md:max-h-12 w-full object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
+            />
+          </div>
+        ))}
+      </div>
+    ))}
   </div>
 
   <style jsx>{`
     @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
     }
     .animate-marquee {
       display: flex;
-      width: max-content;
-      animation: marquee 40s linear infinite;
+      flex-shrink: 0;
+      /* Speed: 20s for a faster, seamless scroll */
+      animation: marquee 20s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
     }
   `}</style>
 </section>
