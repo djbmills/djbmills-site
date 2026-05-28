@@ -36,14 +36,14 @@ export default function CorporateEvents() {
       <CorporateHero />
 
 {/* Section: Professional Brand Marquee */}
-<section className="relative py-20 border-b border-border bg-background overflow-hidden">
+<section className="relative pt-20 pb-10 bg-background overflow-hidden">
   <div className="max-w-6xl mx-auto px-6 mb-12 relative z-10">
     <p className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground text-center">
       Trusted By
     </p>
   </div>
 
-  <div className="relative border-y border-border/50 py-10 overflow-hidden">
+  <div className="relative border-t border-border/50 py-10 overflow-hidden">
     <div className="marquee-track">
       {[1, 2].map((i) => (
         <div key={i} className="marquee-row">
