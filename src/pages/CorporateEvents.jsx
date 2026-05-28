@@ -43,25 +43,32 @@ export default function CorporateEvents() {
     </p>
   </div>
 
-  <div className="relative border-y border-border/50 py-12">
-    <div className="marquee-container flex">
-      {/* The row of logos rendered twice for a seamless loop */}
+  <div className="relative border-y border-border/50 py-10 overflow-hidden">
+    <div className="marquee-track">
       {[1, 2].map((i) => (
-        <div key={i} className="flex items-center shrink-0">
+        <div key={i} className="marquee-row">
           {[
-            'google', 'goldman-sachs', 'lvmh', 'celine', 'oracle', 
-            'polymarket', 'disney', 'gucci', 'jpmorgan', 'nbc', 
-            'mlb', 'fanatics', 'tumi', 'citi'
+            'celine',
+            'oracle',
+            'polymarket',
+            'goldmansachs',
+            'disney',
+            'lvmh',
+            'gucci',
+            'jpmorgan',
+            'nbcuniversal',
+            'mlb',
+            'fanatics',
+            'tumi',
+            'citi',
+            'google'
           ].map((brand) => (
-            <div 
-              key={`${brand}-${i}`} 
-              className="flex items-center justify-center px-10 md:px-16"
-              style={{ minWidth: 'max-content' }}
-            >
+            <div key={`${brand}-${i}`} className="logo-slot">
               <img
                 src={`/images/logos/${brand}.svg`}
                 alt={brand}
-                className="h-7 md:h-9 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
+                className="logo-img"
+                loading="lazy"
               />
             </div>
           ))}
@@ -71,21 +78,58 @@ export default function CorporateEvents() {
   </div>
 
   <style jsx>{`
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    @keyframes marqueeScroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
     }
-    .marquee-container {
+
+    .marquee-track {
+      display: flex;
       width: max-content;
-      display: flex;
-      flex-wrap: nowrap;
-      /* Speed: 45s is the rock-solid middle ground you requested */
-      animation: scroll 45s linear infinite;
+      animation: marqueeScroll 55s linear infinite;
+      will-change: transform;
     }
-    /* Prevents the overlapping glitch seen in your screenshot */
-    .marquee-container > div {
+
+    .marquee-row {
       display: flex;
+      align-items: center;
       flex-shrink: 0;
+    }
+
+    .logo-slot {
+      width: 220px;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      padding: 0 26px;
+    }
+
+    .logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: grayscale(1);
+      opacity: 0.48;
+      transition: opacity 500ms ease, filter 500ms ease;
+    }
+
+    .logo-img:hover {
+      opacity: 0.9;
+      filter: grayscale(0);
+    }
+
+    @media (min-width: 768px) {
+      .logo-slot {
+        width: 255px;
+        height: 84px;
+        padding: 0 34px;
+      }
     }
   `}</style>
 </section>
