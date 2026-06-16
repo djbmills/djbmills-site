@@ -18,18 +18,18 @@ const selectedEvents = [
 ];
 
 const trustedFor = [
-  "Corporate events and holiday parties",
-  "Private celebrations and milestone events",
-  "Wedding after parties and late night transitions",
+  "Luxury brand events and product launches",
+  "Tech, finance, fashion, and private client rooms",
+  "After-dark events and high-level celebrations",
 ];
 
 export default function CorporateEvents() {
   return (
     <div className="min-h-screen bg-background">
-      <SEOHeading
-  title="B.MILLS | NYC Corporate Event DJ | Tech & Finance Networking | B Mills"
-  description="Premier NYC corporate DJ trusted by Google, Goldman Sachs, LVMH, and Gagosian Gallery. Specialized in high-stakes finance networking, luxury brand activations, and global galas."
-  keywords="corporate DJ NYC, finance event DJ New York, tech networking DJ, luxury brand activation DJ, B Mills DJ, Goldman Sachs DJ, Google event DJ, Brooklyn corporate DJ"
+     <SEOHeading
+  title="B.MILLS | Music Direction for Luxury Brand, Tech & Finance Events NYC"
+  description="B.MILLS creates music direction and DJ sets for luxury brand events, tech and finance networking, product launches, private rooms, and high-end afterparties in New York and beyond."
+  keywords="luxury brand event DJ NYC, tech networking DJ NYC, finance event DJ New York, corporate event DJ NYC, brand activation DJ NYC, product launch DJ NYC, private room DJ NYC, high end afterparty DJ NYC, Goldman Sachs DJ, Google event DJ, B.MILLS, B Mills DJ"
   url="https://djbmills.com/corporate-events"
 />
 
@@ -529,8 +529,8 @@ export default function CorporateEvents() {
       className="mt-20 pt-10 border-t border-border"
     >
       <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-6">
-        Also Trusted For
-      </p>
+  The Right Rooms
+</p>
       <div className="grid md:grid-cols-3 gap-6">
         {trustedFor.map((item) => (
           <p
@@ -607,7 +607,7 @@ At the highest level, the music is only part of it. B.MILLS is fully insured and
               />
             </div>
             <p className="font-body text-xs text-white/30 mt-4 tracking-widest uppercase">
-              Corporate Cocktail Reception | Boom Boom Room, New York City
+              Kering Eyewear Cocktail Reception | Boom Boom Room, New York City
             </p>
           </motion.div>
         </div>
