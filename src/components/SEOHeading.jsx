@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
 export default function SEOHeading({
-  title = 'B.MILLS | Premier Event DJ NYC for Corporate Events, Brand Experiences & Private Celebrations',
-  description = 'B.MILLS is a New York City DJ specializing in luxury corporate events, brand experiences, and high-end private events across NYC, the Hamptons, and Connecticut.',
+  title = 'B.MILLS | Music Direction for Premier Brand, Tech & Finance Events NYC',
+  description = 'B.MILLS creates music direction and DJ sets for luxury brand events, tech and finance gatherings, product launches, cultural moments, private rooms, and after party events in New York and beyond.',
   keywords = '',
   image = "https://djbmills.com/social/og-home.jpg",
   url = 'https://djbmills.com/',
