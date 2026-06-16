@@ -22,8 +22,8 @@ const SpotifyIcon = ({ className }) => (
 
 export default function InquiryFooter({
   headline = "Let's shape\nthe night.",
-  body = "Share a few details and we can build a curated soundtrack for your event, your space, and your audience.",
-  footerText = "Serving luxury corporate events, brand activations, and private clients across New York City, the Hamptons, Westchester, New Jersey, and Connecticut. Available for travel worldwide."
+  body = "Share the room, the audience, and the intention. We’ll shape the sound around the energy of the night.",  
+  footerText = "Serving luxury corporate events, brand activations, and private clients across New York City, the Hamptons, Westchester, New Jersey, South Florida, and Connecticut. Available for travel worldwide."
 }) {
   const [formData, setFormData] = useState({
     name: '', email: '', eventDate: null, location: '', 
@@ -155,7 +155,7 @@ export default function InquiryFooter({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
                 <div>
                   <label className={labelClass}>Event Type</label>
-                  <Input name="eventType" value={formData.eventType} onChange={handleChange} placeholder="Brand Event, Private Room, After Party..." className={fieldClass} />
+                  <Input name="eventType" value={formData.eventType} onChange={handleChange} placeholder="Brand Event, Private Room, Afterparty..." className={fieldClass} />
                 </div>
                 <div>
                   <label className={labelClass}>Guest Count</label>
@@ -223,7 +223,7 @@ export default function InquiryFooter({
           </p>
           
           <p className="font-body text-[10px] tracking-normal text-muted-foreground/40 italic">
-            © {new Date().getFullYear()} B.MILLS. New York City · The Hamptons · Westchester · New Jersey · Connecticut · Worldwide
+            © {new Date().getFullYear()} B.MILLS. New York City · The Hamptons · Westchester · New Jersey · Connecticut · South Florida · Worldwide
           </p>
         </div>
       </div>
