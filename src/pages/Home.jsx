@@ -15,11 +15,11 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHeading
-        title="B.MILLS | Luxury Event DJ NYC | Brand Activations & Wedding Afterparties"
-        description="B.MILLS is a New York City luxury event DJ specializing in curated sound design for corporate galas, brand activations, and fashion-forward wedding afterparties."
-        image="/images/bmills-hero.jpg"
-        url="https://djbmills.com/"
-      />
+  title="B.MILLS | Music Direction for Luxury Brand Events & Private Rooms"
+  description="B.MILLS creates music direction and DJ sets for luxury brand events, tech and finance gatherings, product launches, cultural moments, private rooms, and afterparties in New York and beyond."
+  image="/images/bmills-hero.jpg"
+  url="https://djbmills.com/"
+/>
       
       {/* ── UNNUMBERED ── */}
       <Hero />
@@ -48,14 +48,9 @@ export default function Home() {
       <InquiryFooter
         headline="Let's shape the night."
         body="Share a few details and we can build a curated sonic identity for your event, your space, and your audience."
-        footerText={`Specializing in luxury corporate events, brand activations, and curated wedding afterparties across New York City, 
+        footerText={`Specializing in luxury corporate events, brand activations, and curated afterparties across New York City, 
 the Hamptons, New Jersey, and Connecticut.`}
-      />
-
-      {/* Hidden SEO Content */}
-      <div aria-hidden="true" className="opacity-0 h-0 overflow-hidden pointer-events-none">
-        <p>B.MILLS is a New York City-based DJ specializing in luxury corporate events...</p>
-      </div>
+  />
     </div>
   );
 }
