@@ -20,7 +20,7 @@ const selectedEvents = [
 const trustedFor = [
   "Luxury brand events and product launches",
   "Tech, finance, fashion, and private client rooms",
-  "After-dark events and high-level celebrations",
+  "Afterparties and high-level celebrations",
 ];
 
 export default function CorporateEvents() {
@@ -349,7 +349,7 @@ export default function CorporateEvents() {
   transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
   className="font-body text-base text-muted-foreground leading-relaxed max-w-3xl"
 >
-  B.MILLS is booked by brands, agencies, planners, and private clients for events where music needs to feel intentional. His work spans premier brand activations, product launches, tech and finance gatherings, fashion events, cultural programming, executive rooms, private celebrations, and after parties across New York and beyond.
+  B.MILLS is booked by brands, agencies, planners, and private clients for events where music needs to feel intentional. His work spans luxury brand activations, product launches, tech and finance gatherings, fashion events, cultural programming, executive rooms, private celebrations, and afterparties across New York and beyond.
 </motion.p>
 
 {/* Gagosian Visual Case Study */}
