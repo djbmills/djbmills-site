@@ -155,7 +155,7 @@ export default function InquiryFooter({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
                 <div>
                   <label className={labelClass}>Event Type</label>
-                  <Input name="eventType" value={formData.eventType} onChange={handleChange} placeholder="Brand Event, Private Room, After-Dark..." className={fieldClass} />
+                  <Input name="eventType" value={formData.eventType} onChange={handleChange} placeholder="Brand Event, Private Room, After Party..." className={fieldClass} />
                 </div>
                 <div>
                   <label className={labelClass}>Guest Count</label>
