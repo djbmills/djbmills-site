@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { ArrowRight, CalendarIcon, Instagram, Linkedin, Mail } from 'lucide-react';
+import { ArrowRight, CalendarIcon, Instagram, Linkedin, Mail, FileText } from 'lucide-react';
 import { format } from 'date-fns';
 
 import { Input } from '@/components/ui/input';
@@ -96,15 +96,31 @@ export default function InquiryFooter({
       <div className="max-w-7xl mx-auto relative">
         <div className="grid md:grid-cols-2 gap-16 md:gap-24 mb-40">
           
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <p className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-4">
-              Inquire · Late 2026 / 2027 Availability
-            </p>
-            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight italic tracking-tight">{headline}</h2>
-            <div className="w-12 h-px bg-foreground/20 mb-8" />
-            <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-sm mb-12">{body}</p>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col justify-between">
+            <div>
+              <p className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-4">
+                Inquire · Late 2026 / 2027 Availability
+              </p>
+              <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight italic tracking-tight">{headline}</h2>
+              <div className="w-12 h-px bg-foreground/20 mb-8" />
+              <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-sm mb-12">{body}</p>
+              
+              <div className="mb-16 space-y-4">
+                <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground/60">Documentation</p>
+                <div className="flex flex-col space-y-3">
+                  <a href="/documentation/bmills-epk.pdf" download className="font-body text-xs tracking-[0.15em] uppercase text-foreground/80 hover:text-foreground transition-colors flex items-center gap-2 group w-fit">
+                    <FileText className="w-3.5 h-3.5 text-muted-foreground/60 group-hover:text-foreground transition-colors" />
+                    <span className="border-b border-transparent group-hover:border-foreground transition-all">Electronic Press Kit (EPK)</span>
+                  </a>
+                  <a href="/documentation/bmills-technical-rider.pdf" download className="font-body text-xs tracking-[0.15em] uppercase text-foreground/80 hover:text-foreground transition-colors flex items-center gap-2 group w-fit">
+                    <FileText className="w-3.5 h-3.5 text-muted-foreground/60 group-hover:text-foreground transition-colors" />
+                    <span className="border-b border-transparent group-hover:border-foreground transition-all">Technical Rider</span>
+                  </a>
+                </div>
+              </div>
+            </div>
             
-            <div className="space-y-1">
+            <div className="space-y-1 mt-auto">
               <a href="mailto:bookings@djbmills.com" className="font-body text-xs tracking-[0.2em] uppercase text-foreground hover:opacity-60 transition-opacity">
                 bookings@djbmills.com
               </a>
