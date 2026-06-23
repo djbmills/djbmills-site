@@ -176,9 +176,9 @@ export default function InquiryFooter({
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
                 <div>
-                  <label className={labelClass}>Do I need to provide sound?</label>
-                  <Input name="equipmentProvided" value={formData.equipmentProvided} onChange={handleChange} placeholder="Audio details at venue" className={fieldClass} />
-                </div>
+                <label className={labelClass}>Audio Production Requirements</label>
+                <Input name="equipmentProvided" value={formData.equipmentProvided} onChange={handleChange} placeholder="Venue sound, AV production team, or B.MILLS independent setup" className={fieldClass} />
+              </div>
                 <div>
                   <label className={labelClass}>Planner Contact</label>
                   <Input name="plannerContact" value={formData.plannerContact} onChange={handleChange} placeholder="Name / Email" className={fieldClass} />
