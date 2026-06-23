@@ -176,9 +176,9 @@ export default function InquiryFooter({
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
                 <div>
-                <label className={labelClass}>Audio Production Requirements</label>
-                <Input name="equipmentProvided" value={formData.equipmentProvided} onChange={handleChange} placeholder="Venue sound, AV production team, or B.MILLS independent setup" className={fieldClass} />
-              </div>
+                  <label className={labelClass}>Audio Production Requirements</label>
+                  <Input name="equipmentProvided" value={formData.equipmentProvided} onChange={handleChange} placeholder="Venue sound, AV partner, etc." className={fieldClass} />
+                </div>
                 <div>
                   <label className={labelClass}>Planner Contact</label>
                   <Input name="plannerContact" value={formData.plannerContact} onChange={handleChange} placeholder="Name / Email" className={fieldClass} />
@@ -188,7 +188,7 @@ export default function InquiryFooter({
               <div className="grid grid-cols-1 gap-10">
                 <div>
                   <label className={labelClass}>How did you hear about me?</label>
-                  <Input name="hearAbout" value={formData.hearAbout} onChange={handleChange} placeholder="Instagram, Referral, Google..." className={fieldClass} />
+                  <Input name="hearAbout" value={formData.hearAbout} onChange={handleChange} placeholder="Word of mouth, industry referral, Instagram, past event..." className={fieldClass} />
                 </div>
               </div>
 
