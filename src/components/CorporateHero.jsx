@@ -40,7 +40,7 @@ export default function CorporateHero() {
             </motion.h1>
           </div>
 
-          <div className="flex flex-col justify-between md:items-end md:pt-3 md:pb-2">
+          <div className="flex flex-col justify-between md:items-end md:pt-6 md:pb-6">
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -54,7 +54,7 @@ export default function CorporateHero() {
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.7, delay: 1.1 }}
-              className="w-14 md:w-16 h-px bg-foreground/25 origin-right my-7 md:my-0"
+              className="w-14 md:w-16 h-px bg-foreground/25 origin-right my-6 md:my-0"
             />
 
             <motion.p
@@ -74,14 +74,14 @@ export default function CorporateHero() {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 1.45 }}
-          className="h-px bg-border origin-left mt-8 md:mt-9"
+          className="h-px bg-border origin-left mt-7 md:mt-8"
         />
 
         <motion.div
           initial={{ opacity: 0, y: 34 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 1.55 }}
-          className="relative mt-7 md:mt-8 overflow-hidden bg-black/5 aspect-[4/5] md:aspect-[2048/1365]"
+          className="relative mt-6 md:mt-7 overflow-hidden bg-black/5 aspect-[4/5] md:aspect-[2048/1365]"
         >
           <motion.div
             className="absolute inset-0 hidden md:block"
