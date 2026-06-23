@@ -13,71 +13,78 @@ export default function CorporateHero() {
     offset: ['start start', 'end start'],
   });
 
-  const imageY = useTransform(scrollYProgress, [0, 1], ['0%', '8%']);
-  const imageScale = useTransform(scrollYProgress, [0, 1], [1.04, 1]);
+  const yDesktop = useTransform(scrollYProgress, [0, 1], ['0%', '8%']);
+  const yMobile = useTransform(scrollYProgress, [0, 1], ['0%', '4%']);
+  const scale = useTransform(scrollYProgress, [0, 1], [1.04, 1]);
 
   return (
     <section
       ref={ref}
-      className="relative py-20 md:py-28 px-6 md:px-12 border-b border-border bg-background overflow-hidden"
+      className="relative py-20 md:py-28 px-6 md:px-12 border-b border-border bg-[#f0eeeb] overflow-hidden"
     >
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 1,
-            ease: [0.25, 0.1, 0.25, 1],
-            delay: 0.1,
-          }}
+          transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
         >
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 md:gap-12 mb-14 md:mb-20">
-            <p className="font-display text-[4.5rem] md:text-[5.75rem] text-foreground leading-none tracking-wide">
-              B.MILLS
-            </p>
-
-            <p className="font-body text-[10px] md:text-xs tracking-[0.28em] md:tracking-[0.4em] uppercase text-muted-foreground md:text-right max-w-md">
-              Brand Culture / Music Direction / After Dark
-            </p>
-          </div>
-
-          <h1 className="font-heading text-[clamp(3rem,8vw,8.5rem)] font-light text-foreground leading-none tracking-[-0.04em]">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="font-body text-[10px] md:text-xs tracking-[0.28em] md:tracking-[0.3em] uppercase text-foreground/50 md:text-foreground/40 mb-5"
+          >
             Event Sound Director
-          </h1>
+          </motion.p>
 
-          <p className="font-body text-base text-muted-foreground leading-relaxed mt-8 max-w-3xl">
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.5 }}
+            className="font-display text-[4.5rem] md:text-[9rem] lg:text-[11rem] text-foreground leading-none tracking-wide"
+          >
+            B.MILLS
+          </motion.h1>
+
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.7, delay: 1.1 }}
+            className="w-14 md:w-16 h-px bg-foreground/25 my-7 md:my-6 origin-left"
+          />
+
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.3 }}
+            className="font-body text-sm md:text-base text-foreground/55 md:text-muted-foreground leading-relaxed max-w-3xl"
+          >
             Curated sound for brand events and private rooms. B.MILLS creates
             elevated open format DJ sets for product launches, executive dinners,
             cultural moments, and afterparties across New York City and beyond.
-            Shaping soundtracks as part of the atmosphere, not as an
-            afterthought.
-          </p>
+            Shaping soundtracks as part of the atmosphere, not as an afterthought.
+          </motion.p>
         </motion.div>
 
         <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{
-            duration: 0.9,
-            ease: [0.25, 0.1, 0.25, 1],
-            delay: 0.35,
-          }}
+          transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 1.45 }}
           className="h-px bg-border origin-left mt-12 md:mt-14"
         />
 
         <motion.div
           initial={{ opacity: 0, y: 34 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 1,
-            ease: [0.25, 0.1, 0.25, 1],
-            delay: 0.45,
-          }}
+          transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 1.55 }}
           className="relative mt-10 md:mt-12 overflow-hidden bg-black/5 aspect-[4/5] md:aspect-[2048/1365]"
         >
           <motion.div
             className="absolute inset-0"
-            style={{ y: imageY, scale: imageScale }}
+            style={{
+              y: typeof window !== 'undefined' && window.innerWidth < 768 ? yMobile : yDesktop,
+              scale,
+            }}
           >
             <picture>
               <source
@@ -105,7 +112,7 @@ export default function CorporateHero() {
           aria-label="Scroll down"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.4 }}
+          transition={{ delay: 2.2 }}
           className="hidden md:flex justify-center mt-10 text-foreground/30 hover:text-foreground/60 transition-colors"
         >
           <ChevronDown className="w-6 h-6 animate-bounce" />
