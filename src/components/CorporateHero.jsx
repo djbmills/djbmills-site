@@ -27,18 +27,9 @@ export default function CorporateHero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-          className="grid md:grid-cols-[minmax(0,1fr)_minmax(380px,600px)] gap-8 md:gap-12 md:items-center"
+          className="grid md:grid-cols-[minmax(0,1fr)_minmax(420px,560px)] gap-8 md:gap-12 md:items-stretch"
         >
-          <div>
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="font-body text-[10px] md:text-xs tracking-[0.28em] md:tracking-[0.3em] uppercase text-foreground/50 md:text-foreground/40 mb-5"
-            >
-              Event Sound Director
-            </motion.p>
-
+          <div className="relative">
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -47,17 +38,36 @@ export default function CorporateHero() {
             >
               B.MILLS
             </motion.h1>
+
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.7, delay: 1.1 }}
+              className="hidden md:block absolute left-0 top-1/2 w-16 h-px bg-foreground/25 origin-left"
+            />
           </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.3 }}
-            className="font-body text-sm md:text-[15px] lg:text-base text-foreground/55 md:text-muted-foreground leading-relaxed max-w-[600px] md:pt-14"
-          >
-            Elevated open format DJ sets for product launches, cultural moments,
-            executive dinners, and afterparties across New York City and beyond.
-          </motion.p>
+          <div className="flex flex-col justify-between md:pt-3 md:pb-2">
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="font-body text-sm md:text-[15px] lg:text-base leading-relaxed uppercase tracking-[0.12em] text-foreground/50 md:text-muted-foreground"
+            >
+              Event Sound Director
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.3 }}
+              className="font-body text-sm md:text-[15px] lg:text-base text-foreground/55 md:text-muted-foreground leading-relaxed max-w-[560px] md:text-justify md:[text-align-last:left] mt-8 md:mt-0"
+            >
+              Elevated open format DJ sets for brand activations, cultural
+              moments, executive dinners, and afterparties across New York City
+              and beyond.
+            </motion.p>
+          </div>
         </motion.div>
 
         <motion.div
