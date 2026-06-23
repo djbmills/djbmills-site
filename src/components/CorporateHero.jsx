@@ -64,7 +64,7 @@ export default function CorporateHero() {
               className="font-body text-sm md:text-[15px] lg:text-base text-foreground/55 md:text-muted-foreground leading-relaxed max-w-[560px] md:text-right"
             >
               Elevated open format DJ sets for brand activations, cultural
-              moments, executive dinners, and afterparties across New York City
+              moments, afterparties, private rooms across New York City
               and beyond.
             </motion.p>
           </div>
