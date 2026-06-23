@@ -64,24 +64,17 @@ export default function CorporateHero() {
               className="font-body text-sm md:text-[15px] lg:text-base text-foreground/55 md:text-muted-foreground leading-relaxed max-w-[560px] md:text-right"
             >
               Elevated open format DJ sets for brand activations, cultural
-              moments, afterparties, private rooms across New York City
-              and beyond.
+              moments, afterparties, and private rooms across New York City and
+              beyond.
             </motion.p>
           </div>
         </motion.div>
 
         <motion.div
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 1.45 }}
-          className="h-px bg-border origin-left mt-7 md:mt-8"
-        />
-
-        <motion.div
           initial={{ opacity: 0, y: 34 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 1.55 }}
-          className="relative mt-6 md:mt-7 overflow-hidden bg-black/5 aspect-[4/5] md:aspect-[2048/1365]"
+          transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 1.45 }}
+          className="relative mt-8 md:mt-9 overflow-hidden bg-black/5 aspect-[4/5] md:aspect-[2048/1365]"
         >
           <motion.div
             className="absolute inset-0 hidden md:block"
