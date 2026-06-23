@@ -29,7 +29,7 @@ export default function CorporateHero() {
           transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
           className="grid md:grid-cols-[minmax(0,1fr)_minmax(420px,560px)] gap-8 md:gap-12 md:items-stretch"
         >
-          <div className="relative">
+          <div>
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -38,30 +38,30 @@ export default function CorporateHero() {
             >
               B.MILLS
             </motion.h1>
+          </div>
+
+          <div className="flex flex-col justify-between md:items-end md:pt-3 md:pb-2">
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="font-body text-sm md:text-[15px] lg:text-base leading-relaxed uppercase tracking-[0.12em] text-foreground/50 md:text-muted-foreground md:text-right"
+            >
+              Event Sound Director
+            </motion.p>
 
             <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.7, delay: 1.1 }}
-              className="hidden md:block absolute left-0 top-1/2 w-16 h-px bg-foreground/25 origin-left"
+              className="w-14 md:w-16 h-px bg-foreground/25 origin-right my-7 md:my-0"
             />
-          </div>
-
-          <div className="flex flex-col justify-between md:pt-3 md:pb-2">
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="font-body text-sm md:text-[15px] lg:text-base leading-relaxed uppercase tracking-[0.12em] text-foreground/50 md:text-muted-foreground"
-            >
-              Event Sound Director
-            </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.3 }}
-              className="font-body text-sm md:text-[15px] lg:text-base text-foreground/55 md:text-muted-foreground leading-relaxed max-w-[560px] md:text-justify md:[text-align-last:left] mt-8 md:mt-0"
+              className="font-body text-sm md:text-[15px] lg:text-base text-foreground/55 md:text-muted-foreground leading-relaxed max-w-[560px] md:text-right"
             >
               Elevated open format DJ sets for brand activations, cultural
               moments, executive dinners, and afterparties across New York City
