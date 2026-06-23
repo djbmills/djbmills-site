@@ -27,7 +27,7 @@ export default function CorporateHero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-          className="grid md:grid-cols-[minmax(0,1fr)_minmax(340px,520px)] gap-10 md:gap-16 md:items-center"
+          className="grid md:grid-cols-[minmax(0,1fr)_minmax(380px,600px)] gap-8 md:gap-12 md:items-center"
         >
           <div>
             <motion.p
@@ -47,23 +47,16 @@ export default function CorporateHero() {
             >
               B.MILLS
             </motion.h1>
-
-            <motion.div
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 0.7, delay: 1.1 }}
-              className="w-14 md:w-16 h-px bg-foreground/25 mt-7 md:mt-6 origin-left"
-            />
           </div>
 
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.3 }}
-            className="font-body text-sm md:text-base text-foreground/55 md:text-muted-foreground leading-relaxed max-w-xl md:pt-16"
+            className="font-body text-sm md:text-[15px] lg:text-base text-foreground/55 md:text-muted-foreground leading-relaxed max-w-[600px] md:pt-14"
           >
-            Elevated open format DJ sets for product launches, executive dinners,
-            cultural moments, and afterparties across New York City and beyond.
+            Elevated open format DJ sets for product launches, cultural moments,
+            executive dinners, and afterparties across New York City and beyond.
           </motion.p>
         </motion.div>
 
@@ -71,14 +64,14 @@ export default function CorporateHero() {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 1.45 }}
-          className="h-px bg-border origin-left mt-10 md:mt-12"
+          className="h-px bg-border origin-left mt-8 md:mt-9"
         />
 
         <motion.div
           initial={{ opacity: 0, y: 34 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 1.55 }}
-          className="relative mt-8 md:mt-9 overflow-hidden bg-black/5 aspect-[4/5] md:aspect-[2048/1365]"
+          className="relative mt-7 md:mt-8 overflow-hidden bg-black/5 aspect-[4/5] md:aspect-[2048/1365]"
         >
           <motion.div
             className="absolute inset-0 hidden md:block"
