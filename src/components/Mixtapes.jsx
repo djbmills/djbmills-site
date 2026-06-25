@@ -6,14 +6,14 @@ const mixtapes = [
   {
     title: 'All For The Love',
     genre: 'R&B Mixtape',
-    description: 'Late hours. Minimalist R&B and deep cuts.',
+    description: 'Late night selections. Sophisticated rhythm and blues mixed with deep cuts.',
     image: '/images/all-for-the-love.png',
     audioUrl: 'https://mcdn.podbean.com/mf/web/2ix9nrz5dvqn4pjy/All_For_The_Love770bt.mp3'
   },
   {
     title: 'The Afterparty',
     genre: 'House / Dance Mixtape',
-    description: 'Classic house and high energy club standards.',
+    description: 'A late night groove built for dance floors.',
     image: '/images/afterparty.jpg',
     audioUrl: 'https://mcdn.podbean.com/mf/web/hh8xury4eea68v3a/theAfterparty.mp3'
   },
