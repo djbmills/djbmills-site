@@ -6,7 +6,7 @@ const mixtapes = [
   {
     title: 'All For The Love',
     genre: 'R&B Mixtape',
-    description: 'Late night selections. Sophisticated rhythm and blues mixed with deep cuts.',
+    description: 'Sophisticated rhythm and blues mixed with deep cuts.',
     image: '/images/all-for-the-love.png',
     audioUrl: 'https://mcdn.podbean.com/mf/web/2ix9nrz5dvqn4pjy/All_For_The_Love770bt.mp3'
   },
