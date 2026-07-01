@@ -26,7 +26,7 @@ export default function BrandActivations() {
     <div className="min-h-screen bg-[#090909] text-[#f5f5f7]">
       <SEOHeading
         title="Luxury Brand Activation DJ & Sonic Director | NYC | B.MILLS"
-        description="B.MILLS designs precise sonic environments, runways, and luxury brand activation soundtracks for global fashion houses and experiential PR agencies including Celine, LVMH, and Gucci."
+        description="B.MILLS designs precise sonic environments, runways, and luxury brand activation soundtracks for global fashion houses and experiential PR agencies including Celine, LVMH, Equinox, and Gucci."
         keywords="luxury brand activation dj nyc, fashion week afterparty dj, product launch music curation manhattan, experimental marketing sound design nyc, luxury event music director, B.MILLS brand events"
         url="https://djbmills.com/brand-activations"
       />
@@ -61,8 +61,8 @@ export default function BrandActivations() {
             {[1, 2].map((i) => (
               <div key={i} className="marquee-row">
                 {[
-                  'celine', 'oracle', 'equinox', 'polymarket', 'goldmansachs', 'disney', 
-                  'lvmh', 'gucci', 'jpmorgan', 'nbcuniversal', 'mlb', 
+                  'celine', 'oracle', 'polymarket', 'goldmansachs', 'disney', 
+                  'lvmh', 'equinox', 'gucci', 'jpmorgan', 'nbcuniversal', 'mlb', 
                   'fanatics', 'tumi', 'citi', 'google'
                 ].map((brand) => (
                   <div key={`${brand}-${i}`} className="logo-slot">
@@ -80,12 +80,12 @@ export default function BrandActivations() {
         </div>
       </section>
 
-      {/* The Master Case Study: The Standard Crown Jewel Layout */}
-      <section className="py-24 md:py-36 px-6 md:px-12 max-w-7xl mx-auto w-full">
-        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 items-start">
+      {/* Case Study I: Gagosian Layout */}
+      <section className="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto w-full">
+        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 items-center">
           <div>
             <span className="font-body text-xs tracking-[0.4em] uppercase text-neutral-500 block mb-4">
-              Featured Case Study
+              Case Study I
             </span>
             <h2 className="font-heading text-3xl md:text-5xl font-extralight text-white tracking-tight leading-tight mb-6">
               Gagosian Gallery x <br />Avedon 100 Centennial
@@ -93,10 +93,10 @@ export default function BrandActivations() {
             <p className="font-body text-xs tracking-widest uppercase text-neutral-400 mb-8">
               The Boom Boom Room & Le Bain | Manhattan, NY
             </p>
-            <p className="font-body text-base text-neutral-400 leading-relaxed mb-6">
+            <p className="font-body text-sm text-neutral-400 leading-relaxed mb-6">
               For the historic Avedon 100 celebration, B.MILLS directed the multi-floor sonic trajectory spanning across the entire 18th floor penthouse of The Standard High Line.
             </p>
-            <p className="font-body text-base text-neutral-400 leading-relaxed">
+            <p className="font-body text-sm text-neutral-400 leading-relaxed">
               Curating music for an elite cultural room featuring international tastemakers, designers, and brand directors, the sound progression demanded immaculate aesthetic calculation—carrying the evening effortlessly from crisp cocktail curation into a driving club room atmosphere.
             </p>
           </div>
@@ -110,8 +110,38 @@ export default function BrandActivations() {
         </div>
       </section>
 
+      {/* Case Study II: Equinox Annual Gala Feature Section */}
+      <section className="py-24 md:py-32 bg-[#0d0d0d] border-y border-neutral-900/60 px-6 md:px-12 w-full">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center">
+          <div className="relative aspect-[4/5] bg-neutral-900 overflow-hidden order-2 lg:order-1">
+            <img
+              src="/images/bmills-equinox-event.png"
+              alt="B.MILLS Performance for Equinox Holiday Gala NYC"
+              className="w-full h-full object-cover opacity-90 transition-transform duration-700 hover:scale-102"
+            />
+          </div>
+          <div className="order-1 lg:order-2">
+            <span className="font-body text-xs tracking-[0.4em] uppercase text-neutral-500 block mb-4">
+              Case Study II
+            </span>
+            <h2 className="font-heading text-3xl md:text-5xl font-extralight text-white tracking-tight leading-tight mb-6">
+              Equinox Annual <br />Gala Production
+            </h2>
+            <p className="font-body text-xs tracking-widest uppercase text-neutral-400 mb-8">
+              1,000+ Attendees | High-Intensity Open Format Curation
+            </p>
+            <p className="font-body text-sm text-neutral-400 leading-relaxed mb-6">
+              Commanding an audience of over 1,000 corporate team members and executive stakeholders for luxury lifestyle power player Equinox, the event demanded high-scale audio synchronization and expert energy modulation.
+            </p>
+            <p className="font-body text-sm text-neutral-400 leading-relaxed">
+              Leveraging custom transitions and multi-genre versatility, B.MILLS crafted a high-octane experiential dance floor tailored to a brand community built completely on intensity, movement, and performance.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Core Philosophies: Three High-Converting Pillars */}
-      <section className="py-24 bg-black border-t border-neutral-900 px-6 md:px-12">
+      <section className="py-24 bg-black px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           <span className="font-body text-[10px] tracking-[0.5em] uppercase text-neutral-500 block mb-16 text-center">
             Execution Framework
