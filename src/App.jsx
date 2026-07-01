@@ -5,8 +5,9 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from "react-route
 import PageNotFound from "./lib/PageNotFound";
 import Home from "./pages/Home";
 import CorporateEvents from "./pages/CorporateEvents";
-import CorporateNJ from "./pages/CorporateNJ"; // <-- Added the New Jersey Page
-import Availability from "./pages/Availability"; // <-- Added this
+import CorporateNJ from "./pages/CorporateNJ"; 
+import BrandActivations from "./pages/BrandActivations"; // <-- 1. Imported the Luxury Brand Activation page
+import Availability from "./pages/Availability"; 
 import Navbar from "./components/Navbar";
 
 // Helper to ensure the page starts at the top on route changes
@@ -41,7 +42,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/corporate-events" element={<CorporateEvents />} />
-          <Route path="/corporate-events-nj" element={<CorporateNJ />} /> {/* <-- Connected the NJ Route */}
+          <Route path="/corporate-events-nj" element={<CorporateNJ />} /> 
+          <Route path="/brand-activations" element={<BrandActivations />} /> {/* <-- 2. Wired up the Luxury Brand Activation route */}
           
           {/* Availability Pillar: The new frictionless booking engine */}
           <Route path="/availability" element={<Availability />} /> 
