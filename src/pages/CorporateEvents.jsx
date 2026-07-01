@@ -48,8 +48,9 @@ export default function CorporateEvents() {
       {[1, 2].map((i) => (
         <div key={i} className="marquee-row">
           {[
-            'celine',
             'oracle',
+            'celine',
+            'equinox',
             'polymarket',
             'goldmansachs',
             'disney',
