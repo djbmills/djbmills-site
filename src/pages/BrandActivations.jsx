@@ -61,7 +61,7 @@ export default function BrandActivations() {
             {[1, 2].map((i) => (
               <div key={i} className="marquee-row">
                 {[
-                  'celine', 'oracle', 'polymarket', 'goldmansachs', 'disney', 
+                  'celine', 'oracle', 'equinox', 'polymarket', 'goldmansachs', 'disney', 
                   'lvmh', 'gucci', 'jpmorgan', 'nbcuniversal', 'mlb', 
                   'fanatics', 'tumi', 'citi', 'google'
                 ].map((brand) => (
