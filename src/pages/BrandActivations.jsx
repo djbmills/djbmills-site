@@ -15,8 +15,8 @@ const selectedEvents = [
 
 const trustedFor = [
   "Experiential Marketing Events",
-  "Seamless Agency and Brand Event Production Partnerships",
-  "Live Performance Curation"
+  "Live Performance Curation and Multi Zone Sound Design",
+  "Seamless Agency and Brand Event Production Partnerships"
 ];
 
 export default function BrandActivations() {
@@ -408,7 +408,7 @@ export default function BrandActivations() {
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
             className="mt-16 border-t border-neutral-900 pt-10"
           >
-            <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-14 items-start">
+            <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-14 items-start mb-8">
               <div>
                 <p className="font-body text-xs tracking-[0.3em] uppercase text-neutral-500 mb-5">
                   Outdoor Brand Experience | Live DJ Battle
@@ -417,10 +417,7 @@ export default function BrandActivations() {
                   Citi Summer in the Square
                 </h3>
                 <p className="font-body text-base text-neutral-400 leading-relaxed mt-8">
-                  For the summer event series in Union Square Park, B.MILLS stepped into an outdoor live DJ battle co-sponsored by Citi and Union Square Partnership. This was part of a weekly, open air entertainment program built to draw awareness from the NYC rush hour crowd.
-                </p>
-                <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
-                  Performing on a live stage in front of dense foot traffic, the set featured high energy mixing and clean tracking transitions engineered to cut through Manhattan street noise, command attention, and hold the crowd throughout the competition.
+                  For the summer event series in Union Square Park, B.MILLS stepped into an outdoor live DJ battle co sponsored by Citi. This was a weekly open air tournament built to draw crowd interaction and drive engagement directly within the main sponsor footprint.
                 </p>
               </div>
 
@@ -435,7 +432,15 @@ export default function BrandActivations() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-4 mt-8">
+            {/* Clean updated 3-photo grid row layout */}
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="border border-neutral-900">
+                <img
+                  src="/images/corporate/citi/dj-bmills-citi-summer-in-the-square-union-square-nyc-brand-event-performance-03.jpg"
+                  alt="B.MILLS performing live facing side profile angle stage layout"
+                  className="w-full h-full object-cover aspect-[4/3] opacity-85"
+                />
+              </div>
               <div className="border border-neutral-900">
                 <img
                   src="/images/corporate/citi/dj-bmills-citi-summer-in-the-square-union-square-nyc-live-crowd-activation-02.jpg"
@@ -445,39 +450,8 @@ export default function BrandActivations() {
               </div>
               <div className="border border-neutral-900">
                 <img
-                  src="/images/corporate/citi/dj-bmills-citi-summer-in-the-square-union-square-nyc-brand-event-performance-03.jpg"
-                  alt="Live performance view and crowds at Citi brand buildout in Union Square Park"
-                  className="w-full h-full object-cover aspect-[4/3] opacity-85"
-                />
-              </div>
-              <div className="border border-neutral-900">
-                <img
-                  src="/images/corporate/citi/dj-bmills-corporate-event-dj-citi-union-square-new-york-city-04.jpg"
-                  alt="Corporate brand footprint details for Citi Summer in the Square"
-                  className="w-full h-full object-cover aspect-[4/3] opacity-85"
-                />
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-4 mt-4">
-              <div className="border border-neutral-900">
-                <img
                   src="/images/corporate/citi/dj-bmills-citi-summer-in-the-square-nyc-public-brand-activation-05.jpg"
-                  alt="Public engagement and sonic booth footprint during Citi activation"
-                  className="w-full h-full object-cover aspect-[4/3] opacity-85"
-                />
-              </div>
-              <div className="border border-neutral-900">
-                <img
-                  src="/images/corporate/citi/dj-bmills-citi-union-square-nyc-event-djs-06.jpg"
-                  alt="DJ audio console overview tracking brand activation metrics"
-                  className="w-full h-full object-cover aspect-[4/3] opacity-85"
-                />
-              </div>
-              <div className="border border-neutral-900">
-                <img
-                  src="/images/corporate/citi/luxury-corporate-event-dj-nyc-citi-summer-in-the-square-bmills-07.jpg"
-                  alt="Full brand landscape installation for Citi banking campaign"
+                  alt="Public engagement perspective behind back landscape view into the crowd during Citi activation"
                   className="w-full h-full object-cover aspect-[4/3] opacity-85"
                 />
               </div>
