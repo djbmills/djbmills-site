@@ -267,9 +267,6 @@ export default function BrandActivations() {
             className="max-w-2xl"
           >
             <p className="font-body text-base text-neutral-400 leading-relaxed">
-              Brand events bring together a lot of moving parts: collection style codes, guest demographics, room lighting, and spatial layouts. The music needs to recognize that creative vision and support it cleanly.
-            </p>
-            <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
               B.MILLS programs the sound directly to the layout of the venue. The physical space, guest flow, lighting changes, and overall brand identity outline the path. The curation stays focused, modern, and aligned.
             </p>
             <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
