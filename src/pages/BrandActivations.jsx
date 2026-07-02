@@ -1,29 +1,29 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import CorporateHero from '../components/CorporateHero';
 import CorporateEventGallery from '../components/CorporateEventGallery';
 import InquiryFooter from '../components/InquiryFooter';
 import SEOHeading from '../components/SEOHeading';
 
-const selectedEvents = [
-  {
-    title: "Sammontana Gelati All’Italiana U.S. Launch",
-    meta: "Brand Launch | Eataly Rooftop, New York City",
-    body: "For the U.S. launch of Sammontana Gelati All’Italiana at Eataly Rooftop, B.MILLS curated the soundtrack for a crowd with a distinctly European feel, including many Italian guests. B.MILLS was brought in through a referral from Kering Eyewear, a past client he had worked with across multiple events, which made the booking feel especially aligned from the start. The music direction was designed to reflect the brand’s roots and the mood of the evening, beginning with a relaxed, stylish energy as guests arrived and settled into the space, then gradually building into a more upbeat European house direction as the night progressed. The result felt culturally in tune, brand right, and effortless in its progression.",
-  },
-  {
-    title: "School of American Ballet Ball",
-    meta: "Dinner + Dancing | Lincoln Center, New York City",
-    body: "Trusted for two consecutive years to soundtrack the SAB Ball, B.MILLS shaped the full musical arc of the evening for approximately 450 guests, including high net worth donors and dance enthusiasts. B.MILLS was referred by the New York City Ballet Young Patrons Circle event team, following 13 years of DJing their Young Patrons Circle post performance parties in The Promenade of the David H. Koch Theater. The night began with a smooth, soulful dinner soundtrack that brought warmth and movement into the room while keeping the tone elegant. From there, the energy built naturally into a more celebratory dance floor later in the evening, allowing the event to shift without losing its sense of refinement.",
-  },
-];
-
-const trustedFor = [
-  "Luxury brand events and product launches",
-  "Tech, finance, fashion, and private client rooms",
-  "Afterparties and high-level celebrations",
-];
-
 export default function BrandActivations() {
+  
+  // ALGORITHMIC FAIL-SAFE: Anchors brand authority tightly to your master corporate destination
+  useEffect(() => {
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute('href', 'https://djbmills.com/corporate-events');
+
+    return () => {
+      if (canonicalLink && canonicalLink.parentNode) {
+        canonicalLink.parentNode.removeChild(canonicalLink);
+      }
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#000000] text-[#f5f5f7] selection:bg-neutral-800 selection:text-white">
       <SEOHeading
@@ -154,7 +154,7 @@ export default function BrandActivations() {
               transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
               className="font-heading text-2xl md:text-3xl lg:text-4xl font-light text-white leading-relaxed"
             >
-              Experiential spaces demand clear audio architecture. The soundtrack must frame the physical space and amplify the brand message without overwhelming client connection.
+              Experiential spaces demand clear audio architecture. The soundtrack must frame the physical space and amplify the brand message without overwhelming consumer connection.
             </motion.p>
           </div>
 
@@ -259,15 +259,15 @@ export default function BrandActivations() {
             className="max-w-2xl"
           >
             <p className="font-body text-base text-neutral-400 leading-relaxed">
-              Experiential activations bring distinct elements into sync: collection visual codes, guest demographics, ambient lighting, and corporate messaging. The audio program must identify and articulate the brand viewpoint seamlessly.
+              Experiential activations bring distinct elements into sync: collection visual codes, consumer demographics, ambient lighting, and campaign layouts. The audio program must identify and articulate that specific viewpoint seamlessly.
             </p>
 
             <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
-              B.MILLS builds the sound design directly from the layout constraints. The room geometry, internal flow, lighting curves, and core consumer alignment guide the trajectory. Curation stays intentional, elevated, and connected.
+              B.MILLS builds the sound design directly from the layout constraints. The room geometry, internal flow, lighting curves, and core brand alignment guide the trajectory. Curation stays intentional, elevated, and connected.
             </p>
 
             <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
-              It is about executing sound restraint—knowing exactly when to anchor a room with a steady rhythm pocket and when to escalate transitions to carry a moment.
+              It is about executing sound restraint—knowing exactly when to anchor a space with a steady rhythm pocket and when to escalate transitions to carry a public launch milestone.
             </p>
           </motion.div>
 
@@ -336,143 +336,15 @@ export default function BrandActivations() {
             transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
             className="font-body text-base text-neutral-400 leading-relaxed max-w-3xl"
           >
-            B.MILLS is commissioned by fashion houses, creative production partners, and premier PR networks to curate experiences where atmospheric execution is mandatory. His output spans luxury brand activations, seasonal collections, tech and financial summits, museum receptions, and high-stakes afterparties.
+            B.MILLS is commissioned by consumer brands, experiential production houses, and creative PR agencies to curate events where atmospheric precision is mandatory. His activation profiles range from open-air lifestyle presentations to private product rollouts.
           </motion.p>
-
-          {/* Gagosian Visual Case Study */}
-          <motion.div
-            initial={{ opacity: 0, y: 34 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
-            className="mt-16 border-t border-neutral-900 pt-10"
-          >
-            <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-14 items-start">
-              <div>
-                <p className="font-body text-xs tracking-[0.3em] uppercase text-neutral-500 mb-5">
-                  Cocktail Event + Afterparty / Art / Fashion / Culture
-                </p>
-
-                <h3 className="font-heading text-3xl md:text-5xl font-light text-white leading-tight">
-                  Gagosian Gallery x Avedon 100
-                </h3>
-
-                <p className="font-body text-sm tracking-[0.25em] uppercase text-neutral-400 mt-6 souce-mono">
-                  Boom Boom Room + Le Bain | New York City
-                </p>
-              </div>
-
-              <div>
-                <p className="font-body text-base text-neutral-400 leading-relaxed">
-                  For Avedon 100 with Gagosian Gallery, B.MILLS directed the sound architecture for a multi-floor layout spanning across the entire 18th floor penthouse of The Standard High Line.
-                </p>
-
-                <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
-                  Catering to an elite demographic of global tastemakers, designers, and directors—including Anna Wintour, Gigi Hadid, and Naomi Campbell—the sonic evolution called for strict taste profiles and calculated momentum. The music carried the room effortlessly from high-level conversation framing into a driving club environment.
-                </p>
-
-                <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
-                  Later covered across Vanity Fair and Vogue, the launch reception was noted extensively across both publications, spotlighting B.MILLS within the night's core production layout.
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-12 border border-neutral-900">
-              <img
-                src="/images/corporate/gagosian-avedon-100/gagosian-avedon-100-boom-boom-room-crowd.jpg"
-                alt="Gagosian Gallery Avedon 100 event crowd at Boom Boom Room in New York City"
-                className="w-full h-auto object-cover opacity-85"
-              />
-              <p className="font-body text-xs text-neutral-500 p-4 tracking-widest uppercase bg-neutral-950">
-                GAGOSIAN GALLERY X AVEDON 100 | BOOM BOOM ROOM, NEW YORK CITY
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8 lg:gap-10 mt-14">
-              <div className="border border-neutral-900">
-                <img
-                  src="/images/corporate/gagosian-avedon-100/bmills-dj-gagosian-avedon-100-boom-boom-room.jpg"
-                  alt="B.MILLS DJing the Gagosian Gallery Avedon 100 event at Boom Boom Room"
-                  className="w-full h-auto object-cover opacity-85"
-                />
-              </div>
-
-              <div className="border border-neutral-900">
-                <img
-                  src="/images/corporate/gagosian-avedon-100/gagosian-avedon-100-boom-boom-room-bar-crowd.jpg"
-                  alt="Black and white bar crowd scene from Gagosian Gallery Avedon 100 at Boom Boom Room"
-                  className="w-full h-auto object-cover opacity-85"
-                />
-              </div>
-            </div>
-
-            <div className="mt-14 pt-10 border-t border-neutral-900">
-              <div className="border border-neutral-900">
-                <img
-                  src="/images/corporate/gagosian-avedon-100/gagosian-avedon-100-le-bain-after-party.jpg"
-                  alt="Le Bain afterparty lighting and disco balls for Gagosian Gallery Avedon 100"
-                  className="w-full h-auto object-cover opacity-85"
-                />
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Equinox Visual Case Study (Mirrored NJ Formula + Fixed Extensions) */}
-          <motion.div
-            initial={{ opacity: 0, y: 34 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
-            className="mt-16 border-t border-neutral-900 pt-10"
-          >
-            <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-12 items-start">
-              <div className="order-2 lg:order-1">
-                <div className="border border-neutral-900">
-                  <img
-                    src="/images/bmills-equinox-event.png"
-                    alt="B.MILLS Live at Equinox End of Year Celebration Manhattan"
-                    className="w-full h-auto object-cover opacity-90"
-                  />
-                </div>
-                <p className="font-body text-xs text-neutral-500 mt-4 tracking-widest uppercase">
-                  EQUINOX ANNUAL PRODUCTION | MANHATTAN, NY
-                </p>
-              </div>
-
-              <div className="order-1 lg:order-2">
-                <p className="font-body text-xs tracking-[0.3em] uppercase text-neutral-500 mb-5">
-                  Corporate Production / 1,000+ Attendees / Premium Curation
-                </p>
-
-                <h3 className="font-heading text-3xl md:text-4xl font-light text-white leading-tight">
-                  Equinox Annual End-of-Year Celebration
-                </h3>
-
-                <p className="font-body text-sm tracking-[0.25em] uppercase text-neutral-400 mt-6">
-                  Large Scale Production | New York City
-                </p>
-
-                <p className="font-body text-base text-neutral-400 leading-relaxed mt-8">
-                  Commanding the full audio architecture for premium lifestyle giant Equinox, B.MILLS synchronized the sonic environment for a room of over 1,000 corporate team members and executive stakeholders.
-                </p>
-
-                <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
-                  Tailored completely for a brand landscape rooted in raw intensity, body motion, and elite peak performance, the soundtrack demanded flawless open-format versatility. Selections integrated technical transitions and clean genre crossovers to keep energy values aligned with the identity of the brand.
-                </p>
-
-                <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
-                  Every transition carried the high-scale room structure forward with absolute continuity, driving an immersive dance floor environment while perfectly matching the internal brand codes.
-                </p>
-              </div>
-            </div>
-          </motion.div>
 
           {/* 1800 Tequila Visual Case Study */}
           <motion.div
             initial={{ opacity: 0, y: 34 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
+            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
             className="mt-16 border-t border-neutral-900 pt-10"
           >
             <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-12 items-start">
@@ -536,6 +408,100 @@ export default function BrandActivations() {
                   src="/images/corporate/1800-tequila/dustin-yellin-pioneer-works-sculpture.png"
                   alt="Dustin Yellin artwork displayed at Pioneer Works for the 1800 Tequila event"
                   className="w-full h-full object-cover aspect-[2/3] opacity-85"
+                />
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Citi / Summer in the Square Case Study */}
+          <motion.div
+            initial={{ opacity: 0, y: 34 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-10%' }}
+            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
+            className="mt-16 border-t border-neutral-900 pt-10"
+          >
+            <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-8 lg:gap-14 items-start">
+              <div>
+                <p className="font-body text-xs tracking-[0.3em] uppercase text-neutral-500 mb-5">
+                  Outdoor Experiential Activation / Public Space Production
+                </p>
+
+                <h3 className="font-heading text-3xl md:text-4xl lg:text-5xl font-light text-white leading-tight">
+                  Citi / Summer in the Square
+                </h3>
+
+                <p className="font-body text-sm tracking-[0.25em] uppercase text-neutral-400 mt-6">
+                  Union Square Park | New York City
+                </p>
+
+                <p className="font-body text-base text-neutral-400 leading-relaxed mt-8">
+                  Directing the open-air sonic footprint for Citi’s multi-zone consumer experience required an intentional balance of public area acoustics and corporate pacing. Held during a high-traffic summer series in Union Square Park, the project centered on driving digital integration, brand connection, and neighborhood community engagement.
+                </p>
+
+                <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
+                  B.MILLS curated a fluid, high-tempo daytime soundtrack calibrated to cut through the park's ambient noise floors, capture foot traffic, and expand dwell-time within the custom brand buildout without stepping on structural activation workflows.
+                </p>
+              </div>
+
+              <div>
+                <div className="border border-neutral-900">
+                  <img
+                    src="/images/corporate/citi/dj-bmills-citi-summer-in-the-square-union-square-nyc-live-crowd-activation-02.jpg"
+                    alt="Citi Summer in the Square public activation experience in Union Square Park Manhattan"
+                    className="w-full h-auto object-cover opacity-85"
+                  />
+                </div>
+                <p className="font-body text-xs text-neutral-500 mt-4 tracking-widest uppercase">
+                  CITI EXPERIENTIAL FOOTPRINT | UNION SQUARE PARK, NYC
+                </p>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-4 mt-8">
+              <div className="border border-neutral-900">
+                <img
+                  src="/images/corporate/citi/dj-bmills-citi-summer-in-the-square-union-square-nyc-corporate-event-dj-01.jpg"
+                  alt="B.MILLS performing at the Citi Summer in the Square brand activation setup"
+                  className="w-full h-full object-cover aspect-[4/3] opacity-85"
+                />
+              </div>
+              <div className="border border-neutral-900">
+                <img
+                  src="/images/corporate/citi/dj-bmills-citi-summer-in-the-square-union-square-nyc-brand-event-performance-03.jpg"
+                  alt="Live performance view and crowds at Citi brand buildout in Union Square Park"
+                  className="w-full h-full object-cover aspect-[4/3] opacity-85"
+                />
+              </div>
+              <div className="border border-neutral-900">
+                <img
+                  src="/images/corporate/citi/dj-bmills-corporate-event-dj-citi-union-square-new-york-city-04.jpg"
+                  alt="Corporate brand footprint details for Citi Summer in the Square"
+                  className="w-full h-full object-cover aspect-[4/3] opacity-85"
+                />
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-4 mt-4">
+              <div className="border border-neutral-900">
+                <img
+                  src="/images/corporate/citi/dj-bmills-citi-summer-in-the-square-nyc-public-brand-activation-05.jpg"
+                  alt="Public engagement and sonic booth footprint during Citi activation"
+                  className="w-full h-full object-cover aspect-[4/3] opacity-85"
+                />
+              </div>
+              <div className="border border-neutral-900">
+                <img
+                  src="/images/corporate/citi/dj-bmills-citi-union-square-nyc-event-djs-06.jpg"
+                  alt="DJ audio console overview tracking brand activation metrics"
+                  className="w-full h-full object-cover aspect-[4/3] opacity-85"
+                />
+              </div>
+              <div className="border border-neutral-900">
+                <img
+                  src="/images/corporate/citi/luxury-corporate-event-dj-nyc-citi-summer-in-the-square-bmills-07.jpg"
+                  alt="Full brand landscape installation for Citi banking campaign"
+                  className="w-full h-full object-cover aspect-[4/3] opacity-85"
                 />
               </div>
             </div>
