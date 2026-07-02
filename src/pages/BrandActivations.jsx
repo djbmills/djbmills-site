@@ -15,8 +15,8 @@ const selectedEvents = [
 
 const trustedFor = [
   "Experiential Marketing Events",
-  "Live Performance Curation and Multi Zone Sound Design",
-  "Seamless Agency and Brand Event Production Partnerships"
+  "Seamless Agency and Brand Event Production Partnerships",
+  "Live Performance Curation"
 ];
 
 export default function BrandActivations() {
@@ -69,7 +69,7 @@ export default function BrandActivations() {
                     <img
                       src={`/images/logos/${brand}.svg`}
                       alt={brand}
-                      className={`logo-img ${brand === 'mlb' ? 'logo-mlb-fix' : ''}`}
+                      className={brand === 'mlb' ? 'logo-mlb-raw-fix' : 'logo-img'}
                       loading="lazy"
                     />
                   </div>
@@ -115,14 +115,22 @@ export default function BrandActivations() {
           .logo-img:hover {
             opacity: 0.6;
           }
-          /* Targeting the flat color vector issues on black background */
-          .logo-img.logo-mlb-fix {
-            filter: brightness(0) invert(1) contrast(2);
+          
+          /* Neutralizes the solid bounding box color inside the MLB asset */
+          .logo-mlb-raw-fix {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(1.8) contrast(1.2);
+            mix-blend-mode: screen;
             opacity: 0.25;
+            transition: opacity 500ms ease;
           }
-          .logo-img.logo-mlb-fix:hover {
-            opacity: 0.7;
+          .logo-mlb-raw-fix:hover {
+            opacity: 0.65;
+            filter: brightness(2.2) contrast(1.5);
           }
+
           @media (min-width: 768px) {
             .logo-slot {
               width: 255px;
@@ -409,7 +417,7 @@ export default function BrandActivations() {
                   Citi Summer in the Square
                 </h3>
                 <p className="font-body text-base text-neutral-400 leading-relaxed mt-8">
-                  For the summer event series in Union Square Park, B.MILLS stepped into an outdoor live DJ battle co sponsored by Citi. This was a weekly open air tournament built to draw crowd interaction and drive engagement directly within the main sponsor footprint.
+                  For the summer event series in Union Square Park, B.MILLS stepped into an outdoor live DJ battle co-sponsored by Citi and Union Square Partnership. This was part of a weekly, open air entertainment program built to draw awareness from the NYC rush hour crowd.
                 </p>
                 <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
                   Performing on a live stage in front of dense foot traffic, the set featured high energy mixing and clean tracking transitions engineered to cut through Manhattan street noise, command attention, and hold the crowd throughout the competition.
