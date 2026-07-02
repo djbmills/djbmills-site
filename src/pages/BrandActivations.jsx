@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import CorporateHero from '../components/CorporateHero';
-import CorporateEventGallery from '../components/CorporateEventGallery';
 import InquiryFooter from '../components/InquiryFooter';
 import SEOHeading from '../components/SEOHeading';
 
@@ -589,8 +588,6 @@ export default function BrandActivations() {
           </motion.div>
         </div>
       </section>
-
-      <CorporateEventGallery />
 
       <InquiryFooter
         headline="Define the sound identity."
