@@ -69,7 +69,7 @@ export default function BrandActivations() {
                     <img
                       src={`/images/logos/${brand}.svg`}
                       alt={brand}
-                      className="logo-img"
+                      className={`logo-img ${brand === 'mlb' ? 'logo-mlb-fix' : ''}`}
                       loading="lazy"
                     />
                   </div>
@@ -114,6 +114,14 @@ export default function BrandActivations() {
           }
           .logo-img:hover {
             opacity: 0.6;
+          }
+          /* Targeting the flat color vector issues on black background */
+          .logo-img.logo-mlb-fix {
+            filter: brightness(0) invert(1) contrast(2);
+            opacity: 0.25;
+          }
+          .logo-img.logo-mlb-fix:hover {
+            opacity: 0.7;
           }
           @media (min-width: 768px) {
             .logo-slot {
@@ -321,6 +329,69 @@ export default function BrandActivations() {
             B.MILLS collaborates with consumer brands, event production agencies, and creative teams to build soundtracks where style and atmosphere are non negotiable. His work covers everything from open air public spaces to private launch events.
           </motion.p>
 
+          {/* 1800 Tequila Case Study */}
+          <motion.div
+            initial={{ opacity: 0, y: 34 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-10%' }}
+            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
+            className="mt-16 border-t border-neutral-900 pt-10"
+          >
+            <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-12 items-start">
+              <div className="order-2 lg:order-1">
+                <div className="border border-neutral-900">
+                  <img
+                    src="/images/corporate/1800-tequila/1800-tequila-pioneer-works-crowd.png"
+                    alt="1800 Tequila x Essential Artists event at Pioneer Works in Red Hook Brooklyn"
+                    className="w-full h-auto object-cover opacity-85"
+                  />
+                </div>
+              </div>
+
+              <div className="order-1 lg:order-2">
+                <p className="font-body text-xs tracking-[0.3em] uppercase text-neutral-500 mb-5">
+                  Brand Reception / Limited Edition Launch / Art World Event
+                </p>
+                <h3 className="font-heading text-3xl md:text-4xl font-light text-white leading-tight">
+                  1800 Tequila x Essential Artists
+                </h3>
+                <p className="font-body text-base text-neutral-400 leading-relaxed mt-8">
+                  For a limited edition 1800 Tequila bottle release with artist Dustin Yellin, B.MILLS crafted the sound for an intimate brand gathering at Pioneer Works, the cultural hub founded by Yellin.
+                </p>
+                <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
+                  The event focused entirely on the custom artwork, the physical installations inside the studio, and the movement of guests throughout the space. The music had to feel premium and engaging without drawing focus away from the gallery layout.
+                </p>
+                <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
+                  B.MILLS leaned on the environment itself to direct the soundtrack, letting the raw Brooklyn venue, the art community crowd, and the natural flow of the night set the pace. The performance relied on soulful, distinct tracks with a steady drive that felt authentic and tied the entire evening together perfectly.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-4 mt-8">
+              <div className="border border-neutral-900">
+                <img
+                  src="/images/corporate/1800-tequila/bmills-1800-tequila-dj-pioneer-works.png"
+                  alt="B.MILLS DJing the 1800 Tequila Essential Artists reception at Pioneer Works"
+                  className="w-full h-full object-cover aspect-[2/3] opacity-85"
+                />
+              </div>
+              <div className="border border-neutral-900">
+                <img
+                  src="/images/corporate/1800-tequila/1800-tequila-essential-artists-bottles.png"
+                  alt="1800 Tequila Essential Artists limited edition bottles by Dustin Yellin"
+                  className="w-full h-full object-cover aspect-[2/3] opacity-85"
+                />
+              </div>
+              <div className="border border-neutral-900">
+                <img
+                  src="/images/corporate/1800-tequila/dustin-yellin-pioneer-works-sculpture.png"
+                  alt="Dustin Yellin artwork displayed at Pioneer Works for the 1800 Tequila event"
+                  className="w-full h-full object-cover aspect-[2/3] opacity-85"
+                />
+              </div>
+            </div>
+          </motion.div>
+
           {/* Citi / Summer in the Square Case Study */}
           <motion.div
             initial={{ opacity: 0, y: 34 }}
@@ -332,16 +403,16 @@ export default function BrandActivations() {
             <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-14 items-start">
               <div>
                 <p className="font-body text-xs tracking-[0.3em] uppercase text-neutral-500 mb-5">
-                  Outdoor Brand Experience | Live DJ Performance Showdown
+                  Outdoor Brand Experience | Live DJ Battle
                 </p>
                 <h3 className="font-heading text-3xl md:text-4xl lg:text-5xl font-light text-white leading-tight">
                   Citi Summer in the Square
                 </h3>
                 <p className="font-body text-base text-neutral-400 leading-relaxed mt-8">
-                  For the Union Square summer series co sponsored by Citi, B.MILLS stepped into a live performance showdown made for high traffic public settings. This head to head DJ showcase required deep musical versatility and active crowd engagement within the main sponsor footprint.
+                  For the summer event series in Union Square Park, B.MILLS stepped into an outdoor live DJ battle co sponsored by Citi. This was a weekly open air tournament built to draw crowd interaction and drive engagement directly within the main sponsor footprint.
                 </p>
                 <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
-                  Commanding an outdoor turntable setup in front of dense crowds, the performance featured sharp track curation and creative mixing transitions designed to cut through the heavy noise of Manhattan and drive energy throughout the square.
+                  Performing on a live stage in front of dense foot traffic, the set featured high energy mixing and clean tracking transitions engineered to cut through Manhattan street noise, command attention, and hold the crowd throughout the competition.
                 </p>
               </div>
 
@@ -349,7 +420,7 @@ export default function BrandActivations() {
                 <div className="border border-neutral-900">
                   <img
                     src="/images/corporate/citi/dj-bmills-citi-summer-in-the-square-union-square-nyc-corporate-event-dj-01.jpg"
-                    alt="B.MILLS performing at the Citi Summer in the Square brand activation setup"
+                    alt="B.MILLS performing live at the Citi Summer in the Square brand activation turntable setup"
                     className="w-full h-auto object-cover opacity-85"
                   />
                 </div>
