@@ -15,8 +15,8 @@ const selectedEvents = [
 
 const trustedFor = [
   "Experiential Marketing Events",
-  "Live Performance Curation and Multi Zone Sound Design",
-  "Seamless Agency and Brand Event Production Partnerships"
+  "Seamless Agency and Brand Event Production Partnerships",
+  "Live Performance Curation"
 ];
 
 export default function BrandActivations() {
@@ -220,6 +220,9 @@ export default function BrandActivations() {
                   />
                 </div>
               </div>
+              <p className="font-body text-[11px] tracking-[0.2em] uppercase text-neutral-500 mt-4 text-left">
+                Goldman Sachs / Robinhood Event | New York City
+              </p>
             </div>
           </motion.div>
         </div>
@@ -279,13 +282,18 @@ export default function BrandActivations() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-10%' }}
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
-            className="mt-14 border border-neutral-900"
+            className="mt-14"
           >
-            <img
-              src="/images/bmills-corporate-3.png"
-              alt="B.MILLS managing audio for Hall des Lumieres Grand Opening NYC Brand Event"
-              className="w-full h-auto object-cover opacity-85"
-            />
+            <div className="border border-neutral-900">
+              <img
+                src="/images/bmills-corporate-3.png"
+                alt="B.MILLS managing audio for Hall des Lumieres Grand Opening NYC Brand Event"
+                className="w-full h-auto object-cover opacity-85"
+              />
+            </div>
+            <p className="font-body text-[11px] tracking-[0.2em] uppercase text-neutral-500 mt-4 text-left">
+              Hall des Lumières Grand Opening | New York City
+            </p>
           </motion.div>
         </div>
       </section>
@@ -398,6 +406,9 @@ export default function BrandActivations() {
                 />
               </div>
             </div>
+            <p className="font-body text-[11px] tracking-[0.2em] uppercase text-neutral-500 mt-4 text-left">
+              1-800 Tequila Activation | Red Hook, Brooklyn
+            </p>
           </motion.div>
 
           {/* Citi / Summer in the Square Case Study */}
@@ -417,7 +428,7 @@ export default function BrandActivations() {
                   Citi Summer in the Square
                 </h3>
                 <p className="font-body text-base text-neutral-400 leading-relaxed mt-8">
-                  For the summer event series in Union Square Park, B.MILLS stepped into an outdoor live DJ battle co sponsored by Citi. This was a weekly open air tournament built to draw crowd interaction and drive engagement directly within the main sponsor footprint.
+                  For the summer event series in Union Square Park, B.MILLS stepped into an outdoor live DJ battle co-sponsored by Citi and Union Square Partnership. This was a weekly, open air entertainment program built to draw awareness from the NYC rush hour crowd.
                 </p>
               </div>
 
@@ -456,6 +467,9 @@ export default function BrandActivations() {
                 />
               </div>
             </div>
+            <p className="font-body text-[11px] tracking-[0.2em] uppercase text-neutral-500 mt-4 text-left">
+              Citi Summer in the Square | New York City
+            </p>
           </motion.div>
 
           {/* Sammontana Case Study */}
@@ -486,6 +500,7 @@ export default function BrandActivations() {
             ))}
           </div>
           
+          {/* Section: The Right Rooms Footer Columns */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
