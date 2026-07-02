@@ -407,7 +407,7 @@ export default function BrandActivations() {
               </div>
             </div>
             <p className="font-body text-[11px] tracking-[0.2em] uppercase text-neutral-500 mt-4 text-left">
-              1-800 Tequila Activation | Red Hook, Brooklyn
+              1800 Tequila Activation | Red Hook, Brooklyn
             </p>
           </motion.div>
 
