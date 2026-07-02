@@ -5,6 +5,26 @@ import CorporateEventGallery from '../components/CorporateEventGallery';
 import InquiryFooter from '../components/InquiryFooter';
 import SEOHeading from '../components/SEOHeading';
 
+// FIX: Localized data arrays to prevent React runtime compilation failures
+const selectedEvents = [
+  {
+    title: "Equinox Lifestyle Presentations",
+    meta: "VIP Brand Activation / Seasonal Launch / NYC",
+    body: "Curating high-tempo, sophisticated sonic profiles for curated high-end consumer experiences, luxury brand expansions, and premium demographic programming."
+  },
+  {
+    title: "Tumi Global Product Rollout",
+    meta: "Press Reception / Product Launch / Manhattan",
+    body: "Designing precise audio backdrops for international press, media influencers, and brand executives during elite retail and corporate rollouts."
+  }
+];
+
+const trustedFor = [
+  "High-Stakes Experiential Marketing Footprints",
+  "Premium Audio Geometry & Multi-Zone Sound Design",
+  "Flawless Agency & Production House Synchronization"
+];
+
 export default function BrandActivations() {
   
   // ALGORITHMIC FAIL-SAFE: Anchors brand authority tightly to your master corporate destination
@@ -436,7 +456,7 @@ export default function BrandActivations() {
                 </p>
 
                 <p className="font-body text-base text-neutral-400 leading-relaxed mt-8">
-                  Directing the open-air sonic footprint for Citi’s multi-zone consumer experience required an intentional balance of public area acoustics and corporate pacing. Held during a high-traffic summer series in Union Square Park, the project centered on driving digital integration, brand connection, and neighborhood community engagement.
+                  Directing the open-air sonic blueprint for Citi’s multi-zone consumer experience required an intentional balance of public area acoustics and corporate pacing. Held during a high-traffic summer series in Union Square Park, the project centered on driving digital integration, brand connection, and neighborhood community engagement.
                 </p>
 
                 <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
