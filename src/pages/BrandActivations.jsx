@@ -5,29 +5,22 @@ import CorporateEventGallery from '../components/CorporateEventGallery';
 import InquiryFooter from '../components/InquiryFooter';
 import SEOHeading from '../components/SEOHeading';
 
-// FIX: Localized data arrays to prevent React runtime compilation failures
 const selectedEvents = [
   {
-    title: "Equinox Lifestyle Presentations",
-    meta: "VIP Brand Activation / Seasonal Launch / NYC",
-    body: "Curating high-tempo, sophisticated sonic profiles for curated high-end consumer experiences, luxury brand expansions, and premium demographic programming."
-  },
-  {
-    title: "Tumi Global Product Rollout",
-    meta: "Press Reception / Product Launch / Manhattan",
-    body: "Designing precise audio backdrops for international press, media influencers, and brand executives during elite retail and corporate rollouts."
+    title: "Sammontana Gelati All’Italiana U.S. Launch",
+    meta: "Brand Launch | Eataly Rooftop, New York City",
+    body: "For the U.S. debut of Sammontana Gelati All’Italiana on the Eataly Rooftop, B.MILLS handled the music direction for an audience with a distinctly European feel, including many international guests. B.MILLS landed this booking through a direct referral from Kering Eyewear, a returning client who has booked him across multiple projects. The soundtrack was built to match the heritage of the brand and the mood of the room, starting with a relaxed, sophisticated vibe during guest arrivals and cleanly shifting into an upscale European house style as the evening picked up. The result was culturally authentic and completely natural in its progression.",
   }
 ];
 
 const trustedFor = [
-  "High-Stakes Experiential Marketing Footprints",
-  "Premium Audio Geometry & Multi-Zone Sound Design",
-  "Flawless Agency & Production House Synchronization"
+  "Experiential Marketing Events",
+  "Live Performance Curation and Multi Zone Sound Design",
+  "Seamless Agency and Brand Event Production Partnerships"
 ];
 
 export default function BrandActivations() {
   
-  // ALGORITHMIC FAIL-SAFE: Anchors brand authority tightly to your master corporate destination
   useEffect(() => {
     let canonicalLink = document.querySelector('link[rel="canonical"]');
     if (!canonicalLink) {
@@ -53,10 +46,8 @@ export default function BrandActivations() {
         url="https://djbmills.com/brand-activations"
       />
 
-      {/* Hero Section: Integrated Brand Infrastructure */}
       <CorporateHero />
 
-      {/* Section: Professional Brand Marquee */}
       <section className="relative pt-20 pb-16 border-b border-neutral-900 bg-[#000000] overflow-hidden">
         <div className="max-w-6xl mx-auto px-6 mb-10 relative z-10">
           <p className="font-body text-[10px] tracking-[0.4em] uppercase text-neutral-500 text-center">
@@ -69,21 +60,9 @@ export default function BrandActivations() {
             {[1, 2].map((i) => (
               <div key={i} className="marquee-row">
                 {[
-                  'oracle',
-                  'celine',
-                  'equinox',
-                  'polymarket',
-                  'goldmansachs',
-                  'disney',
-                  'lvmh',
-                  'gucci',
-                  'jpmorgan',
-                  'nbcuniversal',
-                  'mlb',
-                  'fanatics',
-                  'tumi',
-                  'citi',
-                  'google'
+                  'oracle', 'celine', 'equinox', 'polymarket', 'goldmansachs',
+                  'disney', 'lvmh', 'gucci', 'jpmorgan', 'nbcuniversal',
+                  'mlb', 'fanatics', 'tumi', 'citi', 'google'
                 ].map((brand) => (
                   <div key={`${brand}-${i}`} className="logo-slot">
                     <img
@@ -145,7 +124,6 @@ export default function BrandActivations() {
         `}</style>
       </section>
       
-      {/* Section 01: The Philosophy */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-neutral-900 bg-[#000000]">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-4 mb-10">
@@ -174,7 +152,7 @@ export default function BrandActivations() {
               transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
               className="font-heading text-2xl md:text-3xl lg:text-4xl font-light text-white leading-relaxed"
             >
-              Experiential spaces demand clear audio architecture. The soundtrack must frame the physical space and amplify the brand message without overwhelming consumer connection.
+              Experiential spaces require distinct sound design. The music must frame the physical room and amplify the brand messaging while keeping the crowd entirely connected.
             </motion.p>
           </div>
 
@@ -185,7 +163,7 @@ export default function BrandActivations() {
             transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
             className="font-body text-sm text-neutral-400 mt-8 max-w-xl leading-relaxed"
           >
-            Executing an intentional balance between premium subsurface atmosphere and high-energy transitions.
+            Finding the balance between a premium underlying atmosphere and a great energy shift during live performance milestones.
           </motion.p>
 
           <motion.div
@@ -200,7 +178,7 @@ export default function BrandActivations() {
                 <div className="group relative overflow-hidden bg-neutral-950 aspect-[4/5] border border-neutral-900">
                   <img
                     src="/images/bmills-corporate-2.png"
-                    alt="B.MILLS performing at Goldman Sachs Robinhood event New York City - Corporate Sound Design"
+                    alt="B.MILLS performing at Goldman Sachs Robinhood event New York City Corporate Sound Design"
                     className="w-full h-full object-cover object-center opacity-80 transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
@@ -231,14 +209,13 @@ export default function BrandActivations() {
               </div>
 
               <p className="font-body text-[10px] md:text-xs text-neutral-500 mt-4 tracking-[0.25em] uppercase text-center">
-                GOLDMAN SACHS / ROBINHOOD EVENT, NEW YORK CITY
+                GOLDMAN SACHS ROBINHOOD EVENT NEW YORK CITY
               </p>
             </div>
           </motion.div>
         </div>
       </section>
       
-      {/* Section 02: Brand Alignment */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-neutral-900 bg-[#000000]">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-4 mb-10">
@@ -279,15 +256,15 @@ export default function BrandActivations() {
             className="max-w-2xl"
           >
             <p className="font-body text-base text-neutral-400 leading-relaxed">
-              Experiential activations bring distinct elements into sync: collection visual codes, consumer demographics, ambient lighting, and campaign layouts. The audio program must identify and articulate that specific viewpoint seamlessly.
+              Brand events bring together a lot of moving parts: collection style codes, guest demographics, room lighting, and spatial layouts. The music needs to recognize that creative vision and support it cleanly.
             </p>
 
             <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
-              B.MILLS builds the sound design directly from the layout constraints. The room geometry, internal flow, lighting curves, and core brand alignment guide the trajectory. Curation stays intentional, elevated, and connected.
+              B.MILLS programs the sound directly to the layout of the venue. The physical space, guest flow, lighting changes, and overall brand identity outline the path. The curation stays focused, modern, and aligned.
             </p>
 
             <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
-              It is about executing sound restraint—knowing exactly when to anchor a space with a steady rhythm pocket and when to escalate transitions to carry a public launch milestone.
+              It comes down to great timing knowing exactly when to ground a room with a steady groove and when to step up the transitions during a milestone moments.
             </p>
           </motion.div>
 
@@ -300,7 +277,7 @@ export default function BrandActivations() {
           >
             <img
               src="/images/bmills-corporate-3.png"
-              alt="B.MILLS managing audio for Hall des Lumières Grand Opening - NYC Brand Event"
+              alt="B.MILLS managing audio for Hall des Lumieres Grand Opening NYC Brand Event"
               className="w-full h-auto object-cover opacity-85"
             />
             <p className="font-body text-xs text-neutral-500 p-4 tracking-widest uppercase bg-neutral-950">
@@ -310,7 +287,6 @@ export default function BrandActivations() {
         </div>
       </section>
       
-      {/* Section 03: Selected Event Experience */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-neutral-900 bg-[#000000]">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-4 mb-10 overflow-hidden">
@@ -356,10 +332,9 @@ export default function BrandActivations() {
             transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
             className="font-body text-base text-neutral-400 leading-relaxed max-w-3xl"
           >
-            B.MILLS is commissioned by consumer brands, experiential production houses, and creative PR agencies to curate events where atmospheric precision is mandatory. His activation profiles range from open-air lifestyle presentations to private product rollouts.
+            B.MILLS collaborates with consumer brands, event production agencies, and creative teams to build soundtracks where style and atmosphere are non negotiable. His work covers everything from open air public spaces to private launch events.
           </motion.p>
 
-          {/* 1800 Tequila Visual Case Study */}
           <motion.div
             initial={{ opacity: 0, y: 34 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -395,15 +370,15 @@ export default function BrandActivations() {
                 </p>
 
                 <p className="font-body text-base text-neutral-400 leading-relaxed mt-8">
-                  For a limited edition 1800 Tequila bottle release featuring artist Dustin Yellin, B.MILLS provided the soundtrack for an intimate brand reception at Pioneer Works, the Brooklyn cultural space founded by Yellin.
+                  For a limited edition 1800 Tequila bottle release with artist Dustin Yellin, B.MILLS crafted the sound for an intimate brand gathering at Pioneer Works, the cultural hub founded by Yellin.
                 </p>
 
                 <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
-                  The event centered around the artwork on the bottles, the installations throughout the studio space, and the natural flow of guests gathering, talking, and moving through the room. The music needed to feel atmospheric but still engaging, present without pulling focus.
+                  The event focused entirely on the custom artwork, the physical installations inside the studio, and the movement of guests throughout the space. The music had to feel premium and engaging without drawing focus away from the gallery layout.
                 </p>
 
                 <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
-                  With limited direction from the brand, B.MILLS shaped the sound around the setting itself: the Brooklyn location, the art, the guests, and the tone of the evening. The set moved through soulful, culturally tuned selections with a steady energy that complemented the space and kept the reception feeling warm, connected, and intentional.
+                  B.MILLS leaned on the environment itself to direct the soundtrack, letting the raw Brooklyn venue, the art community crowd, and the natural flow of the night set the pace. The performance relied on soulful, distinct tracks with a steady drive that felt authentic and tied the entire evening together perfectly.
                 </p>
               </div>
             </div>
@@ -433,7 +408,6 @@ export default function BrandActivations() {
             </div>
           </motion.div>
 
-          {/* Citi / Summer in the Square Case Study */}
           <motion.div
             initial={{ opacity: 0, y: 34 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -444,7 +418,7 @@ export default function BrandActivations() {
             <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-8 lg:gap-14 items-start">
               <div>
                 <p className="font-body text-xs tracking-[0.3em] uppercase text-neutral-500 mb-5">
-                  Outdoor Experiential Activation / Public Space Production
+                  Live Brand Activation / Public Performance Series / Multi Zone Sound
                 </p>
 
                 <h3 className="font-heading text-3xl md:text-4xl lg:text-5xl font-light text-white leading-tight">
@@ -456,11 +430,11 @@ export default function BrandActivations() {
                 </p>
 
                 <p className="font-body text-base text-neutral-400 leading-relaxed mt-8">
-                  Directing the open-air sonic blueprint for Citi’s multi-zone consumer experience required an intentional balance of public area acoustics and corporate pacing. Held during a high-traffic summer series in Union Square Park, the project centered on driving digital integration, brand connection, and neighborhood community engagement.
+                  For the high traffic summer event series in Union Square Park, B.MILLS stepped into a live performance structure co sponsored by Citi and the Union Square Partnership. This was a head to head DJ showcase built to grab attention in a busy public setting, demanding deep musical versatility and great crowd control.
                 </p>
 
                 <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
-                  B.MILLS curated a fluid, high-tempo daytime soundtrack calibrated to cut through the park's ambient noise floors, capture foot traffic, and expand dwell-time within the custom brand buildout without stepping on structural activation workflows.
+                  Commanding an outdoor turntable setup in front of massive crowds, the performance featured creative track curation and crisp mixing transitions made to cut right through the heavy noise of Manhattan. The live set successfully brought people in, held the crowd, and drove great energy right around the main sponsor footprint.
                 </p>
               </div>
 
@@ -578,7 +552,6 @@ export default function BrandActivations() {
         </div>
       </section>
       
-      {/* Section 04: Experience / Logistics */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-neutral-900 bg-[#050505]">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-4 mb-10">
@@ -618,7 +591,7 @@ export default function BrandActivations() {
             transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
             className="font-body text-base text-white/50 leading-relaxed max-w-2xl font-light"
           >
-            At the execution level, programming continuity is only part of the framework. B.MILLS operates with comprehensive enterprise liability insurance (COI) and syncs perfectly alongside experiential production houses, delivering absolute atmospheric precision where timing, restraint, and demographic intelligence dictate success.
+            At the execution level, programming continuity is only part of the framework. B.MILLS operates with comprehensive enterprise liability insurance (COI) and syncs perfectly alongside experiential production teams, delivering absolute atmospheric precision where timing, restraint, and demographic intelligence dictate success.
           </motion.p>
 
           <motion.div
@@ -632,14 +605,14 @@ export default function BrandActivations() {
               <div className="border border-neutral-900">
                 <img
                   src="/images/bmills-corporate-4.jpg"
-                  alt="B.MILLS Luxury Corporate Event DJ NYC - Boom Boom Room"
+                  alt="B.MILLS Luxury Corporate Event DJ NYC Boom Boom Room"
                   className="w-full h-full object-cover opacity-85"
                 />
               </div>
               <div className="border border-neutral-900">
                 <img
                   src="/images/bmills-corporate-5.jpg"
-                  alt="B.MILLS Curated Music Direction for High-End Galas"
+                  alt="B.MILLS Curated Music Direction for High End Galas"
                   className="w-full h-full object-cover opacity-85"
                 />
               </div>
@@ -655,13 +628,13 @@ export default function BrandActivations() {
 
       <InquiryFooter
         headline="Define the sound identity."
-        body="High-stakes activations require rigorous sound engineering. Share your experiential timelines and let's coordinate the direction."
+        body="Experiential events require focused music planning. Share your activation timelines and let's coordinate the sound direction."
         footerText={
           <>
             <span className="hidden md:inline">
               Fully COI insured and available for luxury brand activations, seasonal collections,
               <br />
-              and corporate productions across NYC, the Hamptons, and worldwide.
+              and brand productions across NYC, the Hamptons, and worldwide.
             </span>
 
             <span className="md:hidden">
