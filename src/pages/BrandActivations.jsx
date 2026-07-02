@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import InquiryFooter from '../components/InquiryFooter';
 import SEOHeading from '../components/SEOHeading';
@@ -23,7 +22,7 @@ export default function BrandActivations() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#090909] text-[#f5f5f7]">
+    <div className="min-h-screen bg-[#000000] text-[#f5f5f7] selection:bg-neutral-800 selection:text-white font-sans antialiased">
       <SEOHeading
         title="Luxury Brand Activation DJ & Sonic Director | NYC | B.MILLS"
         description="B.MILLS designs precise sonic environments, runways, and luxury brand activation soundtracks for global fashion houses and experiential PR agencies including Celine, LVMH, Equinox, and Gucci."
@@ -31,32 +30,25 @@ export default function BrandActivations() {
         url="https://djbmills.com/brand-activations"
       />
 
-      {/* Hero Section: Editorial Luxury Framework */}
-      <section className="relative min-h-[90vh] flex flex-col justify-between pt-32 pb-16 px-6 md:px-12 max-w-7xl mx-auto w-full">
-        <div className="max-w-4xl mt-12">
-          <span className="font-body text-[10px] tracking-[0.5em] uppercase text-neutral-500 block mb-6">
-            Sonic Architecture / Luxury & Fashion
+      {/* Hero Section: Replicating the Pristine NJ Framework */}
+      <section className="relative pt-32 pb-20 px-6 md:px-12 max-w-7xl mx-auto w-full">
+        <div className="max-w-4xl">
+          <span className="font-mono text-[10px] tracking-[0.5em] uppercase text-neutral-500 block mb-6">
+            Sonic Architecture / Luxury & Experiential
           </span>
-          <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-extralight tracking-tight text-white leading-[1.1] mb-8">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white leading-[1.15] mb-8">
             Translating brand identity <br />
-            <span className="italic font-light text-neutral-400">into atmospheric sound.</span>
+            <span className="font-serif italic font-light text-neutral-400">into atmospheric sound.</span>
           </h1>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-12 items-end border-t border-neutral-800/60 pt-12">
-          <p className="font-body text-sm text-neutral-400 leading-relaxed max-w-md">
-            B.MILLS executes precise sound architecture for experiential launches, runway collections, private client rooms, and premium fashion house receptions. No unneeded mic presence—just highly-curated, brand-aligned atmosphere.
+          <p className="text-base md:text-lg text-neutral-400 leading-relaxed max-w-2xl font-light">
+            B.MILLS executes precise sound curation for experiential launches, seasonal collections, private client rooms, and premium PR receptions. Designed completely around clear room dynamics—no intrusive mic presence.
           </p>
-          <div className="flex flex-col items-start md:items-end gap-2 text-neutral-500 font-body text-xs tracking-widest uppercase">
-            <span>Based in New York City</span>
-            <span>Serving Global Houses</span>
-          </div>
         </div>
       </section>
 
       {/* Infinite Luxury Client Marquee */}
-      <section className="py-12 bg-black border-y border-neutral-900 overflow-hidden">
-        <div className="relative py-4 overflow-hidden">
+      <section className="py-10 bg-[#050505] border-y border-neutral-900 overflow-hidden">
+        <div className="relative overflow-hidden">
           <div className="marquee-track">
             {[1, 2].map((i) => (
               <div key={i} className="marquee-row">
@@ -80,124 +72,99 @@ export default function BrandActivations() {
         </div>
       </section>
 
-      {/* Case Study I: Gagosian Layout */}
-      <section className="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto w-full">
-        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 items-center">
-          <div>
-            <span className="font-body text-xs tracking-[0.4em] uppercase text-neutral-500 block mb-4">
-              Case Study I
-            </span>
-            <h2 className="font-heading text-3xl md:text-5xl font-extralight text-white tracking-tight leading-tight mb-6">
-              Gagosian Gallery x <br />Avedon 100 Centennial
-            </h2>
-            <p className="font-body text-xs tracking-widest uppercase text-neutral-400 mb-8">
-              The Boom Boom Room & Le Bain | Manhattan, NY
-            </p>
-            <p className="font-body text-sm text-neutral-400 leading-relaxed mb-6">
-              For the historic Avedon 100 celebration, B.MILLS directed the multi-floor sonic trajectory spanning across the entire 18th floor penthouse of The Standard High Line.
-            </p>
-            <p className="font-body text-sm text-neutral-400 leading-relaxed">
-              Curating music for an elite cultural room featuring international tastemakers, designers, and brand directors, the sound progression demanded immaculate aesthetic calculation—carrying the evening effortlessly from crisp cocktail curation into a driving club room atmosphere.
-            </p>
-          </div>
-          <div className="relative aspect-[4/5] bg-neutral-900 overflow-hidden">
+      {/* Master Case Study Stack: Pure NJ Card Layout Mirror */}
+      <section className="py-20 md:py-28 px-6 md:px-12 max-w-7xl mx-auto w-full space-y-24">
+        
+        {/* Case Study 1: The Boom Boom Room */}
+        <div className="bg-[#050505] border border-neutral-900 rounded-lg overflow-hidden grid lg:grid-cols-2 shadow-2xl">
+          <div className="relative aspect-[4/3] lg:aspect-auto min-h-[350px] bg-neutral-950">
             <img
               src="/images/dj-bmills-boom-standard-hotel-nyc-full-hero.jpg"
-              alt="B.MILLS Sound Performance at The Boom Boom Room NYC"
-              className="w-full h-full object-cover opacity-85 transition-transform duration-700 hover:scale-102"
+              alt="B.MILLS Performance at The Boom Boom Room NYC"
+              className="absolute inset-0 w-full h-full object-cover opacity-90"
             />
+          </div>
+          <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+            <span className="font-mono text-[10px] tracking-[0.4em] uppercase text-neutral-500 block mb-3">
+              Case Study I
+            </span>
+            <h2 className="text-2xl md:text-4xl font-light text-white tracking-tight mb-4">
+              Gagosian Gallery x <br />Avedon 100 Centennial
+            </h2>
+            <p className="text-xs uppercase tracking-widest text-neutral-400 mb-6 font-mono">
+              The Boom Boom Room | Manhattan, NY
+            </p>
+            <div className="space-y-4 text-sm text-neutral-400 leading-relaxed font-light">
+              <p>
+                For the historic Avedon 100 celebration, B.MILLS directed the multi-floor sonic trajectory spanning across the entire 18th floor penthouse of The Standard High Line.
+              </p>
+              <p>
+                Curating music for an elite cultural room featuring international tastemakers, designers, and brand directors, the sound progression demanded immaculate aesthetic calculation—carrying the evening effortlessly from crisp cocktail curation into a driving club room atmosphere.
+              </p>
+            </div>
           </div>
         </div>
-      </section>
 
-      {/* Case Study II: Equinox Annual Gala Feature Section */}
-      <section className="py-24 md:py-32 bg-[#0d0d0d] border-y border-neutral-900/60 px-6 md:px-12 w-full">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center">
-          <div className="relative aspect-[4/5] bg-neutral-900 overflow-hidden order-2 lg:order-1">
-            <img
-              src="/images/bmills-equinox-event.png"
-              alt="B.MILLS Performance for Equinox Holiday Gala NYC"
-              className="w-full h-full object-cover opacity-90 transition-transform duration-700 hover:scale-102"
-            />
-          </div>
-          <div className="order-1 lg:order-2">
-            <span className="font-body text-xs tracking-[0.4em] uppercase text-neutral-500 block mb-4">
+        {/* Case Study 2: Equinox - Completely Corrected and Reworded */}
+        <div className="bg-[#050505] border border-neutral-900 rounded-lg overflow-hidden grid lg:grid-cols-2 shadow-2xl">
+          <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center order-2 lg:order-1">
+            <span className="font-mono text-[10px] tracking-[0.4em] uppercase text-neutral-500 block mb-3">
               Case Study II
             </span>
-            <h2 className="font-heading text-3xl md:text-5xl font-extralight text-white tracking-tight leading-tight mb-6">
-              Equinox Annual <br />Gala Production
+            <h2 className="text-2xl md:text-4xl font-light text-white tracking-tight mb-4">
+              Equinox Annual <br />End-of-Year Celebration
             </h2>
-            <p className="font-body text-xs tracking-widest uppercase text-neutral-400 mb-8">
-              1,000+ Attendees | High-Intensity Open Format Curation
+            <p className="text-xs uppercase tracking-widest text-neutral-400 mb-6 font-mono">
+              1,000+ Attendees | High-Scale Production
             </p>
-            <p className="font-body text-sm text-neutral-400 leading-relaxed mb-6">
-              Commanding an audience of over 1,000 corporate team members and executive stakeholders for luxury lifestyle power player Equinox, the event demanded high-scale audio synchronization and expert energy modulation.
-            </p>
-            <p className="font-body text-sm text-neutral-400 leading-relaxed">
-              Leveraging custom transitions and multi-genre versatility, B.MILLS crafted a high-octane experiential dance floor tailored to a brand community built completely on intensity, movement, and performance.
-            </p>
+            <div className="space-y-4 text-sm text-neutral-400 leading-relaxed font-light">
+              <p>
+                Commanding an audience of over 1,000 team members and corporate stakeholders for luxury lifestyle power player Equinox, this large-scale annual production demanded expert energy modulation.
+              </p>
+              <p>
+                Leveraging premium transitions and seamless multi-genre versatility, B.MILLS crafted a high-octane experiential dance floor built completely around the intensity, movement, and performance values defining the brand's identity.
+              </p>
+            </div>
+          </div>
+          <div className="relative aspect-[4/3] lg:aspect-auto min-h-[350px] bg-neutral-950 order-1 lg:order-2">
+            <img
+              src="/images/bmills-equinox-event.png"
+              alt="B.MILLS Live at Equinox End-of-Year Celebration"
+              className="absolute inset-0 w-full h-full object-cover opacity-95 object-center"
+            />
           </div>
         </div>
+
       </section>
 
       {/* Core Philosophies: Three High-Converting Pillars */}
-      <section className="py-24 bg-black px-6 md:px-12">
+      <section className="py-20 bg-[#030303] border-t border-neutral-900 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <span className="font-body text-[10px] tracking-[0.5em] uppercase text-neutral-500 block mb-16 text-center">
-            Execution Framework
+          <span className="font-mono text-[10px] tracking-[0.5em] uppercase text-neutral-500 block mb-16 text-center">
+            Execution Standards
           </span>
           <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
-            <div className="border-t border-neutral-800 pt-8">
-              <span className="font-heading text-xs text-neutral-500 block mb-6">01 / BRAND TRANSLATION</span>
-              <h3 className="font-heading text-xl font-light text-white mb-4">Sonic Alignment</h3>
-              <p className="font-body text-sm text-neutral-400 leading-relaxed">
-                Music selection is meticulously aligned with collection guidelines, luxury branding concepts, or experiential target objectives to reflect physical visual values perfectly.
+            <div className="border-t border-neutral-900 pt-8">
+              <span className="font-mono text-[11px] text-neutral-600 block mb-4">01 / BRANDING ALIGNMENT</span>
+              <h3 className="text-lg font-light text-white mb-3">Sonic Translation</h3>
+              <p className="text-sm text-neutral-400 leading-relaxed font-light">
+                Music selection is meticulously aligned with collection mood boards, brand aesthetic profiles, and target demographics to ensure immediate spatial cohesion.
               </p>
             </div>
-            <div className="border-t border-neutral-800 pt-8">
-              <span className="font-heading text-xs text-neutral-500 block mb-6">02 / INTERIOR LOGISTICS</span>
-              <h3 className="font-heading text-xl font-light text-white mb-4">Acoustic Restraint</h3>
-              <p className="font-body text-sm text-neutral-400 leading-relaxed">
-                Vocal interventions are strictly eliminated unless specifically requested for brand announcements. The sound wraps the room seamlessly to facilitate industry connection.
+            <div className="border-t border-neutral-900 pt-8">
+              <span className="font-mono text-[11px] text-neutral-600 block mb-4">02 / INTERIOR MANAGEMENT</span>
+              <h3 className="text-lg font-light text-white mb-3">Acoustic Control</h3>
+              <p className="text-sm text-neutral-400 leading-relaxed font-light">
+                Volume mapping and curation are engineered to accommodate high-level networking, protecting clear conversation flow while maintaining a sophisticated energy line.
               </p>
             </div>
-            <div className="border-t border-neutral-800 pt-8">
-              <span className="font-heading text-xs text-neutral-500 block mb-6">03 / PREMIUM COMPLIANCE</span>
-              <h3 className="font-heading text-xl font-light text-white mb-4">Enterprise Execution</h3>
-              <p className="font-body text-sm text-neutral-400 leading-relaxed">
-                Fully supported by elite corporate multi-million dollar liability insurance (COI), ensuring immediate, credentialed site access across all premier venues and restricted historical galleries.
+            <div className="border-t border-neutral-900 pt-8">
+              <span className="font-mono text-[11px] text-neutral-600 block mb-4">03 / PREMIUM COMPLIANCE</span>
+              <h3 className="text-lg font-light text-white mb-3">Corporate Logistics</h3>
+              <p className="text-sm text-neutral-400 leading-relaxed font-light">
+                Fully credentialed execution backed by comprehensive multi-million dollar liability insurance certificates (COI), facilitating instant security clearance across all major production sites.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Secondary Dual Asset Feature Grid */}
-      <section className="py-24 max-w-7xl mx-auto px-6 md:px-12 w-full">
-        <div className="grid md:grid-cols-2 gap-10">
-          <div className="group space-y-4">
-            <div className="aspect-[3/2] bg-neutral-900 overflow-hidden">
-              <img 
-                src="/images/bmills-corporate-hero.jpg" 
-                alt="B.MILLS Luxury Experiential Sound Design" 
-                className="w-full h-full object-cover opacity-75 grayscale group-hover:grayscale-0 transition-all duration-500" 
-              />
-            </div>
-            <p className="font-body text-[11px] tracking-widest text-neutral-500 uppercase">
-              Brand Activation & Atmosphere Architecture / Manhattan
-            </p>
-          </div>
-          <div className="group space-y-4">
-            <div className="aspect-[3/2] bg-neutral-900 overflow-hidden">
-              <img 
-                src="/images/bmills-corporate-3.png" 
-                alt="B.MILLS Sound Director at Hall des Lumières" 
-                className="w-full h-full object-cover opacity-75 grayscale group-hover:grayscale-0 transition-all duration-500" 
-              />
-            </div>
-            <p className="font-body text-[11px] tracking-widest text-neutral-500 uppercase">
-              Grand Opening Curation / Hall des Lumières, NYC
-            </p>
           </div>
         </div>
       </section>
@@ -217,7 +184,7 @@ export default function BrandActivations() {
         .marquee-track {
           display: flex;
           width: max-content;
-          animation: marqueeScroll 60s linear infinite;
+          animation: marqueeScroll 45s linear infinite;
           will-change: transform;
         }
         .marquee-row {
@@ -226,23 +193,23 @@ export default function BrandActivations() {
           flex-shrink: 0;
         }
         .logo-slot {
-          width: 200px;
+          width: 180px;
           display: flex;
           align-items: center;
           justify-content: center;
           flex-shrink: 0;
-          padding: 0 30px;
+          padding: 0 25px;
         }
         .logo-img {
           width: 100%;
           height: auto;
           object-fit: contain;
           filter: brightness(0) invert(1);
-          opacity: 0.25;
+          opacity: 0.2;
           transition: opacity 300ms ease;
         }
         .logo-img:hover {
-          opacity: 0.7;
+          opacity: 0.5;
         }
       `}</style>
     </div>
