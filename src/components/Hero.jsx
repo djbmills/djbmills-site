@@ -113,7 +113,7 @@ export default function Hero() {
         </div>
 
         <motion.a
-          href="#about"
+          href="#clients"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2.2 }}
