@@ -131,8 +131,16 @@ export default function InquiryFooter({
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-            <form name="inquiry" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-10">
+            <form name="inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit} className="space-y-10">
               <input type="hidden" name="form-name" value="inquiry" />
+              
+              {/* Netlify Honeypot Bot Field (Hidden from humans, visible to bots) */}
+              <p className="absolute opacity-0 pointer-events-none w-0 h-0 m-0 p-0 overflow-hidden" aria-hidden="true">
+                <label>
+                  Don't fill this out if you're human:{" "}
+                  <input name="bot-field" value={formData.botField} onChange={handleChange} tabIndex="-1" />
+                </label>
+              </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
                 <div>
