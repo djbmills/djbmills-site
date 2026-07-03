@@ -27,7 +27,8 @@ export default function BrandActivations() {
       canonicalLink.setAttribute('rel', 'canonical');
       document.head.appendChild(canonicalLink);
     }
-    canonicalLink.setAttribute('href', 'https://djbmills.com/corporate-events');
+    // FIX: Changed from /corporate-events to self-referencing page URL so Google indexes it cleanly
+    canonicalLink.setAttribute('href', 'https://djbmills.com/brand-activations');
 
     return () => {
       if (canonicalLink && canonicalLink.parentNode) {
