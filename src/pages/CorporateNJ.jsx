@@ -26,7 +26,7 @@ const trustedFor = [
 
 export default function CorporateNJ() {
   
-  // FAIL-SAFE HOOK: Tells Google your main NYC page is the master version.
+ // FIX: Tells Google this New Jersey page is its own standalone master version!
   useEffect(() => {
     let canonicalLink = document.querySelector('link[rel="canonical"]');
     if (!canonicalLink) {
@@ -34,7 +34,8 @@ export default function CorporateNJ() {
       canonicalLink.setAttribute('rel', 'canonical');
       document.head.appendChild(canonicalLink);
     }
-    canonicalLink.setAttribute('href', 'https://djbmills.com/corporate-events');
+    // Change this line right here to target the -nj URL:
+    canonicalLink.setAttribute('href', 'https://djbmills.com/corporate-events-nj');
 
     return () => {
       if (canonicalLink && canonicalLink.parentNode) {
