@@ -269,12 +269,12 @@ export default function CorporateNJ() {
             className="mt-14"
           >
             <img
-              src="/images/bmills-corporate-3.png"
-              alt="B.MILLS music curation for events"
+              src="/images/corporate/luxury-brand-event-dj-nyc.png"
+              alt="B.MILLS performative sound design setup at luxury brand launch party in downtown New York City"
               className="w-full h-auto object-cover"
             />
             <p className="font-body text-[10px] md:text-xs text-muted-foreground mt-4 tracking-[0.25em] uppercase text-center">
-              GRAND OPENING CELEBRATION EVENT | DOWNTOWN NEW YORK CITY
+              GRAND OPENING EVENT | DOWNTOWN NEW YORK CITY
             </p>
           </motion.div>
         </div>
@@ -570,14 +570,14 @@ export default function CorporateNJ() {
           >
             <div className="grid grid-cols-2 gap-4">
               <img
-                src="/images/bmills-corporate-4.jpg"
-                alt="B.MILLS event production"
-                className="w-full h-full object-cover"
+                src="/images/corporate/luxury-benefit-event-dj-bmills-nyc.jpg"
+                alt="B.MILLS mixing live audio on professional sound controller deck at corporate function"
+                className="w-full h-full object-cover aspect-[2/3]"
               />
               <img
-                src="/images/bmills-corporate-5.jpg"
-                alt="Sleek event audio setup"
-                className="w-full h-full object-cover"
+                src="/images/corporate/luxury-benefit-event-dj-bmills-nyc-3.jpg"
+                alt="Sleek corporate benefit event DJ production setup close up layout"
+                className="w-full h-full object-cover aspect-[2/3]"
               />
             </div>
             <p className="font-body text-[10px] md:text-xs text-white/30 mt-4 tracking-[0.25em] uppercase text-center">
