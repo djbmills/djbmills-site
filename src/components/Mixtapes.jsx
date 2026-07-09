@@ -8,6 +8,7 @@ const mixtapes = [
     genre: 'R&B Mixtape',
     description: 'Sophisticated rhythm and blues mixed with deep cuts.',
     image: '/images/all-for-the-love.png',
+    altText: 'B.MILLS — Sophisticated rhythm and blues sound design for luxury private rooms and upscale client gatherings in Manhattan',
     audioUrl: 'https://mcdn.podbean.com/mf/web/2ix9nrz5dvqn4pjy/All_For_The_Love770bt.mp3'
   },
   {
@@ -15,6 +16,7 @@ const mixtapes = [
     genre: 'House / Dance Mixtape',
     description: 'A late night groove built for dance floors.',
     image: '/images/afterparty.jpg',
+    altText: 'B.MILLS — Deep house and dance music curation for premium fashion brand afterparties and high-end experiential footprints',
     audioUrl: 'https://mcdn.podbean.com/mf/web/hh8xury4eea68v3a/theAfterparty.mp3'
   },
   {
@@ -22,6 +24,7 @@ const mixtapes = [
     genre: 'Poolside House',
     description: 'Designed for open air activations and cocktail hours.',
     image: '/images/summertime-smooth.png',
+    altText: 'B.MILLS — Open-air poolside house sound formatting for premium seasonal brand activations and outdoor corporate event footprints',
     audioUrl: 'https://mcdn.podbean.com/mf/web/yeipune68mtsf6w2/Summertime_Smooth_36zr5x.mp3'
   },
   {
@@ -29,6 +32,7 @@ const mixtapes = [
     genre: 'Classic Hip Hop · R&B',
     description: '90s and 2000s classics. Gold era curation.',
     image: '/images/throwback-vibes.png',
+    altText: 'B.MILLS — Classic hip hop and R&B music direction for cultural brand moments, media networking events, and premium private rooms',
     audioUrl: 'https://mcdn.podbean.com/mf/web/piu3pek59sg2h5nj/Throwbacks_Vibes8ip11.mp3'
   }
 ];
@@ -142,9 +146,10 @@ export default function Mixtapes() {
               onClick={() => handlePlay(tape)}
             >
               <div className="relative aspect-square overflow-hidden mb-6">
+                {/* Image element now dynamically pulls the invisible keyword-rich alt strings */}
                 <img
                   src={tape.image}
-                  alt={`${tape.title} mixtape cover`}
+                  alt={tape.altText}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
