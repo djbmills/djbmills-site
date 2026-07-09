@@ -76,11 +76,15 @@ export default function InquiryFooter({
         const mixtapesSection = document.getElementById('mixtapes');
         
         if (mixtapesSection) {
+          // 1. Homepage submission path: update browser history query parameters invisibly, then smooth scroll
+          const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?source=inquiry#mixtapes';
+          window.history.pushState({ path: newUrl }, '', newUrl);
+          
           const offsetTop = mixtapesSection.getBoundingClientRect().top + window.scrollY;
           window.scrollTo({ top: offsetTop - 80, behavior: 'smooth' });
         } else {
-          // Redirect back to home page mixtapes from sub-pages
-          window.location.href = '/#mixtapes';
+          // 2. Landing/Sub-page submission path: execute clean cross-page link generation containing the tracking parameter
+          window.location.href = '/?source=inquiry#mixtapes';
         }
       }, 2800);
 
