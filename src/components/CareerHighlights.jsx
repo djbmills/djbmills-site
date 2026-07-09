@@ -23,7 +23,7 @@ const columns = [
       { name: 'Vanity Fair', role: 'Mention', context: 'Luxury culture event music direction mention in Vanity Fair.' },
     ],
   },
- {
+  {
     heading: 'Notable Events',
     items: [
       { name: 'A$AP Ferg', role: 'Album Release @ 1OAK', context: 'Official album release party live DJ set for A$AP Ferg at 1OAK in New York City.' },
@@ -42,6 +42,7 @@ export default function CareerHighlights() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
   const y = useTransform(scrollYProgress, [0, 1], ['-3%', '3%']);
+
   return (
     <section ref={ref} className="py-24 md:py-36 px-6 md:px-12 bg-background relative overflow-hidden">
       <motion.div style={{ y }} className="max-w-7xl mx-auto relative">
@@ -88,11 +89,15 @@ export default function CareerHighlights() {
                 {col.heading}
               </p>
               <div className="space-y-3">
-                {col.items.map(([name, role], i) => (
-                  <div key={i} className="flex items-baseline gap-2 font-body text-xs tracking-[0.15em] uppercase text-foreground/70">
-                    <span className="shrink-0">{name}</span>
+                {col.items.map((item, i) => (
+                  <div 
+                    key={i} 
+                    aria-label={item.context}
+                    className="flex items-baseline gap-2 font-body text-xs tracking-[0.15em] uppercase text-foreground/70"
+                  >
+                    <span className="shrink-0">{item.name}</span>
                     <span className="text-foreground/25 shrink-0">|</span>
-                    <span className="text-foreground/40">{role}</span>
+                    <span className="text-foreground/40">{item.role}</span>
                   </div>
                 ))}
               </div>
