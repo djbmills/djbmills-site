@@ -440,7 +440,7 @@ export default function CorporateNJ() {
                 </p>
 
                 <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
-                  The curation mixed some deep cuts, and soul, with current selections, keeping the open gallery space connected and vibrant throughout the reception.
+                  The music balanced rare soul cuts with modern textures, driving the room's energy while keeping the expansive gallery setting closely connected.
                 </p>
               </div>
             </div>
