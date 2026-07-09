@@ -273,8 +273,8 @@ export default function CorporateNJ() {
               alt="B.MILLS music curation for events"
               className="w-full h-auto object-cover"
             />
-            <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
-              EXECUTIVE RECEPTION DESIGN | REGIONAL ARCHIVE
+            <p className="font-body text-[10px] md:text-xs text-muted-foreground mt-4 tracking-[0.25em] uppercase text-center">
+              GRAND OPENING CELEBRATION EVENT | DOWNTOWN NEW YORK CITY
             </p>
           </motion.div>
         </div>
@@ -373,8 +373,8 @@ export default function CorporateNJ() {
                 alt="Event atmosphere at the opening party"
                 className="w-full h-auto object-cover"
               />
-              <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
-                Boom Boom Room
+              <p className="font-body text-[10px] md:text-xs text-muted-foreground mt-4 tracking-[0.25em] uppercase text-center">
+                BOOM BOOM ROOM | NEW YORK CITY
               </p>
             </div>
 
@@ -580,8 +580,8 @@ export default function CorporateNJ() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <p className="font-body text-xs text-white/30 mt-4 tracking-widest uppercase">
-              Boom Boom Room
+            <p className="font-body text-[10px] md:text-xs text-white/30 mt-4 tracking-[0.25em] uppercase text-center">
+              BOOM BOOM ROOM | NEW YORK CITY
             </p>
           </motion.div>
         </div>
