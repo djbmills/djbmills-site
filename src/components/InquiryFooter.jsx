@@ -183,7 +183,7 @@ export default function InquiryFooter({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
                 <div>
                   <label className={labelClass}>Event Type</label>
-                  <Input name="eventType" value={formData.eventType} onChange={handleChange} placeholder="Brand Activation, Afterparty, End-of-Year Celebration..." className={fieldClass} />
+                  <Input name="eventType" value={formData.eventType} onChange={handleChange} placeholder="Brand Event, Afterparty, End-of-Year Celebration..." className={fieldClass} />
                 </div>
                 <div>
                   <label className={labelClass}>Guest Count</label>
@@ -194,7 +194,7 @@ export default function InquiryFooter({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
                 <div>
                   <label className={labelClass}>Atmosphere</label>
-                  <Input name="atmosphere" value={formData.atmosphere} onChange={handleChange} placeholder="E.g., Deep house groove, brand showcase, high-energy holiday set" className={fieldClass} />
+                  <Input name="atmosphere" value={formData.atmosphere} onChange={handleChange} placeholder="E.g., Deep house groove, brand showcase, high energy set" className={fieldClass} />
                 </div>
                 <div>
                   <label className={labelClass}>Event Timing</label>
