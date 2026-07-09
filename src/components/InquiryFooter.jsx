@@ -103,7 +103,7 @@ export default function InquiryFooter({
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col justify-between">
             <div>
               <p className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-4">
-                Inquire · Late 2026 / 2027 Availability
+                Inquire · Brand Activations, End-of-Year Events & Late 2026/2027
               </p>
               <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight italic tracking-tight">{headline}</h2>
               <div className="w-12 h-px bg-foreground/20 mb-8" />
@@ -183,7 +183,7 @@ export default function InquiryFooter({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
                 <div>
                   <label className={labelClass}>Event Type</label>
-                  <Input name="eventType" value={formData.eventType} onChange={handleChange} placeholder="Brand Event, Private Room, Afterparty..." className={fieldClass} />
+                  <Input name="eventType" value={formData.eventType} onChange={handleChange} placeholder="Brand Activation, Afterparty, End-of-Year Celebration..." className={fieldClass} />
                 </div>
                 <div>
                   <label className={labelClass}>Guest Count</label>
@@ -194,7 +194,7 @@ export default function InquiryFooter({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
                 <div>
                   <label className={labelClass}>Atmosphere</label>
-                  <Input name="atmosphere" value={formData.atmosphere} onChange={handleChange} placeholder="Vibe / Energy goals" className={fieldClass} />
+                  <Input name="atmosphere" value={formData.atmosphere} onChange={handleChange} placeholder="E.g., Deep house groove, brand showcase, high-energy holiday set" className={fieldClass} />
                 </div>
                 <div>
                   <label className={labelClass}>Event Timing</label>
