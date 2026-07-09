@@ -9,24 +9,23 @@ const selectedEvents = [
   {
     title: "Sammontana Gelati All’Italiana U.S. Launch",
     meta: "Brand Launch | Eataly Rooftop, New York City",
-    body: "For the U.S. launch of Sammontana Gelati All’Italiana at Eataly Rooftop, B.MILLS curated the soundtrack for a crowd with a distinctly European feel, including many Italian guests. B.MILLS was brought in through a referral from Kering Eyewear, a past client he had worked with across multiple events, which made the booking feel especially aligned from the start. The music direction was designed to reflect the brand’s roots and the mood of the evening, beginning with a relaxed, stylish energy as guests arrived and settled into the space, then gradually building into a more upbeat European house direction as the night progressed. The result felt culturally in tune, brand right, and effortless in its progression.",
+    body: "For the premier U.S. debut of Sammontana Gelati All’Italiana, B.MILLS designed a tailored sound profile for an international crowd at Eataly Rooftop. Secured via a direct recommendation from Kering Eyewear, the music curation mirrored the brand's sophisticated European heritage. The progression transitioned fluidly from an upscale, atmospheric arrival lounge into a high energy European house set as the evening evolved, delivering an experience that felt both effortless and precise.",
   },
   {
     title: "School of American Ballet Ball",
     meta: "Dinner + Dancing | Lincoln Center, New York City",
-    body: "Trusted for two consecutive years to soundtrack the SAB Ball, B.MILLS shaped the full musical arc of the evening for approximately 450 guests, including high net worth donors and dance enthusiasts. B.MILLS was referred by the New York City Ballet Young Patrons Circle event team, following 13 years of DJing their Young Patrons Circle post performance parties in The Promenade of the David H. Koch Theater. The night began with a smooth, soulful dinner soundtrack that brought warmth and movement into the room while keeping the tone elegant. From there, the energy built naturally into a more celebratory dance floor later in the evening, allowing the event to shift without losing its sense of refinement.",
+    body: "Retained for consecutive years to orchestrate the soundtrack for the historic SAB Ball at Lincoln Center, B.MILLS commanded the energy for over 450 guests, including high net worth donors and stakeholders. Following a thirteen year tenure curating for the New York City Ballet Young Patrons Circle, this production required a delicate musical arc—beginning with understated, soul infused dinner arrangements before naturally escalating into a high energy celebration.",
   },
 ];
 
 const trustedFor = [
-  "Luxury brand events and product launches",
-  "Tech, finance, fashion, and private client rooms",
-  "Afterparties and high-level celebrations",
+  "Luxury brand activations & private client rooms",
+  "Tech, finance, and cultural gallery spaces",
+  "High profile afterparties & regional functions",
 ];
 
 export default function CorporateNJ() {
   
- // FIX: Tells Google this New Jersey page is its own standalone master version!
   useEffect(() => {
     let canonicalLink = document.querySelector('link[rel="canonical"]');
     if (!canonicalLink) {
@@ -34,7 +33,6 @@ export default function CorporateNJ() {
       canonicalLink.setAttribute('rel', 'canonical');
       document.head.appendChild(canonicalLink);
     }
-    // Change this line right here to target the -nj URL:
     canonicalLink.setAttribute('href', 'https://djbmills.com/corporate-events-nj');
 
     return () => {
@@ -100,58 +98,20 @@ export default function CorporateNJ() {
 
         <style jsx>{`
           @keyframes marqueeScroll {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
           }
-
           .marquee-track {
             display: flex;
             width: max-content;
             animation: marqueeScroll 55s linear infinite;
             will-change: transform;
           }
-
-          .marquee-row {
-            display: flex;
-            align-items: center;
-            flex-shrink: 0;
-          }
-
-          .logo-slot {
-            width: 220px;
-            height: 76px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            padding: 0 26px;
-          }
-
-          .logo-img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            filter: grayscale(1);
-            opacity: 0.48;
-            transition: opacity 500ms ease, filter 500ms ease;
-          }
-
-          .logo-img:hover {
-            opacity: 0.9;
-            filter: grayscale(0);
-          }
-
-          @media (min-width: 768px) {
-            .logo-slot {
-              width: 255px;
-              height: 84px;
-              padding: 0 34px;
-            }
-          }
+          .marquee-row { display: flex; align-items: center; flex-shrink: 0; }
+          .logo-slot { width: 220px; height: 76px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 0 26px; }
+          .logo-img { width: 100%; height: 100%; object-fit: contain; filter: grayscale(1); opacity: 0.48; transition: opacity 500ms ease, filter 500ms ease; }
+          .logo-img:hover { opacity: 0.9; filter: grayscale(0); }
+          @media (min-width: 768px) { .logo-slot { width: 255px; height: 84px; padding: 0 34px; } }
         `}</style>
       </section>
             
@@ -184,7 +144,7 @@ export default function CorporateNJ() {
               transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
               className="font-heading text-2xl md:text-3xl lg:text-4xl font-light text-foreground leading-relaxed"
             >
-              Corporate environments require precise sonic curation. The music should define the brand identity without overwhelming the space, providing professional vocal direction only when necessary.
+              Corporate landscapes and private events command an intentional approach to sound. B.MILLS delivers distinct music direction tailored to the environment, maintaining a clean presence on the microphone only when needed.
             </motion.p>
           </div>
 
@@ -195,7 +155,7 @@ export default function CorporateNJ() {
             transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
             className="font-body text-sm text-muted-foreground mt-8 max-w-xl leading-relaxed"
           >
-            Maintaining a sophisticated balance between background atmosphere and high-energy transitions.
+            Balancing sophisticated networking environments with a seamless transition into the evening.
           </motion.p>
 
           <motion.div
@@ -210,7 +170,7 @@ export default function CorporateNJ() {
                 <div className="group relative overflow-hidden bg-black/5 aspect-[4/5]">
                   <img
                     src="/images/bmills-corporate-2.png"
-                    alt="B.MILLS performing at Goldman Sachs Robinhood event New York City - Corporate Sound Design"
+                    alt="B.MILLS performing at regional event"
                     className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
@@ -219,7 +179,7 @@ export default function CorporateNJ() {
                 <div className="group relative overflow-hidden bg-black/5 aspect-[4/5]">
                   <img
                     src="/images/corporate/goldman-robinhood/bmills-dj-booth-robinhood-goldman.png"
-                    alt="B.MILLS DJ setup at Goldman Sachs Robinhood event in New York City"
+                    alt="B.MILLS audio setup"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
@@ -228,7 +188,7 @@ export default function CorporateNJ() {
                 <div className="group relative overflow-hidden bg-black/5 aspect-[4/5]">
                   <img
                     src="/images/corporate/goldman-robinhood/metropolis-event-interior.png"
-                    alt="Metropolis by Marcus Samuelsson event interior for Goldman Sachs Robinhood event"
+                    alt="Venue architecture and interior layout"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
@@ -237,7 +197,7 @@ export default function CorporateNJ() {
                 <div className="group relative overflow-hidden bg-black/5 aspect-[4/5]">
                   <img
                     src="/images/corporate/goldman-robinhood/goldman-robinhood-signage.png"
-                    alt="Goldman Sachs and Robinhood event signage in New York City"
+                    alt="Event branding setup"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
@@ -245,7 +205,7 @@ export default function CorporateNJ() {
               </div>
 
               <p className="font-body text-[10px] md:text-xs text-muted-foreground mt-4 tracking-[0.25em] uppercase text-center">
-                GOLDMAN SACHS / ROBINHOOD EVENT, NEW YORK CITY
+                GOLDMAN SACHS / ROBINHOOD SUMMIT ARCHIVE
               </p>
             </div>
           </motion.div>
@@ -293,15 +253,11 @@ export default function CorporateNJ() {
             className="max-w-2xl"
           >
             <p className="font-body text-base text-muted-foreground leading-relaxed">
-              Corporate events bring different people into the same space: clients, teams, executives, guests, and people who may not all move the same way. The music has to find the common thread without turning the room into something it is not.
+              Premium events bring different groups together, from executive teams to clients and guests. The music needs to connect the entire room naturally while respecting the atmosphere of the venue.
             </p>
 
             <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
-              B.MILLS builds the sound from the setting first. The room, the crowd, the pace, the lighting, the reason everyone is there. Selections stay intentional, soulful, and connected without feeling obvious.
-            </p>
-
-            <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
-              It's not about playing everything. It's about playing what fits, keeping the energy alive, and knowing when to let the music sit in the pocket.
+              B.MILLS reads the energy based directly on the room layout, guest flow, and lighting. The curation is deep, soulful, and current, built completely from scratch without falling back on standard tracklists.
             </p>
           </motion.div>
 
@@ -314,11 +270,11 @@ export default function CorporateNJ() {
           >
             <img
               src="/images/bmills-corporate-3.png"
-              alt="B.MILLS managing audio for Hall des Lumières Grand Opening - NYC Brand Event"
+              alt="B.MILLS music curation for events"
               className="w-full h-auto object-cover"
             />
             <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
-              GRAND OPENING | HALL DES LUMIÈRES, NEW YORK CITY
+              EXECUTIVE RECEPTION DESIGN | REGIONAL ARCHIVE
             </p>
           </motion.div>
         </div>
@@ -370,7 +326,7 @@ export default function CorporateNJ() {
             transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
             className="font-body text-base text-muted-foreground leading-relaxed max-w-3xl"
           >
-            B.MILLS is booked by brands, agencies, planners, and private clients for environments where music needs to remain intentional. His work spans luxury brand activations, product launches, tech and finance gatherings, and high-stakes multi-day functions across Manhattan, Northern New Jersey, Bergen County, and the greater Tri-State corridor.
+            B.MILLS is booked by brands, planners, and hosts who look for intentional music curation. The following portfolio projects showcase custom event production across Northern New Jersey, Bergen County, and the Tri State area.
           </motion.p>
 
           {/* Gagosian Visual Case Study */}
@@ -384,7 +340,7 @@ export default function CorporateNJ() {
             <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-14 items-start">
               <div>
                 <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-5">
-                  Cocktail Event + Afterparty / Art / Fashion / Culture
+                  Gallery Exhibition Opening Party
                 </p>
 
                 <h3 className="font-heading text-3xl md:text-5xl font-light text-foreground leading-tight">
@@ -392,21 +348,21 @@ export default function CorporateNJ() {
                 </h3>
 
                 <p className="font-body text-sm tracking-[0.25em] uppercase text-muted-foreground mt-6">
-                  Boom Boom Room + Le Bain | New York City
+                  The Boom Boom Room, New York City
                 </p>
               </div>
 
               <div>
                 <p className="font-body text-base text-muted-foreground leading-relaxed">
-                  For Avedon 100 with Gagosian Gallery, B.MILLS curated the soundtrack for an evening that began at Boom Boom Room and later moved into Le Bain, with the full 18th floor of The Standard reserved for the event.
+                  For the Avedon 100 opening party in partnership with Gagosian Gallery, B.MILLS mixed the soundtrack for the top floor of The Standard.
                 </p>
 
                 <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
-                  With a guest list spanning fashion, art, and culture, including names like Anna Wintour, Gigi Hadid, and Naomi Campbell, the music direction called for taste, restraint, and just the right amount of movement. The soundtrack supported conversation, complemented the room, and carried the night with an intentional sense of momentum from cocktail hour through the closing stretch.
+                  Playing for an international crowd of artists, designers, and curators, the sound needed to feel effortless while driving the energy of the room. The music allowed for natural conversation early on before expanding into a late night dance floor.
                 </p>
 
                 <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
-                  Later featured in Vanity Fair and Vogue, the evening was noted by both publications, with B.MILLS named among the DJs behind the night.
+                  The event coverage was later featured across major fashion and lifestyle platforms, including Vogue and Vanity Fair.
                 </p>
               </div>
             </div>
@@ -414,24 +370,24 @@ export default function CorporateNJ() {
             <div className="mt-12">
               <img
                 src="/images/corporate/gagosian-avedon-100/gagosian-avedon-100-boom-boom-room-crowd.jpg"
-                alt="Gagosian Gallery Avedon 100 event crowd at Boom Boom Room in New York City"
+                alt="Event atmosphere at the opening party"
                 className="w-full h-auto object-cover"
               />
               <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
-                GAGOSIAN GALLERY X AVEDON 100 | BOOM BOOM ROOM, NEW YORK CITY
+                Boom Boom Room
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 lg:gap-10 mt-14">
               <img
                 src="/images/corporate/gagosian-avedon-100/bmills-dj-gagosian-avedon-100-boom-boom-room.jpg"
-                alt="B.MILLS DJing the Gagosian Gallery Avedon 100 event at Boom Boom Room"
+                alt="B.MILLS on the decks at the event"
                 className="w-full h-auto object-cover"
               />
 
               <img
                 src="/images/corporate/gagosian-avedon-100/gagosian-avedon-100-boom-boom-room-bar-crowd.jpg"
-                alt="Black and white bar crowd scene from Gagosian Gallery Avedon 100 at Boom Boom Room"
+                alt="Guests at the gallery gathering"
                 className="w-full h-auto object-cover"
               />
             </div>
@@ -439,7 +395,7 @@ export default function CorporateNJ() {
             <div className="mt-14 pt-10 border-t border-border">
               <img
                 src="/images/corporate/gagosian-avedon-100/gagosian-avedon-100-le-bain-after-party.jpg"
-                alt="Le Bain afterparty lighting and disco balls for Gagosian Gallery Avedon 100"
+                alt="Afterparty lighting layout"
                 className="w-full h-auto object-cover"
               />
             </div>
@@ -457,41 +413,37 @@ export default function CorporateNJ() {
               <div className="order-2 lg:order-1">
                 <img
                   src="/images/corporate/1800-tequila/1800-tequila-pioneer-works-crowd.png"
-                  alt="1800 Tequila x Essential Artists event at Pioneer Works in Red Hook Brooklyn"
+                  alt="Atmospheric brand reception setup"
                   className="w-full h-auto object-cover"
                 />
                 <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
-                  1800 TEQUILA X ESSENTIAL ARTISTS | PIONEER WORKS, BROOKLYN
+                  1800 TEQUILA ARTIST BOTTLE LAUNCH RECEPTION
                 </p>
               </div>
 
               <div className="order-1 lg:order-2">
                 <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-5">
-                  Brand Reception / Limited Edition Launch / Art World Event
+                  Artist Bottle Release Party & Custom Installation
                 </p>
 
                 <h3 className="font-heading text-3xl md:text-4xl font-light text-foreground leading-tight">
-                  1800 Tequila x Essential Artists
+                  1800 Tequila x Dustin Yellin
                 </h3>
 
                 <p className="font-body text-sm tracking-[0.25em] uppercase text-muted-foreground mt-6">
-                  Pioneer Works | Red Hook, Brooklyn
+                  Pioneer Works, Brooklyn
                 </p>
 
                 <p className="font-body text-base text-muted-foreground leading-relaxed mt-8">
-                  For a limited edition 1800 Tequila bottle release featuring artist Dustin Yellin, B.MILLS provided the soundtrack for an intimate brand reception at Pioneer Works, the Brooklyn cultural space founded by Yellin.
+                  To celebrate the release of the limited edition Dustin Yellin custom artist bottle, B.MILLS set the soundscape for an evening reception.
                 </p>
 
                 <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
-                  The event centered around the artwork on the bottles, the installations throughout the studio space, and the natural flow of guests gathering, talking, and moving through the room. The music needed to feel atmospheric but still engaging, present without pulling focus.
+                  The venue design highlighted massive glass art installations, calling for a music selection that felt modern and texturized without overtaking the room.
                 </p>
 
                 <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
-                  With limited direction from the brand, B.MILLS shaped the sound around the setting itself: the Brooklyn location, the art, the guests, and the tone of the evening. The set moved through soulful, culturally tuned selections with a steady energy that complemented the space and kept the reception feeling warm, connected, and intentional.
-                </p>
-
-                <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
-                  Each transition was built to feel seamless from one record to the next, supporting the brand experience while allowing the artwork and environment to remain the focus.
+                  The curation mixed rare groove, soul, and current electronic layers, keeping the open gallery space connected and vibrant throughout the reception.
                 </p>
               </div>
             </div>
@@ -499,17 +451,17 @@ export default function CorporateNJ() {
             <div className="grid md:grid-cols-3 gap-4 mt-8">
               <img
                 src="/images/corporate/1800-tequila/bmills-1800-tequila-dj-pioneer-works.png"
-                alt="B.MILLS DJing the 1800 Tequila Essential Artists reception at Pioneer Works"
+                alt="B.MILLS performing at the release party"
                 className="w-full h-full object-cover aspect-[2/3]"
               />
               <img
                 src="/images/corporate/1800-tequila/1800-tequila-essential-artists-bottles.png"
-                alt="1800 Tequila Essential Artists limited edition bottles by Dustin Yellin"
+                alt="Dustin Yellin custom artist bottle collection"
                 className="w-full h-full object-cover aspect-[2/3]"
               />
               <img
                 src="/images/corporate/1800-tequila/dustin-yellin-pioneer-works-sculpture.png"
-                alt="Dustin Yellin artwork displayed at Pioneer Works for the 1800 Tequila event"
+                alt="Art installation on display"
                 className="w-full h-full object-cover aspect-[2/3]"
               />
             </div>
@@ -566,7 +518,7 @@ export default function CorporateNJ() {
         </div>
       </section>
             
-      {/* Section 04: Experience / Logistics */}
+      {/* Section 04: Logistics & Standards */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border" style={{ backgroundColor: '#0d0d0d' }}>
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-4 mb-10">
@@ -583,7 +535,7 @@ export default function CorporateNJ() {
             />
 
             <span className="font-body text-xs tracking-[0.3em] uppercase text-white/30 shrink-0 whitespace-nowrap">
-              Logistics & Trust
+              Logistics & Execution
             </span>
           </div>
 
@@ -606,7 +558,7 @@ export default function CorporateNJ() {
             transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
             className="font-body text-base text-white/50 leading-relaxed max-w-2xl"
           >
-            At the highest level, execution extends far beyond performance. B.MILLS provides a seamless integration framework—fully credentialed with comprehensive multi-million dollar corporate liability insurance (COI) required by premier properties, luxury country clubs, and corporate campuses across the New York, New Jersey, and regional tri-state logistics corridor.
+            Flawless execution stretches far past the music itself. B.MILLS maintains a clean operational framework, fully covered with the comprehensive multi million dollar commercial liability insurance (COI) required by premier venues, country clubs, and private spaces across New York, New Jersey, and the Tri State area.
           </motion.p>
 
           <motion.div
@@ -619,17 +571,17 @@ export default function CorporateNJ() {
             <div className="grid grid-cols-2 gap-4">
               <img
                 src="/images/bmills-corporate-4.jpg"
-                alt="B.MILLS Luxury Corporate Event DJ NYC - Boom Boom Room"
+                alt="B.MILLS event production"
                 className="w-full h-full object-cover"
               />
               <img
                 src="/images/bmills-corporate-5.jpg"
-                alt="B.MILLS Curated Music Direction for High-End Galas"
+                alt="Sleek event audio setup"
                 className="w-full h-full object-cover"
               />
             </div>
             <p className="font-body text-xs text-white/30 mt-4 tracking-widest uppercase">
-              Kering Eyewear Cocktail Reception | Boom Boom Room, New York City
+              Boom Boom Room
             </p>
           </motion.div>
         </div>
@@ -639,21 +591,21 @@ export default function CorporateNJ() {
 
       <InquiryFooter
         headline="Define the sound."
-        body="High-stakes events require a precise soundtrack. Share your event details and let's discuss the direction."
+        body="High stakes events require a precise soundtrack. Share your event details and let's discuss the direction."
         footerText={
           <>
             <span className="hidden md:inline">
-              Fully COI insured and available for luxury brand activations, corporate galas,
+              Fully COI insured and available for brand activations, corporate galas,
               <br />
-              and regional functions across NYC, Northern New Jersey, and premium tri-state spaces.
+              and private functions across NYC, Northern New Jersey, and premium tri state spaces.
             </span>
 
             <span className="md:hidden">
-              Fully COI insured and available for luxury brand activations,
+              Fully COI insured and available for brand activations,
               <br />
-              corporate galas, and regional functions
+              corporate galas, and private functions
               <br />
-              across NYC, NJ, and premium tri-state spaces.
+              across NYC, NJ, and premium tri state spaces.
             </span>
           </>
         }
