@@ -348,7 +348,7 @@ export default function CorporateNJ() {
                 </h3>
 
                 <p className="font-body text-sm tracking-[0.25em] uppercase text-muted-foreground mt-6">
-                  The Boom Boom Room, New York City
+                  Boom Boom Room, New York City
                 </p>
               </div>
 
@@ -373,9 +373,6 @@ export default function CorporateNJ() {
                 alt="Event atmosphere at the opening party"
                 className="w-full h-auto object-cover"
               />
-              <p className="font-body text-[10px] md:text-xs text-muted-foreground mt-4 tracking-[0.25em] uppercase text-center">
-                BOOM BOOM ROOM | NEW YORK CITY
-              </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 lg:gap-10 mt-14">
@@ -439,7 +436,7 @@ export default function CorporateNJ() {
                 </p>
 
                 <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
-                  The venue design highlighted massive glass art installations, calling for a music selection that felt modern and texturized without overtaking the room.
+                  The venue design highlighted Yellin's massive glass art installations, calling for a music selection that felt modern and texturized without overtaking the room.
                 </p>
 
                 <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
@@ -568,10 +565,15 @@ export default function CorporateNJ() {
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
             className="pt-12 mt-12 border-t border-white/10"
           >
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-3 gap-4">
               <img
                 src="/images/corporate/luxury-benefit-event-dj-bmills-nyc.jpg"
                 alt="B.MILLS mixing live audio on professional sound controller deck at corporate function"
+                className="w-full h-full object-cover aspect-[2/3]"
+              />
+              <img
+                src="/images/corporate/luxury-benefit-event-dj-bmills-nyc-2.jpg"
+                alt="B.MILLS performing at a luxury corporate benefit event inside the premium booth setup"
                 className="w-full h-full object-cover aspect-[2/3]"
               />
               <img
@@ -580,9 +582,6 @@ export default function CorporateNJ() {
                 className="w-full h-full object-cover aspect-[2/3]"
               />
             </div>
-            <p className="font-body text-[10px] md:text-xs text-white/30 mt-4 tracking-[0.25em] uppercase text-center">
-              BOOM BOOM ROOM | NEW YORK CITY
-            </p>
           </motion.div>
         </div>
       </section>
