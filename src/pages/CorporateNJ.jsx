@@ -420,7 +420,7 @@ export default function CorporateNJ() {
 
               <div className="order-1 lg:order-2">
                 <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-5">
-                  Artist Bottle Release Party & Custom Installation
+                  Brand Event & Custom Installation
                 </p>
 
                 <h3 className="font-heading text-3xl md:text-4xl font-light text-foreground leading-tight">
@@ -428,7 +428,7 @@ export default function CorporateNJ() {
                 </h3>
 
                 <p className="font-body text-sm tracking-[0.25em] uppercase text-muted-foreground mt-6">
-                  Pioneer Works, Brooklyn
+                  Pioneer Works | Red Hook, Brooklyn
                 </p>
 
                 <p className="font-body text-base text-muted-foreground leading-relaxed mt-8">
@@ -440,7 +440,7 @@ export default function CorporateNJ() {
                 </p>
 
                 <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
-                  The curation mixed rare groove, soul, and current electronic layers, keeping the open gallery space connected and vibrant throughout the reception.
+                  The curation mixed some deep cuts, and soul, with current selections, keeping the open gallery space connected and vibrant throughout the reception.
                 </p>
               </div>
             </div>
