@@ -21,8 +21,13 @@ const photos = [
   { src: "/images/bmills-event-15.png", alt: "High-energy dance moment at corporate event with B.MILLS DJ" },
   { src: "/images/bmills-event-16.jpg", alt: "B.MILLS DJ performing at exclusive New York City venue" },
   { src: "/images/bmills-event-17.jpg", alt: "Guests dancing at luxury brand event with B.MILLS DJ" },
-  { src: "/images/bmills-event-mobile-1.png", alt: "Mobile view of B.MILLS DJ performance at upscale NYC event", mobileOnly: true }
+  { src: "/images/bmills-event-mobile-1.png", alt: "Mobile view of B.MILLS DJ performance at upscale NYC event", mobileOnly: true },
+  // Localized Mobile-Only SEO Additions:
+  { src: "/images/bmills-hamptons-summer-outdoor-dj.jpg", alt: "B.MILLS performing a private summer outdoor DJ set for a client event in the Hamptons", mobileOnly: true },
+  { src: "/images/bmills-union-square-citibank-dj-performance.jpg", alt: "B.MILLS live DJ performance at the Citibank sponsored community event in Union Square Park NYC", mobileOnly: true },
+  { src: "/images/bmills-nyc-nightclub-led-dj-set.jpg", alt: "B.MILLS delivering a high-energy live performance set featuring dynamic LED production graphics inside a New York City nightclub", mobileOnly: true }
 ];
+
 export default function PhotoGallery() {
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
