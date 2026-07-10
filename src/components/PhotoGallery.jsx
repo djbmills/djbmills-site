@@ -25,8 +25,7 @@ const photos = [
   // Localized Mobile-Only SEO Additions:
   { src: "/images/corporate/luxury-brand-event-dj-nyc.png", alt: "B.MILLS mixing live at an upscale luxury brand event corporate reception in New York City", mobileOnly: true }, // <-- Fixed: Added the missing comma here
   { src: "/images/bmills-hamptons-summer-outdoor-dj.jpg", alt: "B.MILLS performing a private summer outdoor DJ set for a client event in the Hamptons", mobileOnly: true },
-  { src: "/images/bmills-union-square-citibank-dj-performance.jpg", alt: "B.MILLS live DJ performance at the Citibank sponsored community event in Union Square Park NYC", mobileOnly: true },
-  { src: "/images/bmills-nyc-nightclub-led-dj-set.jpg", alt: "B.MILLS delivering a high-energy live performance set featuring dynamic LED production graphics inside a New York City nightclub", mobileOnly: true }
+  { src: "/images/bmills-union-square-citibank-dj-performance.jpg", alt: "B.MILLS live DJ performance at the Citibank sponsored community event in Union Square Park NYC", mobileOnly: true }
 ];
 
 export default function PhotoGallery() {
