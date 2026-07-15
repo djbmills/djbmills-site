@@ -1,12 +1,28 @@
-import { motion } from 'framer-motion';
-import { useState } from 'react';
-import { ArrowRight, CalendarIcon, Instagram, Linkedin, Mail, FileText } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState
+} from 'react';
+import {
+  ArrowRight,
+  CalendarIcon,
+  Instagram,
+  Linkedin,
+  Mail,
+  FileText
+} from 'lucide-react';
 import { format } from 'date-fns';
 
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Calendar } from '@/components/ui/calendar';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger
+} from '@/components/ui/popover';
 
 const TikTokIcon = ({ className }) => (
   <svg
@@ -23,7 +39,11 @@ const TikTokIcon = ({ className }) => (
 );
 
 const SpotifyIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+  >
     <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.491 17.306c-.215.353-.674.464-1.026.25-2.85-1.742-6.438-2.135-10.665-1.168-.403.093-.811-.16-.904-.564-.093-.403.16-.811.564-.904 4.625-1.058 8.583-.605 11.781 1.348.352.215.463.673.25 1.026zm1.465-3.265c-.27.439-.846.582-1.285.312-3.262-2.004-8.234-2.587-12.091-1.416-.494.15-1.02-.132-1.17-.626-.15-.494.132-1.02.626-1.17 4.406-1.336 9.889-.684 13.608 1.6 0 .439-.143.846-.312 1.285zm.126-3.411c-3.911-2.323-10.354-2.537-14.124-1.393-.6.182-1.233-.162-1.415-.762-.182-.6.162-1.233.762-1.415 4.316-1.31 11.432-1.058 15.962 1.631.54.32.716 1.015.396 1.555-.32.54-1.015.716-1.555.396z" />
   </svg>
 );
@@ -51,6 +71,13 @@ export default function InquiryFooter({
   const [calendarOpen, setCalendarOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
+  const [showSuccessOverlay, setShowSuccessOverlay] =
+    useState(false);
+  const [redirectCountdown, setRedirectCountdown] =
+    useState(null);
+
+  const hasRedirected = useRef(false);
+  const overlayPanelRef = useRef(null);
 
   const labelClass =
     'font-body text-[11px] tracking-[0.15em] uppercase text-muted-foreground/80 mb-2 flex items-center justify-between gap-3';
@@ -61,8 +88,118 @@ export default function InquiryFooter({
   const tagClass =
     'font-body text-[9px] tracking-[0.18em] uppercase text-foreground/30';
 
-  const scrollToTop = () =>
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  const navigateToMixtapes = useCallback(() => {
+    if (hasRedirected.current) {
+      return;
+    }
+
+    hasRedirected.current = true;
+    setRedirectCountdown(null);
+    setShowSuccessOverlay(false);
+
+    const mixtapesSection =
+      document.getElementById('mixtapes');
+
+    if (mixtapesSection) {
+      const newUrl =
+        window.location.protocol +
+        '//' +
+        window.location.host +
+        window.location.pathname +
+        '?source=inquiry#mixtapes';
+
+      window.history.pushState(
+        { path: newUrl },
+        '',
+        newUrl
+      );
+
+      window.requestAnimationFrame(() => {
+        const offsetTop =
+          mixtapesSection.getBoundingClientRect().top +
+          window.scrollY;
+
+        window.scrollTo({
+          top: offsetTop - 80,
+          behavior: 'smooth'
+        });
+      });
+    } else {
+      window.location.href =
+        '/?source=inquiry#mixtapes';
+    }
+  }, []);
+
+  const remainOnPage = () => {
+    setRedirectCountdown(null);
+    setShowSuccessOverlay(false);
+    hasRedirected.current = false;
+  };
+
+  useEffect(() => {
+    if (
+      !showSuccessOverlay ||
+      redirectCountdown === null
+    ) {
+      return undefined;
+    }
+
+    if (redirectCountdown <= 0) {
+      navigateToMixtapes();
+      return undefined;
+    }
+
+    const countdownTimer = window.setTimeout(() => {
+      setRedirectCountdown((currentCountdown) => {
+        if (currentCountdown === null) {
+          return null;
+        }
+
+        return currentCountdown - 1;
+      });
+    }, 1000);
+
+    return () => {
+      window.clearTimeout(countdownTimer);
+    };
+  }, [
+    showSuccessOverlay,
+    redirectCountdown,
+    navigateToMixtapes
+  ]);
+
+  useEffect(() => {
+    if (!showSuccessOverlay) {
+      return undefined;
+    }
+
+    const previousFocus = document.activeElement;
+    const originalOverflow =
+      document.body.style.overflow;
+
+    document.body.style.overflow = 'hidden';
+
+    const focusFrame = window.requestAnimationFrame(() => {
+      overlayPanelRef.current?.focus();
+    });
+
+    return () => {
+      window.cancelAnimationFrame(focusFrame);
+      document.body.style.overflow =
+        originalOverflow;
+
+      if (previousFocus instanceof HTMLElement) {
+        previousFocus.focus();
+      }
+    };
+  }, [showSuccessOverlay]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -86,17 +223,25 @@ export default function InquiryFooter({
     e.preventDefault();
 
     if (!formData.eventDate) {
-      setSubmitStatus('Please select an event date.');
+      setSubmitStatus(
+        'Please select an event date.'
+      );
       return;
     }
 
     setIsSubmitting(true);
+    setSubmitStatus('');
+    setRedirectCountdown(null);
+    setShowSuccessOverlay(false);
+    hasRedirected.current = false;
 
     const encode = (data) =>
       Object.keys(data)
         .map(
           (key) =>
-            `${encodeURIComponent(key)}=${encodeURIComponent(
+            `${encodeURIComponent(
+              key
+            )}=${encodeURIComponent(
               data[key] ?? ''
             )}`
         )
@@ -106,12 +251,16 @@ export default function InquiryFooter({
       const response = await fetch('/', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
+          'Content-Type':
+            'application/x-www-form-urlencoded'
         },
         body: encode({
           'form-name': 'inquiry',
           ...formData,
-          eventDate: format(formData.eventDate, 'MMMM d, yyyy')
+          eventDate: format(
+            formData.eventDate,
+            'MMMM d, yyyy'
+          )
         })
       });
 
@@ -120,38 +269,11 @@ export default function InquiryFooter({
       }
 
       setSubmitStatus(
-        'Inquiry sent. Expect a response within 24 hours. Opening Mixtape Mode...'
+        'Inquiry sent. Expect a response within 24 hours.'
       );
 
-      setTimeout(() => {
-        const mixtapesSection = document.getElementById('mixtapes');
-
-        if (mixtapesSection) {
-          const newUrl =
-            window.location.protocol +
-            '//' +
-            window.location.host +
-            window.location.pathname +
-            '?source=inquiry#mixtapes';
-
-          window.history.pushState(
-            { path: newUrl },
-            '',
-            newUrl
-          );
-
-          const offsetTop =
-            mixtapesSection.getBoundingClientRect().top +
-            window.scrollY;
-
-          window.scrollTo({
-            top: offsetTop - 80,
-            behavior: 'smooth'
-          });
-        } else {
-          window.location.href = '/?source=inquiry#mixtapes';
-        }
-      }, 3000);
+      setRedirectCountdown(10);
+      setShowSuccessOverlay(true);
     } catch (error) {
       setSubmitStatus(
         'Something went wrong. Please try again or email directly.'
@@ -162,424 +284,545 @@ export default function InquiryFooter({
   };
 
   return (
-    <section
-      id="inquiry"
-      className="py-20 md:py-32 px-6 md:px-12 border-t border-border relative overflow-hidden warm-grain"
-      style={{ backgroundColor: '#ebe6d9' }}
-    >
-      <div className="max-w-7xl mx-auto relative">
-        <div className="grid md:grid-cols-2 md:grid-rows-[auto_1fr] gap-16 md:gap-x-24 md:gap-y-0 mb-40">
+    <>
+      <section
+        id="inquiry"
+        className="py-20 md:py-32 px-6 md:px-12 border-t border-border relative overflow-hidden warm-grain"
+        style={{ backgroundColor: '#ebe6d9' }}
+      >
+        <div className="max-w-7xl mx-auto relative">
+          <div className="grid md:grid-cols-2 md:grid-rows-[auto_1fr] gap-16 md:gap-x-24 md:gap-y-0 mb-40">
 
-          {/* Introduction: first on mobile, left column on desktop */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="md:col-start-1 md:row-start-1"
-          >
-            <p className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-4">
-              Inquire · Brand Activations, End-of-Year Events & Late 2026/2027
-            </p>
-
-            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight italic tracking-tight">
-              {headline}
-            </h2>
-
-            <div className="w-12 h-px bg-foreground/20 mb-8" />
-
-            <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-sm">
-              {body}
-            </p>
-          </motion.div>
-
-          {/* Form: second on mobile, right column on desktop */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="md:col-start-2 md:row-start-1 md:row-span-2"
-          >
-            <form
-              name="inquiry"
-              method="POST"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
-              onSubmit={handleSubmit}
-              className="space-y-10"
+            {/* Introduction: first on mobile, left column on desktop */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="md:col-start-1 md:row-start-1"
             >
-              <input
-                type="hidden"
-                name="form-name"
-                value="inquiry"
-              />
-
-              {/* Netlify Honeypot Bot Field */}
-              <p
-                className="absolute opacity-0 pointer-events-none w-0 h-0 m-0 p-0 overflow-hidden"
-                aria-hidden="true"
-              >
-                <label>
-                  Don't fill this out if you're human:{' '}
-                  <input
-                    name="bot-field"
-                    value={formData.botField}
-                    onChange={handleChange}
-                    tabIndex="-1"
-                  />
-                </label>
+              <p className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-4">
+                Inquire · Brand Activations,
+                End-of-Year Events & Late
+                2026/2027
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
-                <div>
-                  <label className={labelClass}>
-                    Name
-                    <span className={tagClass}>Required</span>
+              <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight italic tracking-tight">
+                {headline}
+              </h2>
+
+              <div className="w-12 h-px bg-foreground/20 mb-8" />
+
+              <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-sm">
+                {body}
+              </p>
+            </motion.div>
+
+            {/* Form: second on mobile, right column on desktop */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="md:col-start-2 md:row-start-1 md:row-span-2"
+            >
+              <form
+                name="inquiry"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                onSubmit={handleSubmit}
+                className="space-y-10"
+              >
+                <input
+                  type="hidden"
+                  name="form-name"
+                  value="inquiry"
+                />
+
+                {/* Netlify Honeypot Bot Field */}
+                <p
+                  className="absolute opacity-0 pointer-events-none w-0 h-0 m-0 p-0 overflow-hidden"
+                  aria-hidden="true"
+                >
+                  <label>
+                    Don't fill this out if you're
+                    human:{' '}
+                    <input
+                      name="bot-field"
+                      value={formData.botField}
+                      onChange={handleChange}
+                      tabIndex="-1"
+                    />
                   </label>
-
-                  <Input
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className={fieldClass}
-                  />
-                </div>
-
-                <div>
-                  <label className={labelClass}>
-                    Email
-                    <span className={tagClass}>Required</span>
-                  </label>
-
-                  <Input
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className={fieldClass}
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
-                <div>
-                  <label className={labelClass}>
-                    Event Date
-                    <span className={tagClass}>Required</span>
-                  </label>
-
-                  <Popover
-                    open={calendarOpen}
-                    onOpenChange={setCalendarOpen}
-                  >
-                    <PopoverTrigger asChild>
-                      <button
-                        type="button"
-                        className="w-full bg-transparent border-0 border-b border-foreground/20 rounded-none pb-3 text-left font-body text-sm flex items-center justify-between h-10 shadow-none"
-                      >
-                        <span
-                          className={
-                            formData.eventDate
-                              ? 'text-foreground'
-                              : 'text-muted-foreground/30'
-                          }
-                        >
-                          {formData.eventDate
-                            ? format(
-                                formData.eventDate,
-                                'MMMM d, yyyy'
-                              )
-                            : 'Select date'}
-                        </span>
-
-                        <CalendarIcon className="w-4 h-4 text-muted-foreground/40" />
-                      </button>
-                    </PopoverTrigger>
-
-                    <PopoverContent
-                      align="start"
-                      className="w-auto p-0 border border-border rounded-none bg-[#ebe6d9] shadow-2xl"
-                    >
-                      <Calendar
-                        mode="single"
-                        selected={formData.eventDate}
-                        onSelect={handleDateChange}
-                        disabled={(date) =>
-                          date <
-                          new Date(
-                            new Date().setHours(0, 0, 0, 0)
-                          )
-                        }
-                      />
-                    </PopoverContent>
-                  </Popover>
-                </div>
-
-                <div>
-                  <label className={labelClass}>
-                    Location
-                  </label>
-
-                  <Input
-                    name="location"
-                    value={formData.location}
-                    onChange={handleChange}
-                    placeholder="Venue or City"
-                    className={fieldClass}
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
-                <div>
-                  <label className={labelClass}>
-                    Event Type
-                  </label>
-
-                  <Input
-                    name="eventType"
-                    value={formData.eventType}
-                    onChange={handleChange}
-                    placeholder="Brand Event, Afterparty, End-of-Year Celebration..."
-                    className={fieldClass}
-                  />
-                </div>
-
-                <div>
-                  <label className={labelClass}>
-                    Guest Count
-                  </label>
-
-                  <Input
-                    name="guestCount"
-                    value={formData.guestCount}
-                    onChange={handleChange}
-                    placeholder="Estimated count"
-                    className={fieldClass}
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
-                <div>
-                  <label className={labelClass}>
-                    Atmosphere
-                  </label>
-
-                  <Input
-                    name="atmosphere"
-                    value={formData.atmosphere}
-                    onChange={handleChange}
-                    placeholder="E.g., Deep house groove, brand showcase, high energy set"
-                    className={fieldClass}
-                  />
-                </div>
-
-                <div>
-                  <label className={labelClass}>
-                    Event Hours / Set Time
-                  </label>
-
-                  <Input
-                    name="eventTiming"
-                    value={formData.eventTiming}
-                    onChange={handleChange}
-                    placeholder="Expected hours"
-                    className={fieldClass}
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
-                <div>
-                  <label className={labelClass}>
-                    Production / AV
-                  </label>
-
-                  <Input
-                    name="equipmentProvided"
-                    value={formData.equipmentProvided}
-                    onChange={handleChange}
-                    placeholder="Venue sound, AV partner, etc."
-                    className={fieldClass}
-                  />
-                </div>
-
-                <div>
-                  <label className={labelClass}>
-                    Planner / Producer Contact
-                  </label>
-
-                  <Input
-                    name="plannerContact"
-                    value={formData.plannerContact}
-                    onChange={handleChange}
-                    placeholder="Name / Email"
-                    className={fieldClass}
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 gap-10">
-                <div>
-                  <label className={labelClass}>
-                    How did you hear about me?
-                  </label>
-
-                  <Input
-                    name="hearAbout"
-                    value={formData.hearAbout}
-                    onChange={handleChange}
-                    placeholder="Word of mouth, industry referral, Instagram, past event..."
-                    className={fieldClass}
-                  />
-                </div>
-              </div>
-
-              {submitStatus && (
-                <p className="font-body text-xs text-foreground italic border-l-2 border-foreground pl-4 py-1">
-                  {submitStatus}
                 </p>
-              )}
 
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full sm:w-auto bg-foreground text-background hover:bg-foreground/90 font-body text-[11px] tracking-[0.25em] uppercase px-12 py-7 rounded-none transition-all flex items-center gap-4"
-              >
-                {isSubmitting
-                  ? 'Sending...'
-                  : 'Request Availability'}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+                  <div>
+                    <label className={labelClass}>
+                      Name
+                      <span className={tagClass}>
+                        Required
+                      </span>
+                    </label>
 
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-            </form>
-          </motion.div>
+                    <Input
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className={fieldClass}
+                    />
+                  </div>
 
-          {/* Documentation: third on mobile, lower-left on desktop */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="md:col-start-1 md:row-start-2 md:self-end md:pt-12"
-          >
-            <div className="mb-16 space-y-4">
-              <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground/60">
-                Documentation
-              </p>
+                  <div>
+                    <label className={labelClass}>
+                      Email
+                      <span className={tagClass}>
+                        Required
+                      </span>
+                    </label>
 
-              <div className="flex flex-col space-y-3">
-                <a
-                  href="/documentation/bmills-epk.pdf"
-                  download
-                  className="font-body text-xs tracking-[0.15em] uppercase text-foreground/80 hover:text-foreground transition-colors flex items-center gap-2 group w-fit"
+                    <Input
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className={fieldClass}
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+                  <div>
+                    <label className={labelClass}>
+                      Event Date
+                      <span className={tagClass}>
+                        Required
+                      </span>
+                    </label>
+
+                    <Popover
+                      open={calendarOpen}
+                      onOpenChange={setCalendarOpen}
+                    >
+                      <PopoverTrigger asChild>
+                        <button
+                          type="button"
+                          className="w-full bg-transparent border-0 border-b border-foreground/20 rounded-none pb-3 text-left font-body text-sm flex items-center justify-between h-10 shadow-none"
+                        >
+                          <span
+                            className={
+                              formData.eventDate
+                                ? 'text-foreground'
+                                : 'text-muted-foreground/30'
+                            }
+                          >
+                            {formData.eventDate
+                              ? format(
+                                  formData.eventDate,
+                                  'MMMM d, yyyy'
+                                )
+                              : 'Select date'}
+                          </span>
+
+                          <CalendarIcon className="w-4 h-4 text-muted-foreground/40" />
+                        </button>
+                      </PopoverTrigger>
+
+                      <PopoverContent
+                        align="start"
+                        className="w-auto p-0 border border-border rounded-none bg-[#ebe6d9] shadow-2xl"
+                      >
+                        <Calendar
+                          mode="single"
+                          selected={
+                            formData.eventDate
+                          }
+                          onSelect={
+                            handleDateChange
+                          }
+                          disabled={(date) =>
+                            date <
+                            new Date(
+                              new Date().setHours(
+                                0,
+                                0,
+                                0,
+                                0
+                              )
+                            )
+                          }
+                        />
+                      </PopoverContent>
+                    </Popover>
+                  </div>
+
+                  <div>
+                    <label className={labelClass}>
+                      Location
+                    </label>
+
+                    <Input
+                      name="location"
+                      value={formData.location}
+                      onChange={handleChange}
+                      placeholder="Venue or City"
+                      className={fieldClass}
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+                  <div>
+                    <label className={labelClass}>
+                      Event Type
+                    </label>
+
+                    <Input
+                      name="eventType"
+                      value={formData.eventType}
+                      onChange={handleChange}
+                      placeholder="Brand Event, Afterparty, End-of-Year Celebration..."
+                      className={fieldClass}
+                    />
+                  </div>
+
+                  <div>
+                    <label className={labelClass}>
+                      Guest Count
+                    </label>
+
+                    <Input
+                      name="guestCount"
+                      value={formData.guestCount}
+                      onChange={handleChange}
+                      placeholder="Estimated count"
+                      className={fieldClass}
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+                  <div>
+                    <label className={labelClass}>
+                      Atmosphere
+                    </label>
+
+                    <Input
+                      name="atmosphere"
+                      value={formData.atmosphere}
+                      onChange={handleChange}
+                      placeholder="E.g., Deep house groove, brand showcase, high energy set"
+                      className={fieldClass}
+                    />
+                  </div>
+
+                  <div>
+                    <label className={labelClass}>
+                      Event Hours / Set Time
+                    </label>
+
+                    <Input
+                      name="eventTiming"
+                      value={formData.eventTiming}
+                      onChange={handleChange}
+                      placeholder="Expected hours"
+                      className={fieldClass}
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+                  <div>
+                    <label className={labelClass}>
+                      Production / AV
+                    </label>
+
+                    <Input
+                      name="equipmentProvided"
+                      value={
+                        formData.equipmentProvided
+                      }
+                      onChange={handleChange}
+                      placeholder="Venue sound, AV partner, etc."
+                      className={fieldClass}
+                    />
+                  </div>
+
+                  <div>
+                    <label className={labelClass}>
+                      Planner / Producer Contact
+                    </label>
+
+                    <Input
+                      name="plannerContact"
+                      value={
+                        formData.plannerContact
+                      }
+                      onChange={handleChange}
+                      placeholder="Name / Email"
+                      className={fieldClass}
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 gap-10">
+                  <div>
+                    <label className={labelClass}>
+                      How did you hear about me?
+                    </label>
+
+                    <Input
+                      name="hearAbout"
+                      value={formData.hearAbout}
+                      onChange={handleChange}
+                      placeholder="Word of mouth, industry referral, Instagram, past event..."
+                      className={fieldClass}
+                    />
+                  </div>
+                </div>
+
+                {submitStatus && (
+                  <p
+                    role="status"
+                    aria-live="polite"
+                    className="font-body text-xs text-foreground italic border-l-2 border-foreground pl-4 py-1"
+                  >
+                    {submitStatus}
+                  </p>
+                )}
+
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full sm:w-auto bg-foreground text-background hover:bg-foreground/90 font-body text-[11px] tracking-[0.25em] uppercase px-12 py-7 rounded-none transition-all flex items-center gap-4"
                 >
-                  <FileText className="w-3.5 h-3.5 text-muted-foreground/60 group-hover:text-foreground transition-colors" />
+                  {isSubmitting
+                    ? 'Sending...'
+                    : 'Request Availability'}
 
-                  <span className="border-b border-transparent group-hover:border-foreground transition-all">
-                    Electronic Press Kit (EPK)
-                  </span>
-                </a>
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </form>
+            </motion.div>
 
-                <a
-                  href="/documentation/bmills-technical-rider.pdf"
-                  download
-                  className="font-body text-xs tracking-[0.15em] uppercase text-foreground/80 hover:text-foreground transition-colors flex items-center gap-2 group w-fit"
-                >
-                  <FileText className="w-3.5 h-3.5 text-muted-foreground/60 group-hover:text-foreground transition-colors" />
+            {/* Documentation: third on mobile, lower-left on desktop */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="md:col-start-1 md:row-start-2 md:self-end md:pt-12"
+            >
+              <div className="mb-16 space-y-4">
+                <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground/60">
+                  Documentation
+                </p>
 
-                  <span className="border-b border-transparent group-hover:border-foreground transition-all">
-                    Technical Rider
-                  </span>
-                </a>
+                <div className="flex flex-col space-y-3">
+                  <a
+                    href="/documentation/bmills-epk.pdf"
+                    download
+                    className="font-body text-xs tracking-[0.15em] uppercase text-foreground/80 hover:text-foreground transition-colors flex items-center gap-2 group w-fit"
+                  >
+                    <FileText className="w-3.5 h-3.5 text-muted-foreground/60 group-hover:text-foreground transition-colors" />
+
+                    <span className="border-b border-transparent group-hover:border-foreground transition-all">
+                      Electronic Press Kit (EPK)
+                    </span>
+                  </a>
+
+                  <a
+                    href="/documentation/bmills-technical-rider.pdf"
+                    download
+                    className="font-body text-xs tracking-[0.15em] uppercase text-foreground/80 hover:text-foreground transition-colors flex items-center gap-2 group w-fit"
+                  >
+                    <FileText className="w-3.5 h-3.5 text-muted-foreground/60 group-hover:text-foreground transition-colors" />
+
+                    <span className="border-b border-transparent group-hover:border-foreground transition-all">
+                      Technical Rider
+                    </span>
+                  </a>
+                </div>
               </div>
-            </div>
 
-            <div className="space-y-1">
-              <a
-                href="mailto:bookings@djbmills.com"
-                className="font-body text-xs tracking-[0.2em] uppercase text-foreground hover:opacity-60 transition-opacity"
-              >
-                bookings@djbmills.com
-              </a>
+              <div className="space-y-1">
+                <a
+                  href="mailto:bookings@djbmills.com"
+                  className="font-body text-xs tracking-[0.2em] uppercase text-foreground hover:opacity-60 transition-opacity"
+                >
+                  bookings@djbmills.com
+                </a>
 
-              <p className="font-body text-[9px] tracking-[0.2em] text-muted-foreground uppercase opacity-70">
-                Response within 24 hours
-              </p>
-            </div>
-          </motion.div>
-        </div>
-
-        <div className="pt-16 border-t border-border/40 flex flex-col items-center text-center">
-          <button
-            onClick={scrollToTop}
-            className="mb-10 group transition-transform hover:scale-105 active:scale-95"
-          >
-            <img
-              src="/logos/bmills-logo-white.png"
-              alt="B.MILLS"
-              className="h-12 w-auto mx-auto brightness-0 opacity-90"
-            />
-          </button>
-
-          <div className="flex items-center gap-8 mb-12">
-            <a
-              href="https://instagram.com/djbmills"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground/50 hover:text-foreground transition-colors"
-            >
-              <Instagram className="w-5 h-5" />
-            </a>
-
-            <a
-              href="https://tiktok.com/@djbmills"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground/50 hover:text-foreground transition-colors"
-            >
-              <TikTokIcon className="w-5 h-5" />
-            </a>
-
-            <a
-              href="https://open.spotify.com/user/djbmills"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground/50 hover:text-foreground transition-colors"
-            >
-              <SpotifyIcon className="w-5 h-5" />
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/bmillsdj/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground/50 hover:text-foreground transition-colors"
-            >
-              <Linkedin className="w-5 h-5" />
-            </a>
-
-            <a
-              href="mailto:bookings@djbmills.com"
-              className="text-foreground/50 hover:text-foreground transition-colors"
-            >
-              <Mail className="w-5 h-5" />
-            </a>
+                <p className="font-body text-[9px] tracking-[0.2em] text-muted-foreground uppercase opacity-70">
+                  Response within 24 hours
+                </p>
+              </div>
+            </motion.div>
           </div>
 
-          <p className="font-body text-[11px] tracking-tight text-muted-foreground leading-relaxed max-w-2xl opacity-90 mb-8">
-            {footerText}
-          </p>
+          <div className="pt-16 border-t border-border/40 flex flex-col items-center text-center">
+            <button
+              onClick={scrollToTop}
+              className="mb-10 group transition-transform hover:scale-105 active:scale-95"
+            >
+              <img
+                src="/logos/bmills-logo-white.png"
+                alt="B.MILLS"
+                className="h-12 w-auto mx-auto brightness-0 opacity-90"
+              />
+            </button>
 
-          <p className="font-body text-[10px] tracking-normal text-muted-foreground/40 italic">
-            © {new Date().getFullYear()} B.MILLS. New York City ·
-            The Hamptons · Westchester · New Jersey · Connecticut ·
-            South Florida · Worldwide
-          </p>
+            <div className="flex items-center gap-8 mb-12">
+              <a
+                href="https://instagram.com/djbmills"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground/50 hover:text-foreground transition-colors"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+
+              <a
+                href="https://tiktok.com/@djbmills"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground/50 hover:text-foreground transition-colors"
+              >
+                <TikTokIcon className="w-5 h-5" />
+              </a>
+
+              <a
+                href="https://open.spotify.com/user/djbmills"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground/50 hover:text-foreground transition-colors"
+              >
+                <SpotifyIcon className="w-5 h-5" />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/bmillsdj/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground/50 hover:text-foreground transition-colors"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+
+              <a
+                href="mailto:bookings@djbmills.com"
+                className="text-foreground/50 hover:text-foreground transition-colors"
+              >
+                <Mail className="w-5 h-5" />
+              </a>
+            </div>
+
+            <p className="font-body text-[11px] tracking-tight text-muted-foreground leading-relaxed max-w-2xl opacity-90 mb-8">
+              {footerText}
+            </p>
+
+            <p className="font-body text-[10px] tracking-normal text-muted-foreground/40 italic">
+              © {new Date().getFullYear()}{' '}
+              B.MILLS. New York City · The
+              Hamptons · Westchester · New
+              Jersey · Connecticut · South
+              Florida · Worldwide
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <AnimatePresence>
+        {showSuccessOverlay && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-foreground/50 px-6 backdrop-blur-sm"
+          >
+            <motion.div
+              ref={overlayPanelRef}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="inquiry-success-title"
+              aria-describedby="inquiry-success-description"
+              tabIndex={-1}
+              initial={{
+                opacity: 0,
+                y: 18,
+                scale: 0.98
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                scale: 1
+              }}
+              exit={{
+                opacity: 0,
+                y: 10,
+                scale: 0.98
+              }}
+              transition={{
+                duration: 0.4,
+                ease: [0.25, 0.1, 0.25, 1]
+              }}
+              className="w-full max-w-lg border border-foreground/15 bg-[#ebe6d9] px-8 py-10 text-center shadow-2xl outline-none md:px-14 md:py-12"
+            >
+              <p className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-5">
+                Inquiry Received
+              </p>
+
+              <h3
+                id="inquiry-success-title"
+                className="font-heading text-4xl md:text-5xl font-light italic tracking-tight text-foreground mb-6"
+              >
+                Thank you.
+              </h3>
+
+              <div className="w-12 h-px bg-foreground/20 mx-auto mb-7" />
+
+              <p
+                id="inquiry-success-description"
+                className="font-body text-sm text-muted-foreground leading-relaxed mb-7"
+              >
+                Your inquiry has been sent.
+                Expect a response within 24 hours.
+              </p>
+
+              <p className="font-body text-[10px] tracking-[0.25em] uppercase text-foreground/60 mb-8">
+                Opening Mixtape Mode in{' '}
+                <span className="tabular-nums text-foreground">
+                  00:
+                  {String(
+                    redirectCountdown ?? 0
+                  ).padStart(2, '0')}
+                </span>
+              </p>
+
+              <div className="flex flex-col items-center gap-5">
+                <Button
+                  type="button"
+                  onClick={navigateToMixtapes}
+                  className="w-full sm:w-auto bg-foreground text-background hover:bg-foreground/90 font-body text-[11px] tracking-[0.25em] uppercase px-10 py-6 rounded-none transition-all flex items-center justify-center gap-4"
+                >
+                  Listen Now
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+
+                <button
+                  type="button"
+                  onClick={remainOnPage}
+                  className="font-body text-[10px] tracking-[0.2em] uppercase text-muted-foreground transition-colors hover:text-foreground hover:underline hover:underline-offset-4"
+                >
+                  Remain on This Page
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
