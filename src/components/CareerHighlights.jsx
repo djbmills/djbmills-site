@@ -17,10 +17,30 @@ const columns = [
   {
     heading: 'Select Media',
     items: [
-      { name: "Diplo's Revolution", role: 'SiriusXM', context: 'Guest mix broadcast nationwide on Diplo\'s Revolution on SiriusXM.' },
-      { name: 'Good Day New York', role: 'Fox 5', context: 'Live television broadcast appearance and music performance on Fox 5 Good Day New York.' },
-      { name: 'Vogue', role: 'Mention', context: 'Editorial brand mention and event curation feature in Vogue Magazine.' },
-      { name: 'Vanity Fair', role: 'Mention', context: 'Luxury culture event music direction mention in Vanity Fair.' },
+      {
+        name: "Diplo's Revolution",
+        role: 'SiriusXM',
+        context: 'FAED University Episode 229 featuring B.MILLS, broadcast on Diplo\'s Revolution on SiriusXM.',
+        url: 'https://www.mixcloud.com/headlinermusic/faed-university-episode-229-featuring-bmills/',
+      },
+      {
+        name: 'Good Day New York',
+        role: 'Fox 5',
+        context: 'On-camera appearance during the live Good Day New York segment covering the Hip-Hop Til Infinity opening at Hall des Lumières.',
+        url: 'https://www.fox5ny.com/video/1257772',
+      },
+      {
+        name: 'Vogue',
+        role: 'Mention',
+        context: 'Event coverage naming B.MILLS among the DJs for the Avedon 100 celebration at the Top of the Standard.',
+        url: 'https://www.vogue.com/slideshow/gagosian-richard-avedon-centenary-party-2023',
+      },
+      {
+        name: 'Vanity Fair',
+        role: 'Mention',
+        context: 'Event coverage crediting DJ B.MILLS with providing the soundtrack for the Avedon 100 celebration.',
+        url: 'https://www.vanityfair.com/style/2023/05/richard-avedon-100-photography',
+      },
     ],
   },
   {
@@ -52,20 +72,30 @@ export default function CareerHighlights() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground">07</motion.span>
+            className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground"
+          >
+            07
+          </motion.span>
+
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-            className="flex-1 h-px bg-border origin-left" />
+            className="flex-1 h-px bg-border origin-left"
+          />
+
           <motion.span
             initial={{ opacity: 0, x: 10 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
-            className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground">Career</motion.span>
+            className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground"
+          >
+            Career
+          </motion.span>
         </div>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -73,7 +103,9 @@ export default function CareerHighlights() {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <h2 className="font-heading text-4xl md:text-6xl font-light text-foreground">Highlights</h2>
+          <h2 className="font-heading text-4xl md:text-6xl font-light text-foreground">
+            Highlights
+          </h2>
         </motion.div>
 
         <motion.div
@@ -88,14 +120,28 @@ export default function CareerHighlights() {
               <p className="font-body text-xs tracking-[0.3em] uppercase text-foreground/40 pb-4 border-b border-foreground/10">
                 {col.heading}
               </p>
+
               <div className="space-y-3">
                 {col.items.map((item, i) => (
-                  <div 
-                    key={i} 
+                  <div
+                    key={i}
                     aria-label={item.context}
                     className="flex items-baseline gap-2 font-body text-xs tracking-[0.15em] uppercase text-foreground/70"
                   >
-                    <span className="shrink-0">{item.name}</span>
+                    {item.url ? (
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Open ${item.name} media featuring B.MILLS in a new tab`}
+                        className="shrink-0 text-inherit no-underline transition-all duration-300 hover:text-foreground hover:underline hover:underline-offset-4 hover:decoration-foreground/50"
+                      >
+                        {item.name}
+                      </a>
+                    ) : (
+                      <span className="shrink-0">{item.name}</span>
+                    )}
+
                     <span className="text-foreground/25 shrink-0">|</span>
                     <span className="text-foreground/40">{item.role}</span>
                   </div>
