@@ -41,6 +41,13 @@ const columns = [
         context: 'Event coverage crediting DJ B.MILLS with providing the soundtrack for the Avedon 100 celebration.',
         url: 'https://www.vanityfair.com/style/2023/05/richard-avedon-100-photography',
       },
+      {
+        name: 'Mixtape Mode',
+        role: 'Original Mix Series',
+        context: 'B.MILLS original podcast and mixtape series, available to stream directly on the website.',
+        url: '#mixtapes',
+        external: false,
+      },
     ],
   },
   {
@@ -131,9 +138,13 @@ export default function CareerHighlights() {
                     {item.url ? (
                       <a
                         href={item.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Open ${item.name} media featuring B.MILLS in a new tab`}
+                        target={item.external === false ? undefined : '_blank'}
+                        rel={item.external === false ? undefined : 'noopener noreferrer'}
+                        aria-label={
+                          item.external === false
+                            ? `Go to ${item.name} on this page`
+                            : `Open ${item.name} media featuring B.MILLS in a new tab`
+                        }
                         className="shrink-0 text-inherit no-underline transition-all duration-300 hover:text-foreground hover:underline hover:underline-offset-4 hover:decoration-foreground/50"
                       >
                         {item.name}
