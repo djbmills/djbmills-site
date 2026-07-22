@@ -3,7 +3,41 @@ import { useState, useRef, useEffect } from 'react';
 import { Play, Pause } from 'lucide-react';
 
 const mixtapes = [
-  // --- ROW 1: THE SUMMERTIME SERIES ---
+  // --- ROW 1: GENRE VERSATILITY ---
+  {
+    title: '1990 Something',
+    genre: '90s Dance · Nostalgia',
+    description: 'Upbeat 90s dance floor classics with steady, elegant energy.',
+    image: '/images/bmills-1990-something-90s-dance-mixtape.png',
+    altText: 'B.MILLS — 90s dance and nostalgia music direction for corporate celebrations, media galas, and exclusive client parties',
+    audioUrl: 'https://mcdn.podbean.com/mf/web/ktk4bhd9guaah73t/Can_t_Stop_The_90_s_short_9smfg.mp3'
+  },
+  {
+    title: 'All For The Love',
+    genre: 'R&B Mixtape',
+    description: 'Sophisticated rhythm and blues mixed with deep cuts.',
+    image: '/images/all-for-the-love.png',
+    altText: 'B.MILLS — Sophisticated rhythm and blues sound design for luxury private rooms and upscale client gatherings in Manhattan',
+    audioUrl: 'https://mcdn.podbean.com/mf/web/2ix9nrz5dvqn4pjy/All_For_The_Love770bt.mp3'
+  },
+  {
+    title: 'The Afterparty',
+    genre: 'House / Dance Mixtape',
+    description: 'A late night groove built for dance floors.',
+    image: '/images/afterparty.jpg',
+    altText: 'B.MILLS — Deep house and dance music curation for premium fashion brand afterparties and high-end experiential footprints',
+    audioUrl: 'https://mcdn.podbean.com/mf/web/hh8xury4eea68v3a/theAfterparty.mp3'
+  },
+  {
+    title: 'Throwback Vibes',
+    genre: 'Classic Hip Hop · R&B',
+    description: '90s and 2000s classics. Gold era curation.',
+    image: '/images/throwback-vibes.png',
+    altText: 'B.MILLS — Classic hip hop and R&B music direction for cultural brand moments, media networking events, and premium private rooms',
+    audioUrl: 'https://mcdn.podbean.com/mf/web/piu3pek59sg2h5nj/Throwbacks_Vibes8ip11.mp3'
+  },
+
+  // --- ROW 2: THE SUMMERTIME SERIES ---
   {
     title: 'Summertime Smooth 1',
     genre: 'Classic Hip Hop · R&B',
@@ -35,40 +69,6 @@ const mixtapes = [
     image: '/images/bmills-summertime-smooth-4-poolside-house-mixtape.png',
     altText: 'B.MILLS — Luxury resort and beach club house music curation for high-fashion summer events and private luxury estates',
     audioUrl: 'https://mcdn.podbean.com/mf/web/gkr5zdjqejhajfzj/dj-bmills-Summertime-Smooth-4.mp3'
-  },
-
-  // --- ROW 2: GENRE & VIBE DIVERSITY ---
-  {
-    title: 'All For The Love',
-    genre: 'R&B Mixtape',
-    description: 'Sophisticated rhythm and blues mixed with deep cuts.',
-    image: '/images/all-for-the-love.png',
-    altText: 'B.MILLS — Sophisticated rhythm and blues sound design for luxury private rooms and upscale client gatherings in Manhattan',
-    audioUrl: 'https://mcdn.podbean.com/mf/web/2ix9nrz5dvqn4pjy/All_For_The_Love770bt.mp3'
-  },
-  {
-    title: '1990 Something',
-    genre: '90s Dance · Nostalgia',
-    description: 'Upbeat 90s dance floor classics with steady energy.',
-    image: '/images/bmills-1990-something-90s-dance-mixtape.png',
-    altText: 'B.MILLS — 90s dance and nostalgia music direction for corporate celebrations, media galas, and exclusive client parties',
-    audioUrl: 'https://mcdn.podbean.com/mf/web/ktk4bhd9guaah73t/Can_t_Stop_The_90_s_short_9smfg.mp3'
-  },
-  {
-    title: 'The Afterparty',
-    genre: 'House / Dance Mixtape',
-    description: 'A late night groove built for dance floors.',
-    image: '/images/afterparty.jpg',
-    altText: 'B.MILLS — Deep house and dance music curation for premium fashion brand afterparties and high-end experiential footprints',
-    audioUrl: 'https://mcdn.podbean.com/mf/web/hh8xury4eea68v3a/theAfterparty.mp3'
-  },
-  {
-    title: 'Throwback Vibes',
-    genre: 'Classic Hip Hop · R&B',
-    description: '90s and 2000s classics. Gold era curation.',
-    image: '/images/throwback-vibes.png',
-    altText: 'B.MILLS — Classic hip hop and R&B music direction for cultural brand moments, media networking events, and premium private rooms',
-    audioUrl: 'https://mcdn.podbean.com/mf/web/piu3pek59sg2h5nj/Throwbacks_Vibes8ip11.mp3'
   }
 ];
 
