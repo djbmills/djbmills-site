@@ -7,14 +7,14 @@ const mixtapes = [
   {
     title: '1990 Something',
     genre: '90s Dance · Nostalgia',
-    description: 'Upbeat 90s dance floor classics with steady, elegant energy.',
+    description: 'Upbeat 90s dance classics with steady energy.',
     image: '/images/bmills-1990-something-90s-dance-mixtape.png',
     altText: 'B.MILLS — 90s dance and nostalgia music direction for corporate celebrations, media galas, and exclusive client parties',
     audioUrl: 'https://mcdn.podbean.com/mf/web/ktk4bhd9guaah73t/Can_t_Stop_The_90_s_short_9smfg.mp3'
   },
   {
     title: 'All For The Love',
-    genre: 'R&B Mixtape',
+    genre: 'R&B',
     description: 'Sophisticated rhythm and blues mixed with deep cuts.',
     image: '/images/all-for-the-love.png',
     altText: 'B.MILLS — Sophisticated rhythm and blues sound design for luxury private rooms and upscale client gatherings in Manhattan',
@@ -22,7 +22,7 @@ const mixtapes = [
   },
   {
     title: 'The Afterparty',
-    genre: 'House / Dance Mixtape',
+    genre: 'House / Dance',
     description: 'A late night groove built for dance floors.',
     image: '/images/afterparty.jpg',
     altText: 'B.MILLS — Deep house and dance music curation for premium fashion brand afterparties and high-end experiential footprints',
@@ -41,7 +41,7 @@ const mixtapes = [
   {
     title: 'Summertime Smooth 1',
     genre: 'Classic Hip Hop · R&B',
-    description: 'Golden era grooves and essential warm-weather hip hop.',
+    description: 'Laidback flow for open road drives.',
     image: '/images/bmills-summertime-smooth-1-hip-hop-mixtape.png',
     altText: 'B.MILLS — Classic hip hop and R&B music direction for luxury poolside lounges and high-end summer brand activations in NYC',
     audioUrl: 'https://mcdn.podbean.com/mf/web/3krcbtqx9iskmwrh/Summertime_Smooth99djd.mp3'
@@ -49,7 +49,7 @@ const mixtapes = [
   {
     title: 'Summertime Smooth 2',
     genre: 'Poolside House',
-    description: 'Uplifting deep house curated for open-air afternoons.',
+    description: 'Uplifting deep house curated for open air afternoons.',
     image: '/images/bmills-summertime-smooth-2-poolside-house-mixtape.png',
     altText: 'B.MILLS — Deep house sound formatting for premium seasonal brand moments, rooftop galas, and outdoor corporate footprints',
     audioUrl: 'https://mcdn.podbean.com/mf/web/nzfnp7r4wjj97ndi/Summertime_Smooth_House_Edition_b5mmi.mp3'
@@ -57,7 +57,7 @@ const mixtapes = [
   {
     title: 'Summertime Smooth 3',
     genre: 'Poolside House',
-    description: 'Designed for open air activations and cocktail hours.',
+    description: 'Designed for lounge chair listening and cocktail hours.',
     image: '/images/summertime-smooth.png',
     altText: 'B.MILLS — Open-air poolside house sound formatting for premium seasonal brand activations and outdoor corporate event footprints',
     audioUrl: 'https://mcdn.podbean.com/mf/web/yeipune68mtsf6w2/Summertime_Smooth_36zr5x.mp3'
@@ -65,7 +65,7 @@ const mixtapes = [
   {
     title: 'Summertime Smooth 4',
     genre: 'Poolside House',
-    description: 'Modern beach club sound design and sun-drenched house.',
+    description: 'Modern beach club sounds and warm dance rhythms.',
     image: '/images/bmills-summertime-smooth-4-poolside-house-mixtape.png',
     altText: 'B.MILLS — Luxury resort and beach club house music curation for high-fashion summer events and private luxury estates',
     audioUrl: 'https://mcdn.podbean.com/mf/web/gkr5zdjqejhajfzj/dj-bmills-Summertime-Smooth-4.mp3'
