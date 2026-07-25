@@ -64,6 +64,13 @@ const columns = [
         url: 'https://www.mixcloud.com/headlinermusic/faed-university-episode-229-featuring-bmills/',
       },
       {
+  name: 'FITRADIO',
+  role: 'DJ Contributor',
+  context:
+    'Official DJ contributor profile and curated mixes by B.MILLS on the FITRADIO fitness music platform.',
+  url: 'https://fitradio.com/ogdj/332',
+      },
+      {
         name: 'Good Day New York',
         role: 'Fox 5',
         context:
