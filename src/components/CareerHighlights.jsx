@@ -221,7 +221,7 @@ export default function CareerHighlights() {
           className="mb-16"
         >
           <h2 className="font-heading text-4xl md:text-6xl font-light text-foreground">
-            Highlights
+            Selected Highlights
           </h2>
         </motion.div>
 
