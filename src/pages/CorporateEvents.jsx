@@ -46,11 +46,11 @@ export default function CorporateEvents() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHeading
-        title="B.MILLS | Music Direction for Luxury Brand, Tech & Finance Events NYC"
-        description="B.MILLS creates music direction and DJ sets for luxury brand events, tech and finance networking, product launches, private rooms, and high-end afterparties in New York and beyond."
-        keywords="luxury brand event DJ NYC, tech networking DJ NYC, finance event DJ New York, corporate event DJ NYC, brand activation DJ NYC, product launch DJ NYC, private room DJ NYC, high end afterparty DJ NYC, Goldman Sachs DJ, Google event DJ, B.MILLS, B Mills DJ"
-        url="https://djbmills.com/corporate-events"
-      />
+  title="B.MILLS | Corporate Event DJ & Music Direction NYC"
+  description="B.MILLS provides corporate event DJ services and music direction for luxury brands, tech and finance gatherings, product launches, executive rooms, galas, and afterparties in New York and beyond."
+  keywords="corporate event DJ NYC, corporate DJ NYC, luxury event DJ NYC, luxury brand event DJ NYC, tech networking DJ NYC, finance event DJ New York, brand activation DJ NYC, product launch DJ NYC, corporate gala DJ New York, private room DJ NYC, high end afterparty DJ NYC, B.MILLS, B Mills DJ"
+  url="https://djbmills.com/corporate-events"
+/>
 
       <CorporateHero />
 
