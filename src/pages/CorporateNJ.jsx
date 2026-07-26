@@ -45,10 +45,9 @@ export default function CorporateNJ() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHeading
-        title="Luxury Corporate Event DJ & Sound Director | NJ & Tri-State | B.MILLS"
-        description="B.MILLS creates music direction and DJ sets for luxury brand events, tech and finance networking, product launches, corporate summits, and private rooms across Northern New Jersey, Bergen County, and NYC."
-        keywords="luxury corporate event DJ NJ, tech networking DJ New Jersey, finance event DJ Bergen County, corporate event DJ Northern NJ, brand activation DJ tri state, product launch DJ NJ, private estate DJ NJ, luxury gala DJ Montvale, B.MILLS, B Mills DJ"
-        url="https://djbmills.com/corporate-events-nj"
+        title="NYC Corporate Event DJ Serving New Jersey | B.MILLS"
+        description="B.MILLS is an NYC corporate event DJ and music director serving Northern New Jersey, Bergen County, and the Tri-State area for luxury brand events, galas, product launches, networking events, and private rooms."
+        keywords="NYC corporate event DJ serving New Jersey, corporate DJ NJ, luxury event DJ Bergen County, Northern New Jersey corporate DJ, New York City DJ for New Jersey events, brand activation DJ NJ, product launch DJ New Jersey, corporate gala DJ Bergen County, B.MILLS DJ"
       />
 
       <CorporateHero />
