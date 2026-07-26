@@ -14,10 +14,11 @@ import InquiryFooter from '../components/InquiryFooter';
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      <SEOHeading
+     <SEOHeading
   title="B.MILLS | NYC Event DJ & Music Direction"
-  description="B.MILLS creates music direction and DJ sets for luxury brand events, tech and finance gatherings, product launches, cultural moments, private rooms, and afterparties in New York and beyond."
-  image="/images/bmills-hero.jpg"
+  description="B.MILLS provides live event DJ sets and music direction for luxury brand events, corporate gatherings, product launches, cultural moments, private rooms, and afterparties in New York and beyond."
+  keywords="NYC event DJ, event DJ NYC, luxury event DJ NYC, music direction NYC, luxury brand event DJ, corporate event DJ NYC, brand activation DJ NYC, product launch DJ NYC, private event DJ NYC, afterparty DJ NYC, B.MILLS DJ"
+  image="https://djbmills.com/images/bmills-hero.jpg"
   url="https://djbmills.com/"
 />
       
