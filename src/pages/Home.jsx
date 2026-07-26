@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHeading
-  title="B.MILLS | Music Direction for Luxury Brand Events & Private Rooms"
+  title="B.MILLS | NYC Event DJ & Music Direction"
   description="B.MILLS creates music direction and DJ sets for luxury brand events, tech and finance gatherings, product launches, cultural moments, private rooms, and afterparties in New York and beyond."
   image="/images/bmills-hero.jpg"
   url="https://djbmills.com/"
