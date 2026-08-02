@@ -18,6 +18,12 @@ const trustedFor = [
   "Live Performance Curation"
 ];
 
+const brandLogos = [
+  'oracle', 'celine', 'equinox', 'polymarket', 'goldmansachs',
+  'disney', 'lvmh', 'gucci', 'jpmorgan', 'nbcuniversal',
+  'mlb', 'fanatics', 'tumi', 'citi', 'google'
+];
+
 export default function BrandActivations() {
   
   useEffect(() => {
@@ -27,7 +33,6 @@ export default function BrandActivations() {
       canonicalLink.setAttribute('rel', 'canonical');
       document.head.appendChild(canonicalLink);
     }
-    // FIX: Changed from /corporate-events to self-referencing page URL so Google indexes it cleanly
     canonicalLink.setAttribute('href', 'https://djbmills.com/brand-activations');
 
     return () => {
@@ -60,15 +65,11 @@ export default function BrandActivations() {
           <div className="marquee-track">
             {[1, 2].map((i) => (
               <div key={i} className="marquee-row">
-                {[
-                  'oracle', 'celine', 'equinox', 'polymarket', 'goldmansachs',
-                  'disney', 'lvmh', 'gucci', 'jpmorgan', 'nbcuniversal',
-                  'mlb', 'fanatics', 'tumi', 'citi', 'google'
-                ].map((brand) => (
+                {brandLogos.map((brand) => (
                   <div key={`${brand}-${i}`} className="logo-slot">
                     <img
                       src={`/images/logos/${brand}.svg`}
-                      alt={brand}
+                      alt={`${brand} logo`}
                       className={brand === 'mlb' ? 'logo-mlb-raw-fix' : 'logo-img'}
                       loading="lazy"
                     />
@@ -140,7 +141,7 @@ export default function BrandActivations() {
           }
         `}</style>
       </section>
-      
+
       {/* Section 01: The Philosophy */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-neutral-900 bg-[#000000]">
         <div className="max-w-4xl mx-auto">
@@ -227,7 +228,7 @@ export default function BrandActivations() {
           </motion.div>
         </div>
       </section>
-      
+
       {/* Section 02: Brand Alignment */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-neutral-900 bg-[#000000]">
         <div className="max-w-4xl mx-auto">
@@ -270,7 +271,7 @@ export default function BrandActivations() {
               B.MILLS programs the sound directly to the layout of the venue. The physical space, guest flow, lighting changes, and overall brand identity outline the path. The curation stays focused, modern, and aligned.
             </p>
             <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
-              It comes down to great timing knowing exactly when to ground a room with a steady groove and when to step up the transitions during a milestone moments.
+              It comes down to great timing—knowing exactly when to ground a room with a steady groove and when to step up the transitions during milestone moments.
             </p>
           </motion.div>
 
@@ -294,7 +295,7 @@ export default function BrandActivations() {
           </motion.div>
         </div>
       </section>
-      
+
       {/* Section 03: Selected Event Experience */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-neutral-900 bg-[#000000]">
         <div className="max-w-5xl mx-auto">
@@ -339,7 +340,7 @@ export default function BrandActivations() {
             transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
             className="font-body text-base text-neutral-400 leading-relaxed max-w-3xl"
           >
-            B.MILLS collaborates with consumer brands, event production agencies, and creative teams to build soundtracks where style and atmosphere are non negotiable. His work covers everything from open air public spaces to private launch events.
+            B.MILLS collaborates with consumer brands, event production agencies, and creative teams to build soundtracks where style and atmosphere are non-negotiable. His work covers everything from open-air public spaces to private launch events.
           </motion.p>
 
           {/* 1800 Tequila Case Study */}
@@ -425,7 +426,7 @@ export default function BrandActivations() {
                   Citi Summer in the Square
                 </h3>
                 <p className="font-body text-base text-neutral-400 leading-relaxed mt-8">
-                  For the summer event series in Union Square Park, B.MILLS stepped into an outdoor live DJ battle co-sponsored by Citi and Union Square Partnership. This was a weekly, open air entertainment program built to draw awareness from the NYC rush hour crowd.
+                  For the summer event series in Union Square Park, B.MILLS stepped into an outdoor live DJ battle co-sponsored by Citi and Union Square Partnership. This was a weekly, open-air entertainment program built to draw awareness from the NYC rush hour crowd.
                 </p>
               </div>
 
@@ -440,7 +441,6 @@ export default function BrandActivations() {
               </div>
             </div>
 
-            {/* Clean updated 3-photo grid row layout */}
             <div className="grid md:grid-cols-3 gap-4">
               <div className="border border-neutral-900">
                 <img
