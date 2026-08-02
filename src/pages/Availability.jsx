@@ -3,7 +3,7 @@ import InquiryFooter from '../components/InquiryFooter';
 
 export default function Availability() {
   useEffect(() => {
-    document.title = "Check Availability | B.MILLS";
+    document.title = "Check Availability | B.MILLS Brand & Private Event DJ NYC";
     window.scrollTo(0, 0); 
   }, []);
 
