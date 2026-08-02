@@ -27,6 +27,7 @@ const trustedFor = [
 export default function CorporateNJ() {
   
   useEffect(() => {
+    // 1. Canonical Link Tag Setup
     let canonicalLink = document.querySelector('link[rel="canonical"]');
     if (!canonicalLink) {
       canonicalLink = document.createElement('link');
@@ -35,9 +36,59 @@ export default function CorporateNJ() {
     }
     canonicalLink.setAttribute('href', 'https://djbmills.com/corporate-events-nj');
 
+    // 2. Structured Data (JSON-LD) Injection for Local & Corporate SEO
+    const schemaId = 'corporate-nj-jsonld';
+    let scriptTag = document.getElementById(schemaId);
+    if (!scriptTag) {
+      scriptTag = document.createElement('script');
+      scriptTag.id = schemaId;
+      scriptTag.type = 'application/ld+json';
+      
+      const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "B.MILLS | Corporate Event & Brand DJ",
+        "url": "https://djbmills.com/corporate-events-nj",
+        "description": "NYC corporate event DJ and music director serving Northern New Jersey, Bergen County, and the Tri-State area for luxury brand events, galas, product launches, and private events.",
+        "areaServed": [
+          {
+            "@type": "State",
+            "name": "New Jersey"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Bergen County"
+          },
+          {
+            "@type": "City",
+            "name": "New York City"
+          },
+          {
+            "@type": "DefinedRegion",
+            "name": "Tri-State Area"
+          }
+        ],
+        "knowsAbout": [
+          "Corporate Event Entertainment",
+          "Brand Activations",
+          "Sound Curation",
+          "Private Parties",
+          "Gala Sound Design"
+        ]
+      };
+
+      scriptTag.textContent = JSON.stringify(structuredData);
+      document.head.appendChild(scriptTag);
+    }
+
+    // Cleanup on component unmount
     return () => {
       if (canonicalLink && canonicalLink.parentNode) {
         canonicalLink.parentNode.removeChild(canonicalLink);
+      }
+      const existingScript = document.getElementById(schemaId);
+      if (existingScript && existingScript.parentNode) {
+        existingScript.parentNode.removeChild(existingScript);
       }
     };
   }, []);
@@ -49,6 +100,11 @@ export default function CorporateNJ() {
         description="B.MILLS is an NYC corporate event DJ and music director serving Northern New Jersey, Bergen County, and the Tri-State area for luxury brand events, galas, product launches, networking events, and private rooms."
         keywords="NYC corporate event DJ serving New Jersey, corporate DJ NJ, luxury event DJ Bergen County, Northern New Jersey corporate DJ, New York City DJ for New Jersey events, brand activation DJ NJ, product launch DJ New Jersey, corporate gala DJ Bergen County, B.MILLS DJ"
       />
+
+      {/* Accessible H1 Tag for Primary Search Intent */}
+      <h1 className="sr-only">
+        NYC Corporate Event &amp; Brand Activation DJ Serving New Jersey, Bergen County, and the Tri-State Area
+      </h1>
 
       <CorporateHero />
 
@@ -84,7 +140,7 @@ export default function CorporateNJ() {
                   <div key={`${brand}-${i}`} className="logo-slot">
                     <img
                       src={`/images/logos/${brand}.svg`}
-                      alt={brand}
+                      alt={`${brand} corporate logo`}
                       className="logo-img"
                       loading="lazy"
                     />
@@ -531,7 +587,7 @@ export default function CorporateNJ() {
             />
 
             <span className="font-body text-xs tracking-[0.3em] uppercase text-white/30 shrink-0 whitespace-nowrap">
-              Logistics & Execution
+              Logistics &amp; Execution
             </span>
           </div>
 
