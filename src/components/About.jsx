@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const ABOUT_IMG = "/images/bmills-about-hero.png";
 
@@ -103,13 +104,27 @@ export default function About() {
               </p>
 
               <p className="font-body text-[0.98rem] md:text-[1.05rem] text-muted-foreground leading-[1.75] font-light">
-                From cocktail hours to after hours, the approach stays consistent. Feel it. Adjust in real time. Let the energy build where it should.
+                From{" "}
+                <Link 
+                  to="/corporate-events" 
+                  className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white transition-colors"
+                >
+                  cocktail hours
+                </Link>{" "}
+                to{" "}
+                <Link 
+                  to="/afterparties" 
+                  className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white transition-colors"
+                >
+                  after hours
+                </Link>
+                , the approach stays consistent. Feel it. Adjust in real time. Let the energy build where it should.
+              </p>
+
+              <p className="font-heading text-[1.05rem] md:text-[1.2rem] font-light italic text-foreground/60 mt-8 md:mt-10">
+                Never background music. Always part of the moment.
               </p>
             </div>
-
-            <p className="font-heading text-[1.05rem] md:text-[1.2rem] font-light italic text-foreground/60 mt-8 md:mt-10">
-              Never background music. Always part of the moment.
-            </p>
           </motion.div>
         </div>
       </motion.div>
