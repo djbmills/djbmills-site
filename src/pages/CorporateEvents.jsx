@@ -582,25 +582,9 @@ export default function CorporateEvents() {
         </div>
       </section>
 
-     {/* Section 04: Experience / Logistics */}
+    {/* Section 04: Professional Standards */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-neutral-900 bg-[#050505]">
         <div className="max-w-4xl mx-auto">
-          <div className="flex items-center gap-4 mb-10">
-            <span className="font-body text-xs tracking-[0.4em] uppercase text-white/30 shrink-0">
-              04
-            </span>
-            <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-              className="flex-1 h-px bg-white/10 origin-left min-w-[40px]"
-            />
-            <span className="font-body text-xs tracking-[0.3em] uppercase text-white/30 shrink-0 whitespace-nowrap">
-              Logistics & Trust
-            </span>
-          </div>
-
           <div className="overflow-hidden">
             <motion.h2
               initial={{ opacity: 0, y: 40 }}
@@ -618,15 +602,49 @@ export default function CorporateEvents() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-10%' }}
             transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
-            className="max-w-2xl space-y-5"
+            className="max-w-2xl"
           >
             <p className="font-body text-base text-neutral-400 leading-relaxed font-light">
-              High-profile events leave zero room for technical failure or unprofessional execution. Behind every seamless performance is rigorous preparation, state-of-the-art sound equipment, and an acute understanding of corporate logistics.
-            </p>
-            <p className="font-body text-base text-neutral-400 leading-relaxed font-light">
-              From coordinate walkthroughs with event directors and audio engineers to maintaining fully redundant backup systems, every detail is engineered to ensure an immaculate brand experience.
+              At the execution level, programming continuity is only part of the framework. B.MILLS operates with comprehensive enterprise liability insurance (COI) and syncs perfectly alongside experiential production teams, delivering absolute atmospheric precision where timing, restraint, and demographic intelligence dictate success.
             </p>
           </motion.div>
+
+          {/* Photo Grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-10%' }}
+            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
+            className="mt-16 pt-10 border-t border-neutral-900"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="border border-neutral-900 group overflow-hidden bg-neutral-950">
+                <img
+                  src="/images/bmills-corporate-1.png"
+                  alt="B.MILLS performing at DJ booth"
+                  className="w-full h-72 md:h-80 object-cover opacity-85 transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <div className="border border-neutral-900 group overflow-hidden bg-neutral-950">
+                <img
+                  src="/images/corporate/goldman-robinhood/bmills-dj-booth-robinhood-goldman.png"
+                  alt="B.MILLS performing at high level corporate event"
+                  className="w-full h-72 md:h-80 object-cover opacity-85 transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Corporate Event Gallery Component */}
+      <CorporateEventGallery />
+
+      {/* Inquiry Footer */}
+      <InquiryFooter />
+    </div>
+  );
+}
 
           {/* Section 04 Photo Grid */}
           <motion.div
