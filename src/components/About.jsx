@@ -107,14 +107,14 @@ export default function About() {
                 From{" "}
                 <Link 
                   to="/corporate-events" 
-                  className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white transition-colors"
+                  className="text-foreground underline underline-offset-4 decoration-foreground/30 hover:decoration-foreground transition-colors"
                 >
                   cocktail hours
                 </Link>{" "}
                 to{" "}
                 <Link 
                   to="/afterparties" 
-                  className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white transition-colors"
+                  className="text-foreground underline underline-offset-4 decoration-foreground/30 hover:decoration-foreground transition-colors"
                 >
                   after hours
                 </Link>
