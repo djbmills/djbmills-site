@@ -2,9 +2,8 @@ import { useState, useRef } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 import InquiryFooter from "../components/InquiryFooter";
 
-// Media Assets Array (6 Total Items: 3x2 Grid with Concourse Club centered on bottom row)
+// Media Assets Array
 const AFTERPARTY_MEDIA = [
-  // Top Row
   {
     id: "guastavinos",
     type: "video",
@@ -32,7 +31,6 @@ const AFTERPARTY_MEDIA = [
     description: "Packed floor and relentless momentum keeping the celebration running deep into the night.",
     alt: "High energy crowd dancing at Fresh Meadows Country Club Long Island afterparty with DJ B.MILLS",
   },
-  // Bottom Row
   {
     id: "glen-oaks",
     type: "image",
@@ -93,11 +91,11 @@ function VideoCard({ item }) {
         aria-label={isMuted ? "Unmute video sound" : "Mute video sound"}
         title={isMuted ? "Tap for Sound" : "Mute Sound"}
       >
-        {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} className="text-amber-400" />}
+        {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} className="text-white" />}
       </button>
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent p-6 flex flex-col justify-end pointer-events-none">
-        <span className="text-amber-400 text-xs font-mono uppercase tracking-widest mb-1">{item.location}</span>
+        <span className="text-neutral-400 text-xs font-mono uppercase tracking-widest mb-1">{item.location}</span>
         <h3 className="text-xl font-bold text-white mb-2 leading-tight">{item.title}</h3>
         <p className="text-xs text-neutral-300 line-clamp-3 leading-relaxed">{item.description}</p>
       </div>
@@ -116,7 +114,7 @@ function ImageCard({ item }) {
       />
       
       <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent p-6 flex flex-col justify-end pointer-events-none">
-        <span className="text-amber-400 text-xs font-mono uppercase tracking-widest mb-1">{item.location}</span>
+        <span className="text-neutral-400 text-xs font-mono uppercase tracking-widest mb-1">{item.location}</span>
         <h3 className="text-xl font-bold text-white mb-2 leading-tight">{item.title}</h3>
         <p className="text-xs text-neutral-300 leading-relaxed">{item.description}</p>
       </div>
@@ -129,11 +127,11 @@ export default function Afterparties() {
     <div className="bg-black text-white min-h-screen pt-28">
       <section className="py-12 px-6 max-w-7xl mx-auto">
         <div className="mb-14 text-center max-w-3xl mx-auto">
-          <span className="font-body text-xs tracking-[0.3em] uppercase text-amber-400 block mb-3">
+          <span className="font-body text-xs tracking-[0.3em] uppercase text-neutral-400 block mb-3">
             Sound Programming
           </span>
-          <h1 className="font-heading text-4xl md:text-6xl font-light tracking-wide uppercase mb-4">
-            The <span className="text-amber-400 font-normal">Afterparty</span> Experience
+          <h1 className="font-heading text-4xl md:text-6xl font-light tracking-wide uppercase mb-4 text-white">
+            The <span className="font-serif italic font-normal text-white">Afterparty</span> Experience
           </h1>
           <p className="text-neutral-400 text-sm md:text-base font-body tracking-wide max-w-xl mx-auto">
             From iconic NYC landmarks to luxury Hamptons estates, capturing raw late night moments and high energy crowds.
@@ -152,27 +150,29 @@ export default function Afterparties() {
         </div>
       </section>
 
-      {/* Inquiry Footer Section */}
-      <section className="border-t border-white/10 py-20 bg-neutral-950 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="font-heading text-2xl md:text-4xl font-light uppercase tracking-wide mb-3">
-            Ready to Take Your <span className="text-amber-400">Afterparty</span> to the Next Level?
+      {/* Heading Section Before Footer */}
+      <section className="pt-20 pb-10 bg-black px-6 border-t border-white/10 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h3 className="font-heading text-2xl md:text-4xl font-light uppercase tracking-wide mb-3 text-white">
+            Late Night <span className="font-serif italic font-normal text-white">Sound</span> Programming.
           </h3>
-          <p className="text-neutral-400 text-sm md:text-base mb-10 max-w-xl mx-auto font-body">
-            Available for high energy late night sets, private celebrations, and VIP afterparties across New York City, Long Island, The Hamptons, Connecticut, and New Jersey.
+          <p className="text-neutral-400 text-sm md:text-base max-w-xl mx-auto font-body">
+            Available for select private afterparties, late night celebrations, and VIP events across New York, Long Island, The Hamptons, Connecticut, and New Jersey.
           </p>
-          
-          <InquiryFooter />
-          
-          <footer 
-            className="mt-12 text-xs text-neutral-600 space-y-1 font-body"
-            aria-label="Luxury high-energy afterparty DJ services in NYC, Long Island, Hamptons, CT, and NJ"
-          >
-            <p>DJ B.MILLS • Premier Late Night & Afterparty Sound Programming</p>
-            <p>Guastavino's • The Plaza Hotel • Fresh Meadows CC • Concourse Club • Glen Oaks Club • Oceanbleu Westhampton</p>
-          </footer>
         </div>
       </section>
+
+      {/* Full Bleed Inquiry Footer Component */}
+      <InquiryFooter />
+
+      {/* SEO Footer */}
+      <footer 
+        className="py-8 bg-background border-t border-border text-center text-xs text-muted-foreground space-y-1 font-body"
+        aria-label="Luxury high-energy afterparty DJ services in NYC, Long Island, Hamptons, CT, and NJ"
+      >
+        <p>DJ B.MILLS • Premier Late Night & Afterparty Sound Programming</p>
+        <p>Guastavino's • The Plaza Hotel • Fresh Meadows CC • Concourse Club • Glen Oaks Club • Oceanbleu Westhampton</p>
+      </footer>
     </div>
   );
 }
