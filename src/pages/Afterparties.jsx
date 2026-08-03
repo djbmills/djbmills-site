@@ -27,7 +27,7 @@ const AFTERPARTY_MEDIA = [
     type: "video",
     src: "/videos/long-island-country-club-afterparty-dj-fresh-meadows-bmills.mp4",
     location: "Fresh Meadows Country Club • Long Island",
-    title: "North Shore Country Club Energy",
+    title: "North Shore Energy",
     description: "Packed floor and relentless momentum keeping the celebration running deep into the night.",
     alt: "High energy crowd dancing at Fresh Meadows Country Club Long Island afterparty with DJ B.MILLS",
   },
@@ -46,7 +46,7 @@ const AFTERPARTY_MEDIA = [
     src: "/videos/nj-concourse-club-afterparty-dj-bmills.mp4",
     location: "Concourse Club • New Jersey",
     title: "Rooftop Lounge Nightlife",
-    description: "High energy late night sound programming keeping the floor packed deep into the night.",
+    description: "Afterhours sound programming keeping the crowd moving deep into the night.",
     alt: "High energy afterparty crowd dancing at Concourse Club New Jersey with DJ B.MILLS",
   },
   {
@@ -55,7 +55,7 @@ const AFTERPARTY_MEDIA = [
     src: "/images/hamptons-afterparty-dj-oceanbleu-westhampton-bmills.jpg",
     location: "Oceanbleu • Westhampton, NY",
     title: "Hamptons Oceanfront Peak Vibe",
-    description: "Unfiltered, raw nightlife atmosphere bringing full club level energy right to the beach.",
+    description: "Unfiltered, nightlife atmosphere bringing full club level energy right to the beach.",
     alt: "Peak afterparty dance floor energy at Oceanbleu Westhampton Hamptons with DJ B.MILLS",
   },
 ];
