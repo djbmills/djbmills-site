@@ -620,59 +620,19 @@ export default function CorporateEvents() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="border border-neutral-900 group overflow-hidden bg-neutral-950">
                 <img
-                  src="/images/bmills-corporate-1.png"
-                  alt="B.MILLS performing at DJ booth"
+                  src="/images/nyc-kering-eyewear-cocktail-reception-boom-boom-room-standard-high-line-dj-bmills-2.jpg"
+                  alt="B.MILLS DJing the Kering Eyewear cocktail reception at Boom Boom Room at The Standard High Line in New York City"
                   className="w-full h-72 md:h-80 object-cover opacity-85 transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
               <div className="border border-neutral-900 group overflow-hidden bg-neutral-950">
                 <img
-                  src="/images/corporate/goldman-robinhood/bmills-dj-booth-robinhood-goldman.png"
-                  alt="B.MILLS performing at high level corporate event"
+                  src="/images/nyc-kering-eyewear-cocktail-reception-boom-boom-room-standard-high-line-dj-bmills.jpg"
+                  alt="Kering Eyewear cocktail reception at Boom Boom Room at The Standard High Line with B.MILLS in New York City"
                   className="w-full h-72 md:h-80 object-cover opacity-85 transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Corporate Event Gallery Component */}
-      <CorporateEventGallery />
-
-      {/* Inquiry Footer */}
-      <InquiryFooter />
-    </div>
-  );
-}
-
-          {/* Section 04 Photo Grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
-            className="mt-14"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="border border-neutral-900 group overflow-hidden bg-neutral-950">
-                <img
-                  src="/images/bmills-corporate-1.png"
-                  alt="B.MILLS corporate DJ booth setup and sound management"
-                  className="w-full h-72 md:h-80 object-cover opacity-85 transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div className="border border-neutral-900 group overflow-hidden bg-neutral-950">
-                <img
-                  src="/images/corporate/goldman-robinhood/bmills-dj-booth-robinhood-goldman.png"
-                  alt="B.MILLS professional DJ setup at high profile corporate activation"
-                  className="w-full h-72 md:h-80 object-cover opacity-85 transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-            </div>
-            <p className="font-body text-[11px] tracking-[0.2em] uppercase text-neutral-500 mt-4 text-left">
-              Professional DJ Booth Setup & Sound Curation | NYC
-            </p>
           </motion.div>
         </div>
       </section>
