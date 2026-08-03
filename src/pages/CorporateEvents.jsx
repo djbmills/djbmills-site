@@ -234,28 +234,28 @@ export default function CorporateEvents() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 <div className="group relative overflow-hidden bg-neutral-900 aspect-[4/5] border border-neutral-800">
                   <img
-                    src="/images/bmills-corporate-2.png"
+                    src="/images/corporate/goldman-robinhood/new-york-city-pac-nyc-goldman-sachs-robinhood-corporate-event-dj-bmills.jpg"
                     alt="B.MILLS corporate event DJ performing at Goldman Sachs Robinhood event New York City"
                     className="w-full h-full object-cover object-center opacity-90 transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 <div className="group relative overflow-hidden bg-neutral-900 aspect-[4/5] border border-neutral-800">
                   <img
-                    src="/images/corporate/goldman-robinhood/bmills-dj-booth-robinhood-goldman.png"
+                    src="/images/corporate/goldman-robinhood/new-york-city-pac-nyc-goldman-sachs-robinhood-dj-booth-dj-bmills.jpg"
                     alt="B.MILLS brand event DJ booth setup at Goldman Sachs Robinhood event in New York City"
                     className="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 <div className="group relative overflow-hidden bg-neutral-900 aspect-[4/5] border border-neutral-800">
                   <img
-                    src="/images/corporate/goldman-robinhood/metropolis-event-interior.png"
+                    src="/images/corporate/goldman-robinhood/new-york-city-pac-nyc-metropolis-corporate-event-interior-dj-bmills.jpg"
                     alt="Metropolis by Marcus Samuelsson event interior for Goldman Sachs Robinhood event"
                     className="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 <div className="group relative overflow-hidden bg-neutral-900 aspect-[4/5] border border-neutral-800">
                   <img
-                    src="/images/corporate/goldman-robinhood/goldman-robinhood-signage.png"
+                    src="/images/corporate/goldman-robinhood/new-york-city-pac-nyc-goldman-sachs-robinhood-event-signage-dj-bmills.jpg"
                     alt="Goldman Sachs and Robinhood event signage in New York City"
                     className="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
                   />
