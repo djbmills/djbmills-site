@@ -8,6 +8,7 @@ const navLinks = [
   { label: 'Listen', href: '/#mixtapes', sectionId: 'mixtapes' },
   { label: 'Clients', href: '/#clients', sectionId: 'clients' },
   { label: 'Events', href: '/corporate-events', sectionId: null },
+  { label: 'Afterparties', href: '/afterparties', sectionId: null },
   { label: 'Feedback', href: '/#feedback', sectionId: 'feedback' },
 ];
 
@@ -18,7 +19,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('');
 
-  // 1. Updated for Desktop & Mobile Menu
+  // Updated for Desktop & Mobile Menu
   const inquiryLink = { 
     label: 'Secure Your Date', 
     href: '/availability', 
@@ -39,8 +40,11 @@ export default function Navbar() {
 
   useEffect(() => {
     const isCorporatePage = location.pathname === '/corporate-events';
+    const isAfterpartiesPage = location.pathname === '/afterparties';
     const isAvailabilityPage = location.pathname === '/availability';
+    
     if (isCorporatePage) { setActiveLink('Events'); return; }
+    if (isAfterpartiesPage) { setActiveLink('Afterparties'); return; }
     if (isAvailabilityPage) { setActiveLink(''); return; }
     if (location.pathname !== '/') { setActiveLink(''); return; }
 
@@ -136,7 +140,7 @@ export default function Navbar() {
           </div>
 
           <div className="md:hidden flex items-center gap-3">
-            {/* 2. Updated for Mobile Header */}
+            {/* Mobile Header Button */}
             <a href={inquiryLink.href} onClick={(e) => handleNavClick(e, inquiryLink)}
               className="font-body text-[10px] tracking-[0.25em] uppercase text-foreground border border-foreground/30 px-4 py-2 hover:border-foreground transition-all duration-300">
               Book
