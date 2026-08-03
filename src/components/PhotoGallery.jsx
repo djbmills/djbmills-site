@@ -3,42 +3,115 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const photos = [
-  { src: "/images/bmills-event-1.jpg", alt: "B.MILLS DJ performing at luxury corporate event in New York City" },
-  { src: "/images/bmills-event-2.jpg", alt: "Upscale NYC event with B.MILLS DJing for corporate audience" },
-  { src: "/images/bmills-event-4.jpg", alt: "B.MILLS DJ set at luxury brand activation in New York" },
-  { src: "/images/bmills-event-5.jpg", alt: "Elegant corporate gala atmosphere with live DJ performance by B.MILLS" },
-  { src: "/images/bmills-event-3.png", alt: "Fanatics Topps event in NYC with B.MILLS DJ" },
-  { src: "/images/bmills-event-6.jpg", alt: "B.MILLS DJ creating atmosphere at upscale Manhattan event" },
-  { src: "/images/bmills-event-7.jpg", alt: "Luxury event crowd engagement with B.MILLS DJ in New York City" },
-  { src: "/images/bmills-event-7.png", alt: "Guests enjoying music during curated DJ set by B.MILLS" },
-  { src: "/images/bmills-event-8.jpg", alt: "B.MILLS DJ performing at high-end nightlife venue in NYC" },
-  { src: "/images/bmills-event-9.jpg", alt: "Packed dance floor at luxury private celebration with B.MILLS DJ" },
-  { src: "/images/bmills-event-10.jpg", alt: "B.MILLS DJ at premium corporate function in New York City" },
-  { src: "/images/bmills-event-11.jpg", alt: "Refined DJ setup for luxury brand event by B.MILLS" },
-  { src: "/images/bmills-event-12.jpg", alt: "B.MILLS DJ performing at large-scale gala event in NYC venue" },
-  { src: "/images/bmills-event-13.jpg", alt: "Corporate event entertainment with B.MILLS DJ in upscale setting" },
-  { src: "/images/bmills-event-14.jpg", alt: "B.MILLS DJ delivering curated music experience at luxury dinner event" },
-  { src: "/images/bmills-event-15.png", alt: "High-energy dance moment at corporate event with B.MILLS DJ" },
-  { src: "/images/bmills-event-16.jpg", alt: "B.MILLS DJ performing at exclusive New York City venue" },
-  { src: "/images/bmills-event-17.jpg", alt: "Guests dancing at luxury brand event with B.MILLS DJ" },
-  { src: "/images/bmills-event-mobile-1.png", alt: "Mobile view of B.MILLS DJ performance at upscale NYC event", mobileOnly: true },
-  // Localized Mobile-Only SEO Additions:
-  { src: "/images/corporate/luxury-brand-event-dj-nyc.png", alt: "B.MILLS mixing live at an upscale luxury brand event corporate reception in New York City", mobileOnly: true }, // <-- Fixed: Added the missing comma here
-  { src: "/images/bmills-hamptons-summer-outdoor-dj.jpg", alt: "B.MILLS performing a private summer outdoor DJ set for a client event in the Hamptons", mobileOnly: true },
-  { src: "/images/bmills-union-square-citibank-dj-performance.jpg", alt: "B.MILLS live DJ performance at the Citibank sponsored community event in Union Square Park NYC", mobileOnly: true }
+  // COLUMN 1 (Top Left -> Down)
+  { 
+    src: "/images/nyc-luxury-corporate-dj-hall-des-lumieres-bmills.jpg", 
+    alt: "B.MILLS DJ performing at luxury corporate event in New York City" 
+  },
+  { 
+    src: "/images/nyc-event-hall-des-lumieres-abigail-kirsch-bmills.jpg", 
+    alt: "Upscale NYC event with B.MILLS DJing for corporate audience" 
+  },
+  { 
+    src: "/images/nyc-hospitality-alliance-anniversary-dj-bmills.jpg", 
+    alt: "B.MILLS DJ set at luxury brand activation in New York" 
+  },
+  { 
+    src: "/images/nyc-citibank-union-square-outdoor-dj-bmills.jpg", 
+    alt: "Elegant corporate gala atmosphere with live DJ performance by B.MILLS" 
+  },
+  { 
+    src: "/images/nyc-fanatics-topps-event-dj-bmills.jpg", 
+    alt: "Fanatics Topps event in NYC with B.MILLS DJ" 
+  },
+
+  // COLUMN 2 (Top Column 2 -> Down)
+  { 
+    src: "/images/nyc-corporate-gala-confetti-dj-bmills.jpg", 
+    alt: "B.MILLS DJ creating atmosphere at upscale Manhattan event" 
+  },
+  { 
+    src: "/images/nyc-kering-eyewear-cocktail-reception-boom-boom-room-standard-high-line-dj-bmills.jpg", 
+    alt: "B.MILLS DJ performing at Kering Eyewear cocktail reception at Boom Boom Room at The Standard, High Line in NYC" 
+  },
+  { 
+    src: "/images/nyc-luxury-hotel-lounge-dj-bmills.jpg", 
+    alt: "Guests enjoying music during curated DJ set by B.MILLS" 
+  },
+  { 
+    src: "/images/nyc-ballet-young-patrons-lincoln-center-david-h-koch-theater-dj-bmills.jpg", 
+    alt: "B.MILLS DJing for New York City Ballet Young Patrons event in the David H. Koch Theater Promenade at Lincoln Center",
+    credit: true 
+  },
+  { 
+    src: "/images/nyc-windward-school-fundraising-gala-pier-60-dj-bmills.jpg", 
+    alt: "B.MILLS DJ performing at The Windward School fundraising gala at Pier 60 Chelsea Piers in New York City" 
+  },
+
+  // COLUMN 3 (Top Column 3 -> Down)
+  { 
+    src: "/images/nyc-corporate-gala-dj-booth-bmills.jpg", 
+    alt: "B.MILLS DJ at premium corporate function in New York City" 
+  },
+  { 
+    src: "/images/nyc-windward-school-gala-dinner-pier-60-dj-bmills.jpg", 
+    alt: "Crowd and audience during dinner and live presentation at The Windward School fundraising gala at Pier 60 in Chelsea Piers, NYC" 
+  },
+  { 
+    src: "/images/nyc-ballet-portrait-lincoln-center-david-h-koch-theater-dj-bmills.jpg", 
+    alt: "Portrait of B.MILLS DJ in the David H. Koch Theater Promenade at Lincoln Center in New York City",
+    credit: true 
+  },
+  { 
+    src: "/images/nyc-hornitos-tequila-cinco-de-mayo-brand-activation-dj-bmills.jpg", 
+    alt: "B.MILLS DJing Hornitos Tequila brand activation for Cinco de Mayo event in Manhattan's Upper East Side" 
+  },
+
+  // COLUMN 4 (Top Column 4 -> Down)
+  { 
+    src: "/images/atlantic-city-haven-nightclub-golden-nugget-co2-dj-bmills.jpg", 
+    alt: "B.MILLS spraying CO2 canon from DJ booth over crowd at Haven Nightclub inside Golden Nugget Casino in Atlantic City" 
+  },
+  { 
+    src: "/images/nyc-gucci-start-of-year-celebration-dj-bmills.jpg", 
+    alt: "B.MILLS DJing with Gucci branding in background for Gucci internal start-of-year celebration event in NYC" 
+  },
+  { 
+    src: "/images/nyc-boom-boom-room-standard-high-line-cocktail-reception-dj-bmills.jpg", 
+    alt: "B.MILLS DJ performance during cocktail reception at Boom Boom Room at The Standard, High Line in downtown NYC" 
+  },
+  { 
+    src: "/images/nyc-ballet-young-patrons-dancing-lincoln-center-dj-bmills.jpg", 
+    alt: "Guests dancing during post-performance New York City Ballet Young Patrons event at David H. Koch Theater Promenade at Lincoln Center",
+    credit: true 
+  },
+
+  // MOBILE-ONLY LOCALIZED ADDITIONS
+  { 
+    src: "/images/brooklyn-red-hook-pioneer-works-1800-tequila-dustin-yellin-dj-bmills.jpg", 
+    alt: "B.MILLS DJ performance at 1800 Tequila Dustin Yellin Essential Artists Series bottle release party at Pioneer Works in Red Hook, Brooklyn", 
+    mobileOnly: true 
+  },
+  { 
+    src: "/images/nyc-hall-des-lumieres-grand-opening-dj-booth-bmills.jpg", 
+    alt: "Rear shot of B.MILLS DJ booth overlooking crowd at Hall des Lumières grand opening in New York City", 
+    mobileOnly: true 
+  },
+  { 
+    src: "/images/southampton-hamptons-summer-private-event-dj-bmills.jpg", 
+    alt: "B.MILLS curating sounds for a private summer client event in Southampton, Long Island", 
+    mobileOnly: true 
+  },
+  { 
+    src: "/images/nyc-union-square-citibank-dj-battle-rush-hour-bmills.jpg", 
+    alt: "B.MILLS competing in the Citibank sponsored DJ battle in Union Square Park during NYC rush hour", 
+    mobileOnly: true 
+  }
 ];
 
 export default function PhotoGallery() {
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
-
-  const creditIndices = [8, 12, 17];
-
-  const openLightbox = (i) => setLightboxIndex(i);
-  const closeLightbox = () => setLightboxIndex(null);
-  const prev = () => setLightboxIndex((i) => (i === 0 ? photos.length - 1 : i - 1));
-  const next = () => setLightboxIndex((i) => (i === photos.length - 1 ? 0 : i + 1));
-  const shouldShowCredit = (i) => creditIndices.includes(i);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -46,6 +119,15 @@ export default function PhotoGallery() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  const visiblePhotos = photos.filter(
+    (photo) => !photo.mobileOnly || isMobile
+  );
+
+  const openLightbox = (i) => setLightboxIndex(i);
+  const closeLightbox = () => setLightboxIndex(null);
+  const prev = () => setLightboxIndex((i) => (i === 0 ? visiblePhotos.length - 1 : i - 1));
+  const next = () => setLightboxIndex((i) => (i === visiblePhotos.length - 1 ? 0 : i + 1));
 
   useEffect(() => {
     if (lightboxIndex !== null) {
@@ -67,11 +149,7 @@ export default function PhotoGallery() {
     };
     window.addEventListener('keydown', handleKey);
     return () => window.removeEventListener('keydown', handleKey);
-  }, [lightboxIndex]);
-
-  const visiblePhotos = photos.filter(
-    (photo) => !photo.mobileOnly || isMobile
-  );
+  }, [lightboxIndex, visiblePhotos.length]);
 
   return (
     <section id="events" className="pt-16 md:pt-24 pb-6 md:pb-8 px-6 md:px-12 border-t border-border">
@@ -126,7 +204,7 @@ export default function PhotoGallery() {
 
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
 
-              {shouldShowCredit(i) && (
+              {photo.credit && (
                 <div className="absolute bottom-3 right-3 z-10 pointer-events-none opacity-0 group-hover:opacity-80 transition-opacity duration-300">
                   <p className="font-body text-[10px] md:text-[11px] font-light tracking-[0.08em] uppercase text-white">
                     Photo by{' '}
