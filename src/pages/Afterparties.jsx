@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 import InquiryFooter from "../components/InquiryFooter";
 
@@ -60,22 +60,25 @@ const AFTERPARTY_MEDIA = [
   },
 ];
 
-function VideoCard({ item, activeAudioId, setActiveAudioId }) {
+function VideoCard({ item }) {
+  const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef(null);
-  const isPlayingAudio = activeAudioId === item.id;
-
-  // Control video mute state based on activeAudioId
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.muted = !isPlayingAudio;
-    }
-  }, [isPlayingAudio]);
 
   const toggleMute = () => {
-    if (isPlayingAudio) {
-      setActiveAudioId(null); // Mute current video if tapped again
-    } else {
-      setActiveAudioId(item.id); // Set this video as the ONLY one with audio
+    if (videoRef.current) {
+      if (isMuted) {
+        // Mute all other videos on the page directly via DOM to prevent overlapping sound
+        document.querySelectorAll("video").forEach((vid) => {
+          if (vid !== videoRef.current) {
+            vid.muted = true;
+          }
+        });
+        videoRef.current.muted = false;
+        setIsMuted(false);
+      } else {
+        videoRef.current.muted = true;
+        setIsMuted(true);
+      }
     }
   };
 
@@ -85,7 +88,7 @@ function VideoCard({ item, activeAudioId, setActiveAudioId }) {
         ref={videoRef}
         autoPlay
         loop
-        muted={!isPlayingAudio}
+        muted={isMuted}
         playsInline
         aria-label={item.alt}
         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -96,10 +99,10 @@ function VideoCard({ item, activeAudioId, setActiveAudioId }) {
       <button
         onClick={toggleMute}
         className="absolute top-4 right-4 z-20 bg-black/60 hover:bg-black/90 text-white p-3 rounded-full backdrop-blur-md border border-white/20 transition-all active:scale-95"
-        aria-label={isPlayingAudio ? "Mute video sound" : "Unmute video sound"}
-        title={isPlayingAudio ? "Mute Sound" : "Tap for Sound"}
+        aria-label={isMuted ? "Unmute video sound" : "Mute video sound"}
+        title={isMuted ? "Tap for Sound" : "Mute Sound"}
       >
-        {!isPlayingAudio ? <VolumeX size={18} /> : <Volume2 size={18} className="text-white" />}
+        {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} className="text-white" />}
       </button>
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent p-6 flex flex-col justify-end pointer-events-none">
@@ -117,15 +120,7 @@ function ImageCard({ item }) {
       <img
         src={item.src}
         alt={item.alt}
-        loading="eager"
-        decoding="async"
-        onError={(e) => {
-          if (e.currentTarget.src.endsWith('.jpg')) {
-            e.currentTarget.src = item.src.replace('.jpg', '.png');
-          } else if (e.currentTarget.src.endsWith('.png')) {
-            e.currentTarget.src = item.src.replace('.png', '.jpeg');
-          }
-        }}
+        loading="lazy"
         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
       />
       
@@ -139,8 +134,6 @@ function ImageCard({ item }) {
 }
 
 export default function Afterparties() {
-  const [activeAudioId, setActiveAudioId] = useState(null);
-
   return (
     <div className="bg-black text-white min-h-screen pt-28">
       <section className="py-12 px-6 max-w-7xl mx-auto">
@@ -160,12 +153,7 @@ export default function Afterparties() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {AFTERPARTY_MEDIA.map((item) =>
             item.type === "video" ? (
-              <VideoCard
-                key={item.id}
-                item={item}
-                activeAudioId={activeAudioId}
-                setActiveAudioId={setActiveAudioId}
-              />
+              <VideoCard key={item.id} item={item} />
             ) : (
               <ImageCard key={item.id} item={item} />
             )
