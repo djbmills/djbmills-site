@@ -118,6 +118,14 @@ function ImageCard({ item }) {
         src={item.src}
         alt={item.alt}
         loading="lazy"
+        onError={(e) => {
+          // Automatic extension fallback if .jpg fails
+          if (e.currentTarget.src.endsWith('.jpg')) {
+            e.currentTarget.src = item.src.replace('.jpg', '.png');
+          } else if (e.currentTarget.src.endsWith('.png')) {
+            e.currentTarget.src = item.src.replace('.png', '.jpeg');
+          }
+        }}
         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
       />
       
