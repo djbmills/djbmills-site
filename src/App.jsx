@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import CorporateEvents from "./pages/CorporateEvents";
 import CorporateNJ from "./pages/CorporateNJ"; 
 import BrandActivations from "./pages/BrandActivations"; // <-- 1. Imported the Luxury Brand Activation page
+import Afterparties from "./pages/Afterparties";
 import Availability from "./pages/Availability"; 
 import Navbar from "./components/Navbar";
 
@@ -43,6 +44,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/corporate-events" element={<CorporateEvents />} />
           <Route path="/corporate-events-nj" element={<CorporateNJ />} /> 
+          <Route path="/afterparties" element={<Afterparties />} />
           <Route path="/brand-activations" element={<BrandActivations />} /> {/* <-- 2. Wired up the Luxury Brand Activation route */}
           
           {/* Availability Pillar: The new frictionless booking engine */}
