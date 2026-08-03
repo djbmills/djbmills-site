@@ -117,9 +117,9 @@ function ImageCard({ item }) {
       <img
         src={item.src}
         alt={item.alt}
-        loading="lazy"
+        loading="eager"
+        decoding="async"
         onError={(e) => {
-          // Automatic extension fallback if .jpg fails
           if (e.currentTarget.src.endsWith('.jpg')) {
             e.currentTarget.src = item.src.replace('.jpg', '.png');
           } else if (e.currentTarget.src.endsWith('.png')) {
