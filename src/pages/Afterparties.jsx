@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 import InquiryFooter from "../components/InquiryFooter";
 
@@ -60,14 +60,22 @@ const AFTERPARTY_MEDIA = [
   },
 ];
 
-function VideoCard({ item }) {
-  const [isMuted, setIsMuted] = useState(true);
+function VideoCard({ item, activeAudioId, setActiveAudioId }) {
   const videoRef = useRef(null);
+  const isPlayingAudio = activeAudioId === item.id;
+
+  // Control video mute state based on activeAudioId
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isPlayingAudio;
+    }
+  }, [isPlayingAudio]);
 
   const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
+    if (isPlayingAudio) {
+      setActiveAudioId(null); // Mute current video if tapped again
+    } else {
+      setActiveAudioId(item.id); // Set this video as the ONLY one with audio
     }
   };
 
@@ -77,7 +85,7 @@ function VideoCard({ item }) {
         ref={videoRef}
         autoPlay
         loop
-        muted={isMuted}
+        muted={!isPlayingAudio}
         playsInline
         aria-label={item.alt}
         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -88,10 +96,10 @@ function VideoCard({ item }) {
       <button
         onClick={toggleMute}
         className="absolute top-4 right-4 z-20 bg-black/60 hover:bg-black/90 text-white p-3 rounded-full backdrop-blur-md border border-white/20 transition-all active:scale-95"
-        aria-label={isMuted ? "Unmute video sound" : "Mute video sound"}
-        title={isMuted ? "Tap for Sound" : "Mute Sound"}
+        aria-label={isPlayingAudio ? "Mute video sound" : "Unmute video sound"}
+        title={isPlayingAudio ? "Mute Sound" : "Tap for Sound"}
       >
-        {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} className="text-white" />}
+        {!isPlayingAudio ? <VolumeX size={18} /> : <Volume2 size={18} className="text-white" />}
       </button>
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent p-6 flex flex-col justify-end pointer-events-none">
@@ -123,6 +131,8 @@ function ImageCard({ item }) {
 }
 
 export default function Afterparties() {
+  const [activeAudioId, setActiveAudioId] = useState(null);
+
   return (
     <div className="bg-black text-white min-h-screen pt-28">
       <section className="py-12 px-6 max-w-7xl mx-auto">
@@ -142,7 +152,12 @@ export default function Afterparties() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {AFTERPARTY_MEDIA.map((item) =>
             item.type === "video" ? (
-              <VideoCard key={item.id} item={item} />
+              <VideoCard
+                key={item.id}
+                item={item}
+                activeAudioId={activeAudioId}
+                setActiveAudioId={setActiveAudioId}
+              />
             ) : (
               <ImageCard key={item.id} item={item} />
             )
