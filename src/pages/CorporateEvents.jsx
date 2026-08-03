@@ -96,7 +96,7 @@ export default function CorporateEvents() {
 
       <CorporateHero />
 
-      {/* Section: Professional Brand Marquee (KEPT BLACK) */}
+      {/* Section: Professional Brand Marquee (BLACK) */}
       <section className="relative pt-20 pb-16 border-b border-neutral-900 bg-[#000000] overflow-hidden">
         <div className="max-w-6xl mx-auto px-6 mb-10 relative z-10">
           <p className="font-body text-[10px] tracking-[0.4em] uppercase text-neutral-500 text-center">
@@ -182,11 +182,11 @@ export default function CorporateEvents() {
         `}</style>
       </section>
 
-      {/* Section 01: The Philosophy (TRANSITION BACK TO OFF-WHITE CREAM) */}
-      <section className="py-20 md:py-32 px-6 md:px-12 border-b border-black/10 bg-[#F9F8F6]">
+      {/* Section 01: The Philosophy (KEPT BLACK RIGHT AFTER MARQUEE) */}
+      <section className="py-20 md:py-32 px-6 md:px-12 border-b border-neutral-900 bg-[#050505] text-white">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-4 mb-10">
-            <span className="font-body text-xs tracking-[0.4em] uppercase text-neutral-400 shrink-0">
+            <span className="font-body text-xs tracking-[0.4em] uppercase text-neutral-500 shrink-0">
               01
             </span>
             <motion.div
@@ -194,9 +194,9 @@ export default function CorporateEvents() {
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true, margin: '-10%' }}
               transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-              className="flex-1 h-px bg-black/10 origin-left min-w-[40px]"
+              className="flex-1 h-px bg-neutral-800 origin-left min-w-[40px]"
             />
-            <span className="font-body text-xs tracking-[0.3em] uppercase text-neutral-400 shrink-0 whitespace-nowrap">
+            <span className="font-body text-xs tracking-[0.3em] uppercase text-neutral-500 shrink-0 whitespace-nowrap">
               The Philosophy
             </span>
           </div>
@@ -207,7 +207,7 @@ export default function CorporateEvents() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-10%' }}
               transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
-              className="font-heading text-2xl md:text-3xl lg:text-4xl font-light text-black leading-relaxed"
+              className="font-heading text-2xl md:text-3xl lg:text-4xl font-light text-white leading-relaxed"
             >
               Corporate environments and brand activations require precise sonic curation. The music should define the brand identity without overwhelming the space, providing professional vocal direction only when necessary.
             </motion.p>
@@ -218,7 +218,7 @@ export default function CorporateEvents() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-10%' }}
             transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
-            className="font-body text-sm text-neutral-600 mt-8 max-w-xl leading-relaxed font-light"
+            className="font-body text-sm text-neutral-400 mt-8 max-w-xl leading-relaxed font-light"
           >
             Maintaining a sophisticated balance between background atmosphere and high-energy transitions.
           </motion.p>
@@ -232,32 +232,32 @@ export default function CorporateEvents() {
           >
             <div className="max-w-4xl mx-auto">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                <div className="group relative overflow-hidden bg-neutral-200 aspect-[4/5] border border-black/5">
+                <div className="group relative overflow-hidden bg-neutral-900 aspect-[4/5] border border-neutral-800">
                   <img
                     src="/images/bmills-corporate-2.png"
                     alt="B.MILLS corporate event DJ performing at Goldman Sachs Robinhood event New York City"
-                    className="w-full h-full object-cover object-center opacity-95 transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover object-center opacity-90 transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                <div className="group relative overflow-hidden bg-neutral-200 aspect-[4/5] border border-black/5">
+                <div className="group relative overflow-hidden bg-neutral-900 aspect-[4/5] border border-neutral-800">
                   <img
                     src="/images/corporate/goldman-robinhood/bmills-dj-booth-robinhood-goldman.png"
                     alt="B.MILLS brand event DJ booth setup at Goldman Sachs Robinhood event in New York City"
-                    className="w-full h-full object-cover opacity-95 transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                <div className="group relative overflow-hidden bg-neutral-200 aspect-[4/5] border border-black/5">
+                <div className="group relative overflow-hidden bg-neutral-900 aspect-[4/5] border border-neutral-800">
                   <img
                     src="/images/corporate/goldman-robinhood/metropolis-event-interior.png"
                     alt="Metropolis by Marcus Samuelsson event interior for Goldman Sachs Robinhood event"
-                    className="w-full h-full object-cover opacity-95 transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                <div className="group relative overflow-hidden bg-neutral-200 aspect-[4/5] border border-black/5">
+                <div className="group relative overflow-hidden bg-neutral-900 aspect-[4/5] border border-neutral-800">
                   <img
                     src="/images/corporate/goldman-robinhood/goldman-robinhood-signage.png"
                     alt="Goldman Sachs and Robinhood event signage in New York City"
-                    className="w-full h-full object-cover opacity-95 transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
               </div>
@@ -269,8 +269,8 @@ export default function CorporateEvents() {
         </div>
       </section>
 
-      {/* Section 02: Brand Alignment (SLIGHT CREAM CONTRAST BREAK: #F3F2EF) */}
-      <section className="py-20 md:py-32 px-6 md:px-12 border-b border-black/10 bg-[#F3F2EF]">
+      {/* Section 02: Brand Alignment (TRANSITION TO OFF-WHITE CREAM: #F9F8F6) */}
+      <section className="py-20 md:py-32 px-6 md:px-12 border-b border-black/10 bg-[#F9F8F6]">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-4 mb-10">
             <span className="font-body text-xs tracking-[0.4em] uppercase text-neutral-400 shrink-0">
@@ -339,8 +339,8 @@ export default function CorporateEvents() {
         </div>
       </section>
 
-      {/* Section 03: Selected Event Experience (OFF-WHITE CREAM: #F9F8F6) */}
-      <section className="py-20 md:py-32 px-6 md:px-12 border-b border-black/10 bg-[#F9F8F6]">
+      {/* Section 03: Selected Event Experience (SLIGHT CREAM CONTRAST: #F3F2EF) */}
+      <section className="py-20 md:py-32 px-6 md:px-12 border-b border-black/10 bg-[#F3F2EF]">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-4 mb-10 overflow-hidden">
             <span className="font-body text-xs tracking-[0.4em] uppercase text-neutral-400 shrink-0">
@@ -582,7 +582,7 @@ export default function CorporateEvents() {
         </div>
       </section>
 
-      {/* Section 04: Experience / Logistics (KEPT BLACK) */}
+      {/* Section 04: Logistics & Trust / Professional Standards (FULLY RESTORED - BLACK) */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-neutral-900 bg-[#050505] text-white">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-4 mb-10">
@@ -597,7 +597,7 @@ export default function CorporateEvents() {
               className="flex-1 h-px bg-white/10 origin-left min-w-[40px]"
             />
             <span className="font-body text-xs tracking-[0.3em] uppercase text-white/30 shrink-0 whitespace-nowrap">
-              Logistics & Trust
+              Logistics &amp; Trust
             </span>
           </div>
 
@@ -622,6 +622,54 @@ export default function CorporateEvents() {
           >
             Corporate bookings require flawless execution. B.MILLS maintains full liability coverage, strict adherence to venue load-in schedules, and pristine aesthetic DJ booth setups that align with high-end interior design and luxury branding.
           </motion.p>
+
+          <div className="grid md:grid-cols-2 gap-8 mt-12 pt-10 border-t border-white/10">
+            <div>
+              <h3 className="font-heading text-xl font-light text-white mb-2">
+                Venue &amp; Agency Coordination
+              </h3>
+              <p className="font-body text-xs text-neutral-400 leading-relaxed font-light">
+                Direct alignment with venue production teams, event planners, and brand directors to ensure technical requirements and run-of-show timelines are met without friction.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-heading text-xl font-light text-white mb-2">
+                Aesthetic &amp; Sound Integration
+              </h3>
+              <p className="font-body text-xs text-neutral-400 leading-relaxed font-light">
+                Clean, minimalist hardware setups designed to complement high-end interiors, luxury staging, and branded environments.
+              </p>
+            </div>
+          </div>
+
+          {/* Equinox Visual Grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-10%' }}
+            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
+            className="mt-14"
+          >
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="border border-white/10 overflow-hidden">
+                <img
+                  src="/images/bmills-corporate-equinox-hudson-yards.png"
+                  alt="B.MILLS DJing Equinox Hudson Yards event in NYC"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="border border-white/10 overflow-hidden">
+                <img
+                  src="/images/bmills-corporate-equinox-dj-booth.png"
+                  alt="Minimalist DJ booth setup for Equinox corporate event by B.MILLS"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+            <p className="font-body text-[11px] tracking-[0.2em] uppercase text-neutral-400 mt-4 text-left">
+              Equinox Hudson Yards Activation | New York City
+            </p>
+          </motion.div>
         </div>
       </section>
 
