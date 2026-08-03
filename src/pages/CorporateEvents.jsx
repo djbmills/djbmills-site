@@ -182,7 +182,7 @@ export default function CorporateEvents() {
         `}</style>
       </section>
 
-      {/* Section 01: The Philosophy (KEPT BLACK RIGHT AFTER MARQUEE) */}
+      {/* Section 01: The Philosophy (BLACK RIGHT AFTER MARQUEE) */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-neutral-900 bg-[#050505] text-white">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-4 mb-10">
@@ -269,7 +269,7 @@ export default function CorporateEvents() {
         </div>
       </section>
 
-      {/* Section 02: Brand Alignment (TRANSITION TO OFF-WHITE CREAM: #F9F8F6) */}
+      {/* Section 02: Brand Alignment (OFF-WHITE CREAM) */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-black/10 bg-[#F9F8F6]">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-4 mb-10">
@@ -339,7 +339,7 @@ export default function CorporateEvents() {
         </div>
       </section>
 
-      {/* Section 03: Selected Event Experience (SLIGHT CREAM CONTRAST: #F3F2EF) */}
+      {/* Section 03: Selected Event Experience (SLIGHT CREAM CONTRAST) */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-black/10 bg-[#F3F2EF]">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-4 mb-10 overflow-hidden">
@@ -582,7 +582,7 @@ export default function CorporateEvents() {
         </div>
       </section>
 
-      {/* Section 04: Logistics & Trust / Professional Standards (FULLY RESTORED - BLACK) */}
+      {/* Section 04: Logistics & Trust / Professional Standards (BLACK) */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-neutral-900 bg-[#050505] text-white">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-4 mb-10">
@@ -622,54 +622,6 @@ export default function CorporateEvents() {
           >
             Corporate bookings require flawless execution. B.MILLS maintains full liability coverage, strict adherence to venue load-in schedules, and pristine aesthetic DJ booth setups that align with high-end interior design and luxury branding.
           </motion.p>
-
-          <div className="grid md:grid-cols-2 gap-8 mt-12 pt-10 border-t border-white/10">
-            <div>
-              <h3 className="font-heading text-xl font-light text-white mb-2">
-                Venue &amp; Agency Coordination
-              </h3>
-              <p className="font-body text-xs text-neutral-400 leading-relaxed font-light">
-                Direct alignment with venue production teams, event planners, and brand directors to ensure technical requirements and run-of-show timelines are met without friction.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-heading text-xl font-light text-white mb-2">
-                Aesthetic &amp; Sound Integration
-              </h3>
-              <p className="font-body text-xs text-neutral-400 leading-relaxed font-light">
-                Clean, minimalist hardware setups designed to complement high-end interiors, luxury staging, and branded environments.
-              </p>
-            </div>
-          </div>
-
-          {/* Equinox Visual Grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
-            className="mt-14"
-          >
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="border border-white/10 overflow-hidden">
-                <img
-                  src="/images/bmills-corporate-equinox-hudson-yards.png"
-                  alt="B.MILLS DJing Equinox Hudson Yards event in NYC"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-              <div className="border border-white/10 overflow-hidden">
-                <img
-                  src="/images/bmills-corporate-equinox-dj-booth.png"
-                  alt="Minimalist DJ booth setup for Equinox corporate event by B.MILLS"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-            </div>
-            <p className="font-body text-[11px] tracking-[0.2em] uppercase text-neutral-400 mt-4 text-left">
-              Equinox Hudson Yards Activation | New York City
-            </p>
-          </motion.div>
         </div>
       </section>
 
