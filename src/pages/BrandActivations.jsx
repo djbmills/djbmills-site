@@ -4,38 +4,28 @@ import InquiryFooter from '../components/InquiryFooter';
 import SEOHeading from '../components/SEOHeading';
 
 const brandActivationsSchema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": ["Person", "ProfessionalService"],
-      "@id": "https://djbmills.com/#identity",
-      "name": "B.MILLS",
-      "alternateName": "DJ B.MILLS",
-      "url": "https://djbmills.com",
-      "image": "https://djbmills.com/images/bmills-corporate-2.png",
-      "description": "Custom music direction and live DJ performances for luxury brand activations, product launches, fashion week events, and experiential marketing in NYC.",
-      "areaServed": [
-        { "@type": "City", "name": "New York City" },
-        { "@type": "AdministrativeArea", "name": "The Hamptons" },
-        { "@type": "AdministrativeArea", "name": "Worldwide" }
-      ],
-      "knowsAbout": [
-        "Brand Activation Music Direction",
-        "Experiential Sound Design",
-        "Fashion Week Event DJing",
-        "Product Launch Audio Curation"
-      ]
-    },
-    {
-      "@type": "Service",
-      "@id": "https://djbmills.com/brand-activations#service",
-      "name": "Brand Activation & Experiential Sound Curation",
-      "serviceType": "Event Sound Design & DJ Services",
-      "provider": { "@id": "https://djbmills.com/#identity" },
-      "areaServed": "New York City Metro Area",
-      "description": "Precision music planning and live DJ sets designed to match brand identity, guest flow, and venue layout for consumer brands and experiential agencies."
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://djbmills.com/brand-activations#service',
+  name: 'New York City Brand Activation DJ and Music Direction',
+  url: 'https://djbmills.com/brand-activations',
+  description:
+    'B.MILLS provides custom music direction, curated DJ sets, and event sound curation for luxury brand activations, experiential events, product launches, fashion events, and private brand receptions in New York City.',
+  provider: {
+    '@id': 'https://djbmills.com/#identity',
+  },
+  serviceType: 'Brand Activation DJ and Music Direction',
+  areaServed: {
+    '@type': 'City',
+    name: 'New York City',
+  },
+  knowsAbout: [
+    'Brand Activation Music Direction',
+    'Experiential Event DJ Services',
+    'Product Launch Music Curation',
+    'Fashion Event DJ Services',
+    'Luxury Brand Event Sound Curation',
+  ],
 };
 
 const selectedEvents = [
