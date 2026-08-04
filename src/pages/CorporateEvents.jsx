@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import CorporateHero from '../components/CorporateHero';
 import CorporateEventGallery from '../components/CorporateEventGallery';
 import InquiryFooter from '../components/InquiryFooter';
