@@ -324,7 +324,7 @@ export default function CorporateNJ() {
             className="mt-14"
           >
             <img
-              src="/images/corporate/luxury-brand-event-dj-nyc.png"
+              src="/images/nyc-hall-des-lumieres-grand-opening-dj-booth-bmills.jpg"
               alt="B.MILLS performative sound design setup at luxury brand launch party in downtown New York City"
               className="w-full h-auto object-cover"
             />
@@ -622,17 +622,17 @@ export default function CorporateNJ() {
           >
             <div className="grid grid-cols-3 gap-4">
               <img
-                src="/images/corporate/luxury-benefit-event-dj-bmills-nyc.jpg"
+                src="/images/corporate/new-york-city-boom-boom-room-the-standard-hotel-benefit-event-dj-bmills.jpg"
                 alt="B.MILLS mixing live audio on professional sound controller deck at corporate function"
                 className="w-full h-full object-cover aspect-[2/3]"
               />
               <img
-                src="/images/corporate/luxury-benefit-event-dj-bmills-nyc-2.jpg"
+                src="/images/corporate/new-york-city-boom-boom-room-the-standard-hotel-benefit-event-dj-bmills-2.jpg"
                 alt="B.MILLS performing at a luxury corporate benefit event inside the premium booth setup"
                 className="w-full h-full object-cover aspect-[2/3]"
               />
               <img
-                src="/images/corporate/luxury-benefit-event-dj-bmills-nyc-3.jpg"
+                src="/images/corporate/new-york-city-boom-boom-room-the-standard-hotel-benefit-event-dj-bmills-3.jpg"
                 alt="Sleek corporate benefit event DJ production setup close up layout"
                 className="w-full h-full object-cover aspect-[2/3]"
               />
