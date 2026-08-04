@@ -6,6 +6,7 @@ export default function SEOHeading({
   keywords = '',
   image = "https://djbmills.com/social/og-home.jpg",
   url = 'https://djbmills.com/',
+  schema = null,
 }) {
   useEffect(() => {
     document.title = title;
@@ -44,7 +45,30 @@ export default function SEOHeading({
       document.head.appendChild(canonical);
     }
     canonical.setAttribute('href', url);
-  }, [title, description, keywords, image, url]);
+
+    // Dynamic Schema Injection & Cleanup
+    let scriptEl = document.querySelector('script[data-seo-schema="true"]');
+    
+    if (schema) {
+      if (!scriptEl) {
+        scriptEl = document.createElement('script');
+        scriptEl.setAttribute('type', 'application/ld+json');
+        scriptEl.setAttribute('data-seo-schema', 'true');
+        document.head.appendChild(scriptEl);
+      }
+      scriptEl.textContent = JSON.stringify(schema);
+    } else if (scriptEl) {
+      scriptEl.remove();
+    }
+
+    return () => {
+      // Cleanup schema script on unmount/page change
+      const currentScript = document.querySelector('script[data-seo-schema="true"]');
+      if (currentScript) {
+        currentScript.remove();
+      }
+    };
+  }, [title, description, keywords, image, url, schema]);
 
   return null;
 }
