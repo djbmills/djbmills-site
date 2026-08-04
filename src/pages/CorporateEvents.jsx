@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import CorporateHero from '../components/CorporateHero';
 import CorporateEventGallery from '../components/CorporateEventGallery';
 import InquiryFooter from '../components/InquiryFooter';
@@ -59,7 +60,27 @@ export default function CorporateEvents() {
         }
       },
       "areaServed": ["New York City", "Manhattan", "Brooklyn", "The Hamptons", "Tri-State Area"],
-      "description": "Premium brand activation DJ and corporate event music direction for luxury brands, tech, finance, product launches, and high-profile activations in NYC."
+      "description": "Premium brand activation DJ and corporate event music direction for luxury brands, tech, finance, product launches, and high-profile activations in NYC.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Corporate DJ Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Brand Activation & Launch Events"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Corporate Galas & Private Receptions"
+            }
+          }
+        ]
+      }
     };
 
     let scriptTag = document.querySelector('script[type="application/ld+json"]');
@@ -582,7 +603,7 @@ export default function CorporateEvents() {
         </div>
       </section>
 
-    {/* Section 04: Professional Standards */}
+      {/* Section 04: Professional Standards */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-neutral-900 bg-[#050505]">
         <div className="max-w-4xl mx-auto">
           <div className="overflow-hidden">
@@ -621,15 +642,15 @@ export default function CorporateEvents() {
               <div className="border border-neutral-900 group overflow-hidden bg-neutral-950">
                 <img
                   src="/images/nyc-kering-eyewear-cocktail-reception-boom-boom-room-standard-high-line-dj-bmills-2.jpg"
-                  alt="B.MILLS DJing the Kering Eyewear cocktail reception at Boom Boom Room at The Standard High Line in New York City"
-                  className="w-full h-72 md:h-80 object-cover opacity-85 transition-transform duration-700 group-hover:scale-105"
+                  alt="Kering Eyewear cocktail reception DJ set at Boom Boom Room New York City"
+                  className="w-full h-auto object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
               <div className="border border-neutral-900 group overflow-hidden bg-neutral-950">
                 <img
-                  src="/images/nyc-kering-eyewear-cocktail-reception-boom-boom-room-standard-high-line-dj-bmills.jpg"
-                  alt="Kering Eyewear cocktail reception at Boom Boom Room at The Standard High Line with B.MILLS in New York City"
-                  className="w-full h-72 md:h-80 object-cover opacity-85 transition-transform duration-700 group-hover:scale-105"
+                  src="/images/nyc-equinox-clubs-corporate-event-dj-bmills.jpg"
+                  alt="Equinox corporate event DJ set New York City"
+                  className="w-full h-auto object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
             </div>
@@ -637,8 +658,29 @@ export default function CorporateEvents() {
         </div>
       </section>
 
-      {/* Corporate Event Gallery Component */}
+      {/* Corporate Event Gallery */}
       <CorporateEventGallery />
+
+      {/* Regional Inter-Linking Bridge Block */}
+      <section className="py-16 px-6 bg-[#000000] text-center border-t border-neutral-900">
+        <div className="max-w-2xl mx-auto">
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-neutral-500 mb-3">
+            Regional Coverage
+          </p>
+          <h3 className="font-heading text-xl text-white font-light mb-4">
+            Planning a Corporate Activation Outside NYC?
+          </h3>
+          <p className="font-body text-sm text-neutral-400 font-light mb-6">
+            B.MILLS provides corporate event DJ and music direction services across northern and central New Jersey, including Jersey City, Hoboken, and private venues state-wide.
+          </p>
+          <Link
+            href="/corporate-events-nj"
+            className="inline-block font-body text-xs tracking-[0.2em] uppercase text-white border border-neutral-700 px-6 py-3 hover:bg-white hover:text-black transition-all duration-300"
+          >
+            View New Jersey Corporate DJ Services →
+          </Link>
+        </div>
+      </section>
 
       {/* Inquiry Footer */}
       <InquiryFooter />
