@@ -1,6 +1,49 @@
 import { useState, useRef } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 import InquiryFooter from "../components/InquiryFooter";
+import SEOHeading from "../components/SEOHeading";
+
+// Schema optimized for B2B Corporate/Agency Search & VIP Afterparties
+const afterpartiesSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Person", "ProfessionalService"],
+      "@id": "https://djbmills.com/#identity",
+      "name": "B.MILLS",
+      "alternateName": "DJ B.MILLS",
+      "jobTitle": "Sonic Director & DJ",
+      "url": "https://djbmills.com",
+      "image": "https://djbmills.com/social/og-home.jpg",
+      "description": "Sonic Director and DJ offering bespoke music direction, experiential sound design, and live hybrid performances for agency activations, corporate events, and exclusive VIP afterparties.",
+      "areaServed": [
+        { "@type": "City", "name": "New York City" },
+        { "@type": "AdministrativeArea", "name": "The Hamptons" },
+        { "@type": "AdministrativeArea", "name": "Long Island" },
+        { "@type": "State", "name": "New Jersey" },
+        { "@type": "State", "name": "Connecticut" }
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Corporate Event Planners, Experiential Agencies, PR Firms, Luxury Brands"
+      },
+      "knowsAbout": [
+        "Corporate Event Sound Programming",
+        "Experiential Sound Design",
+        "Hybrid DJ & Musician Curation",
+        "Brand Activation Audio Curation",
+        "Late Night VIP Nightlife Curation"
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Late Night & Corporate Afterparty Sound Curation",
+      "serviceType": "Sonic Direction & Live Performance",
+      "provider": { "@id": "https://djbmills.com/#identity" },
+      "description": "High-energy sound programming, custom music curation, and live performance sets tailored for agency client events, luxury corporate afterparties, and landmark NYC venues."
+    }
+  ]
+};
 
 // Media Assets Array
 const AFTERPARTY_MEDIA = [
@@ -136,6 +179,14 @@ function ImageCard({ item }) {
 export default function Afterparties() {
   return (
     <div className="bg-black text-white min-h-screen pt-28">
+      <SEOHeading
+        title="Luxury Afterparty DJ & Late Night Sound Programming | NYC & Hamptons | B.MILLS"
+        description="B.MILLS delivers high-energy sound programming and elite DJ sets for exclusive afterparties at iconic NYC landmarks, luxury Hamptons estates, and private venues."
+        keywords="afterparty DJ NYC, luxury wedding afterparty DJ, late night event DJ hamptons, VIP afterparty DJ manhattan, high energy club DJ NYC, B.MILLS afterparties"
+        url="https://djbmills.com/afterparties"
+        schema={afterpartiesSchema}
+      />
+
       <section className="py-12 px-6 max-w-7xl mx-auto">
         <div className="mb-14 text-center max-w-3xl mx-auto">
           <span className="font-body text-xs tracking-[0.3em] uppercase text-neutral-400 block mb-3">
