@@ -3,46 +3,51 @@ import { Volume2, VolumeX } from "lucide-react";
 import InquiryFooter from "../components/InquiryFooter";
 import SEOHeading from "../components/SEOHeading";
 
-// Schema optimized for B2B Corporate/Agency Search & VIP Afterparties
+// Page-specific service schema for afterparty DJ, sound, and production support
 const afterpartiesSchema = {
-  "@context": "https://schema.org",
-  "@graph": [
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://djbmills.com/afterparties#service',
+  name: 'New York City Afterparty DJ and Late Night Event Production',
+  url: 'https://djbmills.com/afterparties',
+  description:
+    'B.MILLS provides high-energy DJ performance, late night music programming, sound-system planning, aesthetic DJ booth presentation, and scalable AV production coordination for exclusive afterparties, corporate celebrations, VIP events, and private late night events.',
+  provider: {
+    '@id': 'https://djbmills.com/#identity',
+  },
+  serviceType: [
+    'Afterparty DJ Services',
+    'Late Night Music Programming',
+    'Event Sound System Planning',
+    'DJ Booth and Production Coordination',
+  ],
+  areaServed: [
     {
-      "@type": ["Person", "ProfessionalService"],
-      "@id": "https://djbmills.com/#identity",
-      "name": "B.MILLS",
-      "alternateName": "DJ B.MILLS",
-      "jobTitle": "Sonic Director & DJ",
-      "url": "https://djbmills.com",
-      "image": "https://djbmills.com/social/og-home.jpg",
-      "description": "Sonic Director and DJ offering bespoke music direction, experiential sound design, and live hybrid performances for agency activations, corporate events, and exclusive VIP afterparties.",
-      "areaServed": [
-        { "@type": "City", "name": "New York City" },
-        { "@type": "AdministrativeArea", "name": "The Hamptons" },
-        { "@type": "AdministrativeArea", "name": "Long Island" },
-        { "@type": "State", "name": "New Jersey" },
-        { "@type": "State", "name": "Connecticut" }
-      ],
-      "audience": {
-        "@type": "Audience",
-        "audienceType": "Corporate Event Planners, Experiential Agencies, PR Firms, Luxury Brands"
-      },
-      "knowsAbout": [
-        "Corporate Event Sound Programming",
-        "Experiential Sound Design",
-        "Hybrid DJ & Musician Curation",
-        "Brand Activation Audio Curation",
-        "Late Night VIP Nightlife Curation"
-      ]
+      '@type': 'City',
+      name: 'New York City',
     },
     {
-      "@type": "Service",
-      "name": "Late Night & Corporate Afterparty Sound Curation",
-      "serviceType": "Sonic Direction & Live Performance",
-      "provider": { "@id": "https://djbmills.com/#identity" },
-      "description": "High-energy sound programming, custom music curation, and live performance sets tailored for agency client events, luxury corporate afterparties, and landmark NYC venues."
-    }
-  ]
+      '@type': 'AdministrativeArea',
+      name: 'The Hamptons',
+    },
+    {
+      '@type': 'AdministrativeArea',
+      name: 'Long Island',
+    },
+    {
+      '@type': 'State',
+      name: 'New Jersey',
+    },
+    {
+      '@type': 'State',
+      name: 'Connecticut',
+    },
+  ],
+  audience: {
+    '@type': 'Audience',
+    audienceType:
+      'Corporate event planners, experiential agencies, luxury brands, private clients, and event producers',
+  },
 };
 
 // Media Assets Array
@@ -220,6 +225,9 @@ export default function Afterparties() {
           </h3>
           <p className="text-neutral-400 text-sm md:text-base max-w-xl mx-auto font-body">
             Available for select private afterparties, late night celebrations, and VIP events across New York, Long Island, The Hamptons, Connecticut, and New Jersey.
+          </p>
+          <p className="text-neutral-500 text-sm md:text-base max-w-2xl mx-auto font-body leading-relaxed mt-5">
+            The setup can scale with the room, from a clean, minimal DJ booth and dedicated sound system to expanded AV production coordinated with trusted partners when the event calls for more.
           </p>
         </div>
       </section>
