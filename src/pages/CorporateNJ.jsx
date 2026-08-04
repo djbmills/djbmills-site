@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import CorporateHero from '../components/CorporateHero';
 import CorporateEventGallery from '../components/CorporateEventGallery';
 import SEOHeading from '../components/SEOHeading';
+import InquiryFooter from '../components/InquiryFooter';
 
 const selectedEvents = [
   {
@@ -626,63 +627,7 @@ export default function CorporateNJ() {
         <CorporateEventGallery />
       </div>
 
-      {/* Footer Section */}
-      <div>
-        <section className="py-20 md:py-28 px-6 bg-background border-b border-border">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-heading text-4xl md:text-5xl font-light text-foreground mb-6">
-              Define the sound.
-            </h2>
-            <p className="font-body text-base text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed">
-              High stakes events require a precise soundtrack. Share your event details and let's discuss the direction.
-            </p>
-            
-            <a
-              href="/contact"
-              className="inline-block px-8 py-4 bg-foreground text-background font-body text-xs tracking-[0.3em] uppercase hover:bg-foreground/90 transition-colors"
-            >
-              Inquire For Availability
-            </a>
-
-            <p className="font-body text-xs text-muted-foreground/70 mt-12 leading-relaxed">
-              <span className="hidden md:inline">
-                Fully COI insured and available for brand activations, corporate galas,
-                <br />
-                and private functions across NYC, Northern New Jersey, and premium tri state spaces.
-              </span>
-              <span className="md:hidden">
-                Fully COI insured and available for brand activations,
-                <br />
-                corporate galas, and private functions
-                <br />
-                across NYC, NJ, and premium tri state spaces.
-              </span>
-            </p>
-          </div>
-        </section>
-
-        {/* Discreet Sub-Footer Link Architecture */}
-        <footer className="py-8 px-6 bg-background text-muted-foreground border-t border-border/40">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-body">
-            <p className="tracking-widest text-[11px] uppercase text-muted-foreground/80">
-              © {new Date().getFullYear()} B.MILLS — NYC Sound Curation & Event Direction
-            </p>
-
-            <div className="flex items-center gap-4 text-[10px] tracking-[0.25em] uppercase text-muted-foreground/60">
-              <span>NYC</span>
-              <span>•</span>
-              <a 
-                href="/corporate-events-nj" 
-                className="hover:text-foreground transition-colors border-b border-transparent hover:border-foreground/30 pb-0.5"
-              >
-                Northern NJ
-              </a>
-              <span>•</span>
-              <span>Hamptons</span>
-            </div>
-          </div>
-        </footer>
-      </div>
+      <InquiryFooter />
     </div>
   );
 }
