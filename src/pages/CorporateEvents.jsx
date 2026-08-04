@@ -589,7 +589,21 @@ export default function CorporateEvents() {
         <CorporateEventGallery />
       </div>
 
-      <InquiryFooter />
+      <InquiryFooter
+  footerText={
+    <>
+      Serving luxury corporate events, brand activations, and private clients
+      across New York City, the Hamptons, Westchester,{' '}
+      <a
+        href="/corporate-events-nj"
+        className="border-b border-transparent hover:border-current focus-visible:border-current transition-colors duration-300"
+      >
+        New Jersey
+      </a>
+      , South Florida, and Connecticut. Available for travel worldwide.
+    </>
+  }
+/>
     </div>
   );
 }
