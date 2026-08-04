@@ -58,7 +58,10 @@ export default function BrandActivations() {
         url="https://djbmills.com/brand-activations"
         schema={brandActivationsSchema}
       />
-
+      <h1 className="sr-only">
+      New York City Brand Activation DJ and Music Direction
+      </h1>
+      
       <CorporateHero />
 
       {/* Section: Professional Brand Marquee */}
