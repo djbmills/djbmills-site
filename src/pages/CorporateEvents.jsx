@@ -636,54 +636,35 @@ export default function CorporateEvents() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-10%' }}
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
-            className="mt-16 pt-10 border-t border-neutral-900"
+            className="mt-14"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="border border-neutral-900 group overflow-hidden bg-neutral-950">
-                <img
-                  src="/images/nyc-kering-eyewear-cocktail-reception-boom-boom-room-standard-high-line-dj-bmills-2.jpg"
-                  alt="Kering Eyewear cocktail reception DJ set at Boom Boom Room New York City"
-                  className="w-full h-auto object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div className="border border-neutral-900 group overflow-hidden bg-neutral-950">
-                <img
-                  src="/images/nyc-equinox-clubs-corporate-event-dj-bmills.jpg"
-                  alt="Equinox corporate event DJ set New York City"
-                  className="w-full h-auto object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-            </div>
+            <CorporateEventGallery />
           </motion.div>
         </div>
       </section>
 
-      {/* Corporate Event Gallery */}
-      <CorporateEventGallery />
-
-      {/* Regional Inter-Linking Bridge Block */}
-      <section className="py-16 px-6 bg-[#000000] text-center border-t border-neutral-900">
-        <div className="max-w-2xl mx-auto">
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-neutral-500 mb-3">
-            Regional Coverage
+      {/* Shared Inquiry Footer Component with Location Links */}
+      <InquiryFooter
+        subtext={
+          <p className="font-body text-[11px] text-neutral-500 max-w-xl mx-auto leading-relaxed font-light">
+            Serving luxury corporate events, brand activations, and private clients across{' '}
+            <Link 
+              href="/corporate-events" 
+              className="hover:underline hover:decoration-neutral-400/60 hover:underline-offset-4 hover:text-black transition-colors"
+            >
+              New York City
+            </Link>
+            , The Hamptons, Westchester,{' '}
+            <Link 
+              href="/corporate-events-nj" 
+              className="hover:underline hover:decoration-neutral-400/60 hover:underline-offset-4 hover:text-black transition-colors"
+            >
+              New Jersey
+            </Link>
+            , South Florida, and Connecticut. Available for travel worldwide.
           </p>
-          <h3 className="font-heading text-xl text-white font-light mb-4">
-            Planning a Corporate Activation Outside NYC?
-          </h3>
-          <p className="font-body text-sm text-neutral-400 font-light mb-6">
-            B.MILLS provides corporate event DJ and music direction services across northern and central New Jersey, including Jersey City, Hoboken, and private venues state-wide.
-          </p>
-          <Link
-            href="/corporate-events-nj"
-            className="inline-block font-body text-xs tracking-[0.2em] uppercase text-white border border-neutral-700 px-6 py-3 hover:bg-white hover:text-black transition-all duration-300"
-          >
-            View New Jersey Corporate DJ Services →
-          </Link>
-        </div>
-      </section>
-
-      {/* Inquiry Footer */}
-      <InquiryFooter />
+        }
+      />
     </div>
   );
 }
