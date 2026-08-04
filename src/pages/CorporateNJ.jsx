@@ -627,7 +627,24 @@ export default function CorporateNJ() {
         <CorporateEventGallery />
       </div>
 
-      <InquiryFooter />
+      <InquiryFooter
+  headline={"Let's shape\nthe night."}
+  body="Share the room, the audience, and the intention. We’ll shape the sound around the energy of the night."
+  footerText={
+    <>
+      Serving luxury corporate events, brand activations, and private clients
+      across{' '}
+      <a
+        href="/corporate-events"
+        className="border-b border-transparent hover:border-current focus-visible:border-current transition-colors duration-300"
+      >
+        New York City
+      </a>
+      , the Hamptons, Westchester, New Jersey, South Florida, and Connecticut.
+      Available for travel worldwide.
+    </>
+  }
+/>
     </div>
   );
 }
