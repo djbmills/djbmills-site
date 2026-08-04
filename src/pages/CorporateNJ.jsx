@@ -224,7 +224,7 @@ export default function CorporateNJ() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 <div className="group relative overflow-hidden bg-black/5 aspect-[4/5]">
                   <img
-                    src="/images/bmills-corporate-2.png"
+                    src="/images/corporate/goldman-robinhood/new-york-city-pac-nyc-goldman-sachs-robinhood-corporate-event-dj-bmills.jpg"
                     alt="B.MILLS performing at regional event"
                     className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
@@ -233,7 +233,7 @@ export default function CorporateNJ() {
 
                 <div className="group relative overflow-hidden bg-black/5 aspect-[4/5]">
                   <img
-                    src="/images/corporate/goldman-robinhood/bmills-dj-booth-robinhood-goldman.png"
+                    src="/images/corporate/goldman-robinhood/new-york-city-pac-nyc-goldman-sachs-robinhood-dj-booth-dj-bmills.jpg"
                     alt="B.MILLS audio setup"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -242,7 +242,7 @@ export default function CorporateNJ() {
 
                 <div className="group relative overflow-hidden bg-black/5 aspect-[4/5]">
                   <img
-                    src="/images/corporate/goldman-robinhood/metropolis-event-interior.png"
+                    src="/images/corporate/goldman-robinhood/new-york-city-pac-nyc-metropolis-corporate-event-interior-dj-bmills.jpg"
                     alt="Venue architecture and interior layout"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -251,7 +251,7 @@ export default function CorporateNJ() {
 
                 <div className="group relative overflow-hidden bg-black/5 aspect-[4/5]">
                   <img
-                    src="/images/corporate/goldman-robinhood/goldman-robinhood-signage.png"
+                    src="/images/corporate/goldman-robinhood/new-york-city-pac-nyc-goldman-sachs-robinhood-event-signage-dj-bmills.jpg"
                     alt="Event branding setup"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
