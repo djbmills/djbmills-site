@@ -1,9 +1,46 @@
 import { motion } from 'framer-motion';
-import { useEffect } from 'react';
 import CorporateHero from '../components/CorporateHero';
 import CorporateEventGallery from '../components/CorporateEventGallery';
 import SEOHeading from '../components/SEOHeading';
 import InquiryFooter from '../components/InquiryFooter';
+
+const corporateNJSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://djbmills.com/corporate-events-nj#service',
+  name: 'Corporate Event DJ and Music Direction in New Jersey',
+  url: 'https://djbmills.com/corporate-events-nj',
+  description:
+    'B.MILLS provides corporate event DJ services, music direction, curated sound, sound-system planning, aesthetic DJ booth presentation, and scalable AV production coordination for brand activations, galas, product launches, networking events, and private events across Northern New Jersey and Bergen County.',
+  provider: {
+    '@id': 'https://djbmills.com/#identity',
+  },
+  serviceType: [
+    'Corporate Event DJ Services',
+    'Brand Activation Music Direction',
+    'Event Sound System Planning',
+    'DJ Booth and Production Coordination',
+  ],
+  areaServed: [
+    {
+      '@type': 'State',
+      name: 'New Jersey',
+    },
+    {
+      '@type': 'AdministrativeArea',
+      name: 'Bergen County',
+    },
+    {
+      '@type': 'AdministrativeArea',
+      name: 'Northern New Jersey',
+    },
+  ],
+  audience: {
+    '@type': 'Audience',
+    audienceType:
+      'Corporate event planners, experiential agencies, luxury brands, private clients, venues, and event producers',
+  },
+};
 
 const selectedEvents = [
   {
@@ -31,65 +68,6 @@ const brandLogos = [
 ];
 
 export default function CorporateNJ() {
-  useEffect(() => {
-    // 1. Canonical Link Tag Setup
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (!canonicalLink) {
-      canonicalLink = document.createElement('link');
-      canonicalLink.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonicalLink);
-    }
-    canonicalLink.setAttribute('href', 'https://djbmills.com/corporate-events-nj');
-
-    // 2. Structured Data (JSON-LD) Injection
-    const schemaId = 'corporate-nj-jsonld';
-    let scriptTag = document.getElementById(schemaId);
-    if (!scriptTag) {
-      scriptTag = document.createElement('script');
-      scriptTag.id = schemaId;
-      scriptTag.type = 'application/ld+json';
-      
-      const structuredData = {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "B.MILLS | NYC Sound Curation & Event DJ",
-        "url": "https://djbmills.com/corporate-events-nj",
-        "description": "NYC corporate event DJ and music director serving Northern New Jersey, Bergen County, and the Tri-State area for luxury brand events, galas, product launches, and private events.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "New York",
-          "addressRegion": "NY"
-        },
-        "areaServed": [
-          { "@type": "City", "name": "New York City" },
-          { "@type": "State", "name": "New Jersey" },
-          { "@type": "AdministrativeArea", "name": "Bergen County" },
-          { "@type": "DefinedRegion", "name": "Tri-State Area" }
-        ],
-        "knowsAbout": [
-          "Corporate Event Entertainment",
-          "Brand Activations",
-          "Sound Curation",
-          "Private Parties",
-          "Gala Sound Design"
-        ]
-      };
-
-      scriptTag.textContent = JSON.stringify(structuredData);
-      document.head.appendChild(scriptTag);
-    }
-
-    // Safe Cleanup on unmount
-    return () => {
-      if (canonicalLink && document.head.contains(canonicalLink)) {
-        document.head.removeChild(canonicalLink);
-      }
-      const existingScript = document.getElementById(schemaId);
-      if (existingScript && document.head.contains(existingScript)) {
-        document.head.removeChild(existingScript);
-      }
-    };
-  }, []);
 
   return (
     <div className="min-h-screen bg-background flex flex-col justify-between">
@@ -98,6 +76,8 @@ export default function CorporateNJ() {
           title="NYC Corporate Event DJ Serving New Jersey | B.MILLS"
           description="B.MILLS is an NYC corporate event DJ and music director serving Northern New Jersey, Bergen County, and the Tri-State area for luxury brand events, galas, product launches, networking events, and private rooms."
           keywords="NYC corporate event DJ serving New Jersey, corporate DJ NJ, luxury event DJ Bergen County, Northern New Jersey corporate DJ, New York City DJ for New Jersey events, brand activation DJ NJ, product launch DJ New Jersey, corporate gala DJ Bergen County, B.MILLS DJ"
+          url="https://djbmills.com/corporate-events-nj"
+          schema={corporateNJSchema}
         />
 
         <h1 className="sr-only">
@@ -628,23 +608,23 @@ export default function CorporateNJ() {
       </div>
 
       <InquiryFooter
-  headline={"Let's shape\nthe night."}
-  body="Share the room, the audience, and the intention. We’ll shape the sound around the energy of the night."
-  footerText={
-    <>
-      Serving luxury corporate events, brand activations, and private clients
-      across{' '}
-      <a
-        href="/corporate-events"
-        className="border-b border-transparent hover:border-current focus-visible:border-current transition-colors duration-300"
-      >
-        New York City
-      </a>
-      , the Hamptons, Westchester, New Jersey, South Florida, and Connecticut.
-      Available for travel worldwide.
-    </>
-  }
-/>
+        headline={"Let's shape\nthe night."}
+        body="Share the room, the audience, and the intention. We’ll shape the sound around the energy of the night."
+        footerText={
+          <>
+            Serving luxury corporate events, brand activations, and private clients
+            across{' '}
+            <a
+              href="/corporate-events"
+              className="border-b border-transparent hover:border-current focus-visible:border-current transition-colors duration-300"
+            >
+              New York City
+            </a>
+            , the Hamptons, Westchester, New Jersey, South Florida, and Connecticut.
+            Available for travel worldwide.
+          </>
+        }
+      />
     </div>
   );
 }
