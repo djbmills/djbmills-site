@@ -4,6 +4,37 @@ import CorporateHero from '../components/CorporateHero';
 import InquiryFooter from '../components/InquiryFooter';
 import SEOHeading from '../components/SEOHeading';
 
+const brandActivationsSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["PerformingGroup", "EntertainmentBusiness"],
+      "@id": "https://djbmills.com/brand-activations#identity",
+      "name": "B.MILLS - Brand Activation DJ & Sonic Director",
+      "url": "https://djbmills.com/brand-activations",
+      "description": "Custom music direction and live DJ performances for luxury brand activations, product launches, fashion week events, and experiential marketing in NYC.",
+      "areaServed": [
+        { "@type": "City", "name": "New York City" },
+        { "@type": "AdministrativeArea", "name": "The Hamptons" },
+        { "@type": "AdministrativeArea", "name": "Worldwide" }
+      ],
+      "knowsAbout": [
+        "Brand Activation Music Direction",
+        "Experiential Sound Design",
+        "Fashion Week Event DJing",
+        "Product Launch Audio Curation"
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Brand Activation & Experiential Sound Curation",
+      "serviceType": "Event Sound Design & DJ",
+      "provider": { "@id": "https://djbmills.com/brand-activations#identity" },
+      "description": "Precision music planning and live DJ sets designed to match brand identity, guest flow, and venue layout for consumer brands and experiential agencies."
+    }
+  ]
+};
+
 const selectedEvents = [
   {
     title: "Sammontana Gelati All’Italiana U.S. Launch",
@@ -49,6 +80,7 @@ export default function BrandActivations() {
         description="B.MILLS creates precise music direction and curated DJ sets for luxury brand activations, experiential product launches, runway collections, and private PR receptions in New York and beyond."
         keywords="luxury brand event DJ NYC, brand activation DJ NYC, fashion week afterparty DJ, product launch music curation manhattan, experiential marketing sound design nyc, luxury event music director, B.MILLS brand events"
         url="https://djbmills.com/brand-activations"
+        schema={brandActivationsSchema}
       />
 
       <CorporateHero />
