@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import CorporateHero from '../components/CorporateHero';
 import InquiryFooter from '../components/InquiryFooter';
@@ -8,10 +7,12 @@ const brandActivationsSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["PerformingGroup", "EntertainmentBusiness"],
-      "@id": "https://djbmills.com/brand-activations#identity",
-      "name": "B.MILLS - Brand Activation DJ & Sonic Director",
-      "url": "https://djbmills.com/brand-activations",
+      "@type": ["Person", "ProfessionalService"],
+      "@id": "https://djbmills.com/#identity",
+      "name": "B.MILLS",
+      "alternateName": "DJ B.MILLS",
+      "url": "https://djbmills.com",
+      "image": "https://djbmills.com/images/bmills-corporate-2.png",
       "description": "Custom music direction and live DJ performances for luxury brand activations, product launches, fashion week events, and experiential marketing in NYC.",
       "areaServed": [
         { "@type": "City", "name": "New York City" },
@@ -27,9 +28,11 @@ const brandActivationsSchema = {
     },
     {
       "@type": "Service",
+      "@id": "https://djbmills.com/brand-activations#service",
       "name": "Brand Activation & Experiential Sound Curation",
-      "serviceType": "Event Sound Design & DJ",
-      "provider": { "@id": "https://djbmills.com/brand-activations#identity" },
+      "serviceType": "Event Sound Design & DJ Services",
+      "provider": { "@id": "https://djbmills.com/#identity" },
+      "areaServed": "New York City Metro Area",
       "description": "Precision music planning and live DJ sets designed to match brand identity, guest flow, and venue layout for consumer brands and experiential agencies."
     }
   ]
@@ -56,23 +59,6 @@ const brandLogos = [
 ];
 
 export default function BrandActivations() {
-  
-  useEffect(() => {
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (!canonicalLink) {
-      canonicalLink = document.createElement('link');
-      canonicalLink.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonicalLink);
-    }
-    canonicalLink.setAttribute('href', 'https://djbmills.com/brand-activations');
-
-    return () => {
-      if (canonicalLink && canonicalLink.parentNode) {
-        canonicalLink.parentNode.removeChild(canonicalLink);
-      }
-    };
-  }, []);
-
   return (
     <div className="min-h-screen bg-[#000000] text-[#f5f5f7] selection:bg-neutral-800 selection:text-white">
       <SEOHeading
@@ -229,6 +215,7 @@ export default function BrandActivations() {
                     src="/images/bmills-corporate-2.png"
                     alt="B.MILLS performing at Goldman Sachs Robinhood event New York City Corporate Sound Design"
                     className="w-full h-full object-cover object-center opacity-80 transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
                   />
                 </div>
                 <div className="group relative overflow-hidden bg-neutral-950 aspect-[4/5] border border-neutral-900">
@@ -236,6 +223,7 @@ export default function BrandActivations() {
                     src="/images/corporate/goldman-robinhood/bmills-dj-booth-robinhood-goldman.png"
                     alt="B.MILLS DJ setup at Goldman Sachs Robinhood event in New York City"
                     className="w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
                   />
                 </div>
                 <div className="group relative overflow-hidden bg-neutral-950 aspect-[4/5] border border-neutral-900">
@@ -243,6 +231,7 @@ export default function BrandActivations() {
                     src="/images/corporate/goldman-robinhood/metropolis-event-interior.png"
                     alt="Metropolis by Marcus Samuelsson event interior for Goldman Sachs Robinhood event"
                     className="w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
                   />
                 </div>
                 <div className="group relative overflow-hidden bg-neutral-950 aspect-[4/5] border border-neutral-900">
@@ -250,6 +239,7 @@ export default function BrandActivations() {
                     src="/images/corporate/goldman-robinhood/goldman-robinhood-signage.png"
                     alt="Goldman Sachs and Robinhood event signage in New York City"
                     className="w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -319,6 +309,7 @@ export default function BrandActivations() {
                 src="/images/bmills-corporate-3.png"
                 alt="B.MILLS managing audio for Hall des Lumieres Grand Opening NYC Brand Event"
                 className="w-full h-auto object-cover opacity-85"
+                loading="lazy"
               />
             </div>
             <p className="font-body text-[11px] tracking-[0.2em] uppercase text-neutral-500 mt-4 text-left">
@@ -390,6 +381,7 @@ export default function BrandActivations() {
                     src="/images/corporate/1800-tequila/1800-tequila-pioneer-works-crowd.png"
                     alt="1800 Tequila x Essential Artists event at Pioneer Works in Red Hook Brooklyn"
                     className="w-full h-auto object-cover opacity-85"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -419,6 +411,7 @@ export default function BrandActivations() {
                   src="/images/corporate/1800-tequila/bmills-1800-tequila-dj-pioneer-works.png"
                   alt="B.MILLS DJing the 1800 Tequila Essential Artists reception at Pioneer Works"
                   className="w-full h-full object-cover aspect-[2/3] opacity-85"
+                  loading="lazy"
                 />
               </div>
               <div className="border border-neutral-900">
@@ -426,6 +419,7 @@ export default function BrandActivations() {
                   src="/images/corporate/1800-tequila/1800-tequila-essential-artists-bottles.png"
                   alt="1800 Tequila Essential Artists limited edition bottles by Dustin Yellin"
                   className="w-full h-full object-cover aspect-[2/3] opacity-85"
+                  loading="lazy"
                 />
               </div>
               <div className="border border-neutral-900">
@@ -433,6 +427,7 @@ export default function BrandActivations() {
                   src="/images/corporate/1800-tequila/dustin-yellin-pioneer-works-sculpture.png"
                   alt="Dustin Yellin artwork displayed at Pioneer Works for the 1800 Tequila event"
                   className="w-full h-full object-cover aspect-[2/3] opacity-85"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -468,6 +463,7 @@ export default function BrandActivations() {
                     src="/images/corporate/citi/dj-bmills-citi-summer-in-the-square-union-square-nyc-corporate-event-dj-01.jpg"
                     alt="B.MILLS performing live at the Citi Summer in the Square brand activation turntable setup"
                     className="w-full h-auto object-cover opacity-85"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -479,6 +475,7 @@ export default function BrandActivations() {
                   src="/images/corporate/citi/dj-bmills-citi-summer-in-the-square-union-square-nyc-brand-event-performance-03.jpg"
                   alt="B.MILLS performing live facing side profile angle stage layout"
                   className="w-full h-full object-cover aspect-[4/3] opacity-85"
+                  loading="lazy"
                 />
               </div>
               <div className="border border-neutral-900">
@@ -486,6 +483,7 @@ export default function BrandActivations() {
                   src="/images/corporate/citi/dj-bmills-citi-summer-in-the-square-union-square-nyc-live-crowd-activation-02.jpg"
                   alt="Citi Summer in the Square public activation crowds Union Square Park"
                   className="w-full h-full object-cover aspect-[4/3] opacity-85"
+                  loading="lazy"
                 />
               </div>
               <div className="border border-neutral-900">
@@ -493,6 +491,7 @@ export default function BrandActivations() {
                   src="/images/corporate/citi/dj-bmills-citi-summer-in-the-square-nyc-public-brand-activation-05.jpg"
                   alt="Public engagement perspective behind back landscape view into the crowd during Citi activation"
                   className="w-full h-full object-cover aspect-[4/3] opacity-85"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -608,6 +607,7 @@ export default function BrandActivations() {
                   src="/images/bmills-corporate-4.jpg"
                   alt="B.MILLS Luxury Corporate Event DJ NYC Boom Boom Room"
                   className="w-full h-full object-cover opacity-85"
+                  loading="lazy"
                 />
               </div>
               <div className="border border-neutral-900">
@@ -615,6 +615,7 @@ export default function BrandActivations() {
                   src="/images/bmills-corporate-5.jpg"
                   alt="B.MILLS Curated Music Direction for High End Galas"
                   className="w-full h-full object-cover opacity-85"
+                  loading="lazy"
                 />
               </div>
             </div>
