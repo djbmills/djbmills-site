@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { useEffect } from 'react';
 import CorporateHero from '../components/CorporateHero';
 import CorporateEventGallery from '../components/CorporateEventGallery';
 import SEOHeading from '../components/SEOHeading';
+import InquiryFooter from '../components/InquiryFooter';
 
 const selectedEvents = [
   {
@@ -29,76 +29,37 @@ const brandLogos = [
   'mlb', 'fanatics', 'tumi', 'citi', 'google'
 ];
 
-export default function CorporateNJ() {
-  useEffect(() => {
-    // 1. Canonical Link Tag Setup
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (!canonicalLink) {
-      canonicalLink = document.createElement('link');
-      canonicalLink.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonicalLink);
-    }
-    canonicalLink.setAttribute('href', 'https://djbmills.com/corporate-events-nj');
+const corporateEventsSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://djbmills.com/corporate-events#service',
+  name: 'New York City Corporate Event DJ and Music Direction',
+  url: 'https://djbmills.com/corporate-events',
+  description:
+    'B.MILLS provides corporate event DJ services, music direction, and tailored sound curation for brand events, galas, product launches, networking events, and private client spaces in New York City.',
+  provider: {
+    '@id': 'https://djbmills.com/#identity',
+  },
+  serviceType: 'Corporate Event DJ and Music Direction',
+  areaServed: {
+    '@type': 'City',
+    name: 'New York City',
+  },
+};
 
-    // 2. Structured Data (JSON-LD) Injection
-    const schemaId = 'corporate-nj-jsonld';
-    let scriptTag = document.getElementById(schemaId);
-    if (!scriptTag) {
-      scriptTag = document.createElement('script');
-      scriptTag.id = schemaId;
-      scriptTag.type = 'application/ld+json';
-      
-      const structuredData = {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "B.MILLS | NYC Sound Curation & Event DJ",
-        "url": "https://djbmills.com/corporate-events-nj",
-        "description": "NYC corporate event DJ and music director serving Northern New Jersey, Bergen County, and the Tri-State area for luxury brand events, galas, product launches, and private events.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "New York",
-          "addressRegion": "NY"
-        },
-        "areaServed": [
-          { "@type": "City", "name": "New York City" },
-          { "@type": "State", "name": "New Jersey" },
-          { "@type": "AdministrativeArea", "name": "Bergen County" },
-          { "@type": "DefinedRegion", "name": "Tri-State Area" }
-        ],
-        "knowsAbout": [
-          "Corporate Event Entertainment",
-          "Brand Activations",
-          "Sound Curation",
-          "Private Parties",
-          "Gala Sound Design"
-        ]
-      };
-
-      scriptTag.textContent = JSON.stringify(structuredData);
-      document.head.appendChild(scriptTag);
-    }
-
-    return () => {
-      if (canonicalLink && document.head.contains(canonicalLink)) {
-        document.head.removeChild(canonicalLink);
-      }
-      const existingScript = document.getElementById(schemaId);
-      if (existingScript && document.head.contains(existingScript)) {
-        document.head.removeChild(existingScript);
-      }
-    };
-  }, []);
-
+export default function CorporateEvents() {
   return (
     <div className="w-full min-h-screen bg-background overflow-x-hidden">
       <SEOHeading
-        title="NYC Corporate Event DJ Serving New Jersey | B.MILLS"
-        description="B.MILLS is an NYC corporate event DJ and music director serving Northern New Jersey, Bergen County, and the Tri-State area for luxury brand events, galas, product launches, networking events, and private rooms."
-        keywords="NYC corporate event DJ serving New Jersey, corporate DJ NJ, luxury event DJ Bergen County, Northern New Jersey corporate DJ, New York City DJ for New Jersey events, brand activation DJ NJ, product launch DJ New Jersey, corporate gala DJ Bergen County, B.MILLS DJ"
+        title="New York City Corporate Event DJ & Music Direction | B.MILLS"
+        description="B.MILLS provides tailored DJ sets, music direction, and sound curation for corporate events, galas, product launches, networking events, and private client spaces in New York City."
+        keywords="New York City corporate event DJ, NYC corporate DJ, corporate event music direction NYC, corporate gala DJ New York, product launch DJ NYC, networking event DJ NYC, corporate party DJ Manhattan, luxury corporate event DJ NYC, B.MILLS DJ"
+        url="https://djbmills.com/corporate-events"
+        schema={corporateEventsSchema}
       />
 
       <h1 className="sr-only">
-        NYC Corporate Event &amp; Brand Activation DJ Serving New Jersey, Bergen County, and the Tri-State Area
+        New York City Corporate Event DJ and Music Direction
       </h1>
 
       {/* Hero */}
@@ -357,7 +318,7 @@ export default function CorporateNJ() {
             transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
             className="font-body text-base text-muted-foreground leading-relaxed max-w-3xl"
           >
-            B.MILLS is booked by brands, planners, and hosts who look for intentional music curation. The following portfolio projects showcase custom event production across Northern New Jersey, Bergen County, and the Tri State area.
+            B.MILLS is booked by brands, planners, and hosts who look for intentional music curation. The following portfolio projects showcase custom event production across New York City and premier destination spaces.
           </motion.p>
 
           {/* Gagosian Case Study */}
@@ -590,7 +551,7 @@ export default function CorporateNJ() {
             transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
             className="font-body text-base text-white/50 leading-relaxed max-w-2xl"
           >
-            Flawless execution stretches far past the music itself. B.MILLS maintains a clean operational framework, fully covered with the comprehensive multi million dollar commercial liability insurance (COI) required by premier venues, country clubs, and private spaces across New York, New Jersey, and the Tri State area.
+            Flawless execution stretches far past the music itself. B.MILLS maintains a clean operational framework, fully covered with the comprehensive multi million dollar commercial liability insurance (COI) required by premier venues, cultural institutions, and private spaces across New York City and beyond.
           </motion.p>
 
           {/* TWO PHOTO GRID */}
@@ -628,79 +589,7 @@ export default function CorporateNJ() {
         <CorporateEventGallery />
       </div>
 
-      {/* Call to Action Section */}
-      <section className="w-full py-20 md:py-28 px-6 bg-background border-b border-border">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-heading text-4xl md:text-5xl font-light text-foreground mb-6">
-            Define the sound.
-          </h2>
-          <p className="font-body text-base text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed">
-            High stakes events require a precise soundtrack. Share your event details and let's discuss the direction.
-          </p>
-          
-          <a
-            href="/contact"
-            className="inline-block px-8 py-4 bg-foreground text-background font-body text-xs tracking-[0.3em] uppercase hover:bg-foreground/90 transition-colors"
-          >
-            Get In Touch
-          </a>
-        </div>
-      </section>
-
-      {/* FULL SITE FOOTER WITH NAVIGATION LINKS */}
-      <footer className="w-full bg-background border-t border-border py-16 px-6 md:px-12">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
-          <div className="space-y-4">
-            <a href="/" className="font-heading text-xl tracking-widest text-foreground uppercase block">
-              B.MILLS
-            </a>
-            <p className="font-body text-xs text-muted-foreground leading-relaxed">
-              NYC Sound Curation & Event DJ serving New York, Northern New Jersey, Bergen County, and globally.
-            </p>
-          </div>
-
-          <div>
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-foreground mb-4">Navigation</p>
-            <ul className="space-y-2 font-body text-xs text-muted-foreground">
-              <li><a href="/about" className="hover:text-foreground transition-colors">About</a></li>
-              <li><a href="/listen" className="hover:text-foreground transition-colors">Listen</a></li>
-              <li><a href="/clients" className="hover:text-foreground transition-colors">Clients</a></li>
-              <li><a href="/events" className="hover:text-foreground transition-colors">Events</a></li>
-              <li><a href="/afterparties" className="hover:text-foreground transition-colors">Afterparties</a></li>
-              <li><a href="/feedback" className="hover:text-foreground transition-colors">Feedback</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-foreground mb-4">Specialties</p>
-            <ul className="space-y-2 font-body text-xs text-muted-foreground">
-              <li><a href="/corporate-events" className="hover:text-foreground transition-colors">Corporate Events</a></li>
-              <li><a href="/corporate-events-nj" className="hover:text-foreground transition-colors">New Jersey Corporate</a></li>
-              <li><a href="/brand-activations" className="hover:text-foreground transition-colors">Brand Activations</a></li>
-              <li><a href="/weddings" className="hover:text-foreground transition-colors">Private Events & Weddings</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-foreground mb-4">Connect</p>
-            <ul className="space-y-2 font-body text-xs text-muted-foreground">
-              <li><a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors">Instagram</a></li>
-              <li><a href="https://tiktok.com" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors">TikTok</a></li>
-              <li><a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors">LinkedIn</a></li>
-              <li><a href="/contact" className="hover:text-foreground transition-colors">Contact / Bookings</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="max-w-6xl mx-auto mt-12 pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="font-body text-[10px] text-muted-foreground uppercase tracking-widest">
-            &copy; {new Date().getFullYear()} B.MILLS Sound &amp; Music Direction. All Rights Reserved.
-          </p>
-          <a href="/contact" className="font-body text-[10px] text-muted-foreground hover:text-foreground uppercase tracking-widest">
-            SECURE YOUR DATE &rarr;
-          </a>
-        </div>
-      </footer>
+      <InquiryFooter />
     </div>
   );
 }
