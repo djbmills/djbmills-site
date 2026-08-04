@@ -233,16 +233,34 @@ export default function Afterparties() {
       </section>
 
       {/* Full Bleed Inquiry Footer Component */}
-      <InquiryFooter />
-
-      {/* SEO Footer */}
-      <footer 
-        className="py-8 bg-background border-t border-border text-center text-xs text-muted-foreground space-y-1 font-body"
-        aria-label="Luxury high-energy afterparty DJ services in NYC, Long Island, Hamptons, CT, and NJ"
-      >
-        <p>DJ B.MILLS • Premier Late Night & Afterparty Sound Programming</p>
-        <p>Guastavino's • The Plaza Hotel • Fresh Meadows CC • Concourse Club • Glen Oaks Club • Oceanbleu Westhampton</p>
-      </footer>
+      <InquiryFooter
+        footerText={
+          <>
+            Serving luxury corporate events,{' '}
+            <a
+              href="/brand-activations"
+              className="border-b border-transparent hover:border-current focus-visible:border-current transition-colors duration-300"
+            >
+              brand activations
+            </a>
+            , and private clients across{' '}
+            <a
+              href="/corporate-events"
+              className="border-b border-transparent hover:border-current focus-visible:border-current transition-colors duration-300"
+            >
+              New York City
+            </a>
+            , the Hamptons, Westchester,{' '}
+            <a
+              href="/corporate-events-nj"
+              className="border-b border-transparent hover:border-current focus-visible:border-current transition-colors duration-300"
+            >
+              New Jersey
+            </a>
+            , South Florida, and Connecticut. Available for travel worldwide.
+          </>
+        }
+      />
     </div>
   );
 }
