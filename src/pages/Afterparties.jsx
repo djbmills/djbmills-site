@@ -81,8 +81,8 @@ const AFTERPARTY_MEDIA = [
   },
   {
     id: "glen-oaks",
-    type: "image",
-    src: "/images/long-island-afterparty-dj-glen-oaks-club-bmills.jpg",
+    type: "video",
+    src: "/videos/long-island-afterparty-dj-glen-oaks-club-bmills.mp4",
     location: "Glen Oaks Club • Long Island",
     title: "The Finale Singalong",
     description: "During the last song of the night, everyone organically locked arms in a huge circle while the couple danced together in the center.",
@@ -99,8 +99,8 @@ const AFTERPARTY_MEDIA = [
   },
   {
     id: "oceanbleu",
-    type: "image",
-    src: "/images/hamptons-afterparty-dj-oceanbleu-westhampton-bmills.jpg",
+    type: "video",
+    src: "/videos/hamptons-afterparty-dj-oceanbleu-westhampton-bmills.mp4",
     location: "Oceanbleu • Westhampton, NY",
     title: "Hamptons Oceanfront Peak Vibe",
     description: "Unfiltered, nightlife atmosphere bringing full club level energy right to the beach.",
