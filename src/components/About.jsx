@@ -2,11 +2,17 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-const ABOUT_IMG = "/images/bmills-about-hero.png";
+const ABOUT_WEBP = '/images/nyc-event-dj-bmills-about.webp';
+const ABOUT_FALLBACK = '/images/bmills-about-hero.png';
 
 export default function About() {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  });
+
   const y = useTransform(scrollYProgress, [0, 1], ['-3%', '3%']);
 
   return (
@@ -15,7 +21,10 @@ export default function About() {
       ref={ref}
       className="py-20 md:py-28 px-6 md:px-12 relative overflow-hidden"
     >
-      <motion.div style={{ y }} className="max-w-6xl mx-auto relative">
+      <motion.div
+        style={{ y }}
+        className="max-w-6xl mx-auto relative"
+      >
         <div className="flex items-center gap-4 mb-14 md:mb-16 overflow-hidden">
           <motion.span
             initial={{ opacity: 0, x: -10 }}
@@ -55,11 +64,22 @@ export default function About() {
             className="relative group md:col-span-5"
           >
             <div className="relative overflow-hidden bg-black/5 aspect-[4/5] md:aspect-[5/6]">
-              <img
-                src={ABOUT_IMG}
-                alt="Professional DJ portrait in luxury setting"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+              <picture className="block w-full h-full">
+                <source
+                  srcSet={ABOUT_WEBP}
+                  type="image/webp"
+                />
+
+                <img
+                  src={ABOUT_FALLBACK}
+                  alt="B.MILLS performing at a branded event in New York City"
+                  width="1024"
+                  height="1536"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </picture>
 
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
 
@@ -96,29 +116,34 @@ export default function About() {
 
             <div className="max-w-xl space-y-5">
               <p className="font-body text-[0.98rem] md:text-[1.05rem] text-muted-foreground leading-[1.75] font-light">
-                Based in New York City, B.Mills curates music for luxury brands, cultural institutions, and private hosts who understand that what you hear shapes how a night feels.
+                Based in New York City, B.Mills curates music for luxury brands,
+                cultural institutions, and private hosts who understand that
+                what you hear shapes how a night feels.
               </p>
 
               <p className="font-body text-[0.98rem] md:text-[1.05rem] text-muted-foreground leading-[1.75] font-light">
-                His foundation is built on the kind of records that don't age. Rhythm, tone, and selection come first, layered with house, soul, and modern sounds that move naturally with the room.
+                His foundation is built on the kind of records that don&apos;t
+                age. Rhythm, tone, and selection come first, layered with house,
+                soul, and modern sounds that move naturally with the room.
               </p>
 
               <p className="font-body text-[0.98rem] md:text-[1.05rem] text-muted-foreground leading-[1.75] font-light">
-                From{" "}
-                <Link 
-                  to="/corporate-events" 
-                  className="text-foreground underline underline-offset-4 decoration-foreground/30 hover:decoration-foreground transition-colors"
+                From{' '}
+                <Link
+                  to="/corporate-events"
+                  className="text-foreground border-b border-transparent hover:border-current focus-visible:border-current transition-colors duration-300"
                 >
                   cocktail hours
-                </Link>{" "}
-                to{" "}
-                <Link 
-                  to="/afterparties" 
-                  className="text-foreground underline underline-offset-4 decoration-foreground/30 hover:decoration-foreground transition-colors"
+                </Link>{' '}
+                to{' '}
+                <Link
+                  to="/afterparties"
+                  className="text-foreground border-b border-transparent hover:border-current focus-visible:border-current transition-colors duration-300"
                 >
                   after hours
                 </Link>
-                , the approach stays consistent. Feel it. Adjust in real time. Let the energy build where it should.
+                , the approach stays consistent. Feel it. Adjust in real time.
+                Let the energy build where it should.
               </p>
 
               <p className="font-heading text-[1.05rem] md:text-[1.2rem] font-light italic text-foreground/60 mt-8 md:mt-10">
