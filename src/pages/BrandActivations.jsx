@@ -460,8 +460,8 @@ export default function BrandActivations() {
               <div>
                 <div className="border border-neutral-900">
                   <img
-                    src="/images/nyc-union-square-citibank-dj-battle-rush-hour-bmills.jpg"
-                    alt="B.MILLS performing during the Citi Summer in the Square DJ battle in Union Square during New York City rush hour"
+                    src="/images/corporate/citi/dj-bmills-citi-summer-in-the-square-union-square-nyc-corporate-event-dj-01.jpg"
+                    alt="B.MILLS performing live at the Citi Summer in the Square brand activation turntable setup"
                     className="w-full h-auto object-cover opacity-85"
                     loading="lazy"
                   />
@@ -488,8 +488,8 @@ export default function BrandActivations() {
               </div>
               <div className="border border-neutral-900">
                 <img
-                  src="/images/corporate/citi/dj-bmills-citi-summer-in-the-square-nyc-public-brand-activation-05.jpg"
-                  alt="Public engagement perspective behind back landscape view into the crowd during Citi activation"
+                  src="/images/nyc-union-square-citibank-dj-battle-rush-hour-bmills.jpg"
+                  alt="B.MILLS performing during the Citi Summer in the Square DJ battle in Union Square during New York City rush hour"
                   className="w-full h-full object-cover aspect-[4/3] opacity-85"
                   loading="lazy"
                 />
