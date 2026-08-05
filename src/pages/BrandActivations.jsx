@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import CorporateHero from '../components/CorporateHero';
+import BrandActivationHero from '../components/BrandActivationHero';
 import InquiryFooter from '../components/InquiryFooter';
 import SEOHeading from '../components/SEOHeading';
 
@@ -62,14 +62,7 @@ export default function BrandActivations() {
       New York City Brand Activation DJ and Music Direction
       </h1>
       
-      <CorporateHero
-  desktopImage="/images/nyc-brand-activation-dj-citi-union-square.webp"
-  mobileImage="/images/nyc-brand-activation-dj-citi-union-square-mobile.webp"
-  imageAlt="B.MILLS performing for the Citi Summer in the Square brand activation in Union Square, New York City"
-  caption="Citi Summer in the Square | Union Square, NYC"
-  roleLabel="Brand Activation Music Director"
-  description="Music direction and curated DJ sets for experiential campaigns, product launches, branded environments, and cultural events across New York City and beyond."
-/>
+      <BrandActivationHero />
 
       {/* Section: Professional Brand Marquee */}
       <section className="relative pt-20 pb-16 border-b border-neutral-900 bg-[#000000] overflow-hidden">
