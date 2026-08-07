@@ -52,7 +52,7 @@ export default function BrandActivations() {
   return (
     <div className="min-h-screen bg-[#000000] text-[#f5f5f7] selection:bg-neutral-800 selection:text-white">
       <SEOHeading
-        title="Luxury Brand Activation DJ & Sonic Director | NYC | B.MILLS"
+        title="Brand Activation DJ & Sonic Director | NYC | B.MILLS"
         description="B.MILLS creates precise music direction and curated DJ sets for luxury brand activations, experiential product launches, runway collections, and private PR receptions in New York and beyond."
         keywords="luxury brand event DJ NYC, brand activation DJ NYC, fashion week afterparty DJ, product launch music curation manhattan, experiential marketing sound design nyc, luxury event music director, B.MILLS brand events"
         url="https://djbmills.com/brand-activations"
