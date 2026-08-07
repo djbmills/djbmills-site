@@ -48,7 +48,7 @@ export default function Home() {
 
       <InquiryFooter
         headline="Let's shape the night."
-        body="Share a few details and we can build a curated sonic identity for your event, your space, and your audience."
+        body="Share a few details and we can build a curated audio identity for your event, your space, and your audience."
         footerText={`Specializing in luxury corporate events, brand activations, and curated afterparties across New York City, 
 the Hamptons, New Jersey, and Connecticut.`}
   />
