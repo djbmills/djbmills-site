@@ -271,7 +271,7 @@ export default function BrandActivations() {
               transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
               className="font-heading text-5xl md:text-6xl font-light text-white mb-10 leading-tight"
             >
-              Sonic Identity
+              Audio Identity
             </motion.h2>
           </div>
 
