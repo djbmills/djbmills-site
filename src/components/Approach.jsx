@@ -108,7 +108,7 @@ export default function Approach() {
           >
             <div className="relative overflow-hidden bg-black/5 aspect-[4/3] md:aspect-[5/4] group">
               <img
-                src="/images/bmills-approach.png"
+                src="/images/bmills-approach-optimized.webp"
                 alt="B.MILLS shaping music around the space, crowd, and timing of an event"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
