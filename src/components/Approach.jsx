@@ -107,11 +107,11 @@ export default function Approach() {
             className="md:col-span-7"
           >
             <div className="relative overflow-hidden bg-black/5 aspect-[4/3] md:aspect-[5/4] group">
-              <img
-                src="/images/bmills-approach-optimized.webp"
-                alt="B.MILLS shaping music around the space, crowd, and timing of an event"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+              <img src="/images/bmills-approach-optimized.webp"
+  alt="B.MILLS shaping music around the space, crowd, and timing of an event"
+  loading="lazy"
+  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+/>
 
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
 
