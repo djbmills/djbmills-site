@@ -185,6 +185,7 @@ export default function Mixtapes() {
                 <img
                   src={tape.image}
                   alt={tape.altText}
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
