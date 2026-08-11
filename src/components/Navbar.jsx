@@ -151,14 +151,16 @@ export default function Navbar() {
             className="flex items-center h-10"
           >
             <img
-              src="/logos/bmills-logo-white.png"
-              alt="B.Mills"
-              className="h-12 w-auto object-contain"
-              onError={(e) => {
-                e.currentTarget.src =
-                  '/logos/bmills-logo.png';
-              }}
-            />
+  src="/logos/bmills-logo-white.png"
+  alt="B.Mills"
+  width="1024"
+  height="896"
+  className="h-12 w-auto object-contain"
+  onError={(e) => {
+    e.currentTarget.src =
+      '/logos/bmills-logo.png';
+  }}
+/>
           </a>
 
           <div className="hidden md:flex items-center gap-8">
