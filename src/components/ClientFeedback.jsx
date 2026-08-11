@@ -6,7 +6,7 @@ const testimonials = [
   {
     quote: 'DJ B.Mills is as good as it gets - he made me and my wife\'s after party one of the most special stretches of our wedding evening. He was so fun to work with and very professional. He played all our favorite songs and brought our vision to life.',
     name: 'Noah',
-    title: 'Wedding After Party',
+    title: 'Afterparty',
   },
   {
     quote: 'The event was a huge success, and the guests had such a great time on the dance floor. We truly appreciate the energy you brought to the night.',
@@ -134,14 +134,14 @@ export default function ClientFeedback() {
             </div>
 
             <div className="flex items-center justify-center gap-6 mt-12">
-              <button onClick={prev} className="w-12 h-12 rounded-full border border-background/20 flex items-center justify-center text-background/40 hover:text-background hover:border-background/60 hover:scale-[1.05] transition-all duration-300">
-                <ChevronLeft className="w-5 h-5" />
+            <button onClick={prev} aria-label="Previous testimonial" className="w-12 h-12 rounded-full border border-background/20 flex items-center justify-center text-background/40 hover:text-background hover:border-background/60 hover:scale-[1.05] transition-all duration-300">
+              <ChevronLeft className="w-5 h-5" />
               </button>
               <span className="font-body text-xs text-background/30 tracking-widest">
                 {String(current + 1).padStart(2, '0')} / {String(testimonials.length).padStart(2, '0')}
               </span>
-              <button onClick={next} className="w-12 h-12 rounded-full border border-background/20 flex items-center justify-center text-background/40 hover:text-background hover:border-background/60 hover:scale-[1.05] transition-all duration-300">
-                <ChevronRight className="w-5 h-5" />
+             <button onClick={next} aria-label="Next testimonial" className="w-12 h-12 rounded-full border border-background/20 flex items-center justify-center text-background/40 hover:text-background hover:border-background/60 hover:scale-[1.05] transition-all duration-300">
+              <ChevronRight className="w-5 h-5" />
               </button>
             </div>
           </div>
