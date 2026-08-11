@@ -93,17 +93,17 @@ const photos = [
     mobileOnly: true 
   },
   { 
-    src: "/images/nyc-hall-des-lumieres-grand-opening-dj-booth-bmills.jpg", 
+    src: "/images/nyc-hall-des-lumieres-grand-opening-dj-booth-bmills-optimized.webp" 
     alt: "Rear shot of B.MILLS DJ booth overlooking crowd at Hall des Lumières grand opening in New York City", 
     mobileOnly: true 
   },
   { 
-    src: "/images/southampton-hamptons-summer-private-event-dj-bmills.jpg", 
+    src: "/images/southampton-hamptons-summer-private-event-dj-bmills-optimized.webp" 
     alt: "B.MILLS curating sounds for a private summer client event in Southampton, Long Island", 
     mobileOnly: true 
   },
   { 
-    src: "/images/nyc-union-square-citibank-dj-battle-rush-hour-bmills.jpg", 
+    src: "/images/nyc-union-square-citibank-dj-battle-rush-hour-bmills-optimized.webp"
     alt: "B.MILLS competing in the Citibank sponsored DJ battle in Union Square Park during NYC rush hour", 
     mobileOnly: true 
   }
