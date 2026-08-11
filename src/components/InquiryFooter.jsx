@@ -358,7 +358,7 @@ export default function InquiryFooter({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
                   <div>
-                    <label className={labelClass}>
+                    <label htmlFor="name" className={labelClass}>
                       Name
                       <span className={tagClass}>
                         Required
@@ -366,6 +366,7 @@ export default function InquiryFooter({
                     </label>
 
                     <Input
+                      id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
@@ -375,7 +376,7 @@ export default function InquiryFooter({
                   </div>
 
                   <div>
-                    <label className={labelClass}>
+                    <label htmlFor="email" className={labelClass}>
                       Email
                       <span className={tagClass}>
                         Required
@@ -383,6 +384,7 @@ export default function InquiryFooter({
                     </label>
 
                     <Input
+                      id="email"
                       name="email"
                       type="email"
                       value={formData.email}
@@ -409,6 +411,7 @@ export default function InquiryFooter({
                       <PopoverTrigger asChild>
                         <button
                           type="button"
+                          aria-label="Select event date"
                           className="w-full bg-transparent border-0 border-b border-foreground/20 rounded-none pb-3 text-left font-body text-sm flex items-center justify-between h-10 shadow-none"
                         >
                           <span
@@ -459,11 +462,12 @@ export default function InquiryFooter({
                   </div>
 
                   <div>
-                    <label className={labelClass}>
+                    <label htmlFor="location" className={labelClass}>
                       Location
                     </label>
 
                     <Input
+                      id="location"
                       name="location"
                       value={formData.location}
                       onChange={handleChange}
@@ -475,11 +479,12 @@ export default function InquiryFooter({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
                   <div>
-                    <label className={labelClass}>
+                    <label htmlFor="eventType" className={labelClass}>
                       Event Type
                     </label>
 
                     <Input
+                      id="eventType"
                       name="eventType"
                       value={formData.eventType}
                       onChange={handleChange}
@@ -489,11 +494,12 @@ export default function InquiryFooter({
                   </div>
 
                   <div>
-                    <label className={labelClass}>
+                    <label htmlFor="guestCount" className={labelClass}>
                       Guest Count
                     </label>
 
                     <Input
+                      id="guestCount"
                       name="guestCount"
                       value={formData.guestCount}
                       onChange={handleChange}
@@ -505,11 +511,12 @@ export default function InquiryFooter({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
                   <div>
-                    <label className={labelClass}>
+                    <label htmlFor="atmosphere" className={labelClass}>
                       Atmosphere
                     </label>
 
                     <Input
+                      id="atmosphere"
                       name="atmosphere"
                       value={formData.atmosphere}
                       onChange={handleChange}
@@ -519,11 +526,12 @@ export default function InquiryFooter({
                   </div>
 
                   <div>
-                    <label className={labelClass}>
+                    <label htmlFor="eventTiming" className={labelClass}>
                       Event Hours / Set Time
                     </label>
 
                     <Input
+                      id="eventTiming"
                       name="eventTiming"
                       value={formData.eventTiming}
                       onChange={handleChange}
@@ -535,11 +543,12 @@ export default function InquiryFooter({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
                   <div>
-                    <label className={labelClass}>
+                    <label htmlFor="equipmentProvided" className={labelClass}>
                       Production / AV
                     </label>
 
                     <Input
+                      id="equipmentProvided"
                       name="equipmentProvided"
                       value={
                         formData.equipmentProvided
@@ -551,11 +560,12 @@ export default function InquiryFooter({
                   </div>
 
                   <div>
-                    <label className={labelClass}>
+                    <label htmlFor="plannerContact" className={labelClass}>
                       Planner / Producer Contact
                     </label>
 
                     <Input
+                      id="plannerContact"
                       name="plannerContact"
                       value={
                         formData.plannerContact
@@ -569,11 +579,12 @@ export default function InquiryFooter({
 
                 <div className="grid grid-cols-1 gap-10">
                   <div>
-                    <label className={labelClass}>
+                    <label htmlFor="hearAbout" className={labelClass}>
                       How did you hear about me?
                     </label>
 
                     <Input
+                      id="hearAbout"
                       name="hearAbout"
                       value={formData.hearAbout}
                       onChange={handleChange}
@@ -664,6 +675,7 @@ export default function InquiryFooter({
           <div className="pt-16 border-t border-border/40 flex flex-col items-center text-center">
             <button
               onClick={scrollToTop}
+              aria-label="Back to top"
               className="mb-10 group transition-transform hover:scale-105 active:scale-95"
             >
               <img
@@ -676,6 +688,7 @@ export default function InquiryFooter({
             <div className="flex items-center gap-8 mb-12">
               <a
                 href="https://instagram.com/djbmills"
+                aria-label="B.MILLS on Instagram"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/50 hover:text-foreground transition-colors"
@@ -685,6 +698,7 @@ export default function InquiryFooter({
 
               <a
                 href="https://tiktok.com/@djbmills"
+                aria-label="B.MILLS on TikTok"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/50 hover:text-foreground transition-colors"
@@ -694,6 +708,7 @@ export default function InquiryFooter({
 
               <a
                 href="https://open.spotify.com/user/djbmills"
+                aria-label="B.MILLS on Spotify"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/50 hover:text-foreground transition-colors"
@@ -703,6 +718,7 @@ export default function InquiryFooter({
 
               <a
                 href="https://www.linkedin.com/in/bmillsdj/"
+                aria-label="B.MILLS on LinkedIn"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/50 hover:text-foreground transition-colors"
@@ -712,6 +728,7 @@ export default function InquiryFooter({
 
               <a
                 href="mailto:bookings@djbmills.com"
+                aria-label="Email B.MILLS"
                 className="text-foreground/50 hover:text-foreground transition-colors"
               >
                 <Mail className="w-5 h-5" />
