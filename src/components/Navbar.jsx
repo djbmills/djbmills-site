@@ -151,14 +151,14 @@ export default function Navbar() {
             className="flex items-center h-10"
           >
             <img
-  src="/logos/bmills-logo-white.png"
+  src="/logos/bmills-logo-white-128.png"
   alt="B.Mills"
-  width="1024"
-  height="896"
+  width="128"
+  height="112"
   className="h-12 w-auto object-contain"
   onError={(e) => {
     e.currentTarget.src =
-      '/logos/bmills-logo.png';
+      '/logos/bmills-logo-white.png';
   }}
 />
           </a>
