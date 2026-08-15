@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { ChevronDown } from 'lucide-react';
 
+const HERO_WEBP_MOBILE = '/images/nyc-event-dj-bmills-hero-mobile.webp';
 const HERO_WEBP = '/images/nyc-event-dj-bmills-hero.webp';
 const HERO_FALLBACK = '/images/bmills-hero.png';
 
@@ -40,7 +41,7 @@ export default function Hero() {
         <div className="w-full h-[440px] overflow-hidden bg-white relative">
           <picture className="block w-full h-full">
             <source
-              srcSet={HERO_WEBP}
+              srcSet={HERO_WEBP_MOBILE}
               type="image/webp"
             />
 
