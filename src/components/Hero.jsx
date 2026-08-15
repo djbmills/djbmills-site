@@ -62,7 +62,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-body text-[10px] tracking-[0.28em] uppercase text-foreground/50 mb-5"
+            className="font-body text-[10px] tracking-[0.28em] uppercase text-foreground/60 mb-5"
           >
             Curator · DJ · Atmosphere
           </motion.p>
@@ -129,7 +129,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="font-body text-xs tracking-[0.3em] uppercase text-foreground/40 mb-4"
+            className="font-body text-xs tracking-[0.3em] uppercase text-foreground/50 mb-4"
           >
             Curator · DJ · Atmosphere
           </motion.p>
