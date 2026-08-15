@@ -679,10 +679,12 @@ export default function InquiryFooter({
               className="mb-10 group transition-transform hover:scale-105 active:scale-95"
             >
               <img
-                src="/logos/bmills-logo-white.png"
-                alt="B.MILLS"
-                className="h-12 w-auto mx-auto brightness-0 opacity-90"
-              />
+              src="/images/logos/bmills-logo-white-128.png"
+              alt="B.MILLS"
+              width="128"
+              height="112"
+              className="h-12 w-auto mx-auto brightness-0 opacity-90"
+            />
             </button>
 
             <div className="flex items-center gap-8 mb-12">
