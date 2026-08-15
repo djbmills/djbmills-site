@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 
+const ABOUT_WEBP_SMALL = '/images/nyc-event-dj-bmills-about-640.webp';
 const ABOUT_WEBP = '/images/nyc-event-dj-bmills-about.webp';
 const ABOUT_FALLBACK = '/images/bmills-about-hero.png';
 
@@ -66,7 +67,8 @@ export default function About() {
             <div className="relative overflow-hidden bg-black/5 aspect-[4/5] md:aspect-[5/6]">
               <picture className="block w-full h-full">
                 <source
-                  srcSet={ABOUT_WEBP}
+                  srcSet={`${ABOUT_WEBP_SMALL} 640w, ${ABOUT_WEBP} 1024w`}
+                  sizes="(max-width: 767px) 100vw, 50vw"
                   type="image/webp"
                 />
 
