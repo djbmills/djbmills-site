@@ -12,10 +12,13 @@ import PastClients from '../components/PastClients';
 import Approach from '../components/Approach';
 import About from '../components/About';
 import Mixtapes from '../components/Mixtapes';
-import PhotoGallery from '../components/PhotoGallery';
 import Services from '../components/Services';
 import Philosophy from '../components/Philosophy';
 import CareerHighlights from '../components/CareerHighlights';
+
+const PhotoGallery = lazy(
+  () => import('../components/PhotoGallery')
+);
 
 const ClientFeedback = lazy(
   () => import('../components/ClientFeedback')
@@ -24,6 +27,57 @@ const ClientFeedback = lazy(
 const InquiryFooter = lazy(
   () => import('../components/InquiryFooter')
 );
+
+function DeferredPhotoGallery() {
+  const sectionRef = useRef(null);
+  const [shouldLoad, setShouldLoad] = useState(false);
+
+  useEffect(() => {
+    if (shouldLoad) return;
+
+    if (!('IntersectionObserver' in window)) {
+      setShouldLoad(true);
+      return;
+    }
+
+    const section = sectionRef.current;
+
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoad(true);
+          observer.disconnect();
+        }
+      },
+      {
+        rootMargin: '2200px 0px',
+      }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, [shouldLoad]);
+
+  return (
+    <div
+      ref={sectionRef}
+      className={
+        shouldLoad
+          ? ''
+          : 'min-h-[2200px] md:min-h-[1600px] bg-background'
+      }
+    >
+      {shouldLoad && (
+        <Suspense fallback={null}>
+          <PhotoGallery />
+        </Suspense>
+      )}
+    </div>
+  );
+}
 
 function DeferredClientFeedback() {
   const sectionRef = useRef(null);
@@ -163,7 +217,7 @@ export default function Home() {
       <Mixtapes />
 
       {/* ── SECTION 05 ── */}
-      <PhotoGallery />
+      <DeferredPhotoGallery />
 
       {/* ── REMAINING SECTIONS ── */}
       <Services />
