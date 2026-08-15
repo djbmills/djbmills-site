@@ -151,7 +151,7 @@ export default function Navbar() {
             className="flex items-center h-10"
           >
             <img
-  src="/logos/bmills-logo-white-128.png"
+  src="/images/logos/bmills-logo-white-128.png"
   alt="B.Mills"
   width="128"
   height="112"
