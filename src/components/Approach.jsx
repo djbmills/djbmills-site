@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
 
+const APPROACH_WEBP_SMALL = '/images/bmills-approach-640.webp';
+const APPROACH_WEBP = '/images/bmills-approach-optimized.webp';
+
 export default function Approach() {
   return (
     <section
@@ -107,11 +110,28 @@ export default function Approach() {
             className="md:col-span-7"
           >
             <div className="relative overflow-hidden bg-black/5 aspect-[4/3] md:aspect-[5/4] group">
-              <img src="/images/bmills-approach-optimized.webp"
-  alt="B.MILLS shaping music around the space, crowd, and timing of an event"
-  loading="lazy"
-  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-/>
+              <picture className="block w-full h-full">
+                <source
+                  media="(max-width: 767px)"
+                  srcSet={APPROACH_WEBP_SMALL}
+                  type="image/webp"
+                />
+
+                <source
+                  srcSet={APPROACH_WEBP}
+                  type="image/webp"
+                />
+
+                <img
+                  src={APPROACH_WEBP}
+                  alt="B.MILLS shaping music around the space, crowd, and timing of an event"
+                  width="1024"
+                  height="576"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </picture>
 
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
 
