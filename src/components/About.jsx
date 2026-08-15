@@ -66,22 +66,27 @@ export default function About() {
           >
             <div className="relative overflow-hidden bg-black/5 aspect-[4/5] md:aspect-[5/6]">
               <picture className="block w-full h-full">
-                <source
-                  srcSet={`${ABOUT_WEBP_SMALL} 640w, ${ABOUT_WEBP} 1024w`}
-                  sizes="(max-width: 767px) 100vw, 50vw"
-                  type="image/webp"
-                />
+  <source
+    media="(max-width: 767px)"
+    srcSet={ABOUT_WEBP_SMALL}
+    type="image/webp"
+  />
 
-                <img
-                  src={ABOUT_FALLBACK}
-                  alt="B.MILLS performing at a branded event in New York City"
-                  width="1024"
-                  height="1536"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </picture>
+  <source
+    srcSet={ABOUT_WEBP}
+    type="image/webp"
+  />
+
+  <img
+    src={ABOUT_FALLBACK}
+    alt="B.MILLS performing at a branded event in New York City"
+    width="1024"
+    height="1536"
+    loading="lazy"
+    decoding="async"
+    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+  />
+</picture>
 
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
 
