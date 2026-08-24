@@ -268,6 +268,24 @@ export default function InquiryFooter({
         throw new Error();
       }
 
+      // Track a successful inquiry without allowing analytics to affect
+      // the actual Netlify submission or the visitor's success state.
+      try {
+        if (
+          typeof window !== 'undefined' &&
+          typeof window.gtag === 'function'
+        ) {
+          window.gtag('event', 'generate_lead', {
+            form_name: 'inquiry'
+          });
+        }
+      } catch (analyticsError) {
+        console.warn(
+          'Inquiry submitted successfully, but analytics tracking failed.',
+          analyticsError
+        );
+      }
+
       setSubmitStatus(
         'Inquiry sent. Expect a response within 24 hours.'
       );
