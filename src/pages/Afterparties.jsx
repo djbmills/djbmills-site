@@ -8,10 +8,10 @@ const afterpartiesSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   '@id': 'https://djbmills.com/afterparties#service',
-  name: 'New York City Afterparty DJ and Late Night Event Production',
+  name: 'New York City Luxury Afterparty DJ and Late Night Event Production',
   url: 'https://djbmills.com/afterparties',
   description:
-    'B.MILLS provides high-energy DJ performance, late night music programming, sound-system planning, aesthetic DJ booth presentation, and scalable AV production coordination for exclusive afterparties, corporate celebrations, VIP events, and private late night events.',
+    'B.MILLS provides high-energy DJ performance, late night music programming, sound-system planning, aesthetic DJ booth presentation, and scalable AV production coordination for luxury afterparties, exclusive corporate celebrations, VIP events, and private late night events.',
   provider: {
     '@id': 'https://djbmills.com/#identity',
   },
@@ -147,7 +147,7 @@ function VideoCard({ item }) {
       <button
         onClick={toggleMute}
         className="absolute top-4 right-4 z-20 bg-black/60 hover:bg-black/90 text-white p-3 rounded-full backdrop-blur-md border border-white/20 transition-all active:scale-95"
-        aria-label={isMuted ? "Unmute video sound" : "Mute video sound"}
+        aria-label={isMuted ? "Unmute video sound" : "Mute sound"}
         title={isMuted ? "Tap for Sound" : "Mute Sound"}
       >
         {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} className="text-white" />}
@@ -171,7 +171,7 @@ function ImageCard({ item }) {
         loading="lazy"
         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
       />
-      
+
       <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent p-6 flex flex-col justify-end pointer-events-none">
         <span className="text-neutral-400 text-xs font-mono uppercase tracking-widest mb-1">{item.location}</span>
         <h3 className="text-xl font-bold text-white mb-2 leading-tight">{item.title}</h3>
@@ -186,8 +186,8 @@ export default function Afterparties() {
     <div className="bg-black text-white min-h-screen pt-28">
       <SEOHeading
         title="Luxury Afterparty DJ & Late Night Sound Programming | NYC & Hamptons | B.MILLS"
-        description="B.MILLS delivers high-energy sound programming and elite DJ sets for exclusive afterparties at iconic NYC landmarks, luxury Hamptons estates, and private venues."
-        keywords="afterparty DJ NYC, luxury wedding afterparty DJ, late night event DJ hamptons, VIP afterparty DJ manhattan, high energy club DJ NYC, B.MILLS afterparties"
+        description="B.MILLS delivers high-energy sound programming and elite DJ sets for exclusive luxury afterparties at iconic NYC landmarks, Hamptons estates, and private venues."
+        keywords="afterparty DJ NYC, luxury afterparty DJ NYC, luxury wedding afterparty DJ, late night event DJ Hamptons, VIP afterparty DJ Manhattan, high energy club DJ NYC, Hamptons afterparty DJ, private event DJ NYC, B.MILLS afterparties"
         url="https://djbmills.com/afterparties"
         schema={afterpartiesSchema}
       />
@@ -197,9 +197,11 @@ export default function Afterparties() {
           <span className="font-body text-xs tracking-[0.3em] uppercase text-neutral-400 block mb-3">
             Sound Programming
           </span>
+
           <h1 className="font-heading text-4xl md:text-6xl font-light tracking-wide uppercase mb-4 text-white">
-            The <span className="font-serif italic font-normal text-white">Afterparty</span> Experience
+            The <span className="font-serif italic font-normal text-white">Afterparty DJ</span> Experience
           </h1>
+
           <p className="text-neutral-400 text-sm md:text-base font-body tracking-wide max-w-xl mx-auto">
             From iconic NYC landmarks to luxury Hamptons estates, capturing raw late night moments and high energy crowds.
           </p>
@@ -223,9 +225,11 @@ export default function Afterparties() {
           <h3 className="font-heading text-2xl md:text-4xl font-light uppercase tracking-wide mb-3 text-white">
             Late Night <span className="font-serif italic font-normal text-white">Sound</span> Programming.
           </h3>
+
           <p className="text-neutral-400 text-sm md:text-base max-w-xl mx-auto font-body">
             Available for select private afterparties, late night celebrations, and VIP events across New York, Long Island, The Hamptons, Connecticut, and New Jersey.
           </p>
+
           <p className="text-neutral-500 text-sm md:text-base max-w-2xl mx-auto font-body leading-relaxed mt-5">
             The setup can scale with the room, from a clean, minimal DJ booth and dedicated sound system to expanded AV production coordinated with trusted partners when the event calls for more.
           </p>
