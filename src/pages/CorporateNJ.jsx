@@ -167,7 +167,17 @@ export default function CorporateNJ() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-10%' }}
               transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
-              className="font-body text-sm text-muted-foreground mt-8 max-w-xl leading-relaxed"
+              className="font-body text-sm text-muted-foreground mt-8 max-w-2xl leading-relaxed"
+            >
+              B.MILLS brings New York City corporate event experience to select events throughout Northern New Jersey, Bergen County, and the surrounding Tri State area.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-10%' }}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
+              className="font-body text-sm text-muted-foreground mt-5 max-w-xl leading-relaxed"
             >
               Balancing sophisticated networking environments with a seamless transition into the evening.
             </motion.p>
@@ -500,9 +510,11 @@ export default function CorporateNJ() {
                   <h3 className="font-heading text-2xl md:text-3xl font-light text-foreground leading-tight">
                     {event.title}
                   </h3>
+
                   <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mt-4">
                     {event.meta}
                   </p>
+
                   <p className="font-body text-base text-muted-foreground leading-relaxed mt-6 max-w-4xl">
                     {event.body}
                   </p>
@@ -520,6 +532,7 @@ export default function CorporateNJ() {
               <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-6">
                 The Right Rooms
               </p>
+
               <div className="grid md:grid-cols-3 gap-6">
                 {trustedFor.map((item) => (
                   <p
