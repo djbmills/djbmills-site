@@ -18,9 +18,12 @@ const selectedEvents = [
 ];
 
 const trustedFor = [
-  "Luxury brand activations & private client rooms",
-  "Tech, finance, and cultural gallery spaces",
-  "High profile afterparties & regional functions",
+  "Brand activations, launches & pop-up experiences",
+  "Corporate galas, summits & brand gatherings",
+  "Cocktail receptions & high-profile afterparties",
+  "Tech, finance & corporate headquarters",
+  "Fashion, art & cultural gallery spaces",
+  "Exclusive private client spaces & regional functions"
 ];
 
 const brandLogos = [
