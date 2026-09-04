@@ -43,9 +43,9 @@ const trustedFor = [
 ];
 
 const brandLogos = [
-  'oracle', 'celine', 'equinox', 'polymarket', 'goldmansachs',
+  'oracle', 'tumi', 'celine', 'sohohouse', 'equinox', 'polymarket', 'goldmansachs',
   'disney', 'lvmh', 'gucci', 'jpmorgan', 'nbcuniversal',
-  'mlb', 'fanatics', 'tumi', 'citi', 'google'
+  'mlb', 'fanatics', 'citi', 'google'
 ];
 
 export default function BrandActivations() {
