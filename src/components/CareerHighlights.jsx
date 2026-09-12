@@ -111,7 +111,7 @@ const columns = [
     items: [
        {
         name: 'NY Phil',
-        role: 'Dudamel Inaugural Season Afterparty',
+        role: 'Dudamel Inaugural Afterparty',
         context: 'Official Rainbow Room afterparty celebrating Gustavo Dudamel’s inaugural season with the New York Philharmonic.',
       },
       {
