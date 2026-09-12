@@ -6,6 +6,11 @@ const columns = [
     heading: 'Shared Stages',
     items: [
       {
+        name: 'Mark Ronson',
+        role: 'Direct Support',
+        context: 'Direct support DJ set opening and closing the room around Mark Ronson’s performance at Rainbow Room in New York City.',
+      },
+      {
         name: 'Coco & Breezy',
         role: 'Opening Set',
         context: 'Opening DJ set for Coco & Breezy by B.MILLS.',
