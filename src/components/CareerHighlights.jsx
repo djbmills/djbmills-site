@@ -109,6 +109,11 @@ const columns = [
   {
     heading: 'Notable Events',
     items: [
+       {
+        name: 'NY Phil',
+        role: 'Dudamel Inaugural Season Afterparty',
+        context: 'Official Rainbow Room afterparty celebrating Gustavo Dudamel’s inaugural season with the New York Philharmonic.',
+      },
       {
         name: 'A$AP Ferg',
         role: 'Album Release @ 1OAK',
