@@ -14,6 +14,10 @@ const testimonials = [
     title: 'School of American Ballet',
   },
   {
+    quote: 'The attention to detail was obvious and many people commented on how perfect it all was. If we didn\'t turn on the lights and stop the music, people would still be dancing.',
+    name: 'Jeffrey',
+    title: 'NY Phil Afterparty at Rainbow Room',
+  },  {
     quote: 'Your music choices during cocktails, dinner and after dinner were so thoughtful and fun. At every point in the night, the music was a perfect complement and perfectly suited our guests and atmosphere.',
     name: 'Allison & Jay',
     title: 'Private Event',
