@@ -397,6 +397,83 @@ export default function CorporateEvents() {
             </div>
           </motion.div>
 
+          {/* Boys & Girls Club of Greenwich Case Study */}
+          <motion.div
+            initial={{ opacity: 0, y: 34 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-10%' }}
+            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.475 }}
+            className="mt-16 border-t border-border pt-10"
+          >
+            <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-14 items-start">
+              <div>
+                <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-5">
+                  Annual Benefit
+                </p>
+
+                <h3 className="font-heading text-3xl md:text-5xl font-light text-foreground leading-tight">
+                  Boys & Girls Club of Greenwich
+                </h3>
+
+                <p className="font-body text-sm tracking-[0.25em] uppercase text-muted-foreground mt-6">
+                  Rebecca S. Breed Clubhouse | Greenwich, Connecticut
+                </p>
+              </div>
+
+              <div>
+                <p className="font-body text-base text-muted-foreground leading-relaxed">
+                  The Boys & Girls Club of Greenwich annual benefit. A black tie night with a 007 theme at the Rebecca S. Breed Clubhouse. Formal crowd, live auction, paddles in the air, and a dance floor that kept moving.
+                </p>
+
+                <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
+                  Cocktail hour to the paddle raise to late night. The music followed the room all the way there.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-12">
+              <img
+                src="/images/corporate/boys-girls-club-greenwich/b-mills-dj-boys-and-girls-club-greenwich-2026-benefit-red-room.jpg"
+                alt="Red lit gala room at the Boys & Girls Club of Greenwich annual benefit"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-4 mt-14">
+              <img
+                src="/images/corporate/boys-girls-club-greenwich/b-mills-dj-boys-and-girls-club-greenwich-2026-benefit-portrait.jpg"
+                alt="B.MILLS in a suit and tie at the Boys & Girls Club of Greenwich annual benefit"
+                className="w-full h-full object-cover aspect-[2/3]"
+                loading="lazy"
+              />
+              <img
+                src="/images/corporate/boys-girls-club-greenwich/b-mills-dj-boys-and-girls-club-greenwich-2026-benefit-club-members.jpg"
+                alt="Boys & Girls Club members on stage at the annual benefit"
+                className="w-full h-full object-cover aspect-[2/3]"
+                loading="lazy"
+              />
+              <img
+                src="/images/corporate/boys-girls-club-greenwich/b-mills-dj-boys-and-girls-club-greenwich-2026-benefit-auction-paddles.jpg"
+                alt="Guests holding up auction paddles during the live auction"
+                className="w-full h-full object-cover aspect-[2/3]"
+                loading="lazy"
+              />
+            </div>
+
+            <div className="mt-14 pt-10 border-t border-border">
+              <img
+                src="/images/corporate/boys-girls-club-greenwich/b-mills-dj-boys-and-girls-club-greenwich-2026-benefit-podium.jpg"
+                alt="Speaker at the Boys & Girls Club of Greenwich podium in front of the B.MILLS DJ setup"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <p className="font-body text-[10px] md:text-xs text-muted-foreground mt-4 tracking-[0.25em] uppercase text-center">
+                Photography by Fairfield County Look
+              </p>
+            </div>
+          </motion.div>
+
           {/* 1800 Tequila Case Study */}
           <motion.div
             initial={{ opacity: 0, y: 34 }}
