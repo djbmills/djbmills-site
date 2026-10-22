@@ -468,9 +468,6 @@ export default function CorporateEvents() {
                 className="w-full h-auto object-cover"
                 loading="lazy"
               />
-              <p className="font-body text-[10px] md:text-xs text-muted-foreground mt-4 tracking-[0.25em] uppercase text-center">
-                Photography by Fairfield County Look
-              </p>
             </div>
           </motion.div>
 
