@@ -197,7 +197,7 @@ export default function CorporateEvents() {
 
                 <div className="group relative overflow-hidden bg-black/5 aspect-[4/5]">
                   <img
-                    src="/images/corporate/goldman-robinhood/new-york-city-pac-nyc-event-signage-dj-bmills.jpg"
+                    src="/images/corporate/goldman-robinhood/new-york-city-pac-nyc-goldman-sachs-robinhood-event-signage-dj-bmills.jpg"
                     alt="Event branding setup"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
