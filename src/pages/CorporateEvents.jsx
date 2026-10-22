@@ -54,8 +54,8 @@ export default function CorporateEvents() {
   return (
     <div className="w-full min-h-screen bg-background overflow-x-hidden">
       <SEOHeading
-        title="New York City Corporate Event DJ & Music Direction | B.MILLS"
-        description="B.MILLS provides tailored DJ sets, music direction, and sound curation for corporate events, galas, product launches, networking events, and private client spaces in New York City."
+        title="Corporate Event DJ in NYC for Brand and Company Events | B.MILLS"
+        description="B.MILLS is a New York City corporate event DJ trusted by Google, LVMH, Gucci, and The Standard for company parties, brand events, and end of year parties. Tasteful, curated sets, full production coordination, and a response within 24 hours."
         keywords="New York City corporate event DJ, NYC corporate DJ, corporate event music direction NYC, corporate gala DJ New York, product launch DJ NYC, networking event DJ NYC, corporate party DJ Manhattan, luxury corporate event DJ NYC, B.MILLS DJ"
         url="https://djbmills.com/corporate-events"
         schema={corporateEventsSchema}
@@ -197,7 +197,7 @@ export default function CorporateEvents() {
 
                 <div className="group relative overflow-hidden bg-black/5 aspect-[4/5]">
                   <img
-                    src="/images/corporate/goldman-robinhood/new-york-city-pac-nyc-goldman-sachs-robinhood-event-signage-dj-bmills.jpg"
+                    src="/images/corporate/goldman-robinhood/new-york-city-pac-nyc-event-signage-dj-bmills.jpg"
                     alt="Event branding setup"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
@@ -375,14 +375,14 @@ export default function CorporateEvents() {
               <img
                 src="/images/corporate/gagosian-avedon-100/bmills-dj-gagosian-avedon-100-boom-boom-room.jpg"
                 alt="B.MILLS on the decks at the event"
-                className="w-full h-auto object-cover"
+                className="w-full h-full object-cover"
                 loading="lazy"
               />
 
               <img
                 src="/images/corporate/gagosian-avedon-100/gagosian-avedon-100-boom-boom-room-bar-crowd.jpg"
                 alt="Guests at the gallery gathering"
-                className="w-full h-auto object-cover"
+                className="w-full h-full object-cover"
                 loading="lazy"
               />
             </div>
@@ -595,6 +595,27 @@ export default function CorporateEvents() {
         </div>
       </section>
 
+      {/* Inquiry Band */}
+      <section className="w-full py-16 md:py-20 px-6 border-b border-border bg-background">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-10%' }}
+          transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+          className="max-w-6xl mx-auto text-center"
+        >
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-6">
+            Planning a corporate event in New York
+          </p>
+          <a
+            href="#inquiry"
+            className="font-body text-[11px] tracking-[0.25em] uppercase text-foreground border-b border-foreground/30 hover:border-foreground transition-colors pb-1"
+          >
+            Check Availability
+          </a>
+        </motion.div>
+      </section>
+
       {/* Section 04: Full-Bleed Dark Section (Logistics & Standards with 2 Photos) */}
       <section className="w-full py-20 md:py-32 px-6 md:px-12 border-b border-border bg-[#0d0d0d]">
         <div className="max-w-6xl mx-auto">
@@ -672,8 +693,14 @@ export default function CorporateEvents() {
       <InquiryFooter
   footerText={
     <>
-      Serving luxury corporate events, brand activations, and private clients
-      across New York City, the Hamptons, Westchester,{' '}
+      Serving luxury corporate events,{' '}
+      <a
+        href="/brand-activations"
+        className="border-b border-transparent hover:border-current focus-visible:border-current transition-colors duration-300"
+      >
+        brand activations
+      </a>
+      , and private clients across New York City, the Hamptons, Westchester,{' '}
       <a
         href="/corporate-events-nj"
         className="border-b border-transparent hover:border-current focus-visible:border-current transition-colors duration-300"
