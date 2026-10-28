@@ -73,15 +73,15 @@ export default function CorporateNJ() {
     <div className="min-h-screen bg-background flex flex-col justify-between">
       <div>
         <SEOHeading
-          title="NYC Corporate Event DJ Serving New Jersey | B.MILLS"
-          description="B.MILLS is an NYC corporate event DJ and music director serving Northern New Jersey, Bergen County, and the Tri-State area for luxury brand events, galas, product launches, networking events, and private rooms."
+          title="Corporate Event DJ in New Jersey | B.MILLS"
+          description="B.MILLS is a corporate event DJ in New Jersey, providing music direction and curated DJ sets for company parties, galas, product launches, and brand events across Bergen County and Northern New Jersey, backed by a New York City client roster."
           keywords="NYC corporate event DJ serving New Jersey, corporate DJ NJ, luxury event DJ Bergen County, Northern New Jersey corporate DJ, New York City DJ for New Jersey events, brand activation DJ NJ, product launch DJ New Jersey, corporate gala DJ Bergen County, B.MILLS DJ"
           url="https://djbmills.com/corporate-events-nj"
           schema={corporateNJSchema}
         />
 
         <h1 className="sr-only">
-          NYC Corporate Event &amp; Brand Activation DJ Serving New Jersey, Bergen County, and the Tri-State Area
+          Corporate Event &amp; Brand Activation DJ in New Jersey, Bergen County, and Northern New Jersey
         </h1>
 
         <CorporateHero />
@@ -169,7 +169,7 @@ export default function CorporateNJ() {
               transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
               className="font-body text-sm text-muted-foreground mt-8 max-w-2xl leading-relaxed"
             >
-              B.MILLS brings New York City corporate event experience to select events throughout Northern New Jersey, Bergen County, and the surrounding Tri State area.
+              B.MILLS brings New York City corporate event experience to company parties, galas, and brand events throughout Northern New Jersey and Bergen County.
             </motion.p>
 
             <motion.p
@@ -205,7 +205,7 @@ export default function CorporateNJ() {
                     <img
                       src="/images/corporate/goldman-robinhood/new-york-city-pac-nyc-goldman-sachs-robinhood-dj-booth-dj-bmills.jpg"
                       alt="B.MILLS audio setup"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
@@ -215,7 +215,7 @@ export default function CorporateNJ() {
                     <img
                       src="/images/corporate/goldman-robinhood/new-york-city-pac-nyc-metropolis-corporate-event-interior-dj-bmills.jpg"
                       alt="Venue architecture and interior layout"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
@@ -225,7 +225,7 @@ export default function CorporateNJ() {
                     <img
                       src="/images/corporate/goldman-robinhood/new-york-city-pac-nyc-goldman-sachs-robinhood-event-signage-dj-bmills.jpg"
                       alt="Event branding setup"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
@@ -347,7 +347,7 @@ export default function CorporateNJ() {
               transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
               className="font-body text-base text-muted-foreground leading-relaxed max-w-3xl"
             >
-              B.MILLS is booked by brands, planners, and hosts who look for intentional music curation. The following portfolio projects showcase custom event production across Northern New Jersey, Bergen County, and the Tri State area.
+              B.MILLS is booked by brands, planners, and hosts who look for intentional music curation. The following portfolio projects showcase the New York City events behind the experience he brings to Northern New Jersey and Bergen County.
             </motion.p>
 
             {/* Gagosian Case Study */}
