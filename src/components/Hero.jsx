@@ -147,7 +147,7 @@ export default function Hero() {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.7, delay: 1.1 }}
-            className="w-16 h-px bg-foreground/25 my-6 origin-left"
+            className="w-16 h-px bg-foreground/25 my-10 origin-left"
           />
 
           <motion.p
@@ -163,7 +163,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.5 }}
-            className="font-body text-base lg:text-lg text-foreground/70 leading-relaxed max-w-md mt-8"
+            className="font-body text-base text-foreground/60 leading-relaxed max-w-md mt-12"
           >
             New York City event DJ for corporate, brand activations,
             and afterparties.
