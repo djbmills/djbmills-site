@@ -71,8 +71,8 @@ export default function BrandActivationHero() {
               className="font-body text-sm md:text-[15px] lg:text-base text-foreground/55 md:text-muted-foreground leading-relaxed max-w-[560px] md:text-right"
             >
               Music direction and curated DJ sets for experiential campaigns,
-              product launches, branded environments, and cultural events
-              across New York City and beyond.
+              product launches, pop ups, and retail activations
+              across New York City.
             </motion.p>
           </div>
         </motion.div>
