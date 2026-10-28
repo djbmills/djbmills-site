@@ -203,8 +203,15 @@ export default function Afterparties() {
           </h1>
 
           <p className="text-neutral-400 text-sm md:text-base font-body tracking-wide max-w-xl mx-auto">
-            From iconic NYC landmarks to luxury Hamptons estates, capturing raw late night moments and high energy crowds.
+            Wedding and corporate afterparties across New York City and the Hamptons, with late night sets in rooms like The Plaza Hotel and Guastavino's.
           </p>
+
+          <a
+            href="#inquiry"
+            className="inline-block mt-8 font-body text-xs tracking-[0.25em] uppercase text-neutral-200 border-b border-white/30 hover:border-white transition-colors duration-300 pb-1"
+          >
+            Check Availability
+          </a>
         </div>
 
         {/* 3x2 Grid Layout */}
