@@ -75,6 +75,7 @@ const mixtapes = [
 export default function Mixtapes() {
   const [playing, setPlaying] = useState(null);
   const audioRef = useRef(null);
+  const reportedPlays = useRef(new Set());
 
   useEffect(() => {
     const audio = new Audio();
@@ -105,6 +106,17 @@ export default function Mixtapes() {
         audio.load();
       }
       await audio.play();
+      if (!reportedPlays.current.has(tape.title)) {
+        reportedPlays.current.add(tape.title);
+        try {
+          if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+            window.gtag('event', 'mix_play', {
+              mix_title: tape.title,
+              mix_genre: tape.genre,
+            });
+          }
+        } catch (err) {}
+      }
       audio.onended = () => setPlaying(null);
       setPlaying(tape.title);
     } catch (error) {
@@ -116,7 +128,7 @@ export default function Mixtapes() {
   return (
     <section id="mixtapes" className="py-24 md:py-36 px-6 md:px-12 bg-foreground">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* Section Detail Header */}
         <div className="flex items-center gap-4 mb-16 overflow-hidden">
           <motion.span
