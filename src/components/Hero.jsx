@@ -165,8 +165,9 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 1.5 }}
             className="font-body text-base text-foreground/60 leading-relaxed max-w-md mt-12"
           >
-            New York City event DJ for corporate, brand activations,
-            and afterparties.
+            New York City event DJ
+            <br />
+            for corporate, brand activations, and afterparties.
           </motion.p>
         </div>
 
