@@ -158,6 +158,25 @@ export default function Hero() {
           >
             Less talk. Better music.
           </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.5 }}
+            className="font-body text-base lg:text-lg text-foreground/70 leading-relaxed max-w-md mt-8"
+          >
+            New York City event DJ for corporate events, brand activations,
+            and afterparties.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.7 }}
+            className="font-body text-[11px] lg:text-xs tracking-[0.25em] uppercase text-foreground/45 mt-6"
+          >
+            Trusted by Google · LVMH · Gucci · The Standard
+          </motion.p>
         </div>
 
         <motion.a
