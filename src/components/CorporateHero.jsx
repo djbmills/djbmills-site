@@ -63,9 +63,9 @@ export default function CorporateHero() {
               transition={{ duration: 0.8, delay: 1.3 }}
               className="font-body text-sm md:text-[15px] lg:text-base text-foreground/55 md:text-muted-foreground leading-relaxed max-w-[560px] md:text-right"
             >
-              Elevated open format DJ sets for brand activations, cultural
-              moments, afterparties, and private rooms across New York City and
-              beyond.
+              Elevated open format DJ sets for corporate events, brand
+              activations, cultural moments, afterparties, and private rooms
+              across New York City and beyond.
             </motion.p>
           </div>
         </motion.div>
@@ -74,7 +74,7 @@ export default function CorporateHero() {
           initial={{ opacity: 0, y: 34 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 1.45 }}
-          className="relative w-full mt-8 md:mt-9 overflow-hidden bg-black/5 aspect-[4/5] md:aspect-[2048/1365]"
+          className="relative w-full mt-8 md:mt-9 overflow-hidden bg-black/5 aspect-[4/5] md:aspect-[2/1]"
         >
           <motion.div
             className="absolute inset-0 hidden md:block"
@@ -83,7 +83,7 @@ export default function CorporateHero() {
             <img
               src={HERO_IMG}
               alt="B.MILLS providing music direction for a brand event at Boom at The Standard, High Line"
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-[center_65%]"
             />
           </motion.div>
 
