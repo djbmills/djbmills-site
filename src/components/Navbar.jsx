@@ -322,6 +322,3 @@ export default function Navbar() {
     </>
   );
 }
-
-  );
-}
