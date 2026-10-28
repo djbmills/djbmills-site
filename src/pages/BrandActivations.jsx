@@ -52,8 +52,8 @@ export default function BrandActivations() {
   return (
     <div className="min-h-screen bg-[#000000] text-[#f5f5f7] selection:bg-neutral-800 selection:text-white">
       <SEOHeading
-        title="Brand Activation DJ & Sonic Director | NYC | B.MILLS"
-        description="B.MILLS creates precise music direction and curated DJ sets for luxury brand activations, experiential product launches, runway collections, and private PR receptions in New York and beyond."
+        title="Brand Activation DJ in New York City | B.MILLS"
+        description="B.MILLS is a brand activation DJ in New York City, providing music direction and curated DJ sets for product launches, pop ups, retail activations, and fashion events, trusted by LVMH, Gucci, Celine, and Google."
         keywords="luxury brand event DJ NYC, brand activation DJ NYC, fashion week afterparty DJ, product launch music curation manhattan, experiential marketing sound design nyc, luxury event music director, B.MILLS brand events"
         url="https://djbmills.com/brand-activations"
         schema={brandActivationsSchema}
@@ -61,7 +61,7 @@ export default function BrandActivations() {
       <h1 className="sr-only">
       New York City Brand Activation DJ and Music Direction
       </h1>
-      
+
       <BrandActivationHero />
 
       {/* Section: Professional Brand Marquee */}
@@ -127,7 +127,7 @@ export default function BrandActivations() {
           .logo-img:hover {
             opacity: 0.6;
           }
-          
+
           /* Neutralizes the solid bounding box color inside the MLB asset */
           .logo-mlb-raw-fix {
             width: 100%;
@@ -191,7 +191,7 @@ export default function BrandActivations() {
             transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
             className="font-body text-sm text-neutral-400 mt-8 max-w-xl leading-relaxed"
           >
-            Finding the balance between a premium underlying atmosphere and a great energy shift during live performance milestones.
+            Finding the balance between a premium underlying atmosphere and a great energy shift during live performance milestones, from product launches and pop ups to retail activations across New York City.
           </motion.p>
 
           <motion.div
@@ -520,7 +520,7 @@ export default function BrandActivations() {
               </motion.div>
             ))}
           </div>
-          
+
           {/* Section: The Right Rooms Footer Columns */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -545,7 +545,7 @@ export default function BrandActivations() {
           </motion.div>
         </div>
       </section>
-      
+
       {/* Section 04: Experience / Logistics */}
       <section className="py-20 md:py-32 px-6 md:px-12 border-b border-neutral-900 bg-[#050505]">
         <div className="max-w-4xl mx-auto">
