@@ -21,10 +21,10 @@ export default function Navbar() {
 
   const isAfterpartiesPage = location.pathname === '/afterparties';
 
-  const inquiryLink = { 
-    label: 'Secure Your Date', 
-    href: '/availability', 
-    sectionId: null 
+  const inquiryLink = {
+    label: 'Secure Your Date',
+    href: '/availability',
+    sectionId: null
   };
 
   useEffect(() => {
@@ -42,7 +42,7 @@ export default function Navbar() {
   useEffect(() => {
     const isCorporatePage = location.pathname === '/corporate-events';
     const isAvailabilityPage = location.pathname === '/availability';
-    
+
     if (isCorporatePage) { setActiveLink('Events'); return; }
     if (isAfterpartiesPage) { setActiveLink('Afterparties'); return; }
     if (isAvailabilityPage) { setActiveLink(''); return; }
@@ -95,7 +95,17 @@ export default function Navbar() {
     }
   }, [location.pathname, location.hash]);
 
-  const handleNavClick = (e, link) => {
+  const handleNavClick = (e, link, placement) => {
+    if (placement) {
+      try {
+        if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+          window.gtag('event', 'secure_your_date_click', {
+            placement,
+          });
+        }
+      } catch (err) {}
+    }
+
     if (!link.sectionId) {
       setMobileOpen(false);
       return;
@@ -220,7 +230,7 @@ export default function Navbar() {
             <a
               href={inquiryLink.href}
               onClick={(e) =>
-                handleNavClick(e, inquiryLink)
+                handleNavClick(e, inquiryLink, 'header')
               }
               className="font-body text-xs tracking-[0.2em] uppercase bg-foreground text-background px-4 py-2 hover:bg-foreground/80 transition-colors duration-300 ml-2"
             >
@@ -234,7 +244,7 @@ export default function Navbar() {
             <a
               href={inquiryLink.href}
               onClick={(e) =>
-                handleNavClick(e, inquiryLink)
+                handleNavClick(e, inquiryLink, 'mobile_bar')
               }
               className="font-body text-[10px] tracking-[0.25em] uppercase text-foreground border border-foreground/30 px-4 py-2 hover:border-foreground transition-all duration-300"
             >
@@ -274,7 +284,7 @@ export default function Navbar() {
               <a
                 href={inquiryLink.href}
                 onClick={(e) =>
-                  handleNavClick(e, inquiryLink)
+                  handleNavClick(e, inquiryLink, 'mobile_menu')
                 }
                 className="font-heading text-3xl font-light tracking-wide text-foreground underline decoration-1 underline-offset-8"
               >
@@ -310,5 +320,8 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </>
+  );
+}
+
   );
 }
