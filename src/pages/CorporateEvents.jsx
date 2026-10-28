@@ -602,7 +602,7 @@ export default function CorporateEvents() {
           className="max-w-6xl mx-auto text-center"
         >
           <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-6">
-            Planning a corporate event in New York
+            Planning a corporate event
           </p>
           <a
             href="#inquiry"
