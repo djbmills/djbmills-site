@@ -70,6 +70,30 @@ export default function CorporateEvents() {
         <CorporateHero />
       </div>
 
+      {/* Inquiry Band, top of page */}
+      <section className="w-full py-16 md:py-20 px-6 border-b border-border bg-background">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-10%' }}
+          transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+          className="max-w-6xl mx-auto text-center"
+        >
+          <p className="font-heading text-2xl md:text-3xl font-light text-foreground leading-relaxed">
+            The music is not an afterthought here.
+          </p>
+          <p className="font-body text-sm text-muted-foreground leading-relaxed mt-5 mb-8">
+            End of year parties and brand events in New York City. December is nearly spoken for.
+          </p>
+          <a
+            href="#inquiry"
+            className="font-body text-[11px] tracking-[0.25em] uppercase text-foreground border-b border-foreground/30 hover:border-foreground transition-colors pb-1"
+          >
+            Check Availability
+          </a>
+        </motion.div>
+      </section>
+
       {/* Brand Marquee Section */}
       <section className="w-full pt-20 pb-16 border-b border-border bg-background overflow-hidden">
         <div className="max-w-6xl mx-auto px-6 mb-10 relative z-10">
@@ -187,7 +211,7 @@ export default function CorporateEvents() {
 
                 <div className="group relative overflow-hidden bg-black/5 aspect-[4/5]">
                   <img
-                    src="/images/corporate/goldman-robinhood/new-york-city-pac-nyc-goldman-sachs-robinhood-metropolis-corporate-event-interior-dj-bmills.jpg"
+                    src="/images/corporate/goldman-robinhood/new-york-city-pac-nyc-metropolis-corporate-event-interior-dj-bmills.jpg"
                     alt="Venue architecture and interior layout"
                     className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
@@ -601,11 +625,8 @@ export default function CorporateEvents() {
           transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
           className="max-w-6xl mx-auto text-center"
         >
-          <p className="font-heading text-2xl md:text-3xl font-light text-foreground leading-relaxed">
-            The music is not an afterthought here.
-          </p>
-          <p className="font-body text-sm text-muted-foreground leading-relaxed mt-5 mb-8">
-            End of year parties and brand events in New York City. December is nearly spoken for.
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-6">
+            Planning a corporate event
           </p>
           <a
             href="#inquiry"
