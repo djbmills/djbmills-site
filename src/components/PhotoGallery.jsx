@@ -1,4 +1,4 @@
-// GALLERY REBUILD V2 NOV 2: Windward dinner removed at Brians call, columns rebalanced to the browsers own quarter points, Haven moved mid column. Was: reordered for variety, generic gala booth and Boom Boom Room cocktail shots removed, gold SAB Ball room, Lord Abbett, and NY Philharmonic added. Component logic untouched.
+// GALLERY V3 NOV 3: mobile only Union Square alt reworded, battle language out. Everything else identical to the live V2.
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -105,7 +105,7 @@ const photos = [
   },
   { 
     src: "/images/nyc-union-square-citibank-dj-battle-rush-hour-bmills-optimized.webp",
-    alt: "B.MILLS competing in the Citibank sponsored DJ battle in Union Square Park during NYC rush hour", 
+    alt: "B.MILLS DJing an outdoor set for the Citi Summer in the Square event in Union Square Park during NYC rush hour", 
     mobileOnly: true 
   }
 ];
