@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: 'DJ B.Mills is as good as it gets - he made me and my wife\'s after party one of the most special stretches of our wedding evening. He was so fun to work with and very professional. He played all our favorite songs and brought our vision to life.',
+    quote: 'DJ B.Mills is as good as it gets - he made me and my wife\'s after party one of the most special stretches of our evening. He was so fun to work with and very professional. He played all our favorite songs and brought our vision to life.',
     name: 'Noah',
     title: 'Afterparty',
   },
@@ -43,9 +43,19 @@ const testimonials = [
     title: 'NBCUniversal',
   },
   {
-    quote: 'Brian provided an AMAZING atmosphere for my wedding. He kept everyone on the dance floor the ENTIRE time! He knows what music to play and how to keep the party and vibes going. I\'d recommend him for ANY occasion.',
+    quote: 'Brian provided an AMAZING atmosphere for my celebration. He kept everyone on the dance floor the ENTIRE time! He knows what music to play and how to keep the party and vibes going. I\'d recommend him for ANY occasion.',
     name: 'Raven',
-    title: 'Wedding Reception',
+    title: 'Private Celebration',
+  },
+  {
+    quote: 'He truly knows how to read a party, mix music, and get everyone on the dance floor. He is also extremely sophisticated, which is perfect for high-end events!',
+    name: 'Samantha',
+    title: 'Private Celebration',
+  },
+  {
+    quote: 'We gave him a short list of songs that we liked for our afterparty and he totally picked up on the vibe and did an incredible set that was exactly the vibe we were looking for.',
+    name: 'Nicole',
+    title: 'Afterparty',
   },
 ];
 
