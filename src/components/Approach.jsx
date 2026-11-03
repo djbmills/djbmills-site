@@ -1,4 +1,4 @@
-// APPROACH COPY NOV 3: two paragraphs replaced at Brian's direction. Headline, photo, and Explore line untouched.
+// APPROACH COPY V3 NOV 3: two paragraphs replaced at Brian's direction, one clause clarified. Headline, photo, and Explore line untouched.
 import { motion } from 'framer-motion';
 
 const APPROACH_WEBP_SMALL = '/images/bmills-approach-640.webp';
@@ -71,8 +71,8 @@ export default function Approach() {
               >
                 Nothing is pre built, and nothing is forced. The volume stays
                 where conversation can live until the room asks for more, and
-                the lift comes a record at a time, never over the moments the
-                event was built around. It is why the same hosts and producers
+                the lift comes a record at a time, never louder than the
+                moment the room is in. It is why the same hosts and producers
                 call back.
               </p>
 
