@@ -193,7 +193,7 @@ export default function CareerHighlights() {
             }}
             className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground"
           >
-            07
+            04
           </motion.span>
 
           <motion.div
