@@ -1,3 +1,4 @@
+// HOME FLIP NOV 2: CareerHighlights moved above Mixtapes. Nothing else changed.
 import {
   lazy,
   Suspense,
@@ -214,9 +215,12 @@ export default function Home() {
       <About />
 
       {/* ── SECTION 04 ── */}
-      <Mixtapes />
+      <CareerHighlights />
 
       {/* ── SECTION 05 ── */}
+      <Mixtapes />
+
+      {/* ── SECTION 06 ── */}
       <DeferredPhotoGallery />
 
       {/* ── REMAINING SECTIONS ── */}
@@ -225,12 +229,10 @@ export default function Home() {
 
       <DeferredClientFeedback />
 
-      <CareerHighlights />
-
       <DeferredInquiryFooter
         headline="Let's shape the night."
         body="Share a few details and we can build a curated audio identity for your event, your space, and your audience."
-        footerText={`Specializing in luxury corporate events, brand activations, and curated afterparties across New York City, 
+        footerText={`Specializing in luxury corporate events, brand activations, and curated afterparties across New York City,
 the Hamptons, New Jersey, and Connecticut.`}
       />
     </main>
