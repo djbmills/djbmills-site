@@ -1,3 +1,4 @@
+// NOV 2: header count removed at Brian's request. The slider pager counter at the bottom stays.
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
@@ -55,7 +56,7 @@ const testimonials = [
   {
     quote: 'We gave him a short list of songs that we liked for our afterparty and he totally picked up on the vibe and did an incredible set that was exactly the vibe we were looking for.',
     name: 'Nicole',
-    title: 'Afterparty',
+    title: 'Private Afterparty',
   },
 ];
 
@@ -88,19 +89,6 @@ export default function ClientFeedback({ sectionId = 'feedback' }) {
     >
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-4 mb-16 overflow-hidden">
-          <motion.span
-            initial={{ opacity: 0, x: -10 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.6,
-              ease: [0.25, 0.1, 0.25, 1],
-            }}
-            className="font-body text-xs tracking-[0.4em] uppercase text-background/30"
-          >
-            {String(testimonials.length).padStart(2, '0')}
-          </motion.span>
-
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
