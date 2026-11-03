@@ -181,6 +181,25 @@ function ImageCard({ item }) {
   );
 }
 
+// Host quotes, in the page's own card style rather than the corporate carousel
+const AFTERPARTY_QUOTES = [
+  {
+    quote: "If we didn't turn on the lights and stop the music, people would still be dancing.",
+    name: "Jeffrey",
+    context: "NY Phil Afterparty at Rainbow Room",
+  },
+  {
+    quote: "We gave him a short list of songs that we liked for our afterparty and he totally picked up on the vibe and did an incredible set that was exactly the vibe we were looking for.",
+    name: "Nicole",
+    context: "Private Afterparty",
+  },
+  {
+    quote: "He played all our favorite songs and brought our vision to life.",
+    name: "Noah",
+    context: "Afterparty",
+  },
+];
+
 export default function Afterparties() {
   return (
     <div className="bg-black text-white min-h-screen pt-28">
@@ -226,6 +245,31 @@ export default function Afterparties() {
         </div>
       </section>
 
+      {/* Client Words, set as cards in the page's own style */}
+      <section className="pb-4 px-6 max-w-7xl mx-auto">
+        <p className="font-body text-xs tracking-[0.3em] uppercase text-neutral-400 text-center mb-10">
+          Word of Mouth
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {AFTERPARTY_QUOTES.map((q) => (
+            <figure
+              key={q.name}
+              className="rounded-2xl border border-white/10 bg-neutral-900 p-6 flex flex-col justify-between shadow-2xl"
+            >
+              <blockquote className="font-heading text-xl font-light leading-relaxed text-white">
+                "{q.quote}"
+              </blockquote>
+
+              <figcaption className="mt-8">
+                <span className="block text-neutral-300 text-xs font-mono uppercase tracking-widest">{q.name}</span>
+                <span className="block text-neutral-500 text-xs font-body mt-1">{q.context}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
       {/* Heading Section Before Footer */}
       <section className="pt-20 pb-10 bg-black px-6 border-t border-white/10 text-center">
         <div className="max-w-4xl mx-auto">
@@ -239,6 +283,10 @@ export default function Afterparties() {
 
           <p className="text-neutral-500 text-sm md:text-base max-w-2xl mx-auto font-body leading-relaxed mt-5">
             The setup can scale with the room, from a clean, minimal DJ booth and dedicated sound system to expanded AV production coordinated with trusted partners when the event calls for more.
+          </p>
+
+          <p className="text-neutral-500 text-xs tracking-[0.2em] uppercase font-body mt-8">
+            Fully insured · COI available on request
           </p>
         </div>
       </section>
