@@ -8,12 +8,7 @@ const selectedEvents = [
   {
     title: "Sammontana Gelati All’Italiana U.S. Launch",
     meta: "Brand Launch | Eataly Rooftop, New York City",
-    body: "For the premier U.S. debut of Sammontana Gelati All’Italiana, B.MILLS designed a tailored sound profile for an international crowd at Eataly Rooftop. Secured via a direct recommendation from Kering Eyewear, the music curation mirrored the brand's sophisticated European heritage. The progression transitioned fluidly from an upscale, atmospheric arrival lounge into a high energy European house set as the evening evolved, delivering an experience that felt both effortless and precise.",
-  },
-  {
-    title: "School of American Ballet Ball",
-    meta: "Dinner + Dancing | Lincoln Center, New York City",
-    body: "Retained for consecutive years to orchestrate the soundtrack for the historic SAB Ball at Lincoln Center, B.MILLS commanded the energy for over 450 guests, including high net worth donors and stakeholders. Following a thirteen year tenure curating for the New York City Ballet Young Patrons Circle, this production required a delicate musical arc—beginning with understated, soul infused dinner arrangements before naturally escalating into a high energy celebration.",
+    body: "For the U.S. debut of Sammontana Gelati All’Italiana, B.MILLS was brought in on the recommendation of Kering Eyewear, a returning client. An atmospheric arrival lounge at Eataly Rooftop, opening into a European house set as the night built.",
   },
 ];
 
@@ -69,30 +64,6 @@ export default function CorporateEvents() {
       <div className="w-full">
         <CorporateHero />
       </div>
-
-      {/* Inquiry Band, top of page */}
-      <section className="w-full py-16 md:py-20 px-6 border-b border-border bg-background">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-10%' }}
-          transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
-          className="max-w-6xl mx-auto text-center"
-        >
-          <p className="font-heading text-2xl md:text-3xl font-light text-foreground leading-relaxed">
-            The music is not an afterthought here.
-          </p>
-          <p className="font-body text-sm text-muted-foreground leading-relaxed mt-5 mb-8">
-            End of year parties and brand events in New York City. December is nearly spoken for.
-          </p>
-          <a
-            href="#inquiry"
-            className="font-body text-[11px] tracking-[0.25em] uppercase text-foreground border-b border-foreground/30 hover:border-foreground transition-colors pb-1"
-          >
-            Check Availability
-          </a>
-        </motion.div>
-      </section>
 
       {/* Brand Marquee Section */}
       <section className="w-full pt-20 pb-16 border-b border-border bg-background overflow-hidden">
@@ -301,6 +272,30 @@ export default function CorporateEvents() {
             </p>
           </motion.div>
         </div>
+      </section>
+
+      {/* Inquiry Band, dark, after Audio Identity */}
+      <section className="w-full py-16 md:py-20 px-6 border-b border-border bg-[#0d0d0d]">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-10%' }}
+          transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+          className="max-w-6xl mx-auto text-center"
+        >
+          <p className="font-heading text-2xl md:text-3xl font-light text-white leading-relaxed">
+            The music is not an afterthought here.
+          </p>
+          <p className="font-body text-sm text-white/50 leading-relaxed mt-5 mb-8">
+            End of year parties and brand events in New York City. December is nearly spoken for.
+          </p>
+          <a
+            href="#inquiry"
+            className="font-body text-[11px] tracking-[0.25em] uppercase text-white border-b border-white/30 hover:border-white transition-colors pb-1"
+          >
+            Check Availability
+          </a>
+        </motion.div>
       </section>
 
       {/* Section 03: Selected Event Experience */}
@@ -562,6 +557,77 @@ export default function CorporateEvents() {
                 className="w-full h-full object-cover aspect-[2/3]"
                 loading="lazy"
               />
+            </div>
+          </motion.div>
+
+          {/* School of American Ballet Ball Case Study */}
+          <motion.div
+            initial={{ opacity: 0, y: 34 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-10%' }}
+            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.525 }}
+            className="mt-16 border-t border-border pt-10"
+          >
+            <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-14 items-start">
+              <div>
+                <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-5">
+                  Dinner + Dancing
+                </p>
+
+                <h3 className="font-heading text-3xl md:text-5xl font-light text-foreground leading-tight">
+                  School of American Ballet Ball
+                </h3>
+
+                <p className="font-body text-sm tracking-[0.25em] uppercase text-muted-foreground mt-6">
+                  David H. Koch Theater | Lincoln Center, New York City
+                </p>
+              </div>
+
+              <div>
+                <p className="font-body text-base text-muted-foreground leading-relaxed">
+                  Retained for consecutive years to orchestrate the soundtrack for the historic SAB Ball at Lincoln Center, B.MILLS commanded the energy for over 450 guests, including high net worth donors and stakeholders.
+                </p>
+
+                <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
+                  Following a thirteen year tenure curating for the New York City Ballet Young Patrons Circle, the night required a delicate musical arc, beginning with understated, soul infused dinner arrangements before naturally escalating into a high energy celebration.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-12">
+              <img
+                src="/images/corporate/sab-ball/school-of-american-ballet-ball-lincoln-center-dance-floor-dj-bmills.jpg"
+                alt="The promenade of the David H. Koch Theater set for the School of American Ballet Ball, with a pink dance floor and dinner tables"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4 mt-14">
+              <img
+                src="/images/corporate/sab-ball/school-of-american-ballet-ball-dj-booth-lincoln-center-dj-bmills.jpg"
+                alt="The view from the DJ booth over the School of American Ballet Ball at Lincoln Center"
+                className="w-full h-full object-cover aspect-[2/3]"
+                loading="lazy"
+              />
+              <img
+                src="/images/corporate/sab-ball/school-of-american-ballet-ball-lincoln-center-blue-dance-floor-dj-bmills.jpg"
+                alt="The dance floor under blue light at the School of American Ballet Ball, Lincoln Center"
+                className="w-full h-full object-cover aspect-[2/3]"
+                loading="lazy"
+              />
+            </div>
+
+            <div className="mt-14 pt-10 border-t border-border">
+              <img
+                src="/images/corporate/sab-ball/david-h-koch-theater-lincoln-center-school-of-american-ballet-ball-arrivals-dj-bmills.jpg"
+                alt="Guests arriving at the David H. Koch Theater at Lincoln Center for the School of American Ballet Ball"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <p className="font-body text-xs text-muted-foreground mt-4 tracking-widest uppercase">
+                Guests arriving at the David H. Koch Theater, Lincoln Center
+              </p>
             </div>
           </motion.div>
 
