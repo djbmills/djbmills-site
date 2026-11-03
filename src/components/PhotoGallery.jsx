@@ -1,4 +1,4 @@
-// GALLERY REBUILD NOV 2: reordered for variety, generic gala booth and Boom Boom Room cocktail shots removed, gold SAB Ball room, Lord Abbett, and NY Philharmonic added. Component logic untouched.
+// GALLERY REBUILD V2 NOV 2: Windward dinner removed at Brians call, columns rebalanced to the browsers own quarter points, Haven moved mid column. Was: reordered for variety, generic gala booth and Boom Boom Room cocktail shots removed, gold SAB Ball room, Lord Abbett, and NY Philharmonic added. Component logic untouched.
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -28,47 +28,44 @@ const photos = [
 
   // COLUMN 2 (Top Column 2 -> Down)
   { 
-    src: "/images/nyc-luxury-hotel-lounge-dj-bmills.jpg", 
-    alt: "Guests enjoying music during curated DJ set by B.MILLS" 
+    src: "/images/nyc-event-hall-des-lumieres-abigail-kirsch-bmills.jpg", 
+    alt: "Upscale NYC event with B.MILLS DJing for corporate audience" 
   },
   { 
     src: "/images/nyc-kering-eyewear-cocktail-reception-boom-boom-room-standard-high-line-dj-bmills.jpg", 
     alt: "B.MILLS DJ performing at Kering Eyewear cocktail reception at Boom Boom Room at The Standard, High Line in NYC" 
   },
   { 
-    src: "/images/nyc-new-york-philharmonic-dudamel-afterparty-dj-bmills.jpg", 
-    alt: "B.MILLS DJing the New York Philharmonic opening night afterparty at David Geffen Hall, Lincoln Center, in front of the Gustavo Dudamel season wall" 
+    src: "/images/nyc-citibank-union-square-outdoor-dj-bmills.jpg", 
+    alt: "Elegant corporate gala atmosphere with live DJ performance by B.MILLS" 
   },
   { 
-    src: "/images/nyc-windward-school-gala-dinner-pier-60-dj-bmills.jpg", 
-    alt: "Crowd and audience during dinner and live presentation at The Windward School fundraising gala at Pier 60 in Chelsea Piers, NYC" 
-  },
-  { 
-    src: "/images/nyc-gucci-start-of-year-celebration-dj-bmills.jpg", 
-    alt: "B.MILLS DJing with Gucci branding in background for Gucci internal start-of-year celebration event in NYC" 
-  },
-
-  // COLUMN 3 (Top Column 3 -> Down)
-  { 
-    src: "/images/nyc-event-hall-des-lumieres-abigail-kirsch-bmills.jpg", 
-    alt: "Upscale NYC event with B.MILLS DJing for corporate audience" 
+    src: "/images/atlantic-city-haven-nightclub-golden-nugget-co2-dj-bmills.jpg", 
+    alt: "B.MILLS spraying CO2 canon from DJ booth over crowd at Haven Nightclub inside Golden Nugget Casino in Atlantic City" 
   },
   { 
     src: "/images/nyc-ballet-portrait-lincoln-center-david-h-koch-theater-dj-bmills.jpg", 
     alt: "Portrait of B.MILLS DJ in the David H. Koch Theater Promenade at Lincoln Center in New York City",
     credit: true 
   },
+
+  // COLUMN 3 (Top Column 3 -> Down)
   { 
-    src: "/images/nyc-citibank-union-square-outdoor-dj-bmills.jpg", 
-    alt: "Elegant corporate gala atmosphere with live DJ performance by B.MILLS" 
+    src: "/images/nyc-ballet-young-patrons-lincoln-center-david-h-koch-theater-dj-bmills.jpg", 
+    alt: "B.MILLS DJing for New York City Ballet Young Patrons event in the David H. Koch Theater Promenade at Lincoln Center",
+    credit: true 
   },
   { 
-    src: "/images/nyc-windward-school-fundraising-gala-pier-60-dj-bmills.jpg", 
-    alt: "B.MILLS DJ performing at The Windward School fundraising gala at Pier 60 Chelsea Piers in New York City" 
+    src: "/images/nyc-luxury-hotel-lounge-dj-bmills.jpg", 
+    alt: "Guests enjoying music during curated DJ set by B.MILLS" 
   },
   { 
-    src: "/images/atlantic-city-haven-nightclub-golden-nugget-co2-dj-bmills.jpg", 
-    alt: "B.MILLS spraying CO2 canon from DJ booth over crowd at Haven Nightclub inside Golden Nugget Casino in Atlantic City" 
+    src: "/images/nyc-new-york-philharmonic-dudamel-afterparty-dj-bmills.jpg", 
+    alt: "B.MILLS DJing the New York Philharmonic opening night afterparty at David Geffen Hall, Lincoln Center, in front of the Gustavo Dudamel season wall" 
+  },
+  { 
+    src: "/images/nyc-gucci-start-of-year-celebration-dj-bmills.jpg", 
+    alt: "B.MILLS DJing with Gucci branding in background for Gucci internal start-of-year celebration event in NYC" 
   },
 
   // COLUMN 4 (Top Column 4 -> Down)
@@ -77,9 +74,8 @@ const photos = [
     alt: "B.MILLS DJing behind a Lord Abbett branded booth at a corporate event in New York City" 
   },
   { 
-    src: "/images/nyc-ballet-young-patrons-lincoln-center-david-h-koch-theater-dj-bmills.jpg", 
-    alt: "B.MILLS DJing for New York City Ballet Young Patrons event in the David H. Koch Theater Promenade at Lincoln Center",
-    credit: true 
+    src: "/images/nyc-windward-school-fundraising-gala-pier-60-dj-bmills.jpg", 
+    alt: "B.MILLS DJ performing at The Windward School fundraising gala at Pier 60 Chelsea Piers in New York City" 
   },
   { 
     src: "/images/nyc-hornitos-tequila-cinco-de-mayo-brand-activation-dj-bmills.jpg", 
