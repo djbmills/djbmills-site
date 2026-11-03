@@ -1,3 +1,4 @@
+// LIGHT VERSION NOV 2: light editorial flip. If this line is missing, this is the old dark file.
 import { motion } from 'framer-motion';
 import BrandActivationHero from '../components/BrandActivationHero';
 import InquiryFooter from '../components/InquiryFooter';
@@ -50,7 +51,7 @@ const brandLogos = [
 
 export default function BrandActivations() {
   return (
-    <div className="min-h-screen bg-[#000000] text-[#f5f5f7] selection:bg-neutral-800 selection:text-white">
+    <div className="w-full min-h-screen bg-background overflow-x-hidden">
       <SEOHeading
         title="Brand Activation DJ in New York City | B.MILLS"
         description="B.MILLS is a brand activation DJ in New York City, providing music direction and curated DJ sets for product launches, pop ups, retail activations, and fashion events, trusted by LVMH, Gucci, Celine, and Google."
@@ -65,9 +66,9 @@ export default function BrandActivations() {
       <BrandActivationHero />
 
       {/* Section: Professional Brand Marquee */}
-      <section className="relative pt-20 pb-16 border-b border-neutral-900 bg-[#000000] overflow-hidden">
+      <section className="relative w-full pt-20 pb-16 border-b border-border bg-background overflow-hidden">
         <div className="max-w-6xl mx-auto px-6 mb-10 relative z-10">
-          <p className="font-body text-[10px] tracking-[0.4em] uppercase text-neutral-500 text-center">
+          <p className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground text-center">
             Trusted By
           </p>
         </div>
@@ -81,7 +82,7 @@ export default function BrandActivations() {
                     <img
                       src={`/images/logos/${brand}.svg`}
                       alt={`${brand} logo`}
-                      className={brand === 'mlb' ? 'logo-mlb-raw-fix' : 'logo-img'}
+                      className="logo-img"
                       loading="lazy"
                     />
                   </div>
@@ -120,28 +121,15 @@ export default function BrandActivations() {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            filter: brightness(0) invert(1);
-            opacity: 0.2;
-            transition: opacity 500ms ease;
+            filter: grayscale(1);
+            opacity: 0.48;
+            transition: opacity 500ms ease, filter 500ms ease;
           }
           .logo-img:hover {
-            opacity: 0.6;
+            opacity: 0.9;
+            filter: grayscale(0);
           }
 
-          /* Neutralizes the solid bounding box color inside the MLB asset */
-          .logo-mlb-raw-fix {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            filter: brightness(1.8) contrast(1.2);
-            mix-blend-mode: screen;
-            opacity: 0.25;
-            transition: opacity 500ms ease;
-          }
-          .logo-mlb-raw-fix:hover {
-            opacity: 0.65;
-            filter: brightness(2.2) contrast(1.5);
-          }
 
           @media (min-width: 768px) {
             .logo-slot {
@@ -154,10 +142,10 @@ export default function BrandActivations() {
       </section>
 
       {/* Section 01: The Philosophy */}
-      <section className="py-20 md:py-32 px-6 md:px-12 border-b border-neutral-900 bg-[#000000]">
+      <section className="w-full py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-4 mb-10">
-            <span className="font-body text-xs tracking-[0.4em] uppercase text-neutral-500 shrink-0">
+            <span className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground shrink-0">
               01
             </span>
             <motion.div
@@ -165,9 +153,9 @@ export default function BrandActivations() {
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true, margin: '-10%' }}
               transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-              className="flex-1 h-px bg-neutral-900 origin-left min-w-[40px]"
+              className="flex-1 h-px bg-border origin-left min-w-[40px]"
             />
-            <span className="font-body text-xs tracking-[0.3em] uppercase text-neutral-500 shrink-0 whitespace-nowrap">
+            <span className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground shrink-0 whitespace-nowrap">
               The Philosophy
             </span>
           </div>
@@ -178,7 +166,7 @@ export default function BrandActivations() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-10%' }}
               transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
-              className="font-heading text-2xl md:text-3xl lg:text-4xl font-light text-white leading-relaxed"
+              className="font-heading text-2xl md:text-3xl lg:text-4xl font-light text-foreground leading-relaxed"
             >
               Experiential spaces require distinct sound design. The music must frame the physical room and amplify the brand messaging while keeping the crowd entirely connected.
             </motion.p>
@@ -189,7 +177,7 @@ export default function BrandActivations() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-10%' }}
             transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
-            className="font-body text-sm text-neutral-400 mt-8 max-w-xl leading-relaxed"
+            className="font-body text-sm text-muted-foreground mt-8 max-w-xl leading-relaxed"
           >
             Finding the balance between a premium underlying atmosphere and a great energy shift during live performance milestones, from product launches and pop ups to retail activations across New York City.
           </motion.p>
@@ -203,40 +191,40 @@ export default function BrandActivations() {
           >
             <div className="max-w-4xl mx-auto">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                <div className="group relative overflow-hidden bg-neutral-950 aspect-[4/5] border border-neutral-900">
+                <div className="group relative overflow-hidden bg-black/5 aspect-[4/5]">
                   <img
                     src="/images/bmills-corporate-2.png"
                     alt="B.MILLS performing at Goldman Sachs Robinhood event New York City Corporate Sound Design"
-                    className="w-full h-full object-cover object-center opacity-80 transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />
                 </div>
-                <div className="group relative overflow-hidden bg-neutral-950 aspect-[4/5] border border-neutral-900">
+                <div className="group relative overflow-hidden bg-black/5 aspect-[4/5]">
                   <img
                     src="/images/corporate/goldman-robinhood/bmills-dj-booth-robinhood-goldman.png"
                     alt="B.MILLS DJ setup at Goldman Sachs Robinhood event in New York City"
-                    className="w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />
                 </div>
-                <div className="group relative overflow-hidden bg-neutral-950 aspect-[4/5] border border-neutral-900">
+                <div className="group relative overflow-hidden bg-black/5 aspect-[4/5]">
                   <img
                     src="/images/corporate/goldman-robinhood/metropolis-event-interior.png"
                     alt="Metropolis by Marcus Samuelsson event interior for Goldman Sachs Robinhood event"
-                    className="w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />
                 </div>
-                <div className="group relative overflow-hidden bg-neutral-950 aspect-[4/5] border border-neutral-900">
+                <div className="group relative overflow-hidden bg-black/5 aspect-[4/5]">
                   <img
                     src="/images/corporate/goldman-robinhood/goldman-robinhood-signage.png"
                     alt="Goldman Sachs and Robinhood event signage in New York City"
-                    className="w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />
                 </div>
               </div>
-              <p className="font-body text-[11px] tracking-[0.2em] uppercase text-neutral-500 mt-4 text-left">
+              <p className="font-body text-[11px] tracking-[0.2em] uppercase text-muted-foreground mt-4 text-left">
                 Goldman Sachs / Robinhood Event | New York City
               </p>
             </div>
@@ -245,10 +233,10 @@ export default function BrandActivations() {
       </section>
 
       {/* Section 02: Brand Alignment */}
-      <section className="py-20 md:py-32 px-6 md:px-12 border-b border-neutral-900 bg-[#000000]">
+      <section className="w-full py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-4 mb-10">
-            <span className="font-body text-xs tracking-[0.4em] uppercase text-neutral-500 shrink-0">
+            <span className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground shrink-0">
               02
             </span>
             <motion.div
@@ -256,9 +244,9 @@ export default function BrandActivations() {
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true, margin: '-10%' }}
               transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-              className="flex-1 h-px bg-neutral-900 origin-left min-w-[40px]"
+              className="flex-1 h-px bg-border origin-left min-w-[40px]"
             />
-            <span className="font-body text-xs tracking-[0.3em] uppercase text-neutral-500 shrink-0 whitespace-nowrap">
+            <span className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground shrink-0 whitespace-nowrap">
               Brand Alignment
             </span>
           </div>
@@ -269,7 +257,7 @@ export default function BrandActivations() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-10%' }}
               transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
-              className="font-heading text-5xl md:text-6xl font-light text-white mb-10 leading-tight"
+              className="font-heading text-5xl md:text-6xl font-light text-foreground mb-10 leading-tight"
             >
               Audio Identity
             </motion.h2>
@@ -282,10 +270,10 @@ export default function BrandActivations() {
             transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
             className="max-w-2xl"
           >
-            <p className="font-body text-base text-neutral-400 leading-relaxed">
+            <p className="font-body text-base text-muted-foreground leading-relaxed">
               B.MILLS programs the sound directly to the layout of the venue. The physical space, guest flow, lighting changes, and overall brand identity outline the path. The curation stays focused, modern, and aligned.
             </p>
-            <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
+            <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
               It comes down to great timing—knowing exactly when to ground a room with a steady groove and when to step up the transitions during milestone moments.
             </p>
           </motion.div>
@@ -297,15 +285,15 @@ export default function BrandActivations() {
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
             className="mt-14"
           >
-            <div className="border border-neutral-900">
+            <div>
               <img
                 src="/images/bmills-corporate-3.png"
                 alt="B.MILLS managing audio for Hall des Lumieres Grand Opening NYC Brand Event"
-                className="w-full h-auto object-cover opacity-85"
+                className="w-full h-auto object-cover"
                 loading="lazy"
               />
             </div>
-            <p className="font-body text-[11px] tracking-[0.2em] uppercase text-neutral-500 mt-4 text-left">
+            <p className="font-body text-[11px] tracking-[0.2em] uppercase text-muted-foreground mt-4 text-left">
               Hall des Lumières Grand Opening | New York City
             </p>
           </motion.div>
@@ -313,10 +301,10 @@ export default function BrandActivations() {
       </section>
 
       {/* Section 03: Selected Event Experience */}
-      <section className="py-20 md:py-32 px-6 md:px-12 border-b border-neutral-900 bg-[#000000]">
+      <section className="w-full py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-4 mb-10 overflow-hidden">
-            <span className="font-body text-xs tracking-[0.4em] uppercase text-neutral-500 shrink-0">
+            <span className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground shrink-0">
               03
             </span>
             <motion.div
@@ -324,14 +312,14 @@ export default function BrandActivations() {
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true, margin: '-10%' }}
               transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-              className="flex-1 h-px bg-neutral-900 origin-left"
+              className="flex-1 h-px bg-border origin-left"
             />
             <motion.span
               initial={{ opacity: 0, x: 10 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-10%' }}
               transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
-              className="font-body text-xs tracking-[0.3em] uppercase text-neutral-500 shrink-0"
+              className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground shrink-0"
             >
               Featured Work
             </motion.span>
@@ -343,7 +331,7 @@ export default function BrandActivations() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-10%' }}
               transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
-              className="font-heading text-5xl md:text-6xl font-light text-white mb-10 leading-tight"
+              className="font-heading text-5xl md:text-6xl font-light text-foreground mb-10 leading-tight"
             >
               Selected Activation Experience
             </motion.h2>
@@ -354,7 +342,7 @@ export default function BrandActivations() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-10%' }}
             transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
-            className="font-body text-base text-neutral-400 leading-relaxed max-w-3xl"
+            className="font-body text-base text-muted-foreground leading-relaxed max-w-3xl"
           >
             B.MILLS collaborates with consumer brands, event production agencies, and creative teams to build soundtracks where style and atmosphere are non-negotiable. His work covers everything from open-air public spaces to private launch events.
           </motion.p>
@@ -365,66 +353,66 @@ export default function BrandActivations() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-10%' }}
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
-            className="mt-16 border-t border-neutral-900 pt-10"
+            className="mt-16 border-t border-border pt-10"
           >
             <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-12 items-start">
               <div className="order-2 lg:order-1">
-                <div className="border border-neutral-900">
+                <div>
                   <img
                     src="/images/corporate/1800-tequila/1800-tequila-pioneer-works-crowd.png"
                     alt="1800 Tequila x Essential Artists event at Pioneer Works in Red Hook Brooklyn"
-                    className="w-full h-auto object-cover opacity-85"
+                    className="w-full h-auto object-cover"
                     loading="lazy"
                   />
                 </div>
               </div>
 
               <div className="order-1 lg:order-2">
-                <p className="font-body text-xs tracking-[0.3em] uppercase text-neutral-500 mb-5">
+                <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-5">
                   Brand Reception / Limited Edition Launch / Art World Event
                 </p>
-                <h3 className="font-heading text-3xl md:text-4xl font-light text-white leading-tight">
+                <h3 className="font-heading text-3xl md:text-4xl font-light text-foreground leading-tight">
                   1800 Tequila x Essential Artists
                 </h3>
-                <p className="font-body text-base text-neutral-400 leading-relaxed mt-8">
+                <p className="font-body text-base text-muted-foreground leading-relaxed mt-8">
                   For a limited edition 1800 Tequila bottle release with artist Dustin Yellin, B.MILLS crafted the sound for an intimate brand gathering at Pioneer Works, the cultural hub founded by Yellin.
                 </p>
-                <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
+                <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
                   The event focused entirely on the custom artwork, the physical installations inside the studio, and the movement of guests throughout the space. The music had to feel premium and engaging without drawing focus away from the gallery layout.
                 </p>
-                <p className="font-body text-base text-neutral-400 leading-relaxed mt-5">
+                <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
                   B.MILLS leaned on the environment itself to direct the soundtrack, letting the raw Brooklyn venue, the art community crowd, and the natural flow of the night set the pace. The performance relied on soulful, distinct tracks with a steady drive that felt authentic and tied the entire evening together perfectly.
                 </p>
               </div>
             </div>
 
             <div className="grid md:grid-cols-3 gap-4 mt-8">
-              <div className="border border-neutral-900">
+              <div>
                 <img
                   src="/images/corporate/1800-tequila/bmills-1800-tequila-dj-pioneer-works.png"
                   alt="B.MILLS DJing the 1800 Tequila Essential Artists reception at Pioneer Works"
-                  className="w-full h-full object-cover aspect-[2/3] opacity-85"
+                  className="w-full h-full object-cover aspect-[2/3]"
                   loading="lazy"
                 />
               </div>
-              <div className="border border-neutral-900">
+              <div>
                 <img
                   src="/images/corporate/1800-tequila/1800-tequila-essential-artists-bottles.png"
                   alt="1800 Tequila Essential Artists limited edition bottles by Dustin Yellin"
-                  className="w-full h-full object-cover aspect-[2/3] opacity-85"
+                  className="w-full h-full object-cover aspect-[2/3]"
                   loading="lazy"
                 />
               </div>
-              <div className="border border-neutral-900">
+              <div>
                 <img
                   src="/images/corporate/1800-tequila/dustin-yellin-pioneer-works-sculpture.png"
                   alt="Dustin Yellin artwork displayed at Pioneer Works for the 1800 Tequila event"
-                  className="w-full h-full object-cover aspect-[2/3] opacity-85"
+                  className="w-full h-full object-cover aspect-[2/3]"
                   loading="lazy"
                 />
               </div>
             </div>
-            <p className="font-body text-[11px] tracking-[0.2em] uppercase text-neutral-500 mt-4 text-left">
+            <p className="font-body text-[11px] tracking-[0.2em] uppercase text-muted-foreground mt-4 text-left">
               1800 Tequila Activation | Red Hook, Brooklyn
             </p>
           </motion.div>
@@ -435,27 +423,27 @@ export default function BrandActivations() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-10%' }}
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
-            className="mt-16 border-t border-neutral-900 pt-10"
+            className="mt-16 border-t border-border pt-10"
           >
             <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-14 items-start mb-8">
               <div>
-                <p className="font-body text-xs tracking-[0.3em] uppercase text-neutral-500 mb-5">
+                <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-5">
                   Outdoor Brand Experience | Union Square Park
                 </p>
-                <h3 className="font-heading text-3xl md:text-4xl lg:text-5xl font-light text-white leading-tight">
+                <h3 className="font-heading text-3xl md:text-4xl lg:text-5xl font-light text-foreground leading-tight">
                   Citi Summer in the Square
                 </h3>
-                <p className="font-body text-base text-neutral-400 leading-relaxed mt-8">
+                <p className="font-body text-base text-muted-foreground leading-relaxed mt-8">
                   For the summer event series in Union Square Park, B.MILLS played a weekly, open air program co-sponsored by Citi and Union Square Partnership, built to draw awareness from the NYC rush hour crowd.
                 </p>
               </div>
 
               <div>
-                <div className="border border-neutral-900">
+                <div>
                   <img
                     src="/images/corporate/citi/dj-bmills-citi-summer-in-the-square-union-square-nyc-corporate-event-dj-01.jpg"
                     alt="B.MILLS performing live at the Citi Summer in the Square brand activation turntable setup"
-                    className="w-full h-auto object-cover opacity-85"
+                    className="w-full h-auto object-cover"
                     loading="lazy"
                   />
                 </div>
@@ -463,32 +451,32 @@ export default function BrandActivations() {
             </div>
 
             <div className="grid md:grid-cols-3 gap-4">
-              <div className="border border-neutral-900">
+              <div>
                 <img
                   src="/images/corporate/citi/dj-bmills-citi-summer-in-the-square-union-square-nyc-brand-event-performance-03.jpg"
                   alt="B.MILLS performing live facing side profile angle stage layout"
-                  className="w-full h-full object-cover aspect-[4/3] opacity-85"
+                  className="w-full h-full object-cover aspect-[4/3]"
                   loading="lazy"
                 />
               </div>
-              <div className="border border-neutral-900">
+              <div>
                 <img
                   src="/images/corporate/citi/dj-bmills-citi-summer-in-the-square-union-square-nyc-live-crowd-activation-02.jpg"
                   alt="Citi Summer in the Square public activation crowds Union Square Park"
-                  className="w-full h-full object-cover aspect-[4/3] opacity-85"
+                  className="w-full h-full object-cover aspect-[4/3]"
                   loading="lazy"
                 />
               </div>
-              <div className="border border-neutral-900">
+              <div>
                 <img
                   src="/images/nyc-union-square-citibank-dj-battle-rush-hour-bmills.jpg"
                   alt="B.MILLS performing during the Citi Summer in the Square rush hour program in Union Square, New York City"
-                  className="w-full h-full object-cover aspect-[4/3] opacity-85"
+                  className="w-full h-full object-cover aspect-[4/3]"
                   loading="lazy"
                 />
               </div>
             </div>
-            <p className="font-body text-[11px] tracking-[0.2em] uppercase text-neutral-500 mt-4 text-left">
+            <p className="font-body text-[11px] tracking-[0.2em] uppercase text-muted-foreground mt-4 text-left">
               Citi Summer in the Square | New York City
             </p>
           </motion.div>
@@ -506,15 +494,15 @@ export default function BrandActivations() {
                   ease: [0.25, 0.1, 0.25, 1],
                   delay: 0.15 + index * 0.1,
                 }}
-                className="border-t border-neutral-900 pt-10"
+                className="border-t border-border pt-10"
               >
-                <h3 className="font-heading text-2xl md:text-3xl font-light text-white leading-tight">
+                <h3 className="font-heading text-2xl md:text-3xl font-light text-foreground leading-tight">
                   {event.title}
                 </h3>
-                <p className="font-body text-xs tracking-[0.3em] uppercase text-neutral-500 mt-4">
+                <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mt-4">
                   {event.meta}
                 </p>
-                <p className="font-body text-base text-neutral-400 leading-relaxed mt-6 max-w-4xl font-light">
+                <p className="font-body text-base text-muted-foreground leading-relaxed mt-6 max-w-4xl font-light">
                   {event.body}
                 </p>
               </motion.div>
@@ -527,16 +515,16 @@ export default function BrandActivations() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-10%' }}
             transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
-            className="mt-20 pt-10 border-t border-neutral-900"
+            className="mt-20 pt-10 border-t border-border"
           >
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-neutral-500 mb-6">
+            <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-6">
               The Right Rooms
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               {trustedFor.map((item) => (
                 <p
                   key={item}
-                  className="font-body text-sm text-neutral-400 leading-relaxed font-light"
+                  className="font-body text-sm text-muted-foreground leading-relaxed font-light"
                 >
                   {item}
                 </p>
@@ -547,7 +535,7 @@ export default function BrandActivations() {
       </section>
 
       {/* Section 04: Experience / Logistics */}
-      <section className="py-20 md:py-32 px-6 md:px-12 border-b border-neutral-900 bg-[#050505]">
+      <section className="w-full py-20 md:py-32 px-6 md:px-12 border-b border-border bg-[#0d0d0d]">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-4 mb-10">
             <span className="font-body text-xs tracking-[0.4em] uppercase text-white/30 shrink-0">
@@ -594,20 +582,20 @@ export default function BrandActivations() {
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
             className="pt-12 mt-12 border-t border-white/10"
           >
-            <div className="grid grid-cols-2 gap-4">
-              <div className="border border-neutral-900">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+              <div className="overflow-hidden bg-white/5 aspect-[4/3]">
                 <img
                   src="/images/bmills-corporate-4.jpg"
                   alt="B.MILLS Luxury Corporate Event DJ NYC Boom Boom Room"
-                  className="w-full h-full object-cover opacity-85"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
               </div>
-              <div className="border border-neutral-900">
+              <div className="overflow-hidden bg-white/5 aspect-[4/3]">
                 <img
                   src="/images/bmills-corporate-5.jpg"
                   alt="B.MILLS Curated Music Direction for High End Galas"
-                  className="w-full h-full object-cover opacity-85"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
               </div>
