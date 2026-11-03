@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import CorporateHero from '../components/CorporateHero';
-import CorporateEventGallery from '../components/CorporateEventGallery';
 import SEOHeading from '../components/SEOHeading';
 import InquiryFooter from '../components/InquiryFooter';
 
@@ -46,7 +45,7 @@ const selectedEvents = [
   {
     title: "Sammontana Gelati All’Italiana U.S. Launch",
     meta: "Brand Launch | Eataly Rooftop, New York City",
-    body: "For the premier U.S. debut of Sammontana Gelati All’Italiana, B.MILLS designed a tailored sound profile for an international crowd at Eataly Rooftop. Secured via a direct recommendation from Kering Eyewear, the music curation mirrored the brand's sophisticated European heritage. The progression transitioned fluidly from an upscale, atmospheric arrival lounge into a high energy European house set as the evening evolved, delivering an experience that felt both effortless and precise.",
+    body: "For the U.S. debut of Sammontana Gelati All’Italiana, B.MILLS was brought in on the recommendation of Kering Eyewear, a returning client. An atmospheric arrival lounge at Eataly Rooftop, opening into a European house set as the night built.",
   },
   {
     title: "School of American Ballet Ball",
@@ -213,7 +212,7 @@ export default function CorporateNJ() {
 
                   <div className="group relative overflow-hidden bg-black/5 aspect-[4/5]">
                     <img
-                      src="/images/corporate/goldman-robinhood/new-york-city-pac-nyc-metropolis-corporate-event-interior-dj-bmills.jpg"
+                      src="/images/corporate/goldman-robinhood/new-york-city-pac-nyc-goldman-sachs-robinhood-metropolis-corporate-event-interior-dj-bmills.jpg"
                       alt="Venue architecture and interior layout"
                       className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
@@ -616,8 +615,6 @@ export default function CorporateNJ() {
             </motion.div>
           </div>
         </section>
-
-        <CorporateEventGallery />
       </div>
 
       <InquiryFooter
