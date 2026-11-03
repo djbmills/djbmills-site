@@ -440,13 +440,13 @@ export default function BrandActivations() {
             <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-14 items-start mb-8">
               <div>
                 <p className="font-body text-xs tracking-[0.3em] uppercase text-neutral-500 mb-5">
-                  Outdoor Brand Experience | Live DJ Battle
+                  Outdoor Brand Experience | Union Square Park
                 </p>
                 <h3 className="font-heading text-3xl md:text-4xl lg:text-5xl font-light text-white leading-tight">
                   Citi Summer in the Square
                 </h3>
                 <p className="font-body text-base text-neutral-400 leading-relaxed mt-8">
-                  For the summer event series in Union Square Park, B.MILLS stepped into an outdoor live DJ battle co-sponsored by Citi and Union Square Partnership. This was a weekly, open-air entertainment program built to draw awareness from the NYC rush hour crowd.
+                  For the summer event series in Union Square Park, B.MILLS played a weekly, open air program co-sponsored by Citi and Union Square Partnership, built to draw awareness from the NYC rush hour crowd.
                 </p>
               </div>
 
@@ -482,7 +482,7 @@ export default function BrandActivations() {
               <div className="border border-neutral-900">
                 <img
                   src="/images/nyc-union-square-citibank-dj-battle-rush-hour-bmills.jpg"
-                  alt="B.MILLS performing during the Citi Summer in the Square DJ battle in Union Square during New York City rush hour"
+                  alt="B.MILLS performing during the Citi Summer in the Square rush hour program in Union Square, New York City"
                   className="w-full h-full object-cover aspect-[4/3] opacity-85"
                   loading="lazy"
                 />
