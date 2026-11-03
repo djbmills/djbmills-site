@@ -434,7 +434,7 @@ export default function BrandActivations() {
                   Citi Summer in the Square
                 </h3>
                 <p className="font-body text-base text-muted-foreground leading-relaxed mt-8">
-                  For the summer event series in Union Square Park, B.MILLS played a weekly, open air program co-sponsored by Citi and Union Square Partnership, built to draw awareness from the NYC rush hour crowd.
+                  There is no harder room than a public square at rush hour: a hot summer day, thousands of people in motion, and nobody obliged to stop. B.MILLS played an open air set right in the middle of it and held the crowd anyway, commuters slowing down, office workers gathering at the edges, until the people passing through had become an audience.
                 </p>
               </div>
 
