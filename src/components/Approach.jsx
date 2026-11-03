@@ -1,3 +1,4 @@
+// APPROACH COPY NOV 3: two paragraphs replaced at Brian's direction. Headline, photo, and Explore line untouched.
 import { motion } from 'framer-motion';
 
 const APPROACH_WEBP_SMALL = '/images/bmills-approach-640.webp';
@@ -60,16 +61,19 @@ export default function Approach() {
                 className="font-body text-[0.95rem] md:text-[1rem] leading-[1.75] font-light"
                 style={{ color: 'rgba(22, 22, 20, 0.72)' }}
               >
-                Every event moves different. The music has to meet the space,
-                the crowd, and the moment without forcing any of it.
+                Anyone can build a playlist. The work starts when the room
+                fills. What plays next is decided in the room, not before it.
               </p>
 
               <p
                 className="font-body text-[0.95rem] md:text-[1rem] leading-[1.75] font-light"
                 style={{ color: 'rgba(22, 22, 20, 0.72)' }}
               >
-                Built in real time, adjusted as the energy shifts, and shaped
-                to feel natural from the first arrival to the last record.
+                Nothing is pre built, and nothing is forced. The volume stays
+                where conversation can live until the room asks for more, and
+                the lift comes a record at a time, never over the moments the
+                event was built around. It is why the same hosts and producers
+                call back.
               </p>
 
               <p
