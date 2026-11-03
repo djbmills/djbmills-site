@@ -162,7 +162,7 @@ export default function PhotoGallery() {
             transition={{ duration: 0.6 }}
             className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground"
           >
-            05
+            06
           </motion.span>
 
           <motion.div
