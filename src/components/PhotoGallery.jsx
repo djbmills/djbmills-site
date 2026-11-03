@@ -1,3 +1,4 @@
+// GALLERY REBUILD NOV 2: reordered for variety, generic gala booth and Boom Boom Room cocktail shots removed, gold SAB Ball room, Lord Abbett, and NY Philharmonic added. Component logic untouched.
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -9,53 +10,48 @@ const photos = [
     alt: "B.MILLS DJ performing at luxury corporate event in New York City" 
   },
   { 
-    src: "/images/nyc-event-hall-des-lumieres-abigail-kirsch-bmills.jpg", 
-    alt: "Upscale NYC event with B.MILLS DJing for corporate audience" 
-  },
-  { 
-    src: "/images/nyc-hospitality-alliance-anniversary-dj-bmills.jpg", 
-    alt: "B.MILLS DJ set at luxury brand activation in New York" 
-  },
-  { 
-    src: "/images/nyc-citibank-union-square-outdoor-dj-bmills.jpg", 
-    alt: "Elegant corporate gala atmosphere with live DJ performance by B.MILLS" 
+    src: "/images/school-of-american-ballet-ball-lincoln-center-gala-dinner-dj-bmills.jpg", 
+    alt: "Gala dinner at the School of American Ballet Ball in the David H. Koch Theater at Lincoln Center in New York City" 
   },
   { 
     src: "/images/nyc-fanatics-topps-event-dj-bmills.jpg", 
     alt: "Fanatics Topps event in NYC with B.MILLS DJ" 
   },
-
-  // COLUMN 2 (Top Column 2 -> Down)
   { 
     src: "/images/nyc-corporate-gala-confetti-dj-bmills.jpg", 
     alt: "B.MILLS DJ creating atmosphere at upscale Manhattan event" 
+  },
+  { 
+    src: "/images/nyc-hospitality-alliance-anniversary-dj-bmills.jpg", 
+    alt: "B.MILLS DJ set at luxury brand activation in New York" 
+  },
+
+  // COLUMN 2 (Top Column 2 -> Down)
+  { 
+    src: "/images/nyc-luxury-hotel-lounge-dj-bmills.jpg", 
+    alt: "Guests enjoying music during curated DJ set by B.MILLS" 
   },
   { 
     src: "/images/nyc-kering-eyewear-cocktail-reception-boom-boom-room-standard-high-line-dj-bmills.jpg", 
     alt: "B.MILLS DJ performing at Kering Eyewear cocktail reception at Boom Boom Room at The Standard, High Line in NYC" 
   },
   { 
-    src: "/images/nyc-luxury-hotel-lounge-dj-bmills.jpg", 
-    alt: "Guests enjoying music during curated DJ set by B.MILLS" 
-  },
-  { 
-    src: "/images/nyc-ballet-young-patrons-lincoln-center-david-h-koch-theater-dj-bmills.jpg", 
-    alt: "B.MILLS DJing for New York City Ballet Young Patrons event in the David H. Koch Theater Promenade at Lincoln Center",
-    credit: true 
-  },
-  { 
-    src: "/images/nyc-windward-school-fundraising-gala-pier-60-dj-bmills.jpg", 
-    alt: "B.MILLS DJ performing at The Windward School fundraising gala at Pier 60 Chelsea Piers in New York City" 
-  },
-
-  // COLUMN 3 (Top Column 3 -> Down)
-  { 
-    src: "/images/nyc-corporate-gala-dj-booth-bmills.jpg", 
-    alt: "B.MILLS DJ at premium corporate function in New York City" 
+    src: "/images/nyc-new-york-philharmonic-dudamel-afterparty-dj-bmills.jpg", 
+    alt: "B.MILLS DJing the New York Philharmonic opening night afterparty at David Geffen Hall, Lincoln Center, in front of the Gustavo Dudamel season wall" 
   },
   { 
     src: "/images/nyc-windward-school-gala-dinner-pier-60-dj-bmills.jpg", 
     alt: "Crowd and audience during dinner and live presentation at The Windward School fundraising gala at Pier 60 in Chelsea Piers, NYC" 
+  },
+  { 
+    src: "/images/nyc-gucci-start-of-year-celebration-dj-bmills.jpg", 
+    alt: "B.MILLS DJing with Gucci branding in background for Gucci internal start-of-year celebration event in NYC" 
+  },
+
+  // COLUMN 3 (Top Column 3 -> Down)
+  { 
+    src: "/images/nyc-event-hall-des-lumieres-abigail-kirsch-bmills.jpg", 
+    alt: "Upscale NYC event with B.MILLS DJing for corporate audience" 
   },
   { 
     src: "/images/nyc-ballet-portrait-lincoln-center-david-h-koch-theater-dj-bmills.jpg", 
@@ -63,22 +59,31 @@ const photos = [
     credit: true 
   },
   { 
-    src: "/images/nyc-hornitos-tequila-cinco-de-mayo-brand-activation-dj-bmills.jpg", 
-    alt: "B.MILLS DJing Hornitos Tequila brand activation for Cinco de Mayo event in Manhattan's Upper East Side" 
+    src: "/images/nyc-citibank-union-square-outdoor-dj-bmills.jpg", 
+    alt: "Elegant corporate gala atmosphere with live DJ performance by B.MILLS" 
   },
-
-  // COLUMN 4 (Top Column 4 -> Down)
+  { 
+    src: "/images/nyc-windward-school-fundraising-gala-pier-60-dj-bmills.jpg", 
+    alt: "B.MILLS DJ performing at The Windward School fundraising gala at Pier 60 Chelsea Piers in New York City" 
+  },
   { 
     src: "/images/atlantic-city-haven-nightclub-golden-nugget-co2-dj-bmills.jpg", 
     alt: "B.MILLS spraying CO2 canon from DJ booth over crowd at Haven Nightclub inside Golden Nugget Casino in Atlantic City" 
   },
+
+  // COLUMN 4 (Top Column 4 -> Down)
   { 
-    src: "/images/nyc-gucci-start-of-year-celebration-dj-bmills.jpg", 
-    alt: "B.MILLS DJing with Gucci branding in background for Gucci internal start-of-year celebration event in NYC" 
+    src: "/images/nyc-lord-abbett-corporate-event-dj-bmills.jpg", 
+    alt: "B.MILLS DJing behind a Lord Abbett branded booth at a corporate event in New York City" 
   },
   { 
-    src: "/images/nyc-boom-boom-room-standard-high-line-cocktail-reception-dj-bmills.jpg", 
-    alt: "B.MILLS DJ performance during cocktail reception at Boom Boom Room at The Standard, High Line in downtown NYC" 
+    src: "/images/nyc-ballet-young-patrons-lincoln-center-david-h-koch-theater-dj-bmills.jpg", 
+    alt: "B.MILLS DJing for New York City Ballet Young Patrons event in the David H. Koch Theater Promenade at Lincoln Center",
+    credit: true 
+  },
+  { 
+    src: "/images/nyc-hornitos-tequila-cinco-de-mayo-brand-activation-dj-bmills.jpg", 
+    alt: "B.MILLS DJing Hornitos Tequila brand activation for Cinco de Mayo event in Manhattan's Upper East Side" 
   },
   { 
     src: "/images/nyc-ballet-young-patrons-dancing-lincoln-center-dj-bmills.jpg", 
