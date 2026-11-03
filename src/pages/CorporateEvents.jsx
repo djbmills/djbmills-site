@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import CorporateHero from '../components/CorporateHero';
-import CorporateEventGallery from '../components/CorporateEventGallery';
 import SEOHeading from '../components/SEOHeading';
 import InquiryFooter from '../components/InquiryFooter';
 
@@ -771,11 +770,6 @@ export default function CorporateEvents() {
           </motion.div>
         </div>
       </section>
-
-      {/* Full-Bleed Event Gallery */}
-      <div className="w-full">
-        <CorporateEventGallery />
-      </div>
 
       <InquiryFooter
   footerText={
