@@ -371,7 +371,7 @@ export default function CorporateEvents() {
                 </p>
 
                 <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
-                  The music direction was a moody night, built for the masquerade theme. The set was planned in five parts that followed the room across the five hours. It opened with opera and strings while the room filled, then built slowly through the early part of the night. At 10:30 the Phantom of the Opera overture played clean and unmixed, the moment the ball tipped from reception to party.
+                  The music direction was a moody night, built for the masquerade theme. The DJ set was planned in five parts that followed the room across the five hours, opening with opera and strings while the room filled, then building slowly through the early part of the night. At 10:30 came the turn. The Phantom of the Opera overture played clean and unmixed, and at that same moment a dramatic lighting change, planned with the set, shifted the mood of the whole room. That was the moment the ball tipped from reception to party.
                 </p>
 
                 <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
