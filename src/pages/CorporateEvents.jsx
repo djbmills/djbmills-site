@@ -342,12 +342,134 @@ export default function CorporateEvents() {
             B.MILLS is booked by brands, planners, and hosts who look for intentional music curation. The following portfolio projects showcase custom event production across New York City and premier destination spaces.
           </motion.p>
 
-          {/* Gagosian Case Study */}
+          {/* Columbia Business School Case Study */}
           <motion.div
             initial={{ opacity: 0, y: 34 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-10%' }}
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
+            className="mt-16 border-t border-border pt-10"
+          >
+            <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-14 items-start">
+              <div>
+                <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-5">
+                  Fall Gala
+                </p>
+
+                <h3 className="font-heading text-3xl md:text-5xl font-light text-foreground leading-tight">
+                  Columbia Business School
+                </h3>
+
+                <p className="font-body text-sm tracking-[0.25em] uppercase text-muted-foreground mt-6">
+                  Gotham Hall, New York City
+                </p>
+              </div>
+
+              <div>
+                <p className="font-body text-base text-muted-foreground leading-relaxed">
+                  Columbia Business School's fall gala, The Masquerade Ball, filled Gotham Hall on a Saturday night in November. Black tie, masks, and about 1,300 guests in one of the great rooms in the city, a former bank hall with a stained glass dome overhead.
+                </p>
+
+                <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
+                  The music direction was a moody night, built for the masquerade theme. The set was planned in five parts that followed the room across the five hours. It opened with opera and strings while the room filled, then built slowly through the early part of the night. At 10:30 the Phantom of the Opera overture played clean and unmixed, the moment the ball tipped from reception to party.
+                </p>
+
+                <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
+                  The build was carried by moody records, Tame Impala and Dua Lipa's Illusion and Houdini among them, while The Weeknd's tracks ran through the whole night. By the peak hours the tempo was up and stayed up, party records matched to the dark theme, moving in and out of house. The crowd was locked in on every record, and they stayed that way all the way through the last one. The close was Florence and the Machine, You've Got the Love, into Con te partirò as the final song of the night.
+                </p>
+
+                <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
+                  B.MILLS played from the mezzanine booth overlooking the floor, reading the room from above it all night. Columbia Business School has already invited B.MILLS back to play its spring gala.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-12">
+              <img
+                src="/images/corporate/columbia-business-school-masquerade-ball/columbia-business-school-masquerade-ball-dj-booth-point-of-view-dj-bmills.jpg"
+                alt="The view from the mezzanine DJ booth over the Masquerade Ball at Gotham Hall"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-10 mt-14">
+              <div className="group relative overflow-hidden">
+                <img
+                  src="/images/corporate/columbia-business-school-masquerade-ball/columbia-business-school-masquerade-ball-masquerade-ball-screen-dj-bmills.jpg"
+                  alt="Guests dancing in front of the Masquerade Ball screen at Gotham Hall"
+                  className="w-full h-full object-cover aspect-[2/3]"
+                  loading="lazy"
+                />
+                <div className="absolute bottom-3 right-3 z-10 pointer-events-none opacity-0 group-hover:opacity-80 transition-opacity duration-300">
+                  <p className="font-body text-[10px] md:text-[11px] font-light tracking-[0.08em] uppercase text-white">
+                    Photo by{' '}
+                    <a
+                      href="https://instagram.com/ohmyjoyy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-4 pointer-events-auto"
+                    >
+                      ohmyjoyy
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <div className="group relative overflow-hidden">
+                <img
+                  src="/images/corporate/columbia-business-school-masquerade-ball/columbia-business-school-masquerade-ball-mask-detail-dj-bmills.jpg"
+                  alt="A masquerade mask on a table at the Columbia Business School Fall Gala"
+                  className="w-full h-full object-cover aspect-[2/3]"
+                  loading="lazy"
+                />
+                <div className="absolute bottom-3 right-3 z-10 pointer-events-none opacity-0 group-hover:opacity-80 transition-opacity duration-300">
+                  <p className="font-body text-[10px] md:text-[11px] font-light tracking-[0.08em] uppercase text-white">
+                    Photo by{' '}
+                    <a
+                      href="https://instagram.com/ohmyjoyy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-4 pointer-events-auto"
+                    >
+                      ohmyjoyy
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-14 pt-10 border-t border-border">
+              <div className="group relative overflow-hidden">
+                <img
+                  src="/images/corporate/columbia-business-school-masquerade-ball/columbia-business-school-masquerade-ball-gotham-hall-dance-floor-dj-bmills.jpg"
+                  alt="The dance floor at the Masquerade Ball with the CBS sign lit behind the crowd"
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute bottom-3 right-3 z-10 pointer-events-none opacity-0 group-hover:opacity-80 transition-opacity duration-300">
+                  <p className="font-body text-[10px] md:text-[11px] font-light tracking-[0.08em] uppercase text-white">
+                    Photo by{' '}
+                    <a
+                      href="https://instagram.com/ohmyjoyy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-4 pointer-events-auto"
+                    >
+                      ohmyjoyy
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Gagosian Case Study */}
+          <motion.div
+            initial={{ opacity: 0, y: 34 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-10%' }}
+            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.475 }}
             className="mt-16 border-t border-border pt-10"
           >
             <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-14 items-start">
@@ -404,15 +526,6 @@ export default function CorporateEvents() {
                 loading="lazy"
               />
             </div>
-
-            <div className="mt-14 pt-10 border-t border-border">
-              <img
-                src="/images/corporate/gagosian-avedon-100/gagosian-avedon-100-le-bain-after-party.jpg"
-                alt="Afterparty lighting layout"
-                className="w-full h-auto object-cover"
-                loading="lazy"
-              />
-            </div>
           </motion.div>
 
           {/* Boys & Girls Club of Greenwich Case Study */}
@@ -420,7 +533,7 @@ export default function CorporateEvents() {
             initial={{ opacity: 0, y: 34 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.475 }}
+            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
             className="mt-16 border-t border-border pt-10"
           >
             <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-14 items-start">
@@ -494,7 +607,7 @@ export default function CorporateEvents() {
             initial={{ opacity: 0, y: 34 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
+            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.525 }}
             className="mt-16 border-t border-border pt-10"
           >
             <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-12 items-start">
@@ -564,7 +677,7 @@ export default function CorporateEvents() {
             initial={{ opacity: 0, y: 34 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.525 }}
+            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.55 }}
             className="mt-16 border-t border-border pt-10"
           >
             <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-14 items-start">
