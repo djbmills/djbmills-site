@@ -806,6 +806,9 @@ export default function CorporateEvents() {
           <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-6">
             Planning a corporate event
           </p>
+          <p className="font-heading text-2xl md:text-3xl font-light text-foreground leading-relaxed mb-8">
+            Send the date, the venue, and roughly how many guests.
+          </p>
           <a
             href="#inquiry"
             className="font-body text-[11px] tracking-[0.25em] uppercase text-foreground border-b border-foreground/30 hover:border-foreground transition-colors pb-1"
