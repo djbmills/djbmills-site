@@ -683,7 +683,7 @@ export default function CorporateEvents() {
             <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-14 items-start">
               <div>
                 <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-5">
-                  Dinner + Dancing
+                  Annual Ball
                 </p>
 
                 <h3 className="font-heading text-3xl md:text-5xl font-light text-foreground leading-tight">
@@ -719,12 +719,6 @@ export default function CorporateEvents() {
               <img
                 src="/images/corporate/sab-ball/school-of-american-ballet-ball-dj-booth-lincoln-center-dj-bmills.jpg"
                 alt="The view from the DJ booth over the School of American Ballet Ball at Lincoln Center"
-                className="w-full h-full object-cover aspect-[2/3]"
-                loading="lazy"
-              />
-              <img
-                src="/images/corporate/sab-ball/school-of-american-ballet-ball-lincoln-center-blue-dance-floor-dj-bmills.jpg"
-                alt="The dance floor under blue light at the School of American Ballet Ball, Lincoln Center"
                 className="w-full h-full object-cover aspect-[2/3]"
                 loading="lazy"
               />
