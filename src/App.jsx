@@ -17,6 +17,7 @@ const CorporateNJ = lazy(() => import("./pages/CorporateNJ"));
 const BrandActivations = lazy(() => import("./pages/BrandActivations"));
 const Afterparties = lazy(() => import("./pages/Afterparties"));
 const Availability = lazy(() => import("./pages/Availability"));
+const Services = lazy(() => import("./pages/Services"));
 
 // Helper to ensure the page starts at the top on route changes
 function ScrollToTop() {
@@ -82,6 +83,11 @@ export default function App() {
             <Route
               path="/availability"
               element={<Availability />}
+            />
+
+            <Route
+              path="/services"
+              element={<Services />}
             />
 
             <Route path="*" element={<PageNotFound />} />
