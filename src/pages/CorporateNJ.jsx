@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import CorporateHero from '../components/CorporateHero';
 import SEOHeading from '../components/SEOHeading';
 import InquiryFooter from '../components/InquiryFooter';
+import BookNowCTA from '../components/BookNowCTA';
 
 const corporateNJSchema = {
   '@context': 'https://schema.org',
@@ -131,6 +132,8 @@ export default function CorporateNJ() {
             @media (min-width: 768px) { .logo-slot { width: 255px; height: 84px; padding: 0 34px; } }
           `}</style>
         </section>
+
+        <BookNowCTA />
 
         {/* Section 01: The Philosophy */}
         <section className="py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
