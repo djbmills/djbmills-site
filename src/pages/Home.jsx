@@ -10,6 +10,7 @@ import {
 import SEOHeading from '../components/SEOHeading';
 import Hero from '../components/Hero';
 import PastClients from '../components/PastClients';
+import BookNowCTA from '../components/BookNowCTA';
 import Approach from '../components/Approach';
 import About from '../components/About';
 import Mixtapes from '../components/Mixtapes';
@@ -207,6 +208,8 @@ export default function Home() {
 
       {/* ── SECTION 01 ── */}
       <PastClients />
+
+      <BookNowCTA />
 
       {/* ── SECTION 02 ── */}
       <Approach />
