@@ -20,6 +20,11 @@ const testimonials = [
     title: 'Phillip Jeffries',
   },
   {
+    quote: 'B.Mills DJ\'d our Columbia Business School Fall 2026 Masquerade Gala at Gotham Hall, and he was truly incredible. We came in with a very specific vision for the night, and he embraced it completely. He reads a room, knows when to build energy. Every transition felt intentional. He isn\'t plugging in a laptop and pressing play. You can hear the craft and the care in every set, and our guests felt it too. People were still talking about the music days later. If you want a DJ who will understand your event and make it better, book B.Mills. We\'d work with him again in a heartbeat.',
+    name: 'Addie',
+    title: 'Columbia Business School',
+  },
+  {
     quote: 'The attention to detail was obvious and many people commented on how perfect it all was. If we didn\'t turn on the lights and stop the music, people would still be dancing.',
     name: 'Jeffrey',
     title: 'NY Phil Afterparty at Rainbow Room',
