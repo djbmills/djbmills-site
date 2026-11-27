@@ -5,11 +5,6 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: 'We had such a great experience! Brian was fantastic from start to finish and really understood the energy we wanted for our event.',
-    name: 'Caitlin',
-    title: 'Phillip Jeffries',
-  },
-  {
     quote: 'DJ B.Mills is as good as it gets - he made me and my wife\'s after party one of the most special stretches of our evening. He was so fun to work with and very professional. He played all our favorite songs and brought our vision to life.',
     name: 'Noah',
     title: 'Afterparty',
@@ -18,6 +13,11 @@ const testimonials = [
     quote: 'The event was a huge success, and the guests had such a great time on the dance floor. We truly appreciate the energy you brought to the night.',
     name: 'Ruthie',
     title: 'School of American Ballet',
+  },
+  {
+    quote: 'We had such a great experience! Brian was fantastic from start to finish and really understood the energy we wanted for our event.',
+    name: 'Caitlin',
+    title: 'Phillip Jeffries',
   },
   {
     quote: 'The attention to detail was obvious and many people commented on how perfect it all was. If we didn\'t turn on the lights and stop the music, people would still be dancing.',
