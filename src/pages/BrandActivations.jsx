@@ -56,7 +56,7 @@ export default function BrandActivations() {
       <SEOHeading
         title="Brand Activation DJ in New York City | B.MILLS"
         description="B.MILLS is a brand activation DJ in New York City, providing music direction and curated DJ sets for product launches, pop ups, retail activations, and fashion events, trusted by LVMH, Gucci, Celine, and Google."
-        keywords="luxury brand event DJ NYC, brand activation DJ NYC, fashion week afterparty DJ, product launch music curation manhattan, experiential marketing sound design nyc, luxury event music director, B.MILLS brand events"
+        keywords="luxury brand event DJ NYC, brand activation DJ NYC, in store event DJ NYC, fashion week afterparty DJ, product launch music curation manhattan, experiential marketing sound design nyc, luxury event music director, B.MILLS brand events"
         url="https://djbmills.com/brand-activations"
         schema={brandActivationsSchema}
       />
