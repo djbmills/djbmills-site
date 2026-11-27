@@ -169,6 +169,7 @@ function DeferredInquiryFooter(props) {
   return (
     <div
       ref={sectionRef}
+      id={shouldLoad ? undefined : 'inquiry'}
       className="bg-[#ebe6d9]"
     >
       {shouldLoad ? (
