@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import CorporateHero from '../components/CorporateHero';
 import SEOHeading from '../components/SEOHeading';
 import InquiryFooter from '../components/InquiryFooter';
+import BookNowCTA from '../components/BookNowCTA';
 
 const selectedEvents = [
   {
@@ -110,6 +111,8 @@ export default function CorporateEvents() {
           @media (min-width: 768px) { .logo-slot { width: 255px; height: 84px; padding: 0 34px; } }
         `}</style>
       </section>
+
+      <BookNowCTA />
 
       {/* Section 01: The Philosophy */}
       <section className="w-full py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
@@ -250,6 +253,15 @@ export default function CorporateEvents() {
 
             <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
               B.MILLS reads the energy based directly on the room layout, guest flow, and lighting. The curation is deep, soulful, and current, built completely from scratch without falling back on standard tracklists.
+            </p>
+
+            <p className="mt-8">
+              <a
+                href="/services"
+                className="font-body text-[11px] tracking-[0.25em] uppercase text-foreground border-b border-foreground/30 hover:border-foreground transition-colors pb-1"
+              >
+                See All Services
+              </a>
             </p>
           </motion.div>
 
