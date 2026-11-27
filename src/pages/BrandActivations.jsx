@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import BrandActivationHero from '../components/BrandActivationHero';
 import InquiryFooter from '../components/InquiryFooter';
+import BookNowCTA from '../components/BookNowCTA';
 import SEOHeading from '../components/SEOHeading';
 
 const brandActivationsSchema = {
@@ -141,6 +142,8 @@ export default function BrandActivations() {
         `}</style>
       </section>
 
+      <BookNowCTA />
+
       {/* Section 01: The Philosophy */}
       <section className="w-full py-20 md:py-32 px-6 md:px-12 border-b border-border bg-background">
         <div className="max-w-4xl mx-auto">
@@ -275,6 +278,15 @@ export default function BrandActivations() {
             </p>
             <p className="font-body text-base text-muted-foreground leading-relaxed mt-5">
               It comes down to great timing—knowing exactly when to ground a room with a steady groove and when to step up the transitions during milestone moments.
+            </p>
+
+            <p className="mt-8">
+              <a
+                href="/services"
+                className="font-body text-[11px] tracking-[0.25em] uppercase text-foreground border-b border-foreground/30 hover:border-foreground transition-colors pb-1"
+              >
+                See All Services
+              </a>
             </p>
           </motion.div>
 
