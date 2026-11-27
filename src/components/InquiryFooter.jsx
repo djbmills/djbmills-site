@@ -629,7 +629,7 @@ export default function InquiryFooter({
                 >
                   {isSubmitting
                     ? 'Sending...'
-                    : 'Request Availability'}
+                    : 'Submit Inquiry'}
 
                   <ArrowRight className="w-4 h-4" />
                 </Button>
