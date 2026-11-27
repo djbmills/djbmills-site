@@ -65,7 +65,7 @@ const services = [
   {
     number: '02',
     title: 'In Store Sets',
-    body: 'Live sets in the store for launches, openings, and campaign moments. The music matches the collection and the crowd in the room, at a volume that lets people shop and talk. Sound can be brought in on a slim setup that blends into the room and holds the level at ambiance, so a store with no system of its own is covered.'
+    body: 'Live DJ sets for in store events, from launches and openings to campaign moments. The music matches the collection and the crowd in the room, at a volume that lets people shop and talk. Sound can be brought in on a slim setup that blends into the room and holds the level at ambiance, so a store with no system of its own is covered.'
   },
   {
     number: '03',
@@ -78,9 +78,9 @@ export default function Services() {
   return (
     <div className="w-full min-h-screen bg-background overflow-x-hidden">
       <SEOHeading
-        title="In Store DJ & Brand Event Services in NYC | B.MILLS"
-        description="B.MILLS offers music direction for brand events, live in store DJ sets for retail launches, openings, and campaign moments, and recorded mixes made to brief. Based in New York City, serving the Hamptons, New Jersey, and South Florida."
-        keywords="in store DJ NYC, retail DJ New York, store opening DJ NYC, retail event DJ, in store music programming, brand event music direction NYC, product launch DJ, recorded mixes for retail, DJ services NYC, B.MILLS services"
+        title="In Store Event DJ & Brand Event Services in NYC | B.MILLS"
+        description="Music direction for brand events, live DJ sets for in store events, and recorded mixes made to brief. B.MILLS plays retail launches, store openings, and campaign moments in and around New York City, including the Hamptons, New Jersey, and South Florida."
+        keywords="in store DJ NYC, in store event DJ NYC, DJ for in store events New York, retail DJ New York, store opening DJ NYC, retail event DJ, in store music programming, brand event DJ NYC, brand event music direction NYC, product launch DJ, recorded mixes for retail, DJ services NYC, B.MILLS services"
         url="https://djbmills.com/services"
         schema={servicesSchema}
       />
@@ -88,7 +88,7 @@ export default function Services() {
       <PageHero
         label="Services"
         headline="Three ways to work together."
-        subheadline="Music direction for brand events, live sets in store, and mixes recorded to brief."
+        subheadline="Music direction for brand events, live sets for in store events, and mixes recorded to brief."
       />
 
       {/* Section: Professional Brand Marquee */}
