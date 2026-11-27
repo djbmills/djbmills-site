@@ -8,6 +8,7 @@ const navLinks = [
   { label: 'Listen', href: '/#mixtapes', sectionId: 'mixtapes' },
   { label: 'Clients', href: '/#clients', sectionId: 'clients' },
   { label: 'Events', href: '/corporate-events', sectionId: null },
+  { label: 'Services', href: '/services', sectionId: null },
   { label: 'Afterparties', href: '/afterparties', sectionId: null },
   { label: 'Feedback', href: '/#feedback', sectionId: 'feedback' },
 ];
@@ -44,6 +45,7 @@ export default function Navbar() {
     const isAvailabilityPage = location.pathname === '/availability';
 
     if (isCorporatePage) { setActiveLink('Events'); return; }
+    if (location.pathname === '/services') { setActiveLink('Services'); return; }
     if (isAfterpartiesPage) { setActiveLink('Afterparties'); return; }
     if (isAvailabilityPage) { setActiveLink(''); return; }
     if (location.pathname !== '/') { setActiveLink(''); return; }
