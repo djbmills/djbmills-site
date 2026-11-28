@@ -123,7 +123,7 @@ export default function About() {
 
             <div className="max-w-xl space-y-5">
               <p className="font-body text-[0.98rem] md:text-[1.05rem] text-muted-foreground leading-[1.75] font-light">
-                Based in New York City, B.Mills curates music for luxury brands,
+                Based in New York City, B.MILLS curates music for luxury brands,
                 cultural institutions, and private hosts who understand that
                 what you hear shapes how a night feels.
               </p>
