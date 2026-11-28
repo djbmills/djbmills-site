@@ -88,7 +88,7 @@ export default function Services() {
       <PageHero
         label="Services"
         headline="Ways to Work Together."
-        subheadline="Music direction for brand events, live sets for in store events, and mixes recorded to brief."
+        subheadline="Music direction for brand events, live sets for in-store events, and mixes recorded to brief."
       />
 
       {/* Section: Professional Brand Marquee */}
