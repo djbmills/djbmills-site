@@ -164,7 +164,7 @@ export default function Navbar() {
           >
             <img
   src="/images/logos/bmills-logo-white-128.png"
-  alt="B.Mills"
+  alt="B.MILLS"
   width="128"
   height="112"
   className="h-12 w-auto object-contain"
