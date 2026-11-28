@@ -87,7 +87,7 @@ export default function Services() {
 
       <PageHero
         label="Services"
-        headline="Three ways to work together."
+        headline="Ways to Work Together."
         subheadline="Music direction for brand events, live sets for in store events, and mixes recorded to brief."
       />
 
@@ -199,7 +199,6 @@ export default function Services() {
         </div>
       </section>
 
-      <BookNowCTA placement="services_list" />
 
       {/* Client Quote */}
       <section className="w-full py-16 md:py-20 px-6 md:px-12 bg-background">
@@ -214,7 +213,7 @@ export default function Services() {
             “We had such a great experience! Brian was fantastic from start to finish and really understood the energy we wanted for our event.”
           </p>
           <p className="font-body text-[11px] tracking-[0.25em] uppercase text-muted-foreground">
-            Caitlin McIntyre · Phillip Jeffries
+            Caitlin · Phillip Jeffries
           </p>
         </motion.div>
       </section>
