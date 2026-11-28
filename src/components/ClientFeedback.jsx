@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: 'DJ B.Mills is as good as it gets - he made me and my wife\'s after party one of the most special stretches of our evening. He was so fun to work with and very professional. He played all our favorite songs and brought our vision to life.',
+    quote: 'DJ B.MILLS is as good as it gets - he made me and my wife\'s after party one of the most special stretches of our evening. He was so fun to work with and very professional. He played all our favorite songs and brought our vision to life.',
     name: 'Noah',
     title: 'Afterparty',
   },
