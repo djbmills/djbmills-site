@@ -64,7 +64,7 @@ const services = [
   },
   {
     number: '02',
-    title: 'In Store Sets',
+    title: 'In-Store Sets',
     body: 'Live DJ sets for in store brand events, from launches and openings to campaign moments. The music matches the collection and the crowd in the room, at a volume that lets people shop and talk. Sound can be brought in on a slim setup that blends into the room and holds the level at ambiance, so a store with no system of its own is covered.'
   },
   {
