@@ -183,7 +183,7 @@ export default function Services() {
             >
               <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-6 lg:gap-14 items-start">
                 <div>
-                  <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-5">
+                  <p className="font-heading text-6xl md:text-7xl font-light leading-none text-foreground/15 mb-6">
                     {service.number}
                   </p>
                   <h2 className="font-heading text-3xl md:text-4xl font-light text-foreground leading-tight">
@@ -201,28 +201,46 @@ export default function Services() {
 
       <BookNowCTA placement="services_list" />
 
+      {/* Client Quote */}
+      <section className="w-full py-16 md:py-20 px-6 md:px-12 bg-background">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-10%' }}
+          transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+          className="max-w-3xl mx-auto text-center"
+        >
+          <p className="font-heading text-2xl md:text-3xl font-light text-foreground leading-snug mb-6">
+            “We had such a great experience! Brian was fantastic from start to finish and really understood the energy we wanted for our event.”
+          </p>
+          <p className="font-body text-[11px] tracking-[0.25em] uppercase text-muted-foreground">
+            Caitlin McIntyre · Phillip Jeffries
+          </p>
+        </motion.div>
+      </section>
+
       {/* Also Available */}
-      <section className="w-full py-16 md:py-20 px-6 md:px-12 border-t border-border bg-background">
+      <section className="w-full py-16 md:py-20 px-6 md:px-12 bg-[#0d0d0d]">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
           <a href="/corporate-events" className="group block">
-            <h3 className="font-heading text-2xl md:text-3xl font-light text-foreground leading-tight mb-4">
+            <h3 className="font-heading text-2xl md:text-3xl font-light text-white leading-tight mb-4">
               Corporate Events
             </h3>
-            <p className="font-body text-base text-muted-foreground leading-relaxed mb-5">
+            <p className="font-body text-base text-white/60 leading-relaxed mb-5">
               Galas, company parties, and end of year events across New York City.
             </p>
-            <span className="font-body text-[11px] tracking-[0.25em] uppercase text-foreground border-b border-foreground/30 group-hover:border-foreground transition-colors pb-1">
+            <span className="font-body text-[11px] tracking-[0.25em] uppercase text-white border-b border-white/30 group-hover:border-white transition-colors pb-1">
               Corporate Events
             </span>
           </a>
           <a href="/afterparties" className="group block">
-            <h3 className="font-heading text-2xl md:text-3xl font-light text-foreground leading-tight mb-4">
+            <h3 className="font-heading text-2xl md:text-3xl font-light text-white leading-tight mb-4">
               Afterparties
             </h3>
-            <p className="font-body text-base text-muted-foreground leading-relaxed mb-5">
+            <p className="font-body text-base text-white/60 leading-relaxed mb-5">
               Late night sets for wedding and corporate afterparties.
             </p>
-            <span className="font-body text-[11px] tracking-[0.25em] uppercase text-foreground border-b border-foreground/30 group-hover:border-foreground transition-colors pb-1">
+            <span className="font-body text-[11px] tracking-[0.25em] uppercase text-white border-b border-white/30 group-hover:border-white transition-colors pb-1">
               Afterparties
             </span>
           </a>
